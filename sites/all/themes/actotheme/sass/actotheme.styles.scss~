@@ -3,4 +3,4 @@
 //@import "variables/{YOUR FILE NAME HERE}";
 //@import "abstractions/{YOUR FILE NAME HERE}";
 //@import "base/{YOUR FILE NAME HERE}";
-@import "layouts/onecolumn.layout";
+//@import "components/{YOUR FILE NAME HERE}";

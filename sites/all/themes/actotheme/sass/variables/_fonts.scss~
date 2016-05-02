@@ -1,0 +1,76 @@
+/** Source Sans Pro **/
+
+@font-face {
+    font-family: "SourceSansProExtraLight";
+    src: url(../fonts/SourceSansPro-ExtraLight.ttf);
+    font-style: normal;
+}
+@font-face {
+    font-family: "SourceSansProExtraLightItalic";
+    src: url(../fonts/SourceSansPro-ExtraLightitalic.ttf);
+    font-style: normal;
+}
+@font-face {
+    font-family: "SourceSansProLight";
+    src: url(../fonts/SourceSansPro-Light.ttf);
+    font-style: normal;
+}
+@font-face {
+    font-family: "SourceSansProLightItalic";
+    src: url(../fonts/SourceSansPro-LightItalic.ttf);
+    font-style: normal;
+}
+@font-face {
+    font-family: "SourceSansProRegular";
+    src: url(../fonts/SourceSansPro-Regular.ttf);
+    font-style: normal;
+}
+@font-face {
+    font-family: "SourceSansProItalic";
+    src: url(../fonts/SourceSansPro-Italic.ttf);
+    font-style: normal;
+}
+@font-face {
+    font-family: "SourceSansProSemiBold";
+    src: url(../fonts/SourceSansPro-Semibold.ttf);
+    font-style: normal;
+    font-weight: 600;
+}
+@font-face {
+    font-family: "SourceSansProSemiBoldItalic";
+    src: url(../fonts/SourceSansPro-SemiboldItalic.ttf);
+    font-style: normal;
+    font-weight: 600;
+}
+@font-face {
+    font-family: "SourceSansProBold";
+    src: url(../fonts/SourceSansPro-Bold.ttf);
+    font-style: normal;
+    font-weight: 600;
+}
+@font-face {
+    font-family: "SourceSansProBoldItalic";
+    src: url(../fonts/SourceSansPro-BoldItalic.ttf);
+    font-style: normal;
+    font-weight: 600;
+}
+@font-face {
+    font-family: "SourceSansProBlack";
+    src: url(../fonts/SourceSansPro-Black.ttf);
+    font-style: normal;
+    font-weight: 600;
+}
+@font-face {
+    font-family: "SourceSansProSemiBoldBlackItalic";
+    src: url(../fonts/SourceSansPro-BlackItalic.ttf);
+    font-style: normal;
+    font-weight: 600;
+}
+
+/** Permanent Marker **/
+
+@font-face {
+    font-family: "PermanentMarker";
+    src: url(../fonts/PermanentMarker.ttf);
+    font-style: normal;
+}
