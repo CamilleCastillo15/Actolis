@@ -1,0 +1,315 @@
+@mixin translate($x,$y){
+    -moz-transform : translate($x,$y);
+    -webkit-transform : translate($x,$y);
+    transform : translate($x,$y);
+}
+
+@mixin btn($color) {
+    background-color: transparent;
+    cursor:pointer;
+    transition: all 200ms;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    margin:20px 0;
+
+    @include breakpoint($laptop) {
+
+        margin-top:30px;
+
+    }
+
+    @include breakpoint($laptopl) {
+
+        margin-top:40px;
+
+    }
+
+    padding: 10px 30px;
+    text-align: center;
+    
+    background-repeat: no-repeat;
+
+    background-size : 15% 40%;
+    background-position: 100% center;
+    color: #000000;
+    position: relative;
+    border : 2px solid #000000;
+    background-image : url(../images/f_noires/f_g_droite.svg);
+    
+    width:200px;
+
+    &:hover {
+        color: white;
+        background-color: $color;
+        border : 2px solid $color;
+        background-image : url(../images/f_blanches/f_droite.svg);
+    }
+
+    &:hover > a {
+        color: white;
+    }
+
+}
+
+@mixin atelier(){
+    display:inline-block;
+    vertical-align: top;
+    width:100%;
+    a{
+        text-decoration : none;
+    }
+    text-align:center;
+    @include breakpoint($mobilem){
+          width:33.33%;
+    }
+    img {
+
+        height: auto;
+        width: 100px;
+
+        @include breakpoint($tablet) {
+            width: 125px;
+        }
+
+        @include breakpoint($laptop) {
+            width: 150px;
+        }
+
+        @include breakpoint($laptopl) {
+            width: 175px;
+           
+        }
+
+    }
+
+}
+
+@mixin triangleleft($color){
+
+    @include grid-span(6,1);
+
+        border-bottom-width: 26px;
+        border-bottom-style: solid;
+        border-left: -40px solid transparent;
+        border-right: 102px solid transparent;
+        height: 0;
+        width: 50%;
+
+     
+        //z-index: 100000;
+
+        position: relative;
+
+        @include breakpoint($mobilem) {
+
+            border-bottom-width: 36px;
+            border-left: -40px solid transparent;
+            border-right: 102px solid transparent;
+            
+        }
+
+        @include breakpoint($tablet) {
+
+            border-bottom-width: 46px;
+            border-left: -40px solid transparent;
+            border-right: 102px solid transparent;
+          
+        }
+
+        @include breakpoint($laptop) {
+
+            border-bottom-width: 56px;
+            border-left: -40px solid transparent;
+            border-right: 102px solid transparent;
+           
+        }
+
+        @include breakpoint($laptopl) {
+
+            border-bottom-width: 66px;
+            border-left: -40px solid transparent;
+            border-right: 102px solid transparent;
+           
+
+        }
+
+}
+
+@mixin triangleright($color){
+    @include grid-span(6,7);
+
+        border-bottom-width: 66px;
+        border-bottom-style: solid;
+        border-left: 102px solid transparent;
+        border-right: 0px solid transparent;
+        height: 0;
+        width: 50%;
+        
+        position: relative;
+
+        @include breakpoint($mobilem) {
+
+            border-bottom-width: 36px;
+            border-left: 102px solid transparent;
+            border-right: 0px solid transparent;
+           
+        }
+
+        @include breakpoint($tablet) {
+
+            border-bottom-width: 46px;
+            border-left: 102px solid transparent;
+            border-right: 0px solid transparent;
+           
+
+        }
+
+        @include breakpoint($laptop) {
+
+            border-bottom-width: 56px;
+            border-left: 102px solid transparent;
+            border-right: 0px solid transparent;
+           
+
+        }
+
+        @include breakpoint($laptopl) {
+
+            border-bottom-width: 66px;
+            border-left: 102px solid transparent;
+            border-right: 0px solid transparent;
+           
+
+        }
+}
+@mixin triangles($color1,$color2){
+
+        background-color: $color1;
+       
+        display: block;
+        position: relative;
+        $h : 60px;
+        height: $h - 10;
+        @include breakpoint($tablet) {
+            height: $h;
+        }
+       
+       
+        .triangle-left {
+            @include grid-span(6, 1);
+            border-bottom-width: $h - 10;
+            border-bottom-style: solid;
+            border-bottom-color: $color2;
+            border-right: $h+10 solid transparent;
+            height: 0;
+            width: 50%;
+            position: relative;
+            
+            @include breakpoint($tablet) {
+                border-bottom-width: $h;
+                border-right: ($h*2)/1.5 solid transparent;
+            }
+          
+           
+        }
+        .triangle-right {
+            @include grid-span(6, 7);
+            border-bottom-width: $h - 10;
+            border-bottom-style: solid;
+            border-left: $h+10 solid transparent;
+            border-bottom-color: $color2;
+            height: 0;
+            width: 50%;
+            position: relative;
+            
+           @include breakpoint($tablet) {
+                border-bottom-width: $h;
+                border-left: ($h*2)/1.5 solid transparent;
+            }
+        }
+    }
+
+@mixin btn_don($color){
+    background-color: $color;
+    color:white;
+    cursor:pointer;
+    transition: all 200ms;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    margin:20px 0;
+
+    @include breakpoint($laptop) {
+
+        margin-top:30px;
+
+    }
+
+    @include breakpoint($laptopl) {
+
+        margin-top:40px;
+
+    }
+
+    padding: 10px 30px;
+    text-align: center;
+
+    background-repeat: no-repeat;
+
+    background-size : 15% 40%;
+    background-position: 100% center;
+    position: relative;
+    border : 2px solid $color;
+    background-image : url(../images/f_blanches/f_droite.svg);
+
+    width:200px;
+
+}
+
+@mixin btn_actu($color) {
+    background-color: transparent;
+    cursor:pointer;
+    transition: all 200ms;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+
+    @include breakpoint($laptop) {
+
+        margin-top:30px;
+
+    }
+
+    @include breakpoint($laptopl) {
+
+        margin-top:40px;
+
+    }
+
+    padding: 10px 30px;
+    text-align: center;
+
+    background-repeat: no-repeat;
+
+    background-size : 15% 40%;
+    background-position: 100% center;
+    color: #000000;
+    position: relative;
+    border : 2px solid #000000;
+    background-image : url(../images/f_noires/f_g_droite.svg);
+
+    width:200px;
+
+    &:hover {
+        color: white;
+        background-color: $color;
+        border : 2px solid $color;
+        background-image : url(../images/f_blanches/f_droite.svg);
+    }
+
+    &:hover > a {
+        color: white;
+    }
+
+}
