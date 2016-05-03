@@ -72,9 +72,7 @@
                 
                 <div class="picto"></div>
                 <h3>Titre</h3>
-                <div class="cta">
-                    voir plus
-                </div>
+                <div class="cta">voir plus</div>
             </a>
         </div>
         <div class="b-big-cta b2">
@@ -83,9 +81,7 @@
                 
                 <div class="picto"></div>
                 <h3>pharma & biotechnologie</h3>
-                <div class="cta">
-                    voir plus
-                </div>
+                <div class="cta">voir plus</div>
             </a>
         </div>
         <div class="b-big-cta b3">
@@ -94,9 +90,7 @@
                 
                 <div class="picto"></div>
                 <h3>Titre</h3>
-                <div class="cta">
-                    voir plus
-                </div>
+                <div class="cta">voir plus</div>
             </a>
         </div>
 
@@ -133,6 +127,41 @@
 
         </div>
 
+    </div>
+
+    <div class="c-news">
+        
+        <div class="slide">
+            <div class="news">
+                <div class="c-img">
+                    <img src="http://actolis.dinde.pro/sites/all/themes/actotheme/imgs/home_news_photo.jpg" alt="">
+                </div>
+                <div class="c-text">
+                    <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h4>
+                    <p>Sed et neque facilisis, pellentesque est ac, pellentesque ante. Fusce cursus dapibus aliquet. Maecenas non pellentesque urna, ac aliquam ligula. Suspendisse sit amet dolor tempor, hendrerit est nec, tincidunt elit. </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="c-block">
+
+        <div class="c-gradient">
+                
+            <div class="c-text">
+                <h4>Rejoignez-nous!</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non augue faucibus, ullamcorper est vitae, hendrerit lorem. </p>
+                <div class="c-cta">
+                <a href="" class="cta">formulaire en ligne</a>
+                 </div>
+            </div>
+            <div class="c-img"> 
+                
+            </div>
+
+        </div>
+    
     </div>
 
 </div>
