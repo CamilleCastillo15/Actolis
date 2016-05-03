@@ -84,6 +84,30 @@ $fallback-extension: 'png' !default;
 
     }
 }
+
+@mixin png($name, $poz:false, $size:false){
+    background-image: url(#{$image-path}/#{$name}.png);
+    background-repeat: no-repeat;
+    @if($size){
+        background-size: $size;
+    }
+    @if($poz){
+        background-position: $poz;
+    }
+
+}
+
+@mixin jpg($name, $poz:false, $size:false){
+    background-image: url(#{$image-path}/#{$name}.jpg);
+    background-repeat: no-repeat;
+    @if($size){
+        background-size: $size;
+    }
+    @if($poz){
+        background-position: $poz;
+    }
+
+}
 @mixin main-padding($left:0, $right:0){
     
     @if($left != 0){

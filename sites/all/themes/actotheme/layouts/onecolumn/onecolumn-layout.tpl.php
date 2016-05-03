@@ -44,3 +44,95 @@
             d="M31,21H2.7A0.85,0.85,0,0,0,2,22a0.85,0.85,0,0,0,.7,1H31a0.85,0.85,0,0,0,.7-1C31.7,21.4,31.5,21,31,21Z" transform="translate(10.8 5.7)"/>
     </svg>
 </div>
+
+<div class="web-charte-graphique">
+
+    <div class="c-slider">
+
+        <a href="" class="bt-scroll">
+            
+        </a>
+        
+        <div class="slide">
+            <div class="c-text">
+                <h1>ACTOLIS<div class="sep"></div></h1>
+                
+                <p class="big">Le partenaire des industries de la santé</p>
+                <p>Le partenaire des industries de la santé</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="c-big-cta">
+
+        <div class="b-big-cta b1">
+            <div class="gradient"></div>
+            <a href="#">
+                
+                <div class="picto"></div>
+                <h3>Titre</h3>
+                <div class="cta">
+                    voir plus
+                </div>
+            </a>
+        </div>
+        <div class="b-big-cta b2">
+            <div class="gradient"></div>
+            <a href="#">
+                
+                <div class="picto"></div>
+                <h3>pharma & biotechnologie</h3>
+                <div class="cta">
+                    voir plus
+                </div>
+            </a>
+        </div>
+        <div class="b-big-cta b3">
+            <div class="gradient"></div>
+            <a href="#">
+                
+                <div class="picto"></div>
+                <h3>Titre</h3>
+                <div class="cta">
+                    voir plus
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="c-icones-cta">
+        
+        <div class="b-i i1">
+            
+            <div class="picto"></div>
+            <h3>Titre</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+        </div>
+        <div class="b-i i2">
+            
+            <div class="picto"></div>
+            <h3>Titre</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+        </div>
+        <div class="b-i i3">
+            
+            <div class="picto"></div>
+            <h3>Titre</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+        </div>
+        <div class="b-i i4">
+            
+            <div class="picto"></div>
+            <h3>Titre</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+        </div>
+
+    </div>
+
+</div>
