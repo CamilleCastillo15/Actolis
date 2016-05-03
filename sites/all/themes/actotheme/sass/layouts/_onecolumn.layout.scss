@@ -1,10 +1,14 @@
 @import "singularitygs";
 @import "breakpoint";
 @import "../variables/variables";
+@import "../variables/mixin";
 @include add-grid(12);
 @include add-gutter(0);
 //@include add-guttertyle('split');
 //sdf
+body.admin-menu.adminimal-menu {
+    margin-top: 30px !important;
+}
 
 a {
     &:hover,
@@ -18,20 +22,36 @@ a {
 
 }
 
+.l-off{
+    display: none;
+}
+
 .l-header {
 
-    //background-color:#cccccc;
-    max-width: $max;
+
+   background-color: white;
+
+   // max-width: $max;
+
+   
     display: none;
     position: relative;
+    @include main-padding();
     @include breakpoint($tablet) {
         display: block;
         margin:auto;
     }
 
+   
+
     .logo {
 
-        @include grid-span(2,1);
+    
+        width: 50%;
+        height: 6rem;
+        background-color: $orange;
+
+    
 
         text-align: center;
         padding:0.5rem;
