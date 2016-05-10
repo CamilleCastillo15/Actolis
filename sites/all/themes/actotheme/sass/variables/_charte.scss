@@ -375,6 +375,7 @@
                 position: absolute;
                 bottom:-4rem;
                 display: block;
+                white-space: nowrap;
                 left:50%;
                  @include translate(-50%,0px);
             }
