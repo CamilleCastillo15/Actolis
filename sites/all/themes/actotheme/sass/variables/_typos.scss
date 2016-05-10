@@ -1,6 +1,20 @@
-body{
-    font-size: 17px;
+@import "breakpoint";
+@import "../variables/variables";
+
+body,html{
+	font-family: 'Source Sans Pro', sans-serif;
+    font-size: 10px;
     line-height: 1.5rem;
+    letter-spacing: 0.1rem;
+    @include breakpoint($tablet) {
+        font-size: 1.1vw;
+    }
+
+     @include breakpoint($laptopl) {
+       font-size: 17px;
+    }
+
+    
 }
 
 

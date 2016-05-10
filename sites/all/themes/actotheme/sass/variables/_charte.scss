@@ -1,12 +1,20 @@
-@import "singularitygs";
-@import "breakpoint";
-@import "../variables/variables";
-@import "../variables/mixin";
-@import "../variables/charte";
-@import "../variables/typos";
-@include add-grid(12);
-@include add-gutter(0);
+@import "variables";
+@import "mixin";
 
+@mixin test(){
+   
+}
+
+.web-charte-graphique{
+  
+  
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 50vh;
+ 
+
+
+}
 
 
 
@@ -367,6 +375,7 @@
                 position: absolute;
                 bottom:-4rem;
                 display: block;
+                white-space: nowrap;
                 left:50%;
                  @include translate(-50%,0px);
             }
@@ -476,204 +485,4 @@
 ////     ////     ////     ////     ////     ////     ////     ////     ////
 
 
-body.admin-menu.adminimal-menu {
-    margin-top: 30px !important;
-}
 
-.front{
-    background-color: red;
-}
-
-a {
-
-    text-decoration: none;
-    &:hover,
-    &:link,
-    &:active,
-    &:visited {
-
-     
-    }
-
-}
-
-.l-off{
-    display: none;
-}
-
-.l-header {
-
-
-   background-color: white;
-
-   // max-width: $max;
-
-   
-    display: none;
-    position: relative;
-    @include main-padding();
-    @include breakpoint($tablet) {
-        display: block;
-        margin:auto;
-    }
-
-   
-
-    .logo {
-
-    
-        width: 50%;
-        height: 6rem;
-        background-color: $orange;
-
-    
-
-        text-align: center;
-        padding:0.5rem;
-        img{
-            width:100%;
-            max-width:8rem;
-
-        }
-
-    }
-
-}
-
-.burger {
-    display: block;
-    @include breakpoint($tablet) {
-        display:none ;
-    }
-    /*
-    -webkit-transition: all 1.5s;
-    -moz-transition: all 1.5s;
-    transition: all 1.5s;
-    */
-    top: $margin;
-    right:$margin;
-    //left: 83vw;
-    position: fixed;
-    width: 60px;
-    height: auto;
-    cursor: pointer;
-    z-index:1000;
-    /* $offsetX : 37.099998px;
-        $offsetY : 20.4px;
-        $offsetY_2 : 16.5px;
-        $offsetY_3 : 24.4px;
-        $widthX: 11.8px; */
-    $offsetX: 10.8px;
-    $offsetY: 15.7px;
-    $offsetY_2: 31.4px;
-    $offsetY_3: 47.1px;
-    $widthX: 46.7438px;
-    -webkit-transition: all 500ms;
-    -moz-transition: all 500ms;
-    transition: all 500ms;
-    circle {
-        opacity: 0.3;
-    }
-    #burger_1 {
-        transform: translate(10.8px, 5.7px) rotate(0deg);
-        transition: all 200ms linear;
-        transform-origin: $widthX/2 $offsetY;
-        fill: white;
-    }
-    #burger_2 {
-        transform: translate(10.8px, 5.7px) rotate(0deg);
-        fill: white;
-    }
-    #burger_3 {
-        transform: translate(10.8px, 5.7px) rotate(0deg);
-        transition: all 200ms linear;
-        transform-origin: $offsetX+($widthX/2) $offsetY_3;
-        fill: white;
-    }
-    &.o {
-        #burger_1 {
-            transform: translate($offsetX+2, 5.7px+($offsetY)/2) rotate(45deg);
-        }
-        #burger_2 {
-            opacity: 0;
-        }
-        #burger_3 {
-            transform: translate($offsetX+3, -(5.7px+($offsetY_2)/2)) rotate(-45deg);
-            //translate(($offsetX), -($offsetY_3 - $offsetY_2))
-        }
-        #g10 {
-            transform: translate(-0.1px, 0);
-        }
-    }
-}
-
-.l-page {
-    @include background-grid($color: grey);
-    margin: auto;
-    max-width: $max;
-}
-
-.l-content {
-    //background-color: yellow;
-
-    position: relative;
-    //height:2337px;
-}
-.l-shield{
-    transition: height 0ms ease-in-out 400ms,
-                opacity 400ms ease-in-out 0ms;
-    opacity : 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 0;
-    background-color: rgba(255,255,255,0.7);
-    &.o {
-         transition: height 0ms ease-in-out 0ms,
-                opacity 400ms ease-in-out 0ms;
-        opacity:1;
-        height:100%;
-    }
-}
-
-
-
-.l-footer {
-   display: block;
-    @include grid-span(12, 1);
-}
-
-.l-map {
-    @include grid-span(12, 1);
-    .bloc1 {
-        background-color: white;
-        min-height: 340px;
-        height:340px;
-        //@include grid-span(12,1);
-        @include breakpoint($laptop) {
-            @include grid-span(6, 7);
-        }
-    }
-    .bloc2 {
-
-        padding-top: 14px;
-        min-height: 340px;
-        background-color: #00a886;
-
-        @include breakpoint($laptop) {
-            @include grid-span(6, 7);
-        }
-        height: 341px;
-        font-size: 20px;
-
-        h1{
-            font-size: 1.75rem;
-        }
-
-    }
-    display: block;
-}
-
-.l-services {
-    @include grid-span(12, 1);
-}
