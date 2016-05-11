@@ -55,3 +55,9 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
+
+
+.clear{
+  clear: both;
+  float: none;
+}

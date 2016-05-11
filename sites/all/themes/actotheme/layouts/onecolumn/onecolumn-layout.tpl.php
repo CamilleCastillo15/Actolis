@@ -2,15 +2,39 @@
 <div class="l-header">
     <div class="logo">
         <a href="/">
-            <img src="<?php print $theme ?>/images/ilot_degrade.svg" alt="logo" title="logo" />
+            <img src="<?php print $theme ?>/imgs/logo-actolis.png" alt="logo" title="logo" />
+            <div class="c-txt">
+                <h1>ACTOLIS</h1>
+                <p>le partenaire des industrie de la santé</p>
+            </div>
         </a>
     </div>
+
     <div class="user">
         <?php print render($page['user']); ?>
+        <ul class="menu">
+            <li class="active-trail"><a href="">Consultants</a></li>
+            <li><a href="">Partenaires</a></li>
+            <li><a href="">Clients</a></li>
+        </ul>
+             
     </div>
+    <div class="clear"></div>
 </div>
 <div class="l-menu">
     <?php print render($page['menus']); ?>
+     <ul class="menu">
+            <li class="active-trail"><a href="">Consultants</a></li>
+            <li><a href="">Partenaires</a></li>
+            <li><a href="">Clients</a></li>
+    </ul>
+    <div class="domaine-menu">
+        <ul class="menu">
+            <li class="active-trail"><a href="">dispositifs médicaux</a></li>
+            <li><a href="">pharma & biotechnologie</a></li>
+            <li><a href="">cosmétiques</a></li>
+        </ul>
+    </div>
 </div>
 <div <?php print $attributes;?>>
     <div class="l-content">
