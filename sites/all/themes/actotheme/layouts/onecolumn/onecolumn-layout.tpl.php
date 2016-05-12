@@ -30,9 +30,9 @@
     </ul>
     <div class="domaine-menu">
         <ul class="menu">
-            <li class="active-trail"><a href="">dispositifs médicaux</a></li>
-            <li><a href="">pharma & biotechnologie</a></li>
-            <li><a href="">cosmétiques</a></li>
+            <li class="active-trail"><a href="" class="b1"><div class="picto"></div><span class="c-txt">dispositifs médicaux</span></a></li>
+            <li><a href="" class="b2"><div class="picto"></div><span class="c-txt">pharma & biotechnologie</span></a></li>
+            <li><a href="" class="b3"><div class="picto"></div><span class="c-txt">cosmétiques</span></a></li>
         </ul>
     </div>
 </div>
