@@ -69,7 +69,7 @@
     </svg>
 </div>
 
-<div class="web-charte-graphique">
+<div class="web-charte-graphique hide">
 
     <div class="c-slider">
 

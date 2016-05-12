@@ -12,6 +12,9 @@
   padding-bottom: 50vh;
  
 }
+.hide{
+   // display: none;
+}
 
 @font-face {
     font-family: Actolis;
@@ -23,15 +26,15 @@
 
 .ul-nav{
     width: 100%;
-            text-align: center;
-            li{
-                display: inline-block;
-                padding: 0.3rem 3rem;
-                color:white;
-                a{
-                    color:white;
-                }
-            }
+    text-align: center;
+    li{
+        display: inline-block;
+        padding: 0.3rem 3rem;
+        color:white;
+        a{
+            color:white;
+        }
+    }
 }
 
 
@@ -140,7 +143,7 @@
         width: 100%;
 
         ul{
-            padding: 1rem;
+          
            @extend .ul-nav;
         }
 
