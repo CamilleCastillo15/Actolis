@@ -12,8 +12,11 @@
   padding-bottom: 50vh;
  
 }
-.hide{
-   // display: none;
+
+.logged-in {
+    .hide{
+        display: none;
+    }
 }
 
 @font-face {
@@ -175,6 +178,7 @@
            li{
                 a{
                     padding:2rem 2rem;
+                     @include transition(all 0.2s ease-out);
                     &:hover{
                         background-color: rgba(white,0.1);
                     }
@@ -201,8 +205,10 @@
                             background-size: 60%;
                             margin:0px;
                             margin-right: 1rem;
+                             @include transition(all 0.2s ease-out);
                             &:before{
                                 border-width: 2px;
+                                 @include transition(all 0.2s ease-out);
                             }
                         }
 
