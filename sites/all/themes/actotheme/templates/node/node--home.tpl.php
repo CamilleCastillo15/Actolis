@@ -26,12 +26,12 @@
                 $image_render = field_view_value('field_collection_item', $collectiong, 'field_image', $image_field[0], array(
                     'type' => 'image',
                     'settings' => array(
-                        'image_style' => 'header',
+                        'image_style' => 'large',
                     )));
                 $image_render_mobile = field_view_value('field_collection_item', $collectiong, 'field_image', $image_field[0], array(
                     'type' => 'image',
                     'settings' => array(
-                        'image_style' => 'slider',
+                        'image_style' => 'medium',
                     )));
                 $titre = field_view_field('field_collection_item', $collectiong, 'field_titre');
                 $texte = field_view_field('field_collection_item', $collectiong, 'field_texte');

@@ -22,12 +22,7 @@
     <div class="clear"></div>
 </div>
 <div class="l-menu">
-    <?php print render($page['menus']); ?>
-     <ul class="menu">
-            <li class="active-trail"><a href="">Consultants</a></li>
-            <li><a href="">Partenaires</a></li>
-            <li><a href="">Clients</a></li>
-    </ul>
+    <?php print render($page['header']); ?>
     <div class="domaine-menu">
         <ul class="menu">
             <li class="active-trail"><a href="" class="b1"><div class="picto"></div><span class="c-txt">dispositifs médicaux</span></a></li>
