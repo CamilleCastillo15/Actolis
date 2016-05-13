@@ -1,0 +1,86 @@
+@import "breakpoint";
+@import "../variables/variables";
+@import "../variables/mixin";
+
+  .l-menu{
+
+        background-color: $orange;
+        padding: 0rem;
+        text-align: center;
+        display: block;
+        width: 100%;
+
+        ul{
+
+           @extend .ul-nav;
+           li{
+                a{
+                    padding:2rem 2rem;
+                     @include transition(all 0.2s ease-out);
+                    &:hover{
+                        background-color: rgba(white,0.1);
+                    }
+                }
+           }
+      }
+
+        .domaine-menu{
+            ul{
+                 @extend .ul-nav;
+                 padding:1rem 0rem;
+                 li{
+                    padding: 0rem 0rem;
+                    a{
+                        background-image: none !important;
+                        background-image: url("") !important;
+                         padding: 2rem 3rem;
+                        .picto{
+                            @extend .c-icone;
+                            display: inline-block;
+                            vertical-align: middle;
+                            width: 5rem;
+                            height: 5rem;
+                            background-size: 60%;
+                            margin:0px;
+                            margin-right: 1rem;
+                             @include transition(all 0.2s ease-out);
+                            &:before{
+                                border-width: 2px;
+                                 @include transition(all 0.2s ease-out);
+                            }
+                        }
+
+                        .c-txt{
+
+                            display: inline-block;
+                            text-align: center;
+                            vertical-align: middle;
+                            text-transform: uppercase;
+                            font-size: 1.3rem;
+                            font-weight: 700;
+                            max-width: 300px;
+
+                        }
+
+                         &:hover{
+                            background-color: transparent;
+                            .picto{
+                                background-size: 70%;
+                                &:before{
+                                    background-color: rgba(white,0.1);
+                                }
+
+                            }
+                        }
+                    }
+                    .b2{
+                        border-left:2px solid white;
+                        border-right:2px solid white;
+                    }
+                 }
+            }
+             @extend .gradient-h;
+             width: 100%;
+        }
+
+    }

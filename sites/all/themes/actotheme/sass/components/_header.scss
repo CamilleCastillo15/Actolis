@@ -1,0 +1,112 @@
+@import "breakpoint";
+@import "../variables/variables";
+@import "../variables/mixin";
+
+.ul-nav{
+    width: 100%;
+    text-align: center;
+    li{
+        display: inline-block;
+
+        color:white;
+        a{
+            color:white;
+
+            display: inline-block;
+        }
+    }
+}
+
+
+.l-header {
+
+
+   background-color: white;
+
+   // max-width: $max;
+    display: none;
+    position: relative;
+    @include main-padding();
+    @include breakpoint($tablet) {
+        display: block;
+        margin:auto;
+    }
+
+
+
+    .logo {
+
+
+        width: 50%;
+        height: 6rem;
+        text-align: left;
+        float: left;
+
+        a{
+
+            display: block;
+            height: 100%;
+            width: auto;
+
+            img{
+
+                height: 80%;
+                width: auto;
+                margin-top: 0.5rem;
+                position: relative;
+                 display: inline-block;
+                 vertical-align: middle;
+
+            }
+            .c-txt{
+                display: inline-block;
+                vertical-align: middle;
+                text-align: center;
+                h1{
+                    color:$orange;
+                    font-size: 1.4rem;
+                    font-weight: bold;
+                    text-transform: lowercase;
+                    font-family: Actolis;
+                }
+                p{
+                    color:$orange;
+                    font-size: 0.52rem;
+                    font-family: Verdana;
+                    letter-spacing: -0.2px;
+                }
+            }
+
+        }
+
+
+
+
+    }
+
+    .user{
+        float: left;
+        width: 50%;
+        text-align: right;
+
+        ul{
+
+           @extend .ul-nav;
+           text-align: right;
+                li{
+                    padding: 0rem;
+                    padding-top: 2rem;
+                    padding-left: 2rem;
+
+                    a{
+                        color:black;
+                        padding: 0.5rem 0rem;
+                    }
+
+                }
+         }
+    }
+
+
+
+}
