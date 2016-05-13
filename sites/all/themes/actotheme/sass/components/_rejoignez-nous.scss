@@ -1,0 +1,108 @@
+@import "breakpoint";
+@import "../variables/variables";
+@import "../variables/mixin";
+
+.rejoignez_nous{
+	
+    .c-block-histoire{
+    	
+        .c-img{
+            @include png(join_photo,50% 50%, cover);
+        }
+        width: 	100%;
+        @include main-padding();
+
+        .c-blanc{
+        	padding-left: 0px;
+        }
+    }
+
+    .c-block-offres{
+
+    	width: 	100%;
+	    display: block;
+	    margin: 0 auto;
+	    padding: 3rem;
+	    margin-top:7rem;
+	    margin-bottom: 6rem;
+	    @include main-padding();
+
+		h4{
+
+		}
+		.cc{
+			text-align: center;
+			.item-offre{
+				display: inline-block;
+				width: 33%;
+				
+				height: 6rem;
+				padding-top: 2rem;
+				background-color: $gris;
+				position: relative;	
+				margin-bottom: 0.3rem;
+
+				&:hover{
+					background-color: white;
+				}
+
+				.nom{
+					font-weight: bold;
+					text-transform: uppercase;
+					display: block;	
+					width: 	100%;
+					font-size: 	1.2rem;
+					font-weight: 700;
+				}
+				.date{
+					text-align: right;
+					display: block;	
+					width: 	100%;
+					padding-right: 1rem;
+					
+					font-style: italic;
+					font-size: 	0.7rem;
+				}
+
+				  .sep{
+	                height: 3px;
+	                display: block;
+	                width: 100%;
+	                position: absolute;	
+	                bottom: 0px;
+	                @extend .gradient-h;
+	      
+	            }
+			}
+		}
+
+    }
+}
+
+.c-form{
+	.c-text{
+		@include main-padding();
+		background-color: $gris;
+		text-align: center;	
+		padding: 4rem;
+		padding-bottom: 8rem;
+		p{
+			display: block;	
+			margin:0 auto;
+			width: 50%;
+			font-size: 	1.2rem;
+			font-weight: 	bold;
+		}
+	}
+	.cc-block{
+		@include main-padding();
+		.c-block{
+
+		    margin: 0 auto;
+    		margin-top: -4rem;
+    		width: 	100%;
+
+		}
+	}
+	
+}

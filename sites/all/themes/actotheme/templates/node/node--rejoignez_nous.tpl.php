@@ -38,5 +38,62 @@
     
     </div>
 
+    <div class="c-block-offres">
+         <h4>nos offres</h4>
+         <div class="cc">
+             <div class="item-offre">
+                 <span class="nom">Nom du poste</span>
+                 <span class="date">01/04/2016</span>
+                 <div class="sep"></div>
+             </div>
+              <div class="item-offre">
+                 <span class="nom">Nom du poste</span>
+                 <span class="date">01/04/2016</span>
+                 <div class="sep"></div>
+             </div>
+              <div class="item-offre">
+                 <span class="nom">Nom du poste</span>
+                 <span class="date">01/04/2016</span>
+                 <div class="sep"></div>
+             </div>
+              <div class="item-offre">
+                 <span class="nom">Nom du poste</span>
+                 <span class="date">01/04/2016</span>
+                 <div class="sep"></div>
+             </div>
+              <div class="item-offre">
+                 <span class="nom">Nom du poste</span>
+                 <span class="date">01/04/2016</span>
+                 <div class="sep"></div>
+             </div>
+         </div>
+    </div>
+
+    <div class="c-form"> 
+        
+        <div class="c-text"> 
+            <p> 
+                Aucune offre ne correspond à ton domaine de compétence ?
+                C’est le moment de nous envoyer ta candidature spontanée !
+                C’est avec plaisir et intérêt que nous l’étudierons
+            </p>
+        </div>
+
+        <div class="cc-block">  
+
+            <div class="c-block">
+
+                <div class="c-gradient">
+
+                        formulaire !!!!!
+                            
+                </div>
+        
+            </div>
+
+        </div>
+        
+    </div>
+
 
 </div>
