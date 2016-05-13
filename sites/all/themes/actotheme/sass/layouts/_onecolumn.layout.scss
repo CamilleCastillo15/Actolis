@@ -103,14 +103,14 @@ a {
 }
 
 .l-page {
-    @include background-grid($color: grey);
-    margin: auto;
-    max-width: $max;
+    //@include background-grid($color: grey);
+    //margin: auto;
+    //max-width: $max;
+    background-color: white;
 }
 
 .l-content {
     //background-color: yellow;
-
     position: relative;
     //height:2337px;
 }
@@ -135,7 +135,10 @@ a {
 
 .l-footer {
    display: block;
-    @include grid-span(12, 1);
+   background-color: $nuit;
+   padding: 2rem;
+   text-align: center;
+   color:white;
 }
 
 .l-map {
