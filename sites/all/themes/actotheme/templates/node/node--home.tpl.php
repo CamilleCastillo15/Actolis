@@ -26,7 +26,7 @@
                 $image_render = field_view_value('field_collection_item', $collectiong, 'field_image', $image_field[0], array(
                     'type' => 'image',
                     'settings' => array(
-                        'image_style' => 'large',
+                        'image_style' => 'header',
                     )));
                 $image_render_mobile = field_view_value('field_collection_item', $collectiong, 'field_image', $image_field[0], array(
                     'type' => 'image',

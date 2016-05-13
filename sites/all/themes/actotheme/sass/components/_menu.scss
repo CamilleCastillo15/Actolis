@@ -16,9 +16,40 @@
            li{
                 a{
                     padding:2rem 2rem;
-                     @include transition(all 0.2s ease-out);
+                    padding-bottom: 0.5rem;
+                    @include transition(all 0.2s ease-out);
+
                     &:hover{
                         background-color: rgba(white,0.1);
+
+
+                        &:after {
+
+                            margin:0.5rem 0.5rem;
+                            border-bottom: 2px solid rgba(white,0.3);
+
+                        }
+
+                    }
+                    &.active{
+
+                            &:after {
+
+                                content:"";
+                                border-bottom: 2px solid white;
+                                margin:0.5rem 0.5rem;
+                                display: block;
+
+                            }
+                    }
+
+                    &:after {
+
+                        content:"";
+                        border-bottom: none;
+                        margin:0;
+                        display: block;
+
                     }
                 }
            }
@@ -64,6 +95,14 @@
 
                          &:hover{
                             background-color: transparent;
+
+                                &:after {
+
+                                    margin:0;
+                                    border-bottom: none;
+
+                                }
+
                             .picto{
                                 background-size: 70%;
                                 &:before{
