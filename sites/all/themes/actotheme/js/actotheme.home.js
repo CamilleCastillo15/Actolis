@@ -1,6 +1,6 @@
 (function ($) {
 
-    Drupal.behaviors.ateliersthemeHome = {
+    Drupal.behaviors.actothemeHome = {
 
     attach: function (context, settings) {
         $(window).on("resize",function(){
@@ -34,6 +34,8 @@
         });
 
     }
+
+        console.log("swiperhome");
 
 };
 

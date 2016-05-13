@@ -52,7 +52,7 @@
 <div class="l-shield"></div>
 <div class="l-off">
     <a href="/">
-        <img class="logo" src="<?php print $theme ?>/images/ilot_vert.svg" alt="logo" title="logo" />
+        <img class="logo" src="" />
     </a>
     <?php print render($page['off']); ?>
 </div>

@@ -1,0 +1,216 @@
+@import "breakpoint";
+@import "../variables/variables";
+.picto_ateliers {
+    &:hover,
+    &:link,
+    &:active,
+    &:visited {
+        color: white;
+    }
+    img {
+        width:80%;
+        max-width:150px;
+        height: auto;
+    }
+}
+
+.block-all {
+    position:relative;
+
+    .block-img {
+        width: 141%;
+
+        @include breakpoint($laptop){
+            width: 100%;
+        }
+
+        height: 100%;
+        background-size:cover;
+        background-position:center;
+        img{
+            height:100%;
+            max-width:none;
+            @include breakpoint($tablet){
+                height:auto;
+                max-width:100%;
+            }
+        }
+    }
+    .block-w {
+        @include breakpoint($mobilem){
+            width:80%;
+        }
+
+        color: white;
+        text-align: center;
+        display: block;
+        background: rgba(255, 255, 255, 0.1);
+        position:absolute;
+        top:50%;
+        left:50%;
+        width:100%;
+        transform : translate(-50%,-50%);
+        padding: 2rem;
+
+        .title-bienvenue {
+            font-family: PermanentMarker;
+            font-size: 2rem;
+            @include breakpoint($mobilel){
+                 font-size: 2.5rem;
+
+                display:inline-block;
+            }
+            @include breakpoint($tablet) {
+                font-size: 3rem;
+            }
+
+        }
+
+        .par-bienvenue {
+            font-family: 'SourceSansProLight';
+            margin: 2rem 0;
+            //font-size:21px;
+            text-align: center;
+
+            @include breakpoint($tablet) {
+                //display:inline-block;
+                vertical-align: top;
+                width:50%;
+                margin: 1rem auto;
+                //text-align: left;
+            }
+
+        }
+
+
+        .ateliers {
+
+            width:100%;
+
+            .atelier{
+                @include atelier();
+                margin: 0.5rem 0;
+                img{
+                    width:60%;
+                }
+            }
+
+        @include breakpoint($tablet){
+            width:63%;
+            display:inline-block;
+            vertical-align: top;
+            margin:auto;
+
+                .atelier{
+                    img{
+                     width:60%;
+                    }
+                }
+            }
+
+        @include breakpoint($laptop){
+
+            width:50%;
+
+        }
+    }
+
+        .container-title-pictos {
+            position: relative;
+            .title-pictos {
+                font-family: 'SourceSansProRegular';
+                text-transform: uppercase;
+                @include breakpoint($mobiles) {
+                    position: absolute;
+                    margin-top: 5vw;
+
+                }
+
+            }
+        }
+    }
+}
+
+.header-img-mobile {
+    @include breakpoint($laptop) {
+        display: none;
+    }
+    //position:absolute;
+}
+
+.logo-img {
+    position: absolute;
+    /* float: left; */
+    left: 0;
+    right: 0;
+    @include breakpoint($mobiles) {
+        width: 14em;
+        top: 30vw;
+        margin: 0 auto;
+    }
+    @include breakpoint($mobilem) {
+        width: 16em;
+    }
+    @include breakpoint($mobilel) {
+        width: 22em;
+    }
+    @include breakpoint($tablet) {
+        width: 25em;
+    }
+    @include breakpoint($laptop) {
+        display: none;
+    }
+}
+
+.menu-web {
+    height: 9vw;
+    background-color: white;
+    display: none;
+    @include breakpoint($laptop) {
+        display: block;
+    }
+}
+
+.home-body-padding {
+
+    padding: 3rem;
+
+}
+
+.home-body-actu {
+    background-color: $lightgrey;
+
+    .im_offres {
+        @include breakpoint($tablet) {
+            @include grid-span(6,7);
+        }
+    }
+
+    .body_offres {
+
+        @include breakpoint($tablet) {
+            @include grid-span(6,1);
+        }
+    }
+
+}
+
+.home-body-solidarite {
+    .body_solidarite {
+        padding: 0 30px;
+        display: block;
+        text-align: center;
+        @include breakpoint($tablet) {
+           @include grid-span(6,7);
+        }
+
+
+    }
+    .image_solidarite {
+        display: block;
+        @include breakpoint($tablet) {
+          @include grid-span(6,1);
+        }
+    }
+
+}

@@ -1,6 +1,6 @@
 (function ($) {
 
-    Drupal.behaviors.ateliersthemeSwiper = {
+    Drupal.behaviors.actothemeSwiper = {
 
     attach: function (context, settings) {
 
@@ -17,25 +17,7 @@
 
         });
 
-        $(".atelier-gallerie-image").on("click",function() {
-
-            swiper.slideTo($(this).data("id"));
-
-        });
-
-        $(".offres-speciales-gallerie-image").on("click",function() {
-
-            console.log(".offres-speciales-gallerie-image");
-            swiper.slideTo($(this).data("id"));
-
-        });
-
-        $(".offres-speciales-gallerie-image").on("click",function() {
-
-            console.log(".offres-speciales-gallerie-image");
-            swiper.slideTo($(this).data("id"));
-
-        })
+        console.log("swiper");
 
     }
 
