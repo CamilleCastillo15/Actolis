@@ -41,8 +41,8 @@
                    <?php print render($image_render); ?>
                 </div>
                 <div class="block-w">
-                    <h2 class="title-bienvenue"><?php print render($titre); ?></h2>
-                    <div class="par-bienvenue">
+                    <h2 class="title-home"><?php print render($titre); ?></h2>
+                    <div class="par-home">
                         <?php print render($texte); ?>
                     </div>
                 </div>
