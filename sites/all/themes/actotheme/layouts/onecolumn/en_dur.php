@@ -177,7 +177,7 @@
                 <h4>Rejoignez-nous!</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non augue faucibus, ullamcorper est vitae, hendrerit lorem. </p>
                 <div class="c-cta">
-                <a href="" class="cta">formulaire en ligne</a>
+                        <a href="" class="cta">formulaire en ligne</a>
                  </div>
             </div>
             <div class="c-img"> 
