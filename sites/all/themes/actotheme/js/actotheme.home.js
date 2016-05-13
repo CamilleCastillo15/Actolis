@@ -1,6 +1,6 @@
 (function ($) {
 
-    Drupal.behaviors.ateliersthemeHome = {
+    Drupal.behaviors.actothemeHome = {
 
     attach: function (context, settings) {
         $(window).on("resize",function(){
@@ -21,17 +21,8 @@
             autoplay : 5000
 
         });
-         var swiper2 = new Swiper('.home-body-actu.swiper-container', {
 
-             pagination: '.swiper-pagination',
-            paginationClickable: true,
-            nextButton: '.swiper-button-next',
-            prevButton: '.swiper-button-prev',
-            spaceBetween: 30,
-//            autoHeight:true,
-            autoplay : 5000
-
-        });
+        console.log("swiperhome");
 
     }
 

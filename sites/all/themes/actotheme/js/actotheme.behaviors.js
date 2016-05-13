@@ -53,6 +53,7 @@
 
         // The anchor is then appended to the current element.
         $anchor.appendTo(this);
+          console.log("behavior");
       });
     }
   };
