@@ -138,6 +138,35 @@
 
     }
 
+    .acto-news {
+        background-color: grey;
+
+        .body-acto-news {
+            padding: 0 30px;
+            display: block;
+            text-align: center;
+            @include breakpoint($tablet) {
+               @include grid-span(6,7);
+            }
+
+
+        }
+        .image-acto-news {
+            display: block;
+            @include breakpoint($tablet) {
+              @include grid-span(6,1);
+            }
+
+            img {
+
+                width: 12em;
+                height: auto;
+
+            }
+        }
+
+    }
+
 }
 
 

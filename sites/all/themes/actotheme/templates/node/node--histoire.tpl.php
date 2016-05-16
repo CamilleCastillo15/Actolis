@@ -5,6 +5,15 @@
     $body = field_view_field("node",$node,'field_body');
     $image = field_view_field("node",$node,'field_image');
 
+    $fc_leitmotiv = field_get_items('node', $node, 'field_leitmotiv');
+
+    if($fc_leitmotiv){
+        $idti = array();
+        foreach ($fc_leitmotiv as $fc_field) {
+            $idti[] = $fc_field['value'];
+        }
+        $collectionsg =  field_collection_item_load_multiple($idti);
+    }
 
 ?>
 
@@ -14,26 +23,24 @@
 
         <div class="dark-layer">
 
-            <div class="c-picto">
-                <img src="http://actolis.dinde.pro/sites/all/themes/actotheme/imgs/picto_his_eco.png" alt="">
-                <h2>Titre titre titre</h2>
-            </div>
-            <div class="c-picto">
-                <img src="http://actolis.dinde.pro/sites/all/themes/actotheme/imgs/picto_his_qualite.png" alt="">
-                <h2>Titre titre titre</h2>
-            </div>
-            <div class="c-picto">
-                <img src="http://actolis.dinde.pro/sites/all/themes/actotheme/imgs/picto_his_valeurs.png" alt="">
-                <h2>Titre titre titre</h2>
-            </div>
-            <div class="c-picto">
-                <img src="http://actolis.dinde.pro/sites/all/themes/actotheme/imgs/picto_his_management.png" alt="">
-                <h2>Titre titre titre</h2>
-            </div>
-            <div class="c-picto">
-                <img src="http://actolis.dinde.pro/sites/all/themes/actotheme/imgs/picto_his_accompagnement.png" alt="">
-                <h2>Titre titre titre</h2>
-            </div>
+           <?php
+
+                for($i = 0; $i < count($idti); $i++) {
+
+                $collectiong_2 = $collectionsg[$idti[$i]];
+
+                $title = field_view_field('field_collection_item', $collectiong_2, 'field_titre');
+                $icone = field_view_field('field_collection_item', $collectiong_2, 'field_icone');
+
+                dpm($title);
+            ?>
+
+                <div class="c-picto">
+                    <?php print render($icone); ?>
+                    <?php print render($title); ?>
+                </div>
+
+            <?php } ?>
 
         </div>
 

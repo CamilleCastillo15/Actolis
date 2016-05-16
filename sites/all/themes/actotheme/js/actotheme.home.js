@@ -23,6 +23,17 @@
 
         });
 
+        var swiper = new Swiper('.acto-news.swiper-container', {
+
+
+            effect:"fade",
+            spaceBetween: 0,
+//            autoHeight:true,
+            autoplay : 5000,
+            autoHeight:true
+
+        });
+
         console.log("swiperhome");
 
     }
