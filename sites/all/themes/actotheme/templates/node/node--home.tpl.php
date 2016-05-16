@@ -1,5 +1,4 @@
 <?php
-
     $styles  = drupal_get_css();
 
     $body = field_view_field("node",$node,'field_body');

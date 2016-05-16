@@ -15,8 +15,6 @@ stylesheets[all][] = css/actotheme.styles.css
 ; Scripts
 ; ========================================
 scripts[] = js/actotheme.behaviors.js
-scripts[] = js/actotheme.swiper.js
-scripts[] = js/actotheme.home.js
 
 ; ========================================
 ; Regions
