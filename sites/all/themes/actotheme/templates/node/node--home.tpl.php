@@ -49,4 +49,5 @@
             <?php }  ?>
         </div>
     </div>
+    <img src="../sites/all/themes/actotheme/imgs/handshake.svg" />
 </div>
