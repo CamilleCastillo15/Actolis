@@ -2,8 +2,9 @@
 
     $styles  = drupal_get_css();
 
-    $body = field_view_field("node",$node,'field_body');
-    $image = field_view_field("node",$node,'field_image');
+    $title = field_view_field("node",$node,'title');
+    $body = field_view_field("node",$node,'body');
+    $image = field_view_field("node",$node,'field_image_equipe_partenaire');
 
     $fc_temoignage = field_get_items('node', $node, 'field_temoignage');
 
@@ -24,19 +25,9 @@
         <div class="c-blanc">
                 
             <div class="c-text">
-                <h4>nos équipes et partenaires</h4>
+                <h4><?php print render($title) ?></h4>
 
-                <p>                    
-                    <strong>Jeunes ou expérimentés, ils ont tous un point commun :</strong> la passion de leur métier et le service client.
-                    Convaincue que le travail en équipe est avant tout une force et un moyen d’ouverture pour nous, Actolis a fait le choix sur certains domaines de travailler avec des partenaires très spécialisés. Les retours d’expérience n’ont fait que confirmer cette stratégie.
-                    <strong>Les atouts :</strong>
-
-                    <ul>
-                        <li>Consultants travaillant à 100% de leur temps sur le domaine concerné</li>
-                        <li>Compétences pointues</li>
-                        <li>Différents points de vue : ceux des équipes Actolis et de nos partenaires</li>
-                    </ul>
-                </p>
+                <?php print render($body) ?>
 
             </div>
             <div class="c-img"> 
