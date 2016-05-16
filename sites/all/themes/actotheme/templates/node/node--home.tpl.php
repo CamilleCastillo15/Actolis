@@ -1,10 +1,7 @@
 <?php
     $styles  = drupal_get_css();
-
     $body = field_view_field("node",$node,'field_body');
     $image = field_view_field("node",$node,'field_image');
-    $gallerie = field_get_items("node",$node,'field_image_multi');
-
     $fc_textimage = field_get_items('node', $node, 'field_bloc_presentation_actolis');
 
     if($fc_textimage){
@@ -49,5 +46,39 @@
             <?php }  ?>
         </div>
     </div>
-    <img src="../sites/all/themes/actotheme/imgs/handshake.svg" />
+    <div class="c-header">
+       <div class="dark-layer">
+        <?php
+
+            $image_bkg_pictos = field_view_field("node",$node,'field_image_background_pictos');
+
+            drupal_add_css('.c-header:'.$image_bkg_pictos.' !important;}', 'inline');
+
+            $fc_textpictos = field_get_items('node', $node, 'field_pictos_textes');
+            if($fc_textpictos){
+                $idti_pictos = array();
+                foreach ($fc_textpictos as $fc_field_pictos) {
+                    $idti_pictos[] = $fc_field_pictos['value'];
+                }
+                $collectionsg_pictos =  field_collection_item_load_multiple($idti_pictos);
+            }
+
+            for($j = 0; $j < count($idti_pictos); $j++){
+
+                $collectionsg_pictos_2 = $collectionsg_pictos[$idti_pictos[$j]];
+                $pictos = field_view_field('field_collection_item', $collectionsg_pictos_2, 'field_pictos');
+
+                $chiffres = field_view_field('field_collection_item', $collectionsg_pictos_2, 'field_chiffres');
+                $textes = field_view_field('field_collection_item', $collectionsg_pictos_2, 'field_textes');
+        ?>
+
+
+            <div class="c-picto">
+                <?php print render($pictos); ?>
+                <h2 class="chiffres"><?php print render($chiffres); ?></h2>
+                <p><?php print render($textes); ?></p>
+            </div>
+            <?php }  ?>
+        </div>
+    </div>
 </div>
