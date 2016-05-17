@@ -5,7 +5,9 @@
     $body = field_view_field("node",$node,'field_body');
     $image = field_view_field("node",$node,'field_image');
 
-    $fc_leitmotiv = field_get_items('node', $node, 'field_leitmotiv');
+    $texte = field_view_field("node",$node,'field_texte');
+
+    $fc_leitmotiv = field_get_items('node', $node, 'field_titre_texte_image');
 
     if($fc_leitmotiv){
         $idti = array();
@@ -52,6 +54,7 @@
                 
             <div class="c-text">
                 <h4>valeurs clefs</h4>
+                <?php print render($texte); ?>
                 <p>               
                     <strong>Respect et égalité</strong>
 
