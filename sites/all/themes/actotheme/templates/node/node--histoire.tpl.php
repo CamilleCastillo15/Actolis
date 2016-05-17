@@ -3,7 +3,7 @@
     $styles  = drupal_get_css();
 
     $body = field_view_field("node",$node,'field_body');
-    $image = field_view_field("node",$node,'field_image');
+    $image = field_view_field("node",$node,'field_image_bloc');
 
     $texte = field_view_field("node",$node,'field_texte');
 
