@@ -16,9 +16,18 @@
         }
         $collectionsg =  field_collection_item_load_multiple($idti);
     }
+    $images = field_get_items('node', $node, 'field_image');
+    $icones = field_get_items('node', $node, 'field_icone');
 
-    drupal_add_css('.domaine .c-header {background-image: url('.$image[0].'); !important} ', 'inline');
-    drupal_add_css('.b2 .picto {background-image: url: ('.$icone[0].'); !important} ', 'inline');
+    dpm($images[0]);
+
+    $p = image_style_url("large",$images[0]["uri"]);
+    $m = image_style_url("original",$icones[0]["uri"]);
+
+    @dpm($p);
+    drupal_add_css('.domaine .c-header {background-image: url("'.$p.'"); !important} ', 'inline');
+    drupal_add_css('.b2 .picto {background-image: url: ("'.$m.'"); !important} ', 'inline');
+
 ?>
 
 <div class="domaine">
