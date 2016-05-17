@@ -13,6 +13,10 @@
  
 }
 
+.not-logged-in .field__label{
+    display: none;
+}
+
 
 
 @font-face {
@@ -75,9 +79,9 @@
             h1{
                 text-transform: uppercase;
                 font-weight: 800;
-                font-size: 6rem;
+
                 letter-spacing: 1rem;
-                line-height: 7rem;
+                @include fz(6);
                 display: block;
                 position: relative;
                 width: auto;
@@ -89,7 +93,7 @@
                 line-height: 2.5rem;
             }
             .big{
-                font-size: 2rem;
+                 @include fz(5);
             }
             .sep{
                 height: 0.28rem;
@@ -160,7 +164,7 @@
     display: inline-block;
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 0.9rem;
+     @include fz(1);
     @include transition(all 0.2s ease-out);
 
     &:hover{
@@ -191,7 +195,7 @@
 
 
         h3{
-            font-size: 1.5rem;
+             @include fz(4);
             text-transform: uppercase;
             font-weight: 600;
             letter-spacing: 0.2rem;
@@ -199,9 +203,9 @@
 
         }
         p{
-            font-size: 1.1rem;
+             @include fz(2);
             line-height: 1.5rem;
-             letter-spacing: 0.2rem;
+            letter-spacing: 0.2rem;
         }
 
          .picto{
@@ -254,14 +258,14 @@
             width: 65%;
             padding-left:2rem;
             h4{
-                 font-size: 1.8rem;
+                  @include fz(4);
                  line-height: 2rem;
                  font-weight:   600;
                  margin-bottom: 1rem;
                  text-transform: uppercase ;
              }
              p{
-                        font-size: 1.2rem;
+                         @include fz(3);
              }
              display: inline-block;
              vertical-align: middle;
@@ -319,14 +323,14 @@
        
         }
           h4{
-                 font-size: 1.8rem;
+                  @include fz(5);
                  line-height: 2rem;
                  font-weight:   600;
                  margin-bottom: 1rem;
                  text-transform: uppercase ;
              }
              p{
-                        font-size: 1.2rem;
+                         @include fz(3);
              }
     }
 
@@ -370,30 +374,27 @@
 }
 
 
-
- .c-text{
+.c-text{
 
     p{
-        font-size: 1.2rem;
+         @include fz(2);
     }
 
-        ul{
+    ul{
           
-            list-style-image: url(../imgs/bullet2.png);
-            list-style-position: outside;
-            padding-left: 1rem;
-            li{
+        list-style-image: url(../imgs/bullet2.png);
+        list-style-position: outside;
+        padding-left: 1rem;
+        li{
                 
-                padding-left: 0.1rem;
-                //text-indent: 0.5rem;
-                margin-bottom: 1rem;
-                margin-top: 0.5rem;
+            padding-left: 0.1rem;
+            margin-bottom: 1rem;
+            margin-top: 0.5rem;
 
-
-            }
         }
-
     }
+
+}
 
 
 
@@ -440,7 +441,7 @@
             }
 
             h3{
-                font-size:1.6rem;
+                 @include fz(4);
                 text-transform: uppercase;
                 font-weight: 700;
                 color:white;
