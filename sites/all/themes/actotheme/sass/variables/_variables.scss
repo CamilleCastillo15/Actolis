@@ -19,6 +19,33 @@ $gris :#f1f1f1;
 $noir: #111111;
 $nuit : #0c3843;
 
+// font-size 
+
+$s-min : 0.9rem; // mini texte
+$s : 1.1rem; // pti p
+$ss : 1.3rem; // p
+$sss : 1.6rem; // sous titre
+$ssss : 2rem; //gros titres
+$s-max : 6rem; //maxi H1
+
+$lh-s-min : 1.2rem;
+$lh-s : 1.5rem;
+$lh-ss : 1.8rem;
+$lh-sss : 2rem;
+$lh-ssss : 2.3rem;
+$lh-s-max : 6.2rem;
+
+$a-fs : $s-min, $s, $ss, $sss, $ssss, $s-max;
+$a-lh : $lh-s-min, $lh-s, $lh-ss, $lh-sss, $lh-ssss, $lh-s-max;
+
+@mixin fz($size){
+   
+ 
+	font-size: nth($a-fs, $size);
+	line-height: nth($a-lh, $size);
+
+}
+
 /*
 $lightgrey: rgb(247,247,247);
 $grey: #4b4b4b;

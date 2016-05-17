@@ -45,13 +45,15 @@
                 font-family: 'Source Sans Pro Black', sans-serif;
                 font-weight: bold;
 
+
                 @include breakpoint($mobilel){
-                    font-size: 4.5rem;
+                    @include fz(5);
                     display:inline-block;
                 }
 
                 @include breakpoint($tablet) {
-                    font-size: 7rem;
+                    @include fz(6);
+
                 }
 
                 &:after{
@@ -74,7 +76,7 @@
             .par-home {
 
                // margin: 2rem 0;
-                font-size: 2rem;
+                @include fz(4);
 
                 @include breakpoint($tablet) {
                     vertical-align: top;
@@ -133,7 +135,7 @@
 
         text-transform: uppercase;
         font-family: "Source sans pro Black", sans-serif;
-        font-size: 2rem;
+        @include fz(4);
         font-weight: bold;
 
     }
