@@ -106,11 +106,14 @@
                     $body_acto_news = field_view_field('field_collection_item', $collectionsg_acto_news_2, 'field_texte_acto_news');
             ?>
             <div class="swiper-slide">
+                <h4>acto - news</h4>
                 <div class="image-acto-news">
                     <?php print render($image_acto_news_render); ?>
                 </div>
                 <div class="body-acto-news">
-                    <?php print render($title_acto_news); ?>
+                    <h1 class="title"> <?php print render($title_acto_news); ?> </h1>
+                    <br />
+                    <br />
                     <?php print render($body_acto_news); ?>
                 </div>
             </div>
