@@ -2,7 +2,7 @@
 
     $styles  = drupal_get_css();
 
-    $title = field_view_field("node",$node,'title');
+    //$title = field_view_field("node",$node,'title');
     $body = field_view_field("node",$node,'body');
     $image = field_view_field("node",$node,'field_image_equipe_partenaire');
 
@@ -25,7 +25,7 @@
         <div class="c-blanc">
                 
             <div class="c-text">
-                <h4><?php print render($title) ?></h4>
+                <h4><?php print $title ?></h4>
 
                 <?php print render($body) ?>
 
@@ -46,9 +46,6 @@
         $collectiong_2 = $collectionsg[$idti[$i]];
 
         $title = field_view_field('field_collection_item', $collectiong_2, 'field_titre');
-
-        dpm($title);
-//        dpm($title[0]);
 
         $image = field_view_field('field_collection_item', $collectiong_2, 'field_image_temoignage');
 
