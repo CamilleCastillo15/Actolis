@@ -16,6 +16,11 @@
         $collectionsg =  field_collection_item_load_multiple($idti);
     }
 
+    $images = field_get_items("node",$node,'field_image_equipe_partenaire');
+    $p = image_style_url("large",$images[0]["uri"]);
+
+    drupal_add_css('.equipes_et_partenaire .c-block-histoire .c-img {background-image: url("'.$p.'") !important; } ', 'inline');
+
 ?>
 
 <div class="equipes_et_partenaire">

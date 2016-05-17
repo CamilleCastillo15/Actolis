@@ -15,6 +15,12 @@
         $collectionsg =  field_collection_item_load_multiple($idti);
     }
 
+    $images = field_get_items("node",$node,'field_image_rejoignez_nous');
+    $p = image_style_url("large",$images[0]["uri"]);
+
+    drupal_add_css('.rejoignez_nous .c-block-histoire .c-img {background-image: url("'.$p.'") !important; } ', 'inline');
+
+
 ?>
 
 <div class="rejoignez_nous">
@@ -24,18 +30,8 @@
         <div class="c-blanc">
                 
             <div class="c-text">
-                <h4>rejoignez-nous</h4>
-                <p>                    
-                    <strong>Pourquoi nous rejoindre :</strong>
-                    <ul>
-                        <li>Projets riches et variés</li>
-                        <li>L’humain est au centre de nos interventions</li>
-                        <li>Une société à taille humaine</li>
-                        <li>Vous progresserez avec nous</li>
-                        <li>Vous avez un vrai rôle dans la société</li>
-                    
-                    </ul>
-                </p>
+                <h4><?php print $title ?></h4>
+
                 <?php print render($body) ?>
 
             </div>
