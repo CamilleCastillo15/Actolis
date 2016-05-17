@@ -49,6 +49,8 @@
                         border-bottom: none;
                         margin:0;
                         display: block;
+                        border-bottom: 2px solid transparent;
+                                margin:0.5rem 0.5rem;
 
                     }
                 }
@@ -64,47 +66,69 @@
                     a{
                         background-image: none !important;
                         background-image: url("") !important;
-                         padding: 2rem 3rem;
-                        .picto{
-                            @extend .c-icone;
-                            display: inline-block;
-                            vertical-align: middle;
-                            width: 5rem;
-                            height: 5rem;
-                            background-size: 60%;
-                            margin:0px;
-                            margin-right: 1rem;
-                             @include transition(all 0.2s ease-out);
-                            &:before{
-                                border-width: 2px;
-                                 @include transition(all 0.2s ease-out);
-                            }
+                        //padding: 2rem 2rem;
+
+                        .c-img{
+                             display: inline-block;
+                              vertical-align: middle;
+                              margin-right: 0.5rem;
+                            
+                                @extend .c-icone;
+
+                                display: inline-block;
+                                vertical-align: middle;
+                                width: 5rem;
+                                height: 5rem;
+                                background-size: 60%;
+                                margin:0px;
+                                @include transition(all 0.2s ease-out);
+                                &:before{
+                                    border-width: 2px;
+                                    @include translate(0px,0px);
+                                    @include transition(all 0.2s ease-out);
+                                }
+                                img{
+                                    width: 60%;
+                                    height: auto;
+                                    left: 20%;
+                                    top:20%;
+                                    position: relative;
+                                }
+                            
                         }
 
-                        .c-txt{
+                       
+                        span{
+                            
+                           
 
-                            display: inline-block;
-                            text-align: center;
-                            vertical-align: middle;
-                            text-transform: uppercase;
-                            font-size: 1.3rem;
-                            font-weight: 700;
-                            max-width: 300px;
+                                display: inline-block;
+                                text-align: center;
+                                vertical-align: middle;
+                                text-transform: uppercase;
+                                @include fz(3);
+                                font-weight: 700;
+                                max-width: 14rem;
+                                padding-left: 2rem;
+
+                            
+
 
                         }
+
+                       
 
                          &:hover{
                             background-color: transparent;
 
-                                &:after {
+                            &:after {
+                                
+                                border-color:transparent;
 
-                                    margin:0;
-                                    border-bottom: none;
+                            }
 
-                                }
-
-                            .picto{
-                                background-size: 70%;
+                            .c-img{
+  
                                 &:before{
                                     background-color: rgba(white,0.1);
                                 }
@@ -112,7 +136,9 @@
                             }
                         }
                     }
-                    .b2{
+                
+
+                    &:nth-child(2){
                         border-left:2px solid white;
                         border-right:2px solid white;
                     }

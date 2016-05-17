@@ -101,15 +101,22 @@ $fallback-extension: 'png' !default;
 }
 @mixin main-padding($left:0, $right:0){
     
-    @if($left != 0){
-        padding-left:$left;
-    } @else {
-      padding-left:$m-padding;
-    }
-    @if($right != 0){
-        padding-right:$right;
-    } @else {
-      padding-right:$m-padding;
+    padding-left:2rem;
+    padding-right: 2rem;
+
+    @include breakpoint($laptopl) {
+       
+           @if($left != 0){
+             padding-left:$left;
+          } @else {
+            padding-left:$m-padding;
+          }
+          @if($right != 0){
+              padding-right:$right;
+          } @else {
+            padding-right:$m-padding;
+          }
+
     }
 
     
