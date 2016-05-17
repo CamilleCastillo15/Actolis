@@ -45,11 +45,11 @@
                           $picto = field_view_field("node",$n,'field_icone');
                           $title = field_view_field("node",$n,'field_titre_domaine');
 
-                          $title_render = render($title);
-                          $picto_render = render($picto);
+                          $title_render = '<span>'.render($title).'</span>';
+                          $picto_render = '<div class="c-img">'.render($picto).'</div>';
 
                           echo "<li>";
-                          print l('<div class="picto"></div>'.$picto_render.$title_render, $link,array("html"=>true, 'attributes' => array('class' => array('c-txt'))));
+                          print l($picto_render.$title_render, $link,array("html"=>true, 'attributes' => array('class' => array('c-txt'))));
                           echo "</li>";
 
                        }

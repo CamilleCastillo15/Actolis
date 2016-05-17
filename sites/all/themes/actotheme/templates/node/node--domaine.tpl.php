@@ -4,6 +4,7 @@
 
     $body = field_view_field("node",$node,'field_body');
     $image = field_view_field("node",$node,'field_image');
+    $titre = field_view_field("node",$node,'field_titre_domaine');
 
     $fc_domaines = field_get_items('node', $node, 'field_titre_texte_image');
 
@@ -14,6 +15,8 @@
         }
         $collectionsg =  field_collection_item_load_multiple($idti);
     }
+
+    drupal_add_css('.domaine .c-header {background-image: '.$image.'; !important} ', 'inline');
 ?>
 
 <div class="domaine">
@@ -45,14 +48,14 @@
 
             </div>
 
-            <div class="c-img">
-
-
-
-            </div>
             <div class="clear"></div>
 
     <?php } ?>
+
+            <div class="c-img-1"></div>
+            <div class="c-img-2"></div>
+            <div class="c-img-3"></div>
+            <div class="c-img-4"></div>
 
         </div>
 
