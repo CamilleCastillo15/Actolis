@@ -6,10 +6,6 @@
     transform : translate($x,$y);
 }
 
-
-
-
-
 @mixin transition($args...) {
   -webkit-transition: $args;
   -moz-transition: $args;
@@ -60,11 +56,6 @@
     @content;
   }
 }
-
-
-
-
-
 
 $image-path: '../imgs' !default;
 $fallback-extension: 'png' !default;

@@ -37,8 +37,6 @@
 
         $texte = field_view_field('field_collection_item', $collectiong_2, 'field_texte');
         $image_fc = field_view_field('field_collection_item', $collectiong_2, 'field_image_bloc');
-
-        dpm($title);
     ?>
 
             <div class="c-text">

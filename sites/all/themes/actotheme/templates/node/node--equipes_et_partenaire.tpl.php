@@ -47,9 +47,6 @@
 
         $title = field_view_field('field_collection_item', $collectiong_2, 'field_titre');
 
-        dpm($title);
-//        dpm($title[0]);
-
         $image = field_view_field('field_collection_item', $collectiong_2, 'field_image_temoignage');
 
         $title_image = field_view_field('field_collection_item', $collectiong_2, 'field_titre_image');
