@@ -47,6 +47,53 @@
 
 }
 
+
+@include keyframes(photo1) {
+   0% { @include opacity(0); right:-10rem;  }
+  10% { @include opacity(1); right:-5rem;   }
+  30% { @include opacity(1); right:-5rem;   }
+  50% { @include opacity(0); right:-2rem;   }
+ 100% { @include opacity(0); right:-2rem;   }
+}
+@include keyframes(photo2) {
+   0% { @include opacity(0); right:-10rem; }
+  10% { @include opacity(1); right:-8rem;  }
+  40% { @include opacity(1); right:-8rem;  }
+  50% { @include opacity(0); right:-2rem;  }
+ 100% { @include opacity(0); right:-2rem;  }
+}
+
+
+@include keyframes(photo3) {
+   0% { @include opacity(0); right:-10rem; }
+  55% { @include opacity(0); right:-10rem; }
+  65% { @include opacity(1); right:-5rem;  }
+  90% { @include opacity(1); right:-5rem;  }
+ 100% { @include opacity(0); right:-2rem;  }
+}
+
+@include keyframes(photo4) {
+   0% { @include opacity(0); right:-10rem; }
+  55% { @include opacity(0); right:-10rem; }
+  65% { @include opacity(1); right:-8rem;  }
+  90% { @include opacity(1); right:-8rem;  }
+ 100% { @include opacity(0); right:-6rem;  }
+}
+
+.c-img-1{
+     @include animation(photo1 15s ease-in-out 3);
+}
+.c-img-2{
+     @include animation(photo2 16s ease-in-out 3);
+}
+
+.c-img-3{
+     @include animation(photo3 15s ease-in-out 3);
+}
+.c-img-4{
+     @include animation(photo4 16s ease-in-out 3);
+}
+
 .c-block-domaine{
 
     width: 70vw;
@@ -59,9 +106,7 @@
 
 
     .c-gris{
-
-       background-color: $gris;
-       padding:3rem;
+     
        position: relative ;
        perspective: 1000px;
        min-height: 27vh;
@@ -69,7 +114,11 @@
     }
 
     .c-text{
-        width:  47%;
+
+        background-color: $gris;
+        width:  60%;
+        padding:3rem;
+        padding-right: 12rem;
         position: relative ;
         display: inline-block;
         vertical-align: top;
@@ -79,6 +128,17 @@
             width:  100%;
             text-align: center  ;
         }
+        
+        strong{
+            @include fz(3);
+            text-transform: uppercase;  
+            font-weight:    600;
+            margin-top: 2rem;
+            display: block; 
+            width:  100%;
+            position: relative;
+        }
+
         a{
 
             display: inline-block ;
@@ -86,31 +146,33 @@
             margin-top: 2rem;
 
         }
-          h4{
-                 font-size: 2.4rem;
-                 line-height: 2.5rem;
+          h1{
+                    @include fz(4);
                  font-weight: 900;
                  margin-bottom: 1.5rem;
                  text-transform: uppercase;
              }
              p, li{
-                font-size: 1.1rem;
-                line-height: 1.4rem;
+                @include fz(2);
              }
     }
 
-    .c-img{
+    .c-img-1,.c-img-3{
 
-        width: 47%;
-        height: 115%;
+        z-index: 10;
+
+        width: 57%;
+        height: 47%;
+        right: -5rem;      
+        top:60%;
+
+        min-height: 35vh;
         position: absolute;
         display: block;
         vertical-align: top;
-        right: 2rem;
-
-        min-height: 35vh;
-        top:50%;
-        @include translate(0px,-50%);
+       
+        @include jpg(pharma_affaire,50% 50%, cover);
+        @include translate(0px,-100%);
         &:after{
 
             content:"";
@@ -124,7 +186,49 @@
 
         }
 
-    }
+        }
+
+            .c-img-2,.c-img-4{
+
+        width: 40%;
+        height: 20%;
+        top:84%;
+        right: -8rem;
+
+        position: absolute;
+        display: block;
+        vertical-align: top;
+
+
+        min-height: 35vh;
+       
+        @include jpg(pharma_assurance,50% 50%, cover);
+        @include translate(0px,-100%);
+        &:after{
+
+            content:"";
+            display: block ;
+            height: 5px;
+            width: 100%;
+            position: absolute;
+            bottom:-1px;
+            left:0px;
+            @extend .gradient-h;
+
+        }
+
+        }
+
+        .c-img-3{
+            @include jpg(pharma_gestion,50% 50%, cover);
+   
+            @include opacity(0);
+        }
+        .c-img-4{
+            @include jpg(pharma_ingenierie,50% 50%, cover);
+        
+            @include opacity(0);
+        }
 
     &:nth-child(odd) {
         .c-img{
@@ -160,4 +264,30 @@
        }
     }
 
+}
+
+
+.e-d-c{
+    text-align: center;
+    h1{
+        @include fz(5);
+    }
+    .grille{
+        .item{
+            a{
+                h2{
+                    @include fz(3);
+                }
+                .sep{
+
+                }
+                .cta{
+
+                }
+                p{
+            
+                }
+            }
+        }
+    }
 }
