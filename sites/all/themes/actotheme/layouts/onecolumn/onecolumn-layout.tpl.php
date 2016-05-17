@@ -1,4 +1,6 @@
-<?php  $theme = base_path() . drupal_get_path("theme",$GLOBALS['theme']) ;?>
+<?php  $theme = base_path() . drupal_get_path("theme",$GLOBALS['theme']) ;
+
+?>
 <div class="l-header">
     <div class="logo">
         <a href="/">
@@ -24,11 +26,37 @@
 <div class="l-menu">
     <?php print render($page['header']); ?>
     <div class="domaine-menu">
+    <?php
+
+        $view_domaines = views_get_view('domaines');
+        $view_domaines->execute();
+        $result_domaines = $view_domaines->result;
+
+        dpm($result_domaines); ?>
+
         <ul class="menu">
-            <li class="active-trail"><a href="" class="b1"><div class="picto"></div><span class="c-txt">dispositifs médicaux</span></a></li>
-            <li><a href="" class="b2"><div class="picto"></div><span class="c-txt">pharma & biotechnologie</span></a></li>
-            <li><a href="" class="b3"><div class="picto"></div><span class="c-txt">cosmétiques</span></a></li>
+
+            <?php foreach($result_domaines as $key => $value) { ?>
+
+                    <?php
+
+                          $n = node_load($value->nid);
+                          $link =drupal_get_path_alias("node/".$value->nid);
+                          $picto = field_view_field("node",$n,'field_icone');
+                          $title = field_view_field("node",$n,'title');
+
+                          $title_render = render($title);
+                          $picto_render = render($picto);
+
+                          echo "<li>";
+                          print l('<div class="picto"></div>'.$title_render, $link,array("html"=>true, 'attributes' => array('class' => array('c-txt'))));
+                          echo "</li>";
+
+                       }
+                ?>
+
         </ul>
+
     </div>
 </div>
 <div <?php print $attributes;?>>
