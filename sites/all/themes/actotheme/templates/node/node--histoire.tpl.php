@@ -7,7 +7,7 @@
 
     $texte = field_view_field("node",$node,'field_texte');
 
-    $fc_leitmotiv = field_get_items('node', $node, 'field_titre_texte_image');
+    $fc_leitmotiv = field_get_items('node', $node, 'field_leitmotiv');
 
     if($fc_leitmotiv){
         $idti = array();
@@ -34,7 +34,6 @@
                 $title = field_view_field('field_collection_item', $collectiong_2, 'field_titre');
                 $icone = field_view_field('field_collection_item', $collectiong_2, 'field_icone');
 
-                dpm($title);
             ?>
 
                 <div class="c-picto">
