@@ -41,14 +41,41 @@
         height: 100%;
         border-radius: 100%;
         border:0.3rem solid white;
-        left:50%;
-        @include translate(-50%,0px);
+        @include translate(50%,0px);
 
         background-color: rgba(white,0);
         @include transition(all 0.2s ease-in-out);
 
     }
 }
+
+.c-icone_2{
+   position: relative;
+    height: 7rem;
+    width: 7rem;
+    display: inline-block;
+    margin:3.5rem;
+    margin-bottom: 3.5rem;
+    //transform: scale(0.5);
+
+    &:before{
+
+        content:"";
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        border-radius: 100%;
+        border:0.3rem solid white;
+        left:50%;
+        top:50%;
+        @include translate(-50%,-50%);
+
+        background-color: rgba(white,0);
+        @include transition(all 0.2s ease-in-out);
+
+    }
+}
+
 
 ////////////////////////////////// CHARTE ////////////////////////////////// 
 
@@ -450,7 +477,7 @@
 
             .picto{
 
-                @extend .c-icone;
+                @extend .c-icone_2;
 
             }
 
