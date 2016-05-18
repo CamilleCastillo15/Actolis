@@ -137,28 +137,43 @@
     }
 
     .acto-news {
-        background-color: #f1f1f1;
-        padding: 3rem 8rem;
+        background-color: $gris;
+        @include main-padding(15vw,15vw);
+        h4{
+            margin-top:2rem;
+            margin-bottom: 1rem;
+        }
+        padding-bottom: 2rem;
 
         .body-acto-news {
-            padding: 0 30px;
-            display: block;
+           
+            display: inline-block;
+            vertical-align: middle;
             text-align: left;
+            width: 100%;
             @include breakpoint($tablet) {
-               @include grid-span(6,7);
+               width: 60%;
+               margin-left: 2%;
+            }
+
+            h1{
+                @include fz(4);
+                display: block;
             }
 
 
         }
         .image-acto-news {
-            display: block;
+            display: inline-block;
+            vertical-align: middle;
+            width: 100%;
             @include breakpoint($tablet) {
-              @include grid-span(6,1);
+              width: 35%;
             }
 
             img {
 
-                width: 26em;
+                width: 100%;
                 height: auto;
 
             }
