@@ -49,6 +49,38 @@
         </div>
     </div>
 
+    <div class="c-big-cta">
+
+        <div class="b-big-cta b1">
+            <div class="gradient"></div>
+            <a href="#">
+
+                <div class="picto"></div>
+                <h3>Titre</h3>
+                <div class="cta">voir plus</div>
+            </a>
+        </div>
+        <div class="b-big-cta b2">
+            <div class="gradient"></div>
+            <a href="#">
+
+                <div class="picto"></div>
+                <h3>pharma & biotechnologie</h3>
+                <div class="cta">voir plus</div>
+            </a>
+        </div>
+        <div class="b-big-cta b3">
+            <div class="gradient"></div>
+            <a href="#">
+
+                <div class="picto"></div>
+                <h3>Titre</h3>
+                <div class="cta">voir plus</div>
+            </a>
+        </div>
+
+    </div>
+
     <div class="c-header">
        <div class="dark-layer">
 
@@ -69,6 +101,8 @@
                 $chiffres = field_view_field('field_collection_item', $collectionsg_pictos_2, 'field_chiffres');
                 $textes = field_view_field('field_collection_item', $collectionsg_pictos_2, 'field_textes');
         ?>
+
+
             <div class="c-picto">
                 <?php print render($pictos); ?>
                 <h2 class="chiffres"><?php print render($chiffres); ?></h2>
@@ -77,6 +111,8 @@
             <?php }  ?>
         </div>
     </div>
+
+
 
     <div class="acto-news swiper-container">
             <div class="swiper-wrapper">
@@ -120,6 +156,26 @@
             <?php }  ?>
         </div>
     </div>
+
+     <div class="c-block">
+
+        <div class="c-gradient">
+
+            <div class="c-text">
+                <h4>Rejoignez-nous!</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non augue faucibus, ullamcorper est vitae, hendrerit lorem. </p>
+                <div class="c-cta">
+                <a href="" class="cta">formulaire en ligne</a>
+                 </div>
+            </div>
+            <div class="c-img">
+
+            </div>
+
+        </div>
+
+    </div>
+
 </div>
 
 
