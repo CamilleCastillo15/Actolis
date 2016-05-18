@@ -26,7 +26,7 @@
         var swiper = new Swiper('.acto-news.swiper-container', {
 
 
-            effect:"fade",
+//            effect:"fade",
             spaceBetween: 0,
 //            autoHeight:true,
             autoplay : 5000,
