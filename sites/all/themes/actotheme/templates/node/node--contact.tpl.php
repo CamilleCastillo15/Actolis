@@ -5,21 +5,26 @@
     $body = field_view_field("node",$node,'body');
     $image = field_view_field("node",$node,'field_image');
 
-    $fc_rejoignez_nous = field_get_items('node', $node, 'field_fc_rejoignez_nous');
+    $fc_adresses = field_get_items('node', $node, 'field_fc_adresses');
 
-    if($fc_rejoignez_nous){
+    if($fc_adresses){
         $idti = array();
-        foreach ($fc_rejoignez_nous as $fc_field) {
+        foreach ($fc_adresses as $fc_field) {
             $idti[] = $fc_field['value'];
         }
         $collectionsg =  field_collection_item_load_multiple($idti);
     }
 
-    $images = field_get_items("node",$node,'field_image_rejoignez_nous');
-    $p = image_style_url("large",$images[0]["uri"]);
 
-    drupal_add_css('.rejoignez_nous .c-block-histoire .c-img {background-image: url("'.$p.'") !important; } ', 'inline');
+    $fc_emails = field_get_items('node', $node, 'field_fc_emails');
 
+    if($fc_emails){
+        $idty = array();
+        foreach ($fc_emails as $fc_field) {
+            $idty[] = $fc_field['value'];
+        }
+        $collectionsh =  field_collection_item_load_multiple($idty);
+    }
 
 ?>
 
@@ -31,25 +36,49 @@
         <?php print render($body) ?>
 
     </div>
-
     <div class="c-block-contact">
 
         <div class="c-blanc">
                 
             <div class="c-text">
-                <h5>actolis lyon</h5>
-                1 rue jardin des plantes</br>
-                69001 Lyon</br>
-                <span class="phone">09 81 80 31 65</span>
 
-                <h5>actolis île-de-france</h5>
-                Parc Biocitech </br>
-                102 avenue Gaston Roussel </br>
-                93230 Romainville</br>
-                <span class="phone">06 59 16 81 15</span>
+                <?php
 
-                <h5>e-mail</h5>
-                <span class="mail">contact@actolis.com</span>
+                    for($i = 0; $i < count($idti); $i++) {
+
+                    $collectiong_2 = $collectionsg[$idti[$i]];
+
+                    $title_adresse = field_view_field('field_collection_item', $collectiong_2, 'field_title_adresse');
+
+                    $adresse = field_view_field('field_collection_item', $collectiong_2, 'field_adresse');
+
+                    $telephone = field_view_field('field_collection_item', $collectiong_2, 'field_telephone');
+
+                ?>
+
+                <h5><?php print render($title_adresse); ?></h5>
+                <?php print render($adresse); ?>
+                <span class="phone"> <?php print render($telephone); ?></span>
+
+            <?php } ?>
+
+            <?php
+
+                for($i = 0; $i < count($idty); $i++) {
+
+                $collectionh_2 = $collectionsh[$idty[$i]];
+
+                $title_email = field_view_field('field_collection_item', $collectionh_2, 'field_title_email');
+
+                $email = field_view_field('field_collection_item', $collectionh_2, 'field_texte_email');
+
+            ?>
+
+                <h5><?php print render($title_email); ?></h5>
+                <span class="mail"><?php print render($email); ?></span>
+
+            <?php } ?>
+
             </div>
             
             <div class="c-img"> 

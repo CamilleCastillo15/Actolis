@@ -74,11 +74,15 @@
     <div class="c-form"> 
         
         <div class="c-text"> 
-            <p> 
-                Aucune offre ne correspond à ton domaine de compétence ?
-                C’est le moment de nous envoyer ta candidature spontanée !
-                C’est avec plaisir et intérêt que nous l’étudierons
-            </p>
+
+        <?php
+
+            $texte_formulaire = field_view_field("node",$node,'field_texte_formulaire');
+
+        ?>
+
+           <?php print render($texte_formulaire); ?>
+
         </div>
 
         <div class="cc-block">  

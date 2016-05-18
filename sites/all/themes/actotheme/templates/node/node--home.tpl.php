@@ -201,7 +201,7 @@
        <?php
              $title_rejoignez_nous = field_view_field("node",$node,'field_title_rejoignez_nous');
 
-             dpm($title_rejoignez_nous);
+             //dpm($title_rejoignez_nous);
 
              $texte_rejoignez_nous = field_view_field("node",$node,'field_texte_rejoignez_nous');
 

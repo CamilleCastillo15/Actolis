@@ -4,7 +4,7 @@
     $view_domaines->execute();
     $result_domaines = $view_domaines->result;
 
-    dpm($result_domaines); ?>
+    //dpm($result_domaines); ?>
 
     <ul class="menu">
 
