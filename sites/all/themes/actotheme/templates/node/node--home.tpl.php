@@ -17,6 +17,7 @@
     <div class="block-all swiper-container">
         <div class="swiper-wrapper">
 
+           <a href="" class="bt-scroll"></a>
             <?php for($i = 0; $i < count($idti); $i++){
                 $collectiong = $collectionsg[$idti[$i]];
                 $image_field = field_get_items('field_collection_item', $collectiong, 'field_image');
@@ -49,6 +50,7 @@
         </div>
     </div>
 
+<!--
     <div class="c-big-cta">
 
         <div class="b-big-cta b1">
@@ -78,6 +80,42 @@
                 <div class="cta">voir plus</div>
             </a>
         </div>
+
+    </div>
+-->
+
+    <div class="c-big-cta">
+
+    <?php
+
+        $view_domaines = views_get_view('domaines');
+        $view_domaines->execute();
+        $result_domaines = $view_domaines->result;
+        $i = 1;
+
+        foreach($result_domaines as $key => $value) { ?>
+
+            <?php
+
+                  $n = node_load($value->nid);
+                  $link =drupal_get_path_alias("node/".$value->nid);
+                  $picto = field_view_field("node",$n,'field_icone');
+                  $title = field_view_field("node",$n,'field_titre_domaine');
+
+                  $title_render = '<h3>'.render($title).'</h3>';
+                  $picto_render = '<div class="picto">'.render($picto).'</div>';
+
+                  echo "<div class='b-big-cta b".$i."'>";
+                    echo "<div class='gradient'></div>";
+//                    print $picto_render;
+//                    print $title_render;
+                    print l($picto_render.$title_render."<div class='cta'>voir plus</div>",$link,array("html"=>true));
+                  echo "</div>";
+
+                  $i++;
+
+               }
+        ?>
 
     </div>
 
@@ -111,8 +149,6 @@
             <?php }  ?>
         </div>
     </div>
-
-
 
     <div class="acto-news swiper-container">
             <div class="swiper-wrapper">
@@ -155,23 +191,42 @@
             </div>
             <?php }  ?>
         </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
     </div>
 
      <div class="c-block">
 
-        <div class="c-gradient">
+       <?php
+             $title_rejoignez_nous = field_view_field("node",$node,'field_title_rejoignez_nous');
 
+             dpm($title_rejoignez_nous);
+
+             $texte_rejoignez_nous = field_view_field("node",$node,'field_texte_rejoignez_nous');
+
+            $images_rejoignez_nous_bloc = field_get_items('node', $node, 'field_image_rejoignez_nous_bloc');
+
+            //dpm($images[0]);
+
+            $p = image_style_url("large",$images_rejoignez_nous_bloc[0]["uri"]);
+
+            //dpm($m);
+
+            drupal_add_css('.c-block .c-img {background-image: url("'.$p.'") !important ; } ', 'inline');
+
+        ?>
+
+        <div class="c-gradient">
             <div class="c-text">
-                <h4>Rejoignez-nous!</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non augue faucibus, ullamcorper est vitae, hendrerit lorem. </p>
+                <h4><?php print render($title_rejoignez_nous); ?></h4>
+                <?php print render($texte_rejoignez_nous); ?>
                 <div class="c-cta">
-                <a href="" class="cta">formulaire en ligne</a>
-                 </div>
+                    <a href="" class="cta">formulaire en ligne</a>
+                </div>
             </div>
             <div class="c-img">
-
             </div>
-
         </div>
 
     </div>

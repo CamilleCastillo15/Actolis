@@ -19,12 +19,12 @@
     $images = field_get_items('node', $node, 'field_image');
     $icones = field_get_items('node', $node, 'field_icone');
 
-    dpm($images[0]);
+    //dpm($images[0]);
 
     $p = image_style_url("large",$images[0]["uri"]);
     $m =  file_build_uri($icones[0]["uri"]);
 
-    @dpm($m);
+    //dpm($m);
 
     drupal_add_css('.domaine .c-header {background-image: url("'.$p.'"); !important} ', 'inline');
     drupal_add_css('.b2 .picto {background-image: url: ("'.$icones[0]["uri"].'"); !important} ', 'inline');
