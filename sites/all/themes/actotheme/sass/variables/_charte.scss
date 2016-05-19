@@ -1,8 +1,12 @@
 @import "variables";
 @import "mixin";
 
-@mixin test(){
-   
+
+
+.webform-submit{
+    @extend .cta;
+    background-color: #fff;
+    cursor:pointer;
 }
 
 .web-charte-graphique{
@@ -55,15 +59,16 @@
     width: 7rem;
     display: inline-block;
     margin:3.5rem;
-    margin-bottom: 3.5rem;
     //transform: scale(0.5);
+    top:2rem;
+
 
     &:before{
 
         content:"";
         position: absolute;
-        width: 120px;
-        height: 120px;
+        width: 150%;
+        height: 150%;
         border-radius: 100%;
         border:0.3rem solid white;
         left:50%;
@@ -471,11 +476,14 @@
                 line-height: 2rem;
                 letter-spacing: 0.2rem;
                 height: 40%;
+                padding: 0rem 3rem;
+                padding-top: 1.2rem;
             }
 
             text-align: center;
 
             .picto{
+                
 
                 @extend .c-icone_2;
 
