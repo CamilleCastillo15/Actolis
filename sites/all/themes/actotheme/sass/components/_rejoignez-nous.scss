@@ -28,7 +28,7 @@
 	    @include main-padding();
 
 		h4{
-
+		
 		}
 		.cc{
 			text-align: center;
@@ -80,6 +80,9 @@
 }
 
 .c-form{
+		h4{
+			padding-left: 4rem;
+		}
 	.c-text{
 		@include main-padding();
 		background-color: $gris;
@@ -105,4 +108,19 @@
 		}
 	}
 	
+}
+
+.messages{
+	background-color: white !important;
+}
+
+.messages--error{
+ background-color: white !important;
+ border:none;
+ border-left:5px solid $orange;
+ background-image: none;
+ padding-left: 1rem;
+ margin:0px;
+ margin-left: 4rem;
+ font-weight: bold;
 }

@@ -78,9 +78,9 @@
             $texte_formulaire = field_view_field("node",$node,'field_texte_formulaire');
 
         ?>
-
+            <p>
            <?php print render($texte_formulaire); ?>
-
+</p>
         </div>
 
         <div class="cc-block">  
