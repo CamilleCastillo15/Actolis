@@ -207,7 +207,7 @@
 
             $images_rejoignez_nous_bloc = field_get_items('node', $node, 'field_image_rejoignez_nous_bloc');
 
-            //dpm($images[0]);
+            dpm($images_rejoignez_nous_bloc[0]);
 
             $p = image_style_url("large",$images_rejoignez_nous_bloc[0]["uri"]);
 

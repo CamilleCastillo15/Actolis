@@ -22,12 +22,14 @@
     //dpm($images[0]);
 
     $p = image_style_url("large",$images[0]["uri"]);
-    $m =  file_build_uri($icones[0]["uri"]);
+
+
+    $m = file_create_url($icones[0]["uri"]);
 
     //dpm($m);
 
     drupal_add_css('.domaine .c-header {background-image: url("'.$p.'"); !important} ', 'inline');
-    drupal_add_css('.b2 .picto {background-image: url: ("'.$icones[0]["uri"].'"); !important} ', 'inline');
+    drupal_add_css('.b2 .picto {background-image: url("'.$m.'"); !important} ', 'inline');
 
 ?>
 
@@ -71,46 +73,9 @@
 
                 <h1 class="titre">cases studies</h1>
                     <div class="grille">
-                        <div class="item">
-                            <div class="c-bg">
-                                <a href="">
-                                    <h2>Titre 1</h2>
-                                    <div class="sep"></div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet tincidunt odio ut venenatis. </p>
-                                    <div class="cta">voir plus</div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="c-bg">
-                                <a href="">
-                                    <h2>Titre 1</h2>
-                                    <div class="sep"></div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet tincidunt odio ut venenatis. </p>
-                                    <div class="cta">voir plus</div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="c-bg">
-                                <a href="">
-                                    <h2>Titre 1</h2>
-                                    <div class="sep"></div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet tincidunt odio ut venenatis. </p>
-                                    <div class="cta">voir plus</div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="c-bg">
-                                <a href="">
-                                    <h2>Titre 1</h2>
-                                    <div class="sep"></div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet tincidunt odio ut venenatis. </p>
-                                    <div class="cta">voir plus</div>
-                                </a>
-                            </div>
-                        </div>
+                        <?php $view = views_embed_view('case_studies', 'default', $node->nid);
+                        print $view; ?>
+
 
                         <div class="clear"></div>
 
