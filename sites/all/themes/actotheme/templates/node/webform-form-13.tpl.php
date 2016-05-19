@@ -36,12 +36,9 @@
   // Feel free to break this up and move the pieces within the array.
   //print drupal_render($form['submitted']);
 
-$form['submitted']['nom']['#title'] = 'votre nom';
+//$form['submitted']['nom']['#title'] = 'votre nom';
 
 dpm($form['submitted']);
 ?>
-  <div>qlskjdlqskjd</div>
-  <div ><?php print render($form['submitted']['nom']) ?></div>
 
-  qlskdjhflkqsjdhflqksjdhf
 <?php print drupal_render_children($form);
