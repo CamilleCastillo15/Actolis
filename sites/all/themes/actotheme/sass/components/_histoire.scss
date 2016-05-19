@@ -168,10 +168,11 @@ h4{
 
 .c-block-histoire{
 
-    width: 70vw;
+    
     display: block;
     margin: 0 auto;
     padding:5px;
+    @include main-padding();
     margin-top:7rem;
     margin-bottom: 6rem;
 
