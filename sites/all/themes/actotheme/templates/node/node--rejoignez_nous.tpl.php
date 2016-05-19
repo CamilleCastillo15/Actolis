@@ -20,7 +20,6 @@
 
     drupal_add_css('.rejoignez_nous .c-block-histoire .c-img {background-image: url("'.$p.'") !important; } ', 'inline');
 
-
 ?>
 
 <div class="rejoignez_nous">
