@@ -47,7 +47,7 @@
     <div class="c-block-offres">
          <h4>nos offres</h4>
          <div class="cc">
-        <?php
+        <?php /*
 
             for($i = 0; $i < count($idti); $i++) {
 
@@ -65,7 +65,11 @@
                  <div class="sep"></div>
              </div>
 
-         <?php } ?>
+         <?php } */?>
+
+         <?php $view = views_embed_view('offres_de_postes', 'default', $node->nid);
+                        print $view; ?>
+
          </div>
     </div>
 
@@ -79,7 +83,7 @@
 
         ?>
 
-           <?php print render($texte_formulaire); ?>
+           <p><?php print render($texte_formulaire); ?></p>
 
         </div>
 
