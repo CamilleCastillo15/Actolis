@@ -8,7 +8,7 @@
     if($teaser){
 
         $title_render = render($title);
-        $texte_render = render($texte);
+
 
          $link = url('node/'.$node->nid, array('absolute' => TRUE));
 
@@ -22,6 +22,8 @@
               'type' => 'text_summary_or_trimmed',
               'settings'=>array('trim_length' => 150),
         ));
+
+        $texte_render = render($texte);
 
         ?>
 
@@ -39,9 +41,10 @@
 
         ?>
 
-        <h4><?php print render($title); ?></h4>
-        <?php print render($texte); ?>
         <?php print render($image); ?>
+        <h4><?php print render($title); ?></h4>
+        <div class="c-text"><?php print render($texte); ?></div>
+
 
 <?php    }
 

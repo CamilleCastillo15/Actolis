@@ -73,6 +73,7 @@
 
                 <h1 class="titre">cases studies</h1>
                     <div class="grille">
+
                         <?php $view = views_embed_view('case_studies', 'default', $node->nid);
                         print $view; ?>
 

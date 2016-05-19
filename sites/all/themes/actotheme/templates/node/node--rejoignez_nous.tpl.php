@@ -20,7 +20,6 @@
 
     drupal_add_css('.rejoignez_nous .c-block-histoire .c-img {background-image: url("'.$p.'") !important; } ', 'inline');
 
-
 ?>
 
 <div class="rejoignez_nous">
@@ -47,7 +46,7 @@
     <div class="c-block-offres">
          <h4>nos offres</h4>
          <div class="cc">
-        <?php
+        <?php /*
 
             for($i = 0; $i < count($idti); $i++) {
 
@@ -65,7 +64,11 @@
                  <div class="sep"></div>
              </div>
 
-         <?php } ?>
+         <?php } */?>
+
+         <?php $view = views_embed_view('offres_de_postes', 'default', $node->nid);
+                        print $view; ?>
+
          </div>
     </div>
 
@@ -78,9 +81,9 @@
             $texte_formulaire = field_view_field("node",$node,'field_texte_formulaire');
 
         ?>
-            <p>
-           <?php print render($texte_formulaire); ?>
-</p>
+
+           <p><?php print render($texte_formulaire); ?></p>
+
         </div>
 
         <div class="cc-block">  
