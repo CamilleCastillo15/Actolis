@@ -21,9 +21,9 @@
 
     //dpm($images[0]);
 
-    $p = image_style_url("large",$images[0]["uri"]);
+    //$p = image_style_url("header",$images[0]["uri"]);
 
-
+    $p = file_create_url($images[0]["uri"]);
     $m = file_create_url($icones[0]["uri"]);
 
     //dpm($m);

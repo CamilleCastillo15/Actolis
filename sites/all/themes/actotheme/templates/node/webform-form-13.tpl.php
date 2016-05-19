@@ -38,7 +38,22 @@
 
 //$form['submitted']['nom']['#title'] = 'votre nom';
 
-dpm($form['submitted']);
-?>
+dpm($form['submitted']); ?>
+
+  <div class="form-col">
+
+      <?php print render($form['submitted']['nom']) ?>
+      <?php print render($form['submitted']['prenom']) ?>
+      <?php print render($form['submitted']['e___mail']) ?>
+      <?php print render($form['submitted']['message']) ?>
+
+  </div>
+
+  <div class="form-col">
+
+      <?php print render($form['submitted']['parcourir']) ?>
+
+  </div>
+  <div class="clear"></div>
 
 <?php print drupal_render_children($form);
