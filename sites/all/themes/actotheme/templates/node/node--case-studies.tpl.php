@@ -27,12 +27,12 @@
         </div>
     </div>
 
+<?php    } else {
 
+        ?>
 
+        <h4>  </h4>
 
-<?php    }else{
-
-        print "full";
-    }
+<?php    }
 
     ?>
