@@ -103,20 +103,11 @@
 
                         <h4>contactez-nous</h4>
 
-                        <div class="form-col">
-                            <div class="form-item" id="edit-name-wrapper">
-                             <label for="edit-name">label <span class="form-required" title="This field is required.">*</span></label>
-                             <input type="text" maxlength="60" name="name" id="edit-name" size="30" value="" class="form-text required">
-                
-                            </div>
-                        </div>
-                         <div class="form-col">
-                            <div class="form-item" id="edit-name-wrapper">
-                             <label for="edit-name">label <span class="form-required" title="This field is required.">*</span></label>
-                             <input type="text" maxlength="60" name="name" id="edit-name" size="30" value="" class="form-text required">
-                
-                            </div>
-                        </div>
+                       <?php $form = node_load(14);
+
+                         $view = node_view($form);
+
+                        print render($view); ?>
                         <div class="clear"></div>
                             
                 </div>

@@ -44,8 +44,6 @@
     
     </div>
 
-
-
     <div class="c-block-offres">
          <h4>nos offres</h4>
          <div class="cc">
@@ -91,7 +89,13 @@
 
                 <div class="c-gradient">
 
-                        formulaire !!!!!
+                   <h4>Candidature spontanée</h4>
+
+                    <?php $form = node_load(13);
+
+                         $view = node_view($form);
+
+                        print render($view); ?>
                             
                 </div>
         
@@ -100,6 +104,5 @@
         </div>
         
     </div>
-
 
 </div>
