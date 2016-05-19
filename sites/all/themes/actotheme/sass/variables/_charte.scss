@@ -3,24 +3,6 @@
 
 
 
-.webform-submit{
-    @extend .cta;
-    background-color: #fff;
-    cursor:pointer;
-}
-
-.web-charte-graphique{
-   
-  width: 100%;
-  min-height: 100vh;
-  padding-bottom: 50vh;
- 
-}
-
-.not-logged-in .field__label{
-    display: none;
-}
-
 
 
 @font-face {

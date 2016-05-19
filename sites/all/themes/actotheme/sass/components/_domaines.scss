@@ -290,6 +290,13 @@
         width: 100%;
         padding-top: 10rem;
 
+        .view-case-studies{
+            height: 100%;
+            .view-content{
+                height: 100%;
+            }
+        }
+
          @include breakpoint($laptopl) {
 
             width: 55vw;
@@ -299,13 +306,18 @@
         
         position: relative;
         display: block;
-        .item{
+        .views-row{
             display: block;
             float: left;
             width: 50%;
             height: 50%;
             position: relative;
              padding: 0.2rem;
+
+             .item{
+                height: 100%;
+                width: 100%;
+             }
             
             
             .c-bg{
