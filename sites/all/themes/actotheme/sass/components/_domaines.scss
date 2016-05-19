@@ -99,13 +99,14 @@
 
 .c-block-domaine{
 
-    width: 70vw;
+    //width: 70vw;
 
     display: block;
     margin: 0 auto;
     padding:5px;
     margin-top:7rem;
     margin-bottom: 6rem;
+    @include main-padding();
 
 
     .c-gris{
