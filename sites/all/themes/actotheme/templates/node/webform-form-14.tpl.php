@@ -42,12 +42,19 @@
 dpm($form['submitted']);
 ?>
 
-  <div class="left">
+  <div class="form-col">
 
       <?php print render($form['submitted']['nom']) ?>
       <?php print render($form['submitted']['prenom']) ?>
       <?php print render($form['submitted']['societe']) ?>
       <?php print render($form['submitted']['e___mail']) ?>
+
+  </div>
+
+  <div class="form-col">
+
+      <?php print render($form['submitted']['telephone']) ?>
+      <?php print render($form['submitted']['message']) ?>
 
   </div>
 

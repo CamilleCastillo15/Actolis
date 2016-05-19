@@ -36,6 +36,7 @@
         <?php print render($body) ?>
 
     </div>
+
     <div class="c-block-contact">
 
         <div class="c-blanc">
@@ -90,8 +91,6 @@
         </div>
     
     </div>
-
-
 
     <div class="c-form"> 
         
