@@ -223,7 +223,7 @@
                 <h4><?php print render($title_rejoignez_nous); ?></h4>
                 <?php print render($texte_rejoignez_nous); ?>
                 <div class="c-cta">
-                    <a href="" class="cta">formulaire en ligne</a>
+                    <?php print l("Formulaire en ligne", "/content/formulaire-rejoignez-nous", array("html"=>true, 'attributes' => array('class' => array('cta')))); ?>
                 </div>
             </div>
             <div class="c-img">
