@@ -386,15 +386,8 @@
 }
 
 
-.c-text{
-
-    p{
-         @include fz(2);
-    }
-
-    ul{
-          
-        list-style-image: url(../imgs/bullet2.png);
+.ul-style{
+            list-style-image: url(../imgs/bullet2.png);
         list-style-position: outside;
         padding-left: 1rem;
         li{
@@ -404,6 +397,19 @@
             margin-top: 0.5rem;
 
         }
+}
+
+.c-text{
+
+    p{
+         @include fz(2);
+    }
+
+    ul{
+
+        @extend .ul-style;
+          
+
 
     }
 

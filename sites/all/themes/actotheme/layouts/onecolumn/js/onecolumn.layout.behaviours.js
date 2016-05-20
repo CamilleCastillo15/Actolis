@@ -62,7 +62,7 @@
                 var vH = $(window).height();
                
                 
-                if((sY+vH) > (sMax-(vH/2))){
+                if((sY+vH) > (sMax-(vH/2)) && sMax>(vH*1.2)){
                     $(".bt-top").addClass('ok');
                 }else{
                     $(".bt-top").removeClass('ok');

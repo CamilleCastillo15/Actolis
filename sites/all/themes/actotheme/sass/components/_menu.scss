@@ -15,8 +15,9 @@
            @extend .ul-nav;
            li{
                 a{
-                    padding:2rem 2rem;
-                    padding-bottom: 0.5rem;
+                    padding:2rem;
+                    position: relative;
+
                     @include transition(all 0.2s ease-out);
 
                     &:hover{
@@ -25,8 +26,7 @@
 
                         &:after {
 
-                            margin:0.5rem 0.5rem;
-                            border-bottom: 2px solid rgba(white,0.3);
+                             background-color: rgba(#fff,0.3);
 
                         }
 
@@ -35,22 +35,23 @@
 
                             &:after {
 
-                                content:"";
-                                border-bottom: 2px solid white;
-                                margin:0.5rem 0.5rem;
-                                display: block;
+                   
+                        background-color: rgba(#fff,1);
 
                             }
                     }
 
                     &:after {
 
-                        content:"";
-                        border-bottom: none;
-                        margin:0;
                         display: block;
-                        border-bottom: 2px solid transparent;
-                                margin:0.5rem 0.5rem;
+                        content: "";
+                        position: absolute;
+                        bottom:1rem;
+                        width: 3rem;
+                        left:50%;
+                        @include translate(-50%,0px);
+                        height: 0.22rem;
+                        background-color: rgba(#fff,0);
 
                     }
 
@@ -62,6 +63,7 @@
             ul{
                  @extend .ul-nav;
                  padding:1rem 0rem;
+                 font-size: 0px;
                  li{
                     padding: 0rem 0rem;
                     a{
@@ -95,6 +97,8 @@
                                     top:20%;
                                     position: relative;
                                 }
+
+                                margin-right:2rem;
                             
                         }
 
@@ -107,8 +111,9 @@
                                 text-transform: uppercase;
                                 @include fz(3);
                                 font-weight: 700;
-                                max-width: 14rem;
-                                padding-left: 2rem;
+                                //max-width: 15rem;
+                                width: auto;
+                                //padding-left: 2rem;
 
                         }
 
@@ -119,7 +124,8 @@
 
                             &:after {
                                 
-                                border-color:transparent;
+                                background-color:transparent;
+
 
                             }
 
@@ -145,3 +151,56 @@
         }
 
     }
+
+
+.active-bt{
+    a{
+        position: relative;
+        &:after{
+            display: block;
+            content: "";
+            position: absolute;
+            bottom:1rem;
+            width: 3rem;
+            left:50%;
+            @include translate(-50%,0px);
+            height: 0.22rem;
+            background-color: #fff;
+
+        }
+    }
+}
+
+.page-node-9{
+    .domaine-menu{
+        ul{
+            li{
+                &:nth-child(1){
+                    @extend .active-bt;
+                }
+            }
+        }
+    }
+}
+.page-node-8{
+    .domaine-menu{
+        ul{
+            li{
+                &:nth-child(2){
+                    @extend .active-bt;
+                }
+            }
+        }
+    }
+}
+.page-node-2{
+    .domaine-menu{
+        ul{
+            li{
+                &:nth-child(3){
+                    @extend .active-bt;
+                }
+            }
+        }
+    }
+}

@@ -139,3 +139,16 @@
  margin-left: 4rem;
  font-weight: bold;
 }
+.messages--status{
+ background-color: white !important;
+ border:none;
+ border-left:5px solid $vert;
+ background-image: none;
+ padding-left: 1rem;
+ margin:0px;
+ margin-left: 4rem;
+ font-weight: bold;
+ a{
+ 	color:$vert;
+ }
+}
