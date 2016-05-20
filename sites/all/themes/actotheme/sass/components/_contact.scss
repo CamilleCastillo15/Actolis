@@ -25,9 +25,14 @@
 
 .form-col{
   display: block;
-  float: left;
-  width: 50%;
+  float: none;
+  
   padding: 2rem;
+width: 100%;
+  @include breakpoint($tablet){
+    width: 50%;
+    float: left;
+  }
 
 }
 

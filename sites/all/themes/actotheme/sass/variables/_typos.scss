@@ -3,10 +3,11 @@
 
 body,html{
 	font-family: 'Source Sans Pro', sans-serif;
-    font-size: 10px;
+    font-size: 11px;
     line-height: 1.5rem;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0rem;
     @include breakpoint($tablet) {
+        letter-spacing: 0.1rem;
         font-size: 1.1vw;
     }
 

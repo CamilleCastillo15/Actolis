@@ -120,12 +120,17 @@
     .c-text{
 
         background-color: $gris;
-        width:  60%;
+       
         padding:3rem;
         padding-right: 12rem;
         position: relative ;
         display: inline-block;
         vertical-align: top;
+        width: 100%;
+      @include breakpoint($tablet){
+        width: 60%;
+      
+      }
 
         .c-cta{
             display: block ;
@@ -161,6 +166,15 @@
              }
     }
 
+ .c-img-1,.c-img-2,.c-img-3,.c-img-4{ 
+                 display: none;    
+           }
+    @include breakpoint($tablet){
+           .c-img-1,.c-img-2,.c-img-3,.c-img-4{ 
+                 display: block;    
+           }
+    }
+
     .c-img-1,.c-img-3{
 
         z-index: 10;
@@ -172,7 +186,7 @@
 
         min-height: 35vh;
         position: absolute;
-        display: block;
+        //display: block;
         vertical-align: top;
        
         @include jpg(pharma_affaire,50% 50%, cover);
@@ -200,7 +214,7 @@
         right: -8rem;
 
         position: absolute;
-        display: block;
+        //display: block;
         vertical-align: top;
 
 
@@ -271,6 +285,7 @@
 }
 
 
+
 .e-d-c{
     text-align: center;
     @include main-padding(25vw,25vw);
@@ -288,7 +303,7 @@
     .grille{
         
         width: 100%;
-        padding-top: 10rem;
+        padding-top: 3rem;
 
         .view-case-studies{
             height: 100%;
@@ -296,9 +311,10 @@
                 height: 100%;
             }
         }
-
+            
+           
          @include breakpoint($laptopl) {
-
+padding-top: 10rem;
             width: 55vw;
             height: 55vw;
              margin-left: -5.7vw;
@@ -308,11 +324,19 @@
         display: block;
         .views-row{
             display: block;
-            float: left;
-            width: 50%;
-            height: 50%;
+            float: none;
+            width: 100%;
+            height: auto;
             position: relative;
              padding: 0.2rem;
+             min-height: 25rem;
+
+              @include breakpoint($tablet){
+                 float: left;
+         width: 50%;
+            height: 50%;
+            min-height: 100%;
+     }
 
              .item{
                 height: 100%;
@@ -335,8 +359,12 @@
                 position: relative;
                 padding: 3rem;
                 padding-top: 4rem;
-                @include opacity(0);
+                @include opacity(1);
+                @include breakpoint($laptop){
+
+@include opacity(0);
                 @include transition(all 0.2s ease-out);
+                }
                 h2{
                     @include fz(3);
                     font-weight: 800;
@@ -358,20 +386,28 @@
                 p{
                     @include fz(2);
                 }
+                @include breakpoint($laptop){
                 &:hover{
                     @include opacity(1);
                     .sep{
                         margin-top:1rem;
                     }
                 }
+                }
             }
 
-            &:nth-child(1){
-                margin-top:-100px;
-            }
-             &:nth-child(3){
-                margin-top:-100px;
-            }
+             @include breakpoint($laptop){
+
+
+                &:nth-child(1){
+                    margin-top:-100px;
+                }
+                 &:nth-child(3){
+                    margin-top:-100px;
+                }
+
+             }
+
 
         }
     }

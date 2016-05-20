@@ -188,10 +188,15 @@ h4{
     }
 
     .c-text{
-        width:  47%;
+        width:  100%;
         position: relative ;
-        display: inline-block;
+        display: block;
         vertical-align: top;
+
+         @include breakpoint($tablet){
+           display: inline-block;
+            width:  47%;
+         }
 
         .c-cta{
             display: block ;
@@ -223,16 +228,25 @@ h4{
 
     .c-img{
 
-        width: 47%;
-        height: 115%;
-        position: absolute;
+       
+         width:   100%;
+        height: 300px;
+        position: relative;
         display: block;
         vertical-align: top;
-        right: 2rem;
+        right: 0rem;
          @include jpg(histoire_photo,50% 50%, cover);
         min-height: 35vh;
-        top:50%;
-        @include translate(0px,-50%);
+        top:0%;
+        
+         @include breakpoint($tablet){
+          right: 2rem;
+          @include translate(0px,-50%);
+           top:50%;
+            position: absolute;
+           width: 47%;
+            height: 115%;
+         }
         &:after{
 
             content:"";
