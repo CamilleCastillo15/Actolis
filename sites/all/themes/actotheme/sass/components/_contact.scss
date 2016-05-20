@@ -139,14 +139,24 @@
 
     .c-img{
 
-        width: 65vh;
+       
         position: absolute;
         z-index: 10;
         display: block;
         vertical-align: top;
         right: 2rem;
-         @include jpg(map,50% 50%, 100%);
-        height: 65vh;
+        @include jpg(map,50% 50%, 100%);
+        height: 35vw;
+        width: 35vw;
+
+        @include breakpoint($laptop) {
+            
+            max-width: 560px;
+            max-height: 560px;
+            
+        }
+
+
         top:50%;
         @include translate(0px,-50%);
 
