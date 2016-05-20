@@ -156,7 +156,8 @@
     margin-left:-2rem;
     z-index: 10;
     bottom:20vh;
-
+    @include opacity(1);
+    @include transition(opacity 0.2s ease-out);
     @include animation(scroll 1.5s ease-in-out 3);
 
     &:hover{

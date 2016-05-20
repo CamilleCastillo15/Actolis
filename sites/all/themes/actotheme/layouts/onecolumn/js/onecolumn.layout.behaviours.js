@@ -40,6 +40,40 @@
 
                 }
             });
+
+            $(".bt-top").on(clickmethod, function (e) {
+
+                e.preventDefault();
+               $( "body" ).scrollTop( 0 );
+
+            });
+
+            $(".bt-scroll").on(clickmethod, function (e) {
+
+                var sY = $( "body" ).scrollTop();
+                e.preventDefault();
+               $( "body" ).scrollTop((sY/2)+$(window).height());
+
+            });
+
+            $( document ).scroll(function() {
+                var sY = $( "body" ).scrollTop();
+                var sMax = $( document ).height();
+                var vH = $(window).height();
+               
+                
+                if((sY+vH) > (sMax-(vH/2))){
+                    $(".bt-top").addClass('ok');
+                }else{
+                    $(".bt-top").removeClass('ok');
+                }
+
+                if(sY > (vH/2)){
+                    $(".bt-scroll").addClass('nok');
+                }else{
+                    $(".bt-scroll").removeClass('nok');
+                }
+            });
         }
     }
 

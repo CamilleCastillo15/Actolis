@@ -32,7 +32,11 @@
 		}
 		.cc{
 			text-align: center;
-			.item-offre{
+
+
+			.views-row{
+
+
 				display: inline-block;
 				width: 33%;
 				
@@ -44,6 +48,17 @@
 
 				&:hover{
 					background-color: white;
+
+					a{
+						color:$orange;
+					}
+				}
+
+				a{
+					width: 100%;
+					height: 100%;
+					color:black;
+
 				}
 
 				.nom{

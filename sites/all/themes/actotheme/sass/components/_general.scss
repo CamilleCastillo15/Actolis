@@ -6,6 +6,37 @@ body {
 
     }
 
+ 
+
+}
+
+.not-logged-in{
+
+   
+    &:before{
+    position: fixed;
+          display: block;
+          width: 100%;
+          height: 100%;
+          background:rgba(white,0.85);
+          z-index: 10000;
+          text-align: center;
+          content:"Version responsive en cours de développement";
+          @include fz(4);
+          color:$orange;
+          padding-top: 20rem;
+          
+     }
+    @include breakpoint($laptop) {
+        
+        
+        &:before{
+
+          display: none;
+
+        }
+    }
+
 }
 
 .node-type-home{
@@ -37,7 +68,17 @@ body {
   width: 3rem;
   height: 3rem;
   @include svg(picto_fleche_t, 50% 50%, 60%);
+  @include opacity(0);
+  @include transition(opacity 0.2s ease-out);
 
+}
+
+.ok{
+  @include opacity(1);
+}
+
+.nok{
+  @include opacity(0);
 }
 
 .dark-layer{
