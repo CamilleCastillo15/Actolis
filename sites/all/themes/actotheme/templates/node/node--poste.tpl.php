@@ -34,16 +34,16 @@
 
         ?>
 
-        <h4><?php print render($nom); ?></h4>
+        <h1><?php print render($nom); ?></h1>
 
-        <h4>Caractéristiques de l'offre :</h4>
-        <?php print render($caracteristiques); ?>
+        <div class="caracteristiques"><h4>Caractéristiques de l'offre :</h4>
+        <?php print render($caracteristiques); ?></div>
 
-        <h4>Description de l'offre :</h4>
-        <?php print render($description); ?>
+        <div class="description"><h4>Description de l'offre :</h4>
+        <?php print render($description); ?></div>
 
-        <h4>Qualités requises :</h4>
-        <?php print render($qualites); ?>
+        <div class="qualites"><h4>Qualités requises :</h4>
+        <?php print render($qualites); ?></div>
 
         <?php print l("Postuler", "/content/formulaire-rejoignez-nous", array("html"=>true, 'attributes' => array('class' => array('cta')))); ?>
 
