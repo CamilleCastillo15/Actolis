@@ -12,6 +12,7 @@
             }
 
         });
+
         var swiper = new Swiper('.block-all.swiper-container', {
 
             effect:"fade",
