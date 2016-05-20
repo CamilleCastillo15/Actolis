@@ -45,6 +45,8 @@
         <h4>Qualités requises :</h4>
         <?php print render($qualites); ?>
 
+        <?php print l("Postuler", "/content/formulaire-rejoignez-nous", array("html"=>true, 'attributes' => array('class' => array('cta')))); ?>
+
 <?php    }
 
     ?>

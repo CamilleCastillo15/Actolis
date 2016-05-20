@@ -38,7 +38,7 @@
 
 //$form['submitted']['nom']['#title'] = 'votre nom';
 
-dpm($form['submitted']); ?>
+//dpm($form['submitted']); ?>
 
   <div class="form-col">
 
