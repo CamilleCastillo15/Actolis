@@ -91,5 +91,5 @@
             d="M31,21H2.7A0.85,0.85,0,0,0,2,22a0.85,0.85,0,0,0,.7,1H31a0.85,0.85,0,0,0,.7-1C31.7,21.4,31.5,21,31,21Z" transform="translate(10.8 5.7)"/>
     </svg>
 </div>
-<a href="" class="bt-offres">offres de formation</a>
+<?php print l("Centre de formation", "/content/centre-de-formation", array("html"=>true, 'attributes' => array('class' => array('bt-offres')))); ?>
 <a href="" class="bt-top"></a>

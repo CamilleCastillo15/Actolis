@@ -206,15 +206,15 @@
 
              $texte_rejoignez_nous = field_view_field("node",$node,'field_texte_rejoignez_nous');
 
-            $images_rejoignez_nous_bloc = field_get_items('node', $node, 'field_image_rejoignez_nous_bloc');
+            $images_rejoignez_nous_bloc = field_get_items('node', $node, 'field_image_background_pictos');
 
-            dpm($images_rejoignez_nous_bloc[0]);
+            //dpm($images_rejoignez_nous_bloc[0]);
 
             //$p = image_style_url("large",$images_rejoignez_nous_bloc[0]["uri"]);
             $p = file_create_url($images_rejoignez_nous_bloc[0]["uri"]);
             //dpm($m);
 
-            drupal_add_css('.c-block .c-img {background-image: url("'.$p.'") !important ; } ', 'inline');
+            drupal_add_css('.home .c-header {background-image: url("'.$p.'") !important ; } ', 'inline');
 
         ?>
 
