@@ -1,3 +1,7 @@
+@import "breakpoint";
+@import "../variables/variables";
+@import "../variables/mixin";
+
 body {
 
     img {
@@ -234,3 +238,86 @@ body {
 
 }
 
+.node-type-webform{
+    .l-content{
+    @include main-padding();
+  }
+}
+
+.node-type-poste{
+
+  .l-content{
+    @include main-padding();
+  }
+ 
+  h4{
+    @include fz(4);
+  }
+  .l-content{
+    .cta{
+      margin:1rem;
+      margin-left: 3rem;
+    }
+    p{
+      word-wrap: break-word;
+      @include fz(2);
+    }
+    ul{
+      @include fz(2);
+      @extend .ul-style;
+    }
+
+     h1{
+    @include fz(5);
+    font-weight: 700;
+    display: block;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    width: 100%;
+    padding-bottom: 0rem;
+
+    &:after{
+      content:"";
+      width: 10%;
+      height: 5px;
+      @extend .gradient-h;
+      margin:0 auto;
+      position: relative;
+      display: block;
+      margin-bottom: 0rem;
+      margin-top:2rem;
+    }
+
+  }
+  }
+  
+
+  .caracteristiques{
+    padding: 3rem;
+    padding-bottom: 5rem;
+      background-color: $gris;
+  }
+
+  .description{
+    padding: 3rem;
+      display: inline-block;
+      vertical-align: top;
+      width: 49%;
+      
+      
+  }
+
+  .qualites{
+    padding: 3rem;
+      display: inline-block;
+      vertical-align: top;
+      width: 49%;
+      border-left:1px solid $gris;
+      border-bottom:1px solid $gris;
+      background-color: #fff;
+      margin-top:-3rem;
+      padding-top: 6rem;
+  }
+
+}

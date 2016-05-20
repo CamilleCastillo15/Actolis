@@ -19,7 +19,7 @@
      $bkg_fc_formation = field_get_items("node",$node,'field_bkg_fc_formation');
      $p = image_style_url("large",$bkg_fc_formation[0]["uri"]);
 
-     drupal_add_css('.centre formation .c-header .c-img {background-image: url("'.$p.'") !important; } ', 'inline');
+     drupal_add_css('.centre-formation .c-header .c-img {background-image: url("'.$p.'") !important; } ', 'inline');
 
      $titre_offres_formations = field_view_field("node",$node,'field_titre_offres_formations');
      $texte_mobilite = field_view_field("node",$node,'field_texte_mobilite');
@@ -28,17 +28,28 @@
 
 <div class="centre-formation">
 
-       <?php print render($title) ?>
+    <div class="c-block-histoire">
 
-       <?php print render($texte_formation) ?>
+        <div class="c-blanc">
+                
+            <div class="c-text">
+                <h4><?php print render($title) ?></h4>
+                <?php print render($texte_formation) ?>
 
-       <?php print render($image_formation) ?>
+            </div>
+            <div class="c-img"> 
+                
+            </div>
 
-       <?php print render($titre_fc_formation) ?>
+        </div>
+    
+    </div> 
 
     <div class="c-header">
 
         <div class="dark-layer">
+
+            <h4><?php print render($titre_fc_formation) ?></h4> 
 
              <?php for($i = 0; $i < count($idti); $i++){
 
@@ -58,12 +69,14 @@
 
     </div>
 
-</div>
 
-    <?php print render($titre_offres_formations) ?>
 
     <div class="c-block-offres">
          <h4>nos offres</h4>
+         <p class="ss">
+            <?php print render($titre_offres_formations) ?>
+         </p>
+        
          <div class="cc">
 
          <?php $view = views_embed_view('offres_de_formations', 'default', $node->nid);
@@ -71,5 +84,7 @@
 
          </div>
     </div>
+
+</div>
 
 
