@@ -67,17 +67,21 @@
 
         </div>
 
+        <div class="bloc-texte-case-studies">
 
-        <?php for($j = 0; $j < count($idti); $j++) {
-        $collectionsg_2 = $collectionsg[$idti[$j]];
+            <?php for($j = 0; $j < count($idti); $j++) {
 
-        $title = field_view_field('field_collection_item', $collectionsg_2, 'field_title_etude_cas');
-        $texte = field_view_field('field_collection_item', $collectionsg_2, 'field_texte_etude_cas'); ?>
+                $collectionsg_2 = $collectionsg[$idti[$j]];
 
-        <h4><?php print render($title); ?></h4>
-        <div class="c-text"><?php print render($texte); ?></div>
+                $title = field_view_field('field_collection_item', $collectionsg_2, 'field_title_etude_cas');
+                $texte = field_view_field('field_collection_item', $collectionsg_2, 'field_texte_etude_cas'); ?>
 
-        <?php  }  ?>
+                <h4><?php print render($title); ?></h4>
+                <div class="c-text"><?php print render($texte); ?></div>
+
+            <?php  }  ?>
+
+        </div>
 
 </div>
 
