@@ -201,7 +201,7 @@
         <div class="swiper-button-prev"></div>
     </div>
 
-     <div class="c-block">
+     <div class="c-block" style="width:74%; padding:5px;">
 
        <?php
              $title_rejoignez_nous = field_view_field("node",$node,'field_title_rejoignez_nous');

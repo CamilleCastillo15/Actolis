@@ -20,15 +20,17 @@ body {
     &:before{
     position: fixed;
           display: block;
-          width: 100%;
-          height: 100%;
+          width: 40%;
+          left:30%;
+          height: auto;
+          top:0px;
           background:rgba(white,0.85);
           z-index: 10000;
           text-align: center;
           content:"Version responsive en cours de développement";
-          @include fz(4);
+          @include fz(3);
           color:$orange;
-          padding-top: 20rem;
+          padding: 1rem;
           
      }
     @include breakpoint($laptop) {
@@ -41,6 +43,9 @@ body {
         }
     }
 
+}
+.burger{
+  top:-100000px;
 }
 
 .node-type-home{

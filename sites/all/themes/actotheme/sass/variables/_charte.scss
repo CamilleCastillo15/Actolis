@@ -298,8 +298,11 @@
 
 .c-block{
         
-    width: 100%;
-    @include main-padding();
+    width: 96%;
+     @include breakpoint($tablet){
+        width:  74.1%;
+    }
+    //@include main-padding();
     
     display: block;
     margin: 0 auto;
