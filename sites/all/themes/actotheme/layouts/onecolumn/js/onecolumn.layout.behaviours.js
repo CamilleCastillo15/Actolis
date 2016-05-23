@@ -13,14 +13,15 @@
             $(window).on("resize",function(){
                 l_shield.setAttribute("class", "l-shield");
                 burger.setAttribute("class", "burger");
-                l_off.setAttribute("class", "l-off h");
+                l_menu.setAttribute("class", "l-off h");
                 toggle = 1;
 
             })
             $(".l-shield").on(clickmethod, function () {
                  l_shield.setAttribute("class", "l-shield");
                 burger.setAttribute("class", "burger");
-                l_off.setAttribute("class", "l-off h");
+                l_menu.setAttribute("class", "l-off h");
+                 $("body").removeClass('blocus');
                 toggle = 1;
 
             })
@@ -31,12 +32,16 @@
                     l_shield.setAttribute("class", "l-shield o");
                     burger.setAttribute("class", "burger o");
                     l_menu.setAttribute("class", "l-menu o");
+                    $("body").addClass('blocus');
+                   
+                    $('.user').insertAfter('.domaine-menu');
                     toggle = 0;
 
                 } else {
                     l_shield.setAttribute("class", "l-shield");
                     burger.setAttribute("class", "burger");
                     l_menu.setAttribute("class", "l-menu");
+                    $("body").removeClass('blocus');
                     toggle = 1;
 
                 }

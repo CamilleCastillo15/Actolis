@@ -4,7 +4,7 @@
 <div class="l-header">
     <div class="logo">
         <a href="/">
-            <img src="<?php print $theme ?>/imgs/logo-actolis.png" alt="logo" title="logo" />
+            <img src="<?php print $theme ?>/imgs/logo_actolis.svg" alt="logo" title="logo" />
             <div class="c-txt">
                 <h1>ACTOLIS</h1>
                 <p>le partenaire des industrie de la santé</p>

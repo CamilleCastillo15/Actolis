@@ -10,7 +10,11 @@ body {
 
     }
 
- 
+
+   &.blocus{
+      overflow: hidden;
+   }
+   
 
 }
 
@@ -31,6 +35,7 @@ body {
           @include fz(3);
           color:$orange;
           padding: 1rem;
+          display: none;
           
      }
     @include breakpoint($laptop) {
@@ -48,7 +53,9 @@ body {
 
 .node-type-home{
   .domaine-menu{
-    display: none;
+    @include breakpoint($laptop) {
+      display: none;
+    }
   }
 }
 

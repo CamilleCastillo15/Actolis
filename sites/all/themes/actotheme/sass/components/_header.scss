@@ -40,9 +40,14 @@
 
 
         width: 50%;
-        height: 6rem;
+        height: 8rem;
         text-align: left;
         float: left;
+
+        @include breakpoint($tablet) {
+
+                height: 6rem;
+        }
 
         a{
 
@@ -61,7 +66,8 @@
 
             }
             .c-txt{
-                display: inline-block;
+                display: none;  
+                //display: inline-block;
                 vertical-align: middle;
                 text-align: center;
                 h1{
@@ -91,6 +97,14 @@
         width: 50%;
         text-align: right;
 
+        display: none; 
+
+          @include breakpoint($tablet) {
+
+                 display: block; 
+        }
+
+
         ul{
 
            @extend .ul-nav;
@@ -99,10 +113,12 @@
                     padding: 0rem;
                     padding-top: 2rem;
                     padding-left: 2rem;
+                    background-color: white;
 
                     a{
                         color:black;
                         padding: 0.5rem 0rem;
+                         background-color: white;
                     }
 
                 }
