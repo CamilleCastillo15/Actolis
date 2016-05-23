@@ -7,11 +7,6 @@
     //display: none;
     display:block;
 
-    @include breakpoint($tablet) {
-        
-     
-    }
-
 }
 .l-menu{
 
@@ -151,8 +146,13 @@
                         }
                     }
                     &:nth-child(2){
-                        border-left:2px solid white;
-                        border-right:2px solid white;
+
+                        @include breakpoint($laptop) {
+
+                            border-left:2px solid white;
+                            border-right:2px solid white;
+
+                        }
                     }
                  }
             }
