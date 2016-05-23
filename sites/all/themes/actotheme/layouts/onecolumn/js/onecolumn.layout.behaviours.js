@@ -22,6 +22,7 @@
                 burger.setAttribute("class", "burger");
                 l_menu.setAttribute("class", "l-off h");
                  $("body").removeClass('blocus');
+                 $('.user').insertAfter('.logo');
                 toggle = 1;
 
             })
@@ -32,8 +33,7 @@
                     l_shield.setAttribute("class", "l-shield o");
                     burger.setAttribute("class", "burger o");
                     l_menu.setAttribute("class", "l-menu o");
-                    $("body").addClass('blocus');
-                   
+                    $("body").addClass('blocus');             
                     $('.user').insertAfter('.domaine-menu');
                     toggle = 0;
 
@@ -42,6 +42,7 @@
                     burger.setAttribute("class", "burger");
                     l_menu.setAttribute("class", "l-menu");
                     $("body").removeClass('blocus');
+                    $('.user').insertAfter('.logo');
                     toggle = 1;
 
                 }

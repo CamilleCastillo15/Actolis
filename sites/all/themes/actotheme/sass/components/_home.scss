@@ -14,8 +14,8 @@
             }
 
             img{
-                height:100%;
-                max-width:none;
+                width :100%;
+                height :auto;
                 @include breakpoint($tablet){
                     height:auto;
                     max-width:100%;
@@ -170,10 +170,14 @@
 
     .acto-news {
         background-color: $gris;
+        padding: 0rem 2rem;
         @include breakpoint($laptopl) {
             @include main-padding(15vw,15vw);
         }
-        padding: 0rem 9rem;
+        @include breakpoint($tablet) {
+            padding: 0rem 9rem;
+        }
+        
 
         h4{
             margin-top:2rem;

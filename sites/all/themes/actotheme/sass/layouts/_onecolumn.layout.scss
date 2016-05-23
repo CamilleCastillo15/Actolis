@@ -117,6 +117,7 @@ a {
     //height:2337px;
 }
 .l-shield{
+    z-index:    20;
     transition: height 0ms ease-in-out 400ms,
                 opacity 400ms ease-in-out 0ms;
     opacity : 0;
