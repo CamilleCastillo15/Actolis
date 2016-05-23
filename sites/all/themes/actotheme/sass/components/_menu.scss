@@ -2,17 +2,49 @@
 @import "../variables/variables";
 @import "../variables/mixin";
 
-  .l-menu{
+.menu {
+
+    //display: none;
+    display:block;
+
+    @include breakpoint($tablet) {
+        
+     
+    }
+
+}
+.l-menu{
 
         background-color: $orange;
         padding: 0rem;
         text-align: center;
-        display: block;
+        
         width: 100%;
 
+        position: fixed;
+        z-index: 100;
+        display: none;
+        @include breakpoint($tablet) {
+        
+            position: relative;
+            display: block;
+            z-index: 1;
+        }
+        &.o {
+            display: block;
+        }
+         &.h {
+            display: none;
+        }
         ul{
            @extend .ul-nav;
            li{
+                display: block;
+                width: 100%;
+             @include breakpoint($tablet) {
+                    display: inline-block;
+                    width: auto;
+             }
                 a{
                     padding:2rem;
                     position: relative;
@@ -183,6 +215,7 @@
 }
 
 .l-off {
+    display: none;
 
     .menu {
 
@@ -313,7 +346,7 @@
     -webkit-transition: all 375ms ease-in-out;
     -moz-transition: all 375ms ease-in-out;
     transition: all 375ms ease-in-out;
-    display: block;
+    //display: block;
     @include breakpoint($mobilel){
         width:70%;
     }
