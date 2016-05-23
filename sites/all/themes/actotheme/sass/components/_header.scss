@@ -24,11 +24,13 @@
    background-color: white;
 
    // max-width: $max;
-    display: none;
-    position: relative;
+    //display: none;
+    display: block;
+    
     @include main-padding();
     @include breakpoint($tablet) {
         display: block;
+        position: relative;
         margin:auto;
     }
 

@@ -8,6 +8,7 @@
             var burger = document.getElementsByClassName("burger")[0];
             var l_off = document.getElementsByClassName("l-off")[0];
             var l_shield= document.getElementsByClassName("l-shield")[0];
+            var l_menu = document.getElementsByClassName("l-menu")[0];
             var toggle = 1;
             $(window).on("resize",function(){
                 l_shield.setAttribute("class", "l-shield");
@@ -29,13 +30,13 @@
                 if (toggle == 1) {
                     l_shield.setAttribute("class", "l-shield o");
                     burger.setAttribute("class", "burger o");
-                    l_off.setAttribute("class", "l-off o");
+                    l_menu.setAttribute("class", "l-menu o");
                     toggle = 0;
 
                 } else {
                     l_shield.setAttribute("class", "l-shield");
                     burger.setAttribute("class", "burger");
-                    l_off.setAttribute("class", "l-off h");
+                    l_menu.setAttribute("class", "l-menu");
                     toggle = 1;
 
                 }
