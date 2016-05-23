@@ -16,7 +16,7 @@
 <div class="home">
     <div class="block-all swiper-container">
         <div class="swiper-wrapper">
-
+            <div class="swiper-pagination"></div>
            <a href="" class="bt-scroll"></a>
             <?php for($i = 0; $i < count($idti); $i++){
                 $collectiong = $collectionsg[$idti[$i]];
@@ -47,9 +47,11 @@
                 </div>
             </div>
             <?php }  ?>
-            <div class="swiper-pagination"></div>
+
+<!--
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
+-->
         </div>
     </div>
 

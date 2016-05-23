@@ -20,7 +20,7 @@
         $texte = field_view_field("node",$node,'field_texte_case_study',array(
               'label'=>'hidden',
               'type' => 'text_summary_or_trimmed',
-              'settings'=>array('trim_length' => 150),
+              'settings'=>array('trim_length' => 50),
         ));
 
         $texte_render = render($texte);

@@ -69,8 +69,6 @@
 
     </div>
 
-
-
     <div class="c-block-offres">
          <h4>nos offres</h4>
          <p class="ss">

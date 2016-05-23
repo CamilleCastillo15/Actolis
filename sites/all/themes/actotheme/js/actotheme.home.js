@@ -15,15 +15,15 @@
 
         var swiper = new Swiper('.block-all.swiper-container', {
 
-            effect:"fade",
+           effect:"fade",
             spaceBetween: 0,
 //            autoHeight:true,
             autoplay : 5000,
             autoHeight:true,
             pagination: '.swiper-pagination',
-            paginationClickable: true,
-            nextButton: '.swiper-button-next',
-            prevButton: '.swiper-button-prev'
+            paginationClickable: true
+//            nextButton: '.swiper-button-next',
+//            prevButton: '.swiper-button-prev'
 
         });
 
