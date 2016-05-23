@@ -51,7 +51,7 @@
                 <div class="dark-layer">
 
                     <div class="c-picto">
-                        <h2><?php print render($title); ?></h2>
+                        <h4><?php print render($title); ?></h4>
                     </div>
             </div>
 
