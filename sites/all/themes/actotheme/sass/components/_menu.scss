@@ -10,41 +10,82 @@
 }
 .l-menu{
 
-        background-color: $orange;
+        
         padding: 0rem;
-        text-align: center;
+        text-align: left;
         
         width: 100%;
 
         position: fixed;
         z-index: 100;
         display: none;
-        @include breakpoint($tablet) {
+        background-color: rgba(white,0.9);
         
+        @include breakpoint($tablet) {
+       
+             text-align: center;
+                background-color: $orange;
             position: relative;
             display: block;
             z-index: 1;
         }
         &.o {
             display: block;
+            height: 100%;
+            width: 80%;
+            overflow: auto;
+            top: 0px;
         }
          &.h {
             display: none;
         }
         ul{
            @extend .ul-nav;
+           text-align:left;
+            @include breakpoint($tablet) {
+                        text-align: center; 
+            }
            li{
                 display: block;
                 width: 100%;
-             @include breakpoint($tablet) {
+                background-color: $orange;
+                &.first{
+                    padding-top:3rem;
+                };
+                &.last{
+                    padding-bottom:1rem;
+                };
+                @include breakpoint($tablet) {
                     display: inline-block;
                     width: auto;
+                     &.first{
+                    padding-top:0rem;
+                };
+                &.last{
+                    padding-bottom:0rem;
+                };
              }
                 a{
                     padding:2rem;
+                    padding-top: 1rem;
+                    padding-bottom: 1rem;
                     position: relative;
+                    width: 100%;
+                    background-color: $orange;
+                        @include fz(3);
+                        font-weight: 700;
+                        text-transform: uppercase;  
+                    @include breakpoint($tablet) {
+                         font-weight: 300;
+                        text-transform: none;
+                        font-size:  inherit;
+                        padding:2rem;
+                        width: auto;
+                        background-color: transparent;
+                    }
 
                     @include transition(all 0.2s ease-out);
+                    @include breakpoint($tablet) {
 
                     &:hover{
                         background-color: rgba(white,0.1);
@@ -54,6 +95,8 @@
                              background-color: rgba(#fff,0.3);
                         }
                     }
+
+                }
                     &.active{
                             &:after {
                         background-color: rgba(#fff,1);
@@ -65,10 +108,16 @@
                         display: block;
                         content: "";
                         position: absolute;
-                        bottom:1rem;
+                        bottom:0.5rem;
                         width: 3rem;
-                        left:50%;
-                        @include translate(-50%,0px);
+                        left:2rem;
+                         @include breakpoint($tablet) {
+                            bottom:1rem;
+left:50%;
+ @include translate(-50%,0px);
+                         }
+                        
+                       
                         height: 0.22rem;
                         background-color: rgba(#fff,0);
                     }
@@ -81,11 +130,21 @@
                  @extend .ul-nav;
                  padding:1rem 0rem;
                  font-size: 0px;
+                  text-align:left;
+            @include breakpoint($tablet) {
+                        text-align: center; 
+            }
                  li{
                     padding: 0rem 0rem;
+                     background-color: transparent;
                     a{
                         background-image: none !important;
                         background-image: url("") !important;
+                        background-color: transparent;
+                    @include breakpoint($tablet) {
+                        
+                        background-color: transparent;
+                    }
                         //padding: 2rem 2rem;
                         .c-img{
                              display: inline-block;
@@ -117,7 +176,7 @@
                         }
                         span{
                                 display: inline-block;
-                                text-align: center;
+                                text-align: left;
                                 vertical-align: middle;
                                 text-transform: uppercase;
                                 @include fz(3);
@@ -125,6 +184,12 @@
                                 max-width: 20vw;
                                 width: auto;
                                 //padding-left: 2rem;
+
+                                @include breakpoint($laptop) {
+
+                                        text-align: center; 
+
+                                }
                         }
 
                          &:hover{
@@ -158,6 +223,21 @@
             }
              @extend .gradient-h;
              width: 100%;
+        }
+
+        .user{
+            display: block; 
+            .menu{
+                    padding-bottom: 3rem;
+                    li{
+                        background-color: white;
+                        a{
+                           background-color: white; 
+                           color:black;
+                        }
+                    }
+                
+            }
         }
     }
 
