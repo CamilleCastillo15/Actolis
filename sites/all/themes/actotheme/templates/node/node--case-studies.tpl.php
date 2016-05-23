@@ -39,13 +39,27 @@
 
 <?php    } else {
 
-        ?>
+        $images_case_studies = field_get_items('node', $node, 'field_image_case_study');
 
-        <?php print render($image); ?>
-        <h4><?php print render($title); ?></h4>
+        $p = file_create_url($images_case_studies[0]["uri"]);
+
+        drupal_add_css('.case-studies .dark-layer {background-image: url("'.$p.'") !important ; } ', 'inline');
+?>
+
+<div class="case-studies">
+
+                <div class="dark-layer">
+
+                    <div class="c-picto">
+                        <h2><?php print render($title); ?></h2>
+                    </div>
+            </div>
+
         <div class="c-text"><?php print render($texte); ?></div>
 
 
-<?php    }
+    <?php  }  ?>
 
-    ?>
+</div>
+
+
