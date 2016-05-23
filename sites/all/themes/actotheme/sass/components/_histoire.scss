@@ -173,8 +173,15 @@ h4{
     margin: 0 auto;
     padding:5px;
     @include main-padding();
-    margin-top:7rem;
-    margin-bottom: 6rem;
+    margin-top:1rem;
+    margin-bottom: 1rem;
+
+     @include breakpoint($tablet){
+
+          margin-top:7rem;
+          margin-bottom: 6rem;
+
+     }
 
 
     .c-blanc{
