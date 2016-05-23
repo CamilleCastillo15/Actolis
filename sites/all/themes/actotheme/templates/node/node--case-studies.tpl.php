@@ -44,22 +44,43 @@
         $p = file_create_url($images_case_studies[0]["uri"]);
 
         drupal_add_css('.case-studies .dark-layer {background-image: url("'.$p.'") !important ; } ', 'inline');
+
+        $fc_blocscasestudies = field_get_items('node', $node, 'field_blocs_chapitres_etudes_cas');
+
+        if($fc_blocscasestudies){
+            $idti = array();
+            foreach ($fc_blocscasestudies as $fc_field_pictos) {
+                $idti[] = $fc_field_pictos['value'];
+            }
+            $collectionsg =  field_collection_item_load_multiple($idti);
+        }
+
 ?>
 
 <div class="case-studies">
 
-                <div class="dark-layer">
+        <div class="dark-layer">
 
-                    <div class="c-picto">
-                        <h4><?php print render($title); ?></h4>
-                    </div>
+            <div class="c-picto">
+                <h4><?php print render($title); ?></h4>
             </div>
 
+        </div>
+
+
+        <?php for($j = 0; $j < count($idti); $j++) {
+        $collectionsg_2 = $collectionsg[$idti[$j]];
+
+        $title = field_view_field('field_collection_item', $collectionsg_2, 'field_title_etude_cas');
+        $texte = field_view_field('field_collection_item', $collectionsg_2, 'field_texte_etude_cas'); ?>
+
+        <h4><?php print render($title); ?></h4>
         <div class="c-text"><?php print render($texte); ?></div>
 
-
-    <?php  }  ?>
+        <?php  }  ?>
 
 </div>
+
+<?php } ?>
 
 
