@@ -128,6 +128,7 @@
        <div class="dark-layer">
 
         <?php
+
             $image_bkg_pictos = field_view_field("node",$node,'field_image_background_pictos');
             //drupal_add_css('.c-header:'.$image_bkg_pictos.' !important;}', 'inline');
             $fc_textpictos = field_get_items('node', $node, 'field_pictos_textes');

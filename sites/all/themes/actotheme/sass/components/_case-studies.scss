@@ -1,0 +1,27 @@
+.case-studies {
+
+    @include main-padding();
+
+    .dark-layer {
+
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-color: transparent;
+
+        h4 {
+
+            color:white;
+            margin-bottom: 0;
+
+        }
+
+    }
+
+        .c-text {
+
+            -webkit-column-count: 3; /* Chrome, Safari, Opera */
+            -moz-column-count: 3; /* Firefox */
+            column-count: 3;
+
+        }
+}

@@ -25,14 +25,14 @@
 </div>
 <div class="l-menu">
     <?php print render($page['header']); ?>
-    <div class="domaine-menu">
+<div class="domaine-menu">
     <?php
 
         $view_domaines = views_get_view('domaines');
         $view_domaines->execute();
         $result_domaines = $view_domaines->result;
 
- ?>
+    ?>
 
         <ul class="menu">
 
@@ -59,7 +59,7 @@
 
         </ul>
 
-    </div>
+</div>
 </div>
 <div <?php print $attributes;?>>
     <div class="l-content">
