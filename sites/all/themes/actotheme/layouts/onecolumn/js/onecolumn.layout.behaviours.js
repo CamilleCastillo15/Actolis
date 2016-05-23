@@ -13,14 +13,14 @@
             $(window).on("resize",function(){
                 l_shield.setAttribute("class", "l-shield");
                 burger.setAttribute("class", "burger");
-                l_menu.setAttribute("class", "l-off h");
+                l_menu.setAttribute("class", "l-menu");
                 toggle = 1;
 
             })
             $(".l-shield").on(clickmethod, function () {
                  l_shield.setAttribute("class", "l-shield");
                 burger.setAttribute("class", "burger");
-                l_menu.setAttribute("class", "l-off h");
+                l_menu.setAttribute("class", "l-menu h");
                  $("body").removeClass('blocus');
                  $('.user').insertAfter('.logo');
                 toggle = 1;
