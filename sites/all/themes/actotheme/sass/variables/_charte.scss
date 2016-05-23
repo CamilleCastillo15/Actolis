@@ -160,6 +160,11 @@
     @include transition(opacity 0.2s ease-out);
     @include animation(scroll 1.5s ease-in-out 3);
 
+    display: none;
+
+     @include breakpoint($tablet){
+      display: block;
+  }
     &:hover{
         @include opacity(0.8);
     }
@@ -299,16 +304,22 @@
 .c-block{
         
     width: 96%;
-     @include breakpoint($tablet){
+    @include breakpoint($tablet){
         width:  74.1%;
-    }
+    };
     //@include main-padding();
     
     display: block;
     margin: 0 auto;
     padding:5px;
-    margin-top:10rem;
+    margin-top:1rem;
+    margin-bottom: 1rem;
+  
+  @include breakpoint($tablet){
+   margin-top:10rem;
     margin-bottom: 10rem;
+  }
+
      @extend .gradient-h;
 
     .c-gradient{
@@ -432,8 +443,14 @@
 .c-big-cta{
     
     text-align: center;
+    margin-top:5px;
+    margin-bottom: 1rem;
+
+     @include breakpoint($tablet){
     margin-top:-15vh;
     margin-bottom: 8rem;
+
+     }
 
     .b-big-cta{
         

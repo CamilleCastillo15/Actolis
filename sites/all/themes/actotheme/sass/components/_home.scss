@@ -14,8 +14,8 @@
             }
 
             img{
-                height:100%;
-                max-width:none;
+                width :100%;
+                height :auto;
                 @include breakpoint($tablet){
                     height:auto;
                     max-width:100%;
@@ -29,8 +29,13 @@
             color: black; 
             display: block;  
             position: absolute;  
-            top:30%; 
+            top:20%; 
             width:100%;
+
+             @include breakpoint($tablet){
+                top:30%; 
+
+             }
 
             .title-home {
 
@@ -38,12 +43,14 @@
                 font-family: Actolis;
                 font-weight: bold;
                 
-                @include fz(6);
+                //@include fz(6);
+                font-size: 2.5rem;
 
                 text-align: center;
                 letter-spacing: 1rem;
 
                 @include breakpoint($tablet) {
+                     @include fz(6);
                    text-align: left;
                    display: inline-block;  
                 }
@@ -69,10 +76,11 @@
             .par-home {
 
                // margin: 2rem 0;
-                @include fz(4);
+                @include fz(5);
                 padding-top: 1.2rem;
                  text-align: center;
                 @include breakpoint($tablet){
+                     @include fz(4);
                    text-align: left;
                 }
             }
@@ -83,12 +91,21 @@
              z-index: 2;
             display: block;
             position: absolute;
-            top: 56%;
+            top: 90%;
             /* width: 100%; */
 //            left: 1.5%;
 //            color:$orange;
 //            background: $orange;
-            @include main-padding();
+           // @include main-padding();
+
+            left:50%;
+            @include translate(-50%,0px);
+
+            @include breakpoint($tablet){
+                top: 56%;
+                left:13%;
+                @include translate(0px,0px);
+            }
 
         }
 
@@ -170,16 +187,42 @@
 
     .acto-news {
         background-color: $gris;
+        padding: 0rem 2rem;
+        padding-bottom: 6rem;
         @include breakpoint($laptopl) {
             @include main-padding(15vw,15vw);
         }
-        padding: 0rem 9rem;
+       
+
+        .swiper-pagination{
+            //position: relative;
+            bottom:2rem;
+        }
+
+        .swiper-button-next,.swiper-button-prev{
+           
+            top:92%;
+        }
+
+         @include breakpoint($tablet) {
+            padding: 0rem 9rem;
+              .swiper-pagination{
+            //position: relative;
+            bottom:2rem;
+        }
+
+        .swiper-button-next,.swiper-button-prev{
+           
+            top:50%;
+        }
+        }
+        
 
         h4{
             margin-top:2rem;
             margin-bottom: 1rem;
         }
-        padding-bottom: 2rem;
+
 
         .body-acto-news {
            
@@ -187,7 +230,9 @@
             vertical-align: middle;
             text-align: left;
             width: 100%;
+            padding-bottom: 3rem;
             @include breakpoint($tablet) {
+                padding-bottom: 1rem;
                width: 60%;
                margin-left: 2%;
             }
