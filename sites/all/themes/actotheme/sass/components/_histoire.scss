@@ -164,6 +164,7 @@ h4{
   font-weight: 900;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
+
 }
 
 .c-block-histoire {
@@ -434,6 +435,7 @@ h4{
             background-color: rgba(black,0.51);
 
             h4{
+
               @include fz(4);
               color:white;
               padding: 1rem;
@@ -457,7 +459,96 @@ h4{
 
         }
 
+    }
+
+}
+
+.c-header {
+
+    background-color: transparent !important;
+
+    &.phrases-valeurs {
+
+        background-image: none !important;
+        color:black;
+
+        .dark-layer {
+
+            background-color: transparent !important;
+
+                .c-picto {
+
+                    padding: 5rem 1rem;
+                    background-color: $gris;
+                    //min-height: 150px;
+
+                h2 {
+
+                    max-width: 30rem;
+                    width: 38rem;
+                    //text-align: left;
+                    margin: 0 auto;
+                    color:black;
+                    font-weight: 200;
+
+
+                    &.phrase {
+
+
+                        text-transform: lowercase;
+                        font-style: italic;
+                        font-size:1.5rem;
+
+                        &:first-letter {
+                            text-transform: uppercase;
+                        }
+
+                    }
+
+                    &.valeur {
+
+                        font-size:1.5rem;
+                        font-weight: 200;
+                        font-size:2rem;
+                        padding-top:1rem;
+                        //text-align: right;
+
+                    }
+
+                }
+
+                &.c-picto-cle {
+
+                    margin: 0;
+                    display: inherit;
+
+                    h2 {
+
+                        margin: 0 auto;
+                        text-align: center;
+                        max-width: 100%;
+                        width: 76rem;
+                        font-size:2rem;
+                        font-weight: 800;
+
+                    }
+
+                }
+
+            }
+
+
+        }
+
+        .phrases-container-2 {
+
+            padding-top:3rem;
+
+        }
+
 
     }
 
 }
+
+
