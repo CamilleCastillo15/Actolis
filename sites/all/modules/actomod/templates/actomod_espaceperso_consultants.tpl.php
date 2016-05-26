@@ -1,6 +1,6 @@
 <?php
 
-   
+
 ?>
 
 <div class="espaceperso-clients">
@@ -10,7 +10,7 @@
       <div class="titres">
 
             <h4>Espace client</h4>
-           <h2>Accèder à votre espace privé</h2>
+            <h2>Accèder à votre espace privé</h2>
 
       </div>
 
@@ -67,7 +67,7 @@
         </div>
 
     </div>
-    
+
 </div>
 
 

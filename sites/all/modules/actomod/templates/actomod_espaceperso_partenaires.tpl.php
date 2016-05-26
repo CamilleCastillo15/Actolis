@@ -1,6 +1,6 @@
 <?php
 
-   
+
 ?>
 
 <div class="espaceperso-clients">
@@ -19,6 +19,8 @@
             <h4>Espace client</h4>
 
             <div class="c-block">
+
+
 
                 <div class="c-gradient">
 
@@ -67,7 +69,7 @@
         </div>
 
     </div>
-    
+
 </div>
 
 

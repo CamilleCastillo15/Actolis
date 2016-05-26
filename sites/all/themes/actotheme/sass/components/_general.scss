@@ -128,10 +128,10 @@ body {
 .webform-client-form {
   display: block;
   padding: 2rem;
-  .webform-component {
 
-  @include padding(2rem);
   .webform-component{
+
+      @include padding(2rem);
 
     label{
         @include fz(3);
