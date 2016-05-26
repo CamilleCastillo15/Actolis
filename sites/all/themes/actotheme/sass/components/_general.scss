@@ -128,7 +128,8 @@ body {
 .webform-client-form {
   display: block;
   //width: 50%;
-  padding: 2rem;
+ 
+  @include padding(2rem);
   .webform-component{
     label{
         @include fz(3);
@@ -175,7 +176,11 @@ body {
     background-color: #fff;
     cursor:pointer;
     float: right;
-    margin-right: 2rem;
+    margin-right: 0rem;
+
+        @include breakpoint($tablet){
+          margin-right: 2rem;
+        }
 }
 
 .webform-client-form .webform-component {
@@ -312,21 +317,30 @@ body {
     padding: 3rem;
       display: inline-block;
       vertical-align: top;
-      width: 49%;
+      @include main-49();
       
       
   }
 
   .qualites{
-    padding: 3rem;
+      padding: 3rem;
       display: inline-block;
       vertical-align: top;
-      width: 49%;
+      @include main-49();
       border-left:1px solid $gris;
       border-bottom:1px solid $gris;
       background-color: #fff;
       margin-top:-3rem;
       padding-top: 6rem;
+   
   }
+
+}
+
+.page-node-18{
+  .cta{
+        margin-top:2rem !important;
+        margin-bottom: 2rem !important;
+      }
 
 }
