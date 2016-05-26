@@ -472,24 +472,44 @@ h4{
         background-image: none !important;
         color:black;
 
+
         .dark-layer {
+
+          margin-bottom: 3rem;
 
             background-color: transparent !important;
 
+            .c-in{
+                   padding:1rem;
+                   position: relative;
+                   width: 100%;
+                   
+                   display: inline-block;
+                   @include breakpoint($tablet){
+                       padding:2rem;
+                      width: 49.8%;
+                      max-width: 40rem;
+
+                   }
+            }
+
                 .c-picto {
 
-                    padding: 5rem 1rem;
+                    padding: 2rem 1rem;
+                    width: 100%;
+                    height: 100%;
                     background-color: $gris;
+                    margin:0px !important;
                     //min-height: 150px;
 
                 h2 {
 
-                    max-width: 30rem;
-                    width: 38rem;
+                   
                     //text-align: left;
                     margin: 0 auto;
                     color:black;
                     font-weight: 200;
+                    max-width: 100%;
 
 
                     &.phrase {
@@ -498,6 +518,7 @@ h4{
                         text-transform: lowercase;
                         font-style: italic;
                         font-size:1.5rem;
+                        max-width: 100%;
 
                         &:first-letter {
                             text-transform: uppercase;
@@ -542,7 +563,7 @@ h4{
 
         .phrases-container-2 {
 
-            padding-top:3rem;
+           margin-top:2.5rem;
 
         }
 
