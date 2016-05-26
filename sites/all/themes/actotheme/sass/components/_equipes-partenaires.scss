@@ -37,7 +37,10 @@
 
 
             .va {
-    
+
+                    h4{
+                        text-align: center;
+                    }
                     position: relative;
                     z-index: 2;
                 padding: 6rem 0rem;
@@ -129,17 +132,26 @@
         font-weight: 500;
         color:black;
         text-transform: uppercase;
+        text-align: center;
+         @include breakpoint($tablet){
+        text-align: left;
+     }
     }
 
     .sep{
 
-         height: 5px;
+         height: 0.3rem;
          display: block;
-         float: right;
-         width: 90%;
+         float: none;
+         width: 100%;
          @extend .gradient-h;
          margin-top:1rem;
          margin-bottom: 3rem;
+
+          @include breakpoint($tablet){
+       float: right;
+       width: 90%;
+     }
     }
 
     .c-avatar{

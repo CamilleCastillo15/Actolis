@@ -18,7 +18,10 @@
       margin-top: 10rem;
       margin-bottom: 4rem;
       h4{
-        padding-left: 4rem;
+        padding-left: 0rem;
+        @include breakpoint($tablet){
+          padding-left: 4rem;
+        }
       }
     }
 }
@@ -27,8 +30,8 @@
   display: block;
   float: none;
   
-  padding: 2rem;
-width: 100%;
+  @include padding(2rem);
+  width: 100%;
   @include breakpoint($tablet){
     width: 50%;
     float: left;
@@ -75,6 +78,10 @@ width: 100%;
         display: inline-block;
         vertical-align: top;
         padding-left: 3rem;
+        width:  100%;
+         @include breakpoint($tablet){
+          width:  47%;
+        }
 
         @include fz(3);
 
@@ -147,12 +154,17 @@ width: 100%;
        
         position: absolute;
         z-index: 10;
-        display: block;
+        display: none;
         vertical-align: top;
         right: 2rem;
         @include jpg(map,50% 50%, 100%);
         height: 35vw;
         width: 35vw;
+
+        @include breakpoint($tablet){
+            display: block;
+
+        }
 
         @include breakpoint($laptop) {
             
@@ -174,6 +186,12 @@ width: 100%;
             @include opacity(0.9);
              @include transition(all 0.2s ease-out);
 
+        }
+
+        .montpellier{
+          position: absolute;
+           top: 71%;
+    left: 61%;
         }
 
         .bt-nord,.bt-sud{

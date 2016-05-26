@@ -8,10 +8,15 @@
 
 
 .c-form{
-  margin-top: 10rem;
-  margin-bottom: 4rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
   h4{
     padding-left: 4rem;
+  }
+
+  @include breakpoint($tablet){
+ margin-top: 10rem;
+  margin-bottom: 4rem;
   }
 }
 

@@ -189,8 +189,14 @@
         background-color: $gris;
         padding: 0rem 2rem;
         padding-bottom: 6rem;
+         @include breakpoint($tablet) {
+            padding: 0rem 9rem;
+              .swiper-pagination{
+            //position: relative;
+            bottom:2rem;
+        }
         @include breakpoint($laptopl) {
-            @include main-padding(15vw,15vw);
+            @include main-padding();
         }
        
 
@@ -204,12 +210,7 @@
             top:92%;
         }
 
-         @include breakpoint($tablet) {
-            padding: 0rem 9rem;
-              .swiper-pagination{
-            //position: relative;
-            bottom:2rem;
-        }
+
 
         .swiper-button-next,.swiper-button-prev{
            

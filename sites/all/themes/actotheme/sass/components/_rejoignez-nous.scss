@@ -26,8 +26,15 @@
 	    display: block;
 	    margin: 0 auto;
 	    padding: 3rem;
-	    margin-top:7rem;
+	    		  margin-top:2rem;
+	    margin-bottom: 2rem;
+	     @include breakpoint($tablet) {
+
+	     	margin-top:7rem;
 	    margin-bottom: 6rem;
+
+
+				 }
 	    @include main-padding();
 
 		h4{
@@ -41,7 +48,12 @@
 
 
 				display: inline-block;
-				width: 33%;
+				width: 100%;
+
+				 @include breakpoint($tablet) {
+
+						width: 33%;
+				 }
 				
 				height: 6rem;
 				padding-top: 2rem;
@@ -98,7 +110,10 @@
 
 .c-form{
 		h4{
-			padding-left: 4rem;
+			padding-left: 0rem;
+        	@include breakpoint($tablet){
+         	 padding-left: 4rem;
+        	}
 		}
 	.c-text{
 		@include main-padding();
@@ -109,9 +124,10 @@
 		p{
 			display: block;	
 			margin:0 auto;
-			width: 50%;
+			@include main-50();
 			font-size: 	1.2rem;
 			font-weight: 	bold;
+
 		}
 	}
 	.cc-block{
@@ -138,8 +154,11 @@
  background-image: none;
  padding-left: 1rem;
  margin:0px;
- margin-left: 4rem;
+ margin-left: 0rem;
  font-weight: bold;
+ @include breakpoint($tablet){
+         	 margin-left: 4rem;
+        	}
 }
 .messages--status{
  background-color: white !important;
@@ -148,8 +167,11 @@
  background-image: none;
  padding-left: 1rem;
  margin:0px;
- margin-left: 4rem;
+margin-left: 0rem;
  font-weight: bold;
+ @include breakpoint($tablet){
+         	 margin-left: 4rem;
+        	}
  a{
  	color:$vert;
  }

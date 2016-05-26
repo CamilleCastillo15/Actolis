@@ -164,6 +164,18 @@ h4{
   font-weight: 900;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
+  text-align: center;
+  @include breakpoint($tablet){
+    text-align: left;
+  }
+}
+
+.centre-formation{
+  .c-header{
+ h4{
+    text-align: center !important;
+  }
+  }
 
 }
 
@@ -188,10 +200,15 @@ h4{
     .c-blanc{
 
        background-color: white;
-       padding: 3rem;
+       padding: 0rem;
        position: relative;
        perspective: 1000px;
        min-height: 27vh;
+       @include breakpoint($tablet) {
+
+            padding: 3rem;
+
+       }
 
     }
 
@@ -204,6 +221,9 @@ h4{
          @include breakpoint($tablet){
            display: inline-block;
             width:  47%;
+         }
+         h4{
+          //text-align: left;
          }
 
         .c-cta{
@@ -246,8 +266,9 @@ h4{
          @include jpg(histoire_photo,50% 50%, cover);
         min-height: 35vh;
         top:0%;
-        
+         margin-top: 2rem;
          @include breakpoint($tablet){
+          margin-top: 0px;
           right: 2rem;
           @include translate(0px,-50%);
            top:50%;
@@ -480,32 +501,37 @@ h4{
             background-color: transparent !important;
 
             .c-in{
-                   padding:1rem;
+                   padding:2rem;
                    position: relative;
                    width: 100%;
                    
                    display: inline-block;
                    @include breakpoint($tablet){
-                       padding:2rem;
+                       padding:4rem;
                       width: 49.8%;
                       max-width: 40rem;
+
 
                    }
             }
 
                 .c-picto {
 
-                    padding: 2rem 1rem;
+                  animation:none;
+
+                    padding: 3rem 2rem;
                     width: 100%;
                     height: 100%;
                     background-color: $gris;
                     margin:0px !important;
+                     min-height: 20rem;
+                     padding-top: 15%;
                     //min-height: 150px;
 
                 h2 {
 
                    
-                    //text-align: left;
+                    text-align: center;
                     margin: 0 auto;
                     color:black;
                     font-weight: 200;
@@ -517,8 +543,9 @@ h4{
 
                         text-transform: lowercase;
                         font-style: italic;
-                        font-size:1.5rem;
+
                         max-width: 100%;
+                        @include fz(4);
 
                         &:first-letter {
                             text-transform: uppercase;
@@ -533,15 +560,38 @@ h4{
                         font-size:2rem;
                         padding-top:1rem;
                         //text-align: right;
+                        position: absolute;
+                        bottom: 7rem;
+                        right: 7rem;
+                        display: block;
+                        width: auto;
+
+
+                        &:before{
+                          content:"";
+                          display: block;
+                          width: 3rem;
+                          height: 0.33rem;
+                          @extend .gradient-h;
+                          position: absolute;
+                          right: -4rem;
+                          bottom:0.5rem;
+                        }
 
                     }
 
+
+
                 }
+
+
 
                 &.c-picto-cle {
 
                     margin: 0;
                     display: inherit;
+                    padding: 2rem;
+                    position: relative;
 
                     h2 {
 
@@ -549,8 +599,19 @@ h4{
                         text-align: center;
                         max-width: 100%;
                         width: 76rem;
-                        font-size:2rem;
+
                         font-weight: 800;
+                        @include fz(5);
+
+                        &.valeur{
+                          position: relative;
+                          bottom: 0px;
+                          right: 0px;
+                          display: inline;
+                          &:before{
+                            display: none;
+                          }
+                        }
 
                     }
 
