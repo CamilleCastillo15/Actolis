@@ -1,15 +1,19 @@
 @import "variables";
 @import "mixin";
 
-
-
-
-
 @font-face {
     font-family: Actolis;
     src: url("../fonts/actolis.otf") format("opentype");
 }
 
+
+.c-form{
+  margin-top: 10rem;
+  margin-bottom: 4rem;
+  h4{
+    padding-left: 4rem;
+  }
+}
 
 .c-icone{
    position: relative;
