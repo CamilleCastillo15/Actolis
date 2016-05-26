@@ -39,6 +39,7 @@
 
 
    <div class="logos-partenaires">
+   <div class="gradient"></div>
 
       <div class="va">
 
@@ -63,8 +64,9 @@
 
                 <a href="<?php print render($link_logos)?>" target="_blank">
                     <?php print render($image_logos); ?>
+                    <h6><?php print render($title_logos); ?></h6>
                 </a>
-                <h2><?php print render($title_logos); ?></h2>
+                
             </div>
 
         <?php } ?>
@@ -114,7 +116,10 @@
         <div class="sep"></div>
         <div class="clear"></div>
         <div class="c-avatar">
-            <?php print render($image) ?>
+        <div class="c-img">
+             <?php print render($image) ?>
+        </div>
+           
             <span class="nom"><?php print render($title_image) ?></span>
         </div>
         <div class="c-text"><?php print render($texte) ?></div>

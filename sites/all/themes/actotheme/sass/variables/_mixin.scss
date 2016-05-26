@@ -177,6 +177,9 @@ $fallback-extension: 'png' !default;
 .gradient-v{
 	@include background-gradient($vert,$bleu);
 }
+.gradient-light{
+  @include background-gradient($gris,white);
+}
 
 
 /// Background Horizontal

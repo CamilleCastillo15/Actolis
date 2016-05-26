@@ -103,16 +103,18 @@
 
                 ?>
 
-                <div class="c-picto">
-                    <h2 class="phrase"><?php print render($phrase); ?></h2>
-                    <h2 class="valeur"><?php print render($valeur); ?></h2>
+                <div class="c-in">
+                    <div class="c-picto">
+                        <h2 class="phrase"><?php print render($phrase); ?></h2>
+                        <h2 class="valeur"><?php print render($valeur); ?></h2>
+                    </div>
                 </div>
 
                 <?php } ?>
 
             </div>
 
-            <div class="c-phrases-container phrases-container-2">
+            <div class="c-phrases-container">
 
                 <?php
 
@@ -125,11 +127,13 @@
                     $valeur = field_view_field('field_collection_item', $collectiong_2_phrases_valeurs, 'field_valeur');
 
                 ?>
-
+                <div class="c-in">
                 <div class="c-picto">
                     <h2 class="phrase"><?php print render($phrase); ?></h2>
                     <h2 class="valeur"><?php print render($valeur); ?></h2>
                 </div>
+                </div>
+
 
                 <?php } ?>
 
