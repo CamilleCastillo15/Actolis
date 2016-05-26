@@ -27,7 +27,6 @@
                    <div class="form-col">
 
                         <div>
-                           <h4>LOGIN</h4>
                              <?php print drupal_render($loginform); ?>
                         </div>
 
@@ -36,7 +35,6 @@
                     <div class="form-col">
 
                         <div >
-                           <h4>REGISTER</h4>
                            <div class="description">
 
                                Vous êtes client Actolis, vous n'avez pas encore accès à votre espace privé ?<br />
