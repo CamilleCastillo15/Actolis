@@ -1,0 +1,4 @@
+name = Actolis mod
+description = Module pour le site actolis
+core = 7.x
+version = 7.x-0.1
