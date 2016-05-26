@@ -83,6 +83,7 @@
             </div>
             
             <div class="c-img"> 
+                <span class="pointer montpellier"></span>
                 <a target="blank" href="https://www.google.fr/maps/place/BIOCITECH/@48.89392,2.4316879,17.71z/data=!4m8!1m2!2m1!1sParc+Biotech+102+avenue+Gaston+Roussel+93230+Romainville!3m4!1s0x0000000000000000:0x35cc4ec0dc203b21!8m2!3d48.8941708!4d2.4330157" class="bt-nord"><span class="pointer"></span></a>
                 <a target="blank" href="https://www.google.fr/maps/place/Actolis/@45.7695649,4.8283971,18z/data=!3m1!4b1!4m5!3m4!1s0x47f4eb0210d1f02f:0x17c7a70a70914863!8m2!3d45.7695649!4d4.8294914" class="bt-sud"><span class="pointer"></span></a>
             </div>
