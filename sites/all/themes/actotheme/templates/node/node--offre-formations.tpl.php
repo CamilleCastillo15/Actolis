@@ -20,12 +20,12 @@
                  <div class="sep"></div>
              </div>
 -->
+<div class='sep'></div>
 
             <?php print l("
                 <div class='item-offre'>
                     <span class='nom'>".$nom_render."</span>
                     <span class='date'>".$date_render."</span>
-                    <div class='sep'></div>
                 </div>", $link, array("html"=>true)); ?>
 
 <?php    } else {

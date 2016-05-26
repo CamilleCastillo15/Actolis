@@ -67,7 +67,7 @@
                 $p3 = file_create_url($image_domaine_3[0]["uri"]);
                 $p4 = file_create_url($image_domaine_4[0]["uri"]);
 
-                dpm($p1);
+                //dpm($p1);
 
                 drupal_add_css('.c-block-domaine .c-img-1 {background-image: url("'.$p1.'") !important; } ', 'inline');
                 drupal_add_css('.c-block-domaine .c-img-2 {background-image: url("'.$p2.'") !important; } ', 'inline');

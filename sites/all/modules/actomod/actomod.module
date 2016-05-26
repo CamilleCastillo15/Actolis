@@ -1,0 +1,118 @@
+<?php
+
+/**
+ * @file
+ * A block module that displays a footer
+ */
+function actomod_help($path, $arg) {
+  switch ($path) {
+    case "admin/help#actomod":
+      return '<p>'.t("Module qui contient des blocks et des pages pour le site actolis").'</p>';
+      break;
+  }
+ }
+function actomod_permission() {
+    return array(
+        'access actomod admin' => array(
+            'title' => "Acceder à l'interface d'administration du site actolis"
+        )
+    );
+}
+
+function actomod_menu() {	
+    $items = array();
+    /*
+    $items['admin/settings/ateliers'] = array(
+        'title' => 'Configuration du site' ,
+        'description' => 'Configuration de l\'adresse, du google map, etc..',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('actomod_admin'),    
+        'access arguments' => array('access actomod admin'),
+        'type' => MENU_NORMAL_ITEM,
+    );*/
+    $items['espace-personnel/%'] = array(
+        'title' => 'Connexion à l\espace personnel' ,
+        'description' => 'PAge de connexion à l\espace personnel',
+        'access callback' => TRUE,
+         'page callback' => 'actomod_espaceperso',
+        'page arguments' => array(0,1),        
+        'type' => MENU_NORMAL_ITEM,
+    );
+   
+	return $items;
+}
+
+function actomod_espaceperso($arg,$hop){
+    dpm($hop);
+    global $user;
+    if(user_is_logged_in()){
+        //
+        print "logged";
+        //redirect vers /user/
+        
+    }
+    //
+    $tpl = "";
+    switch($hop){
+        case "clients":
+            $tpl =  "actomod_espaceperso_clients";   
+            break;
+        case "partenaires":
+            $tpl =  "actomod_espaceperso_partenaires";
+            break;
+        case "consultants":
+            $tpl =  "actomod_espaceperso_consultants";
+            break;
+        default:
+            $tpl = "none";
+    }
+    if($tpl == "none"){
+        return drupal_not_found();
+        
+    }
+    $loginform = drupal_get_form('user_login_block');
+    $registerform = drupal_get_form('user_register_form');
+    
+    
+    return theme($tpl, array('loginform' => $loginform, 'registerform'=>$registerform));
+    
+    
+    /*
+    $view = views_get_view("atelier_id");
+    $view->set_arguments(array($hop));
+    $view->execute();
+    $result = $view->result;
+    if(count($result)==0){
+        //redirection
+        return "Cet atelier n'existe pas";
+        
+    }else{
+        $result[0];
+        $node = node_load($result[0]->nid);
+        $view = views_embed_view('actus', 'page_1', $result[0]->nid);
+        //return $view;
+        return theme('actomod_actus', array('view' => $view, 'node'=>$node));
+    }
+    
+    */
+    //return NULL;
+   // return 'hop '.$arg . " ".$hop;
+}
+
+
+
+
+
+function actomod_theme($existing, $type, $theme, $path){
+  $themez = drupal_get_path("theme",$GLOBALS['theme']);
+  return array(
+    'actomod_espaceperso_clients' => array(
+        'template' => 'templates/actomod_espaceperso_clients', // Change this to the template file name.
+        'variables' => array('login' => NULL,"machin"=> NULL), // This is the list of the variables that will be passed to the template file. 
+    ),  
+   
+  );
+}
+
+
+
