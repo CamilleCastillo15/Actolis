@@ -127,13 +127,14 @@
         background-color: $gris;
        
         padding:3rem;
-        padding-right: 12rem;
+        padding-right: 3rem;
         position: relative ;
         display: inline-block;
         vertical-align: top;
         width: 100%;
       @include breakpoint($tablet){
         width: 60%;
+        padding-right: 12rem;
       
       }
 
@@ -294,6 +295,11 @@
 .e-d-c{
     text-align: center;
     @include main-padding(25vw,25vw);
+
+     @include breakpoint($laptop) {
+
+        
+     }
     position: relative;
     display: block;
     width: 100%;
@@ -317,9 +323,9 @@
             }
         }
             
-           
+           padding-top: 8rem;
          @include breakpoint($laptopl) {
-padding-top: 10rem;
+            padding-top: 10rem;
             width: 55vw;
             height: 55vw;
              margin-left: -5.7vw;
@@ -336,7 +342,7 @@ padding-top: 10rem;
              padding: 0.2rem;
              min-height: 25rem;
 
-              @include breakpoint($tablet){
+              @include breakpoint($laptop){
                  float: left;
          width: 50%;
             height: 50%;
@@ -358,7 +364,7 @@ padding-top: 10rem;
             a{
                 display: block;
                 color:black;
-                background-color: rgba(white,0.5);
+                background-color: rgba(white,0.7);
                 width: 100%;
                 height: 100%;
                 position: relative;

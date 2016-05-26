@@ -552,8 +552,8 @@ h4{
                         padding-top:1rem;
                         //text-align: right;
                         position: absolute;
-                        bottom: 5rem;
-                        right: 5rem;
+                        bottom: 7rem;
+                        right: 7rem;
                         display: block;
                         width: auto;
                        
@@ -581,6 +581,8 @@ h4{
 
                     margin: 0;
                     display: inherit;
+                    padding: 2rem;
+                    position: relative;
 
                     h2 {
 
@@ -591,6 +593,16 @@ h4{
           
                         font-weight: 800;
                         @include fz(5);
+
+                        &.valeur{
+                          position: relative;
+                          bottom: 0px;
+                          right: 0px;
+                          display: inline;
+                          &:before{
+                            display: none;
+                          }
+                        }
 
                     }
 
