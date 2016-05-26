@@ -120,7 +120,7 @@
     </div>
 
     <div class="acto-news swiper-container">
-            <div class="swiper-wrapper">
+        <div class="swiper-wrapper">
             <?php
                 $fc_acto_news = field_get_items('node', $node, 'field_acto_news');
                 if($fc_acto_news){
@@ -191,7 +191,7 @@
                 <h4><?php print render($title_rejoignez_nous); ?></h4>
                 <?php print render($texte_rejoignez_nous); ?>
                 <div class="c-cta">
-                    <?php print l("Formulaire en ligne", "/content/rejoignez-nous", array("html"=>true, 'attributes' => array('class' => array('cta')))); ?>
+                    <?php print l("Formulaire en ligne", "/content/lecoindestalents", array("html"=>true, 'attributes' => array('class' => array('cta')))); ?>
                 </div>
             </div>
             <div class="c-img">
