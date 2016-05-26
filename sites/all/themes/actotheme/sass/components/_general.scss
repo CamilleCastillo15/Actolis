@@ -39,8 +39,7 @@ body {
           
      }
     @include breakpoint($laptop) {
-        
-        
+
         &:before{
 
           display: none;

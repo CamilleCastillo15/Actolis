@@ -48,46 +48,9 @@
             </div>
             <?php }  ?>
 
-<!--
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
--->
-        </div>
-    </div>
-
-<!--
-    <div class="c-big-cta">
-
-        <div class="b-big-cta b1">
-            <div class="gradient"></div>
-            <a href="#">
-
-                <div class="picto"></div>
-                <h3>Titre</h3>
-                <div class="cta">voir plus</div>
-            </a>
-        </div>
-        <div class="b-big-cta b2">
-            <div class="gradient"></div>
-            <a href="#">
-
-                <div class="picto"></div>
-                <h3>pharma & biotechnologie</h3>
-                <div class="cta">voir plus</div>
-            </a>
-        </div>
-        <div class="b-big-cta b3">
-            <div class="gradient"></div>
-            <a href="#">
-
-                <div class="picto"></div>
-                <h3>Titre</h3>
-                <div class="cta">voir plus</div>
-            </a>
         </div>
 
     </div>
--->
 
     <div class="c-big-cta">
 

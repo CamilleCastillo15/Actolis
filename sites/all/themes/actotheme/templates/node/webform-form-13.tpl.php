@@ -20,6 +20,7 @@
  * - $form['preview_message']: The preview message renderable.
  * - $form['preview']: A renderable representing the entire submission preview.
  */
+
 ?>
 <?php
   // Print out the progress bar at the top of the page

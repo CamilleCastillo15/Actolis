@@ -21,9 +21,59 @@
 
     drupal_add_css('.equipes_et_partenaire .c-block-histoire .c-img {background-image: url("'.$p.'") !important; } ', 'inline');
 
+    $fc_logos_partenaires = field_get_items('node', $node, 'field_fc_partenaires');
+
+    if($fc_logos_partenaires){
+        $idti_logos = array();
+        foreach ($fc_logos_partenaires as $fc_field) {
+            $idti_logos[] = $fc_field['value'];
+        }
+        $collectionsg_logos =  field_collection_item_load_multiple($idti_logos);
+    }
+
+    $title_logos_partenaires = field_view_field("node",$node, 'field_title_logos_partenaires');
+
 ?>
 
 <div class="equipes_et_partenaire">
+
+
+   <div class="logos-partenaires">
+
+      <div class="va">
+
+        <h4><?php print render($title_logos_partenaires); ?></h4>
+
+       <?php
+
+            for($i = 0; $i < count($idti); $i++) {
+
+            $collectionsg_logos_2 = $collectionsg_logos[$idti_logos[$i]];
+
+            //dpm($collectionsg_logos);
+
+            $title_logos = field_view_field('field_collection_item', $collectionsg_logos_2, 'field_title_logo_partenaire');
+
+            $image_logos = field_view_field('field_collection_item', $collectionsg_logos_2, 'field_image_logo_partenaire');
+
+            $link_logos = field_view_field('field_collection_item', $collectionsg_logos_2, 'field_link_logo_partenaire');
+        ?>
+
+            <div class="c-picto">
+
+                <a href="<?php print render($link_logos)?>" target="_blank">
+                    <?php print render($image_logos); ?>
+                </a>
+                <h2><?php print render($title_logos); ?></h2>
+            </div>
+
+        <?php } ?>
+
+      </div>
+
+
+
+   </div>
 
     <div class="c-block-histoire">
 
@@ -71,33 +121,5 @@
     </div>
 
     <?php } ?>
-
-<!--
-    <div class="c-block-temoignage">
-        <h5>témoignage XXXXXXXXXXXX</h5>
-        <div class="sep"></div>
-        <div class="clear"></div>
-        <div class="c-avatar">
-            <img src="https://a3-images.myspacecdn.com/images03/30/64305e0fdf2d48ab9faf32bb4c5969c0/300x300.jpg" alt="">
-            <span class="nom">gorge abidbol</span>
-        </div>
-        <div class="c-text">Il faut faire confiance au pouvoir infini de l’Amour. L’Amour est l’Energie de Création, alors si cet Amour demeure en vous, vous participez à la recréation, au réaménagement de votre monde. Vous participez à la mise en place du prochain cycle.</div>
-    </div>
-
-
-    <div class="c-block-temoignage">
-        <h5>témoignage XXXXXXXXXXXX</h5>
-        <div class="sep"></div>
-        <div class="clear"></div>
-        <div class="c-avatar">
-            <img src="https://a3-images.myspacecdn.com/images03/30/64305e0fdf2d48ab9faf32bb4c5969c0/300x300.jpg" alt="">
-            <span class="nom">gorge abidbol</span>
-        </div>
-        <div class="c-text">Sweet marzipan apple pie jelly dessert jelly I love I love. Fruitcake cotton candy marzipan chocolate cake candy canes. Sweet fruitcake chupa chups gingerbread. Cupcake gummies chocolate bar jujubes gummi bears chocolate cake candy sweet roll lemon drops. Chocolate macaroon apple pie marzipan. Gummies gummies chocolate cake. I love cupcake I love sugar plum I love soufflé chupa chups. Halvah I love toffee. Tiramisu tiramisu chocolate cake candy canes. Croissant pie candy jujubes. Gingerbread cheesecake donut soufflé sesame snaps cheesecake tart. I love toffee donut tiramisu.</div>
-        <div class="c-cta">
-            <a href="" class="cta">sites partenaires</a>
-        </div>
-    </div>
--->
 
 </div>
