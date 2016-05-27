@@ -109,7 +109,15 @@ function actomod_theme($existing, $type, $theme, $path){
     'actomod_espaceperso_clients' => array(
         'template' => 'templates/actomod_espaceperso_clients', // Change this to the template file name.
         'variables' => array('login' => NULL,"machin"=> NULL), // This is the list of the variables that will be passed to the template file. 
-    ),  
+    ), 
+    'actomod_espaceperso_partenaires' => array(
+        'template' => 'templates/actomod_espaceperso_partenaires', // Change this to the template file name.
+        'variables' => array('login' => NULL,"machin"=> NULL), // This is the list of the variables that will be passed to the template file. 
+    ), 
+    'actomod_espaceperso_consultants' => array(
+        'template' => 'templates/actomod_espaceperso_consultants', // Change this to the template file name.
+        'variables' => array('login' => NULL,"machin"=> NULL), // This is the list of the variables that will be passed to the template file. 
+    )
    
   );
 }

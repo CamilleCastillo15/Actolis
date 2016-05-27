@@ -1,4 +1,4 @@
-.espaceperso-clients {
+.espaceperso {
 
     .c-form {
       display: block;
@@ -88,6 +88,34 @@
         }
     }
 
+    &.consultants, &.partenaires {
+
+        .cc-block {
+
+            text-align: center;
+
+            .form-col {
+
+            @include breakpoint($laptop) {
+
+                     padding-left: 12rem;
+                     padding-right: 12rem;
+                     border-left: 2px solid #02bce8;
+                     width:100%;
+
+                    &:first-child {
+
+                        border-left: 0px solid blue;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
 
 }
 

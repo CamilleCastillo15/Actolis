@@ -3,7 +3,7 @@
    
 ?>
 
-<div class="espaceperso-clients">
+<div class="espaceperso clients">
 
     <div class="c-form">
 
