@@ -98,7 +98,13 @@ function actomod_espaceperso($arg,$hop){
 }
 
 
+function actomod_form_user_pass_alter(&$form, &$form_state){
 
+    print "test";
+    dpm($form_state);
+    
+    $form_state["redirect"] = "content/home";
+}
 
 
 function actomod_theme($existing, $type, $theme, $path){
@@ -118,6 +124,7 @@ function actomod_theme($existing, $type, $theme, $path){
     )
    
   );
+    
 }
 
 
