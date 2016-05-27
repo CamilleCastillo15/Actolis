@@ -73,9 +73,7 @@ function actomod_espaceperso($arg,$hop){
     $loginform = drupal_get_form('user_login_block');
     $registerform = drupal_get_form('user_register_form');
     
-    
     return theme($tpl, array('loginform' => $loginform, 'registerform'=>$registerform));
-    
     
     /*
     $view = views_get_view("atelier_id");
