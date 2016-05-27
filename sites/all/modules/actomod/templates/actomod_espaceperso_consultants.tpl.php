@@ -25,7 +25,13 @@
                     <div class="form-col">
 
                         <div>
-                             <?php print drupal_render($loginform); ?>
+                             <?php //print drupal_render($loginform);
+                            $loginform["links"]["#children"] = null;
+                            $loginform["links"]["#markup"] = null;
+                            print drupal_render($loginform);
+                            dpm($loginform);?>
+
+                            <a href="/user/password" title="Request new password via e-mail.">Request new password</a>
                         </div>
 
                     </div>
