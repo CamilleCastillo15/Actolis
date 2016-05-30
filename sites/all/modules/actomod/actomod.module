@@ -106,6 +106,15 @@ function actomod_form_user_pass_alter(&$form, &$form_state){
     $form_state["redirect"] = "content/home";
 }
 
+function actomod_form_alter(&$form, &$form_state, $form_id) {
+  if ('user_pass' == $form_id) {
+    $form['#submit'][] = '_password_recover_submit';
+  }
+}
+
+function _password_recover_submit($form, &$form_state){
+  $form_state['redirect'] = "content/home";
+}
 
 function actomod_theme($existing, $type, $theme, $path){
   $themez = drupal_get_path("theme",$GLOBALS['theme']);
