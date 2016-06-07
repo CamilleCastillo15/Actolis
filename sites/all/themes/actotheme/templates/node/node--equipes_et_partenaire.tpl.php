@@ -37,46 +37,6 @@
 
 <div class="equipes_et_partenaire">
 
-
-   <div class="logos-partenaires">
-   <div class="gradient"></div>
-
-      <div class="va">
-
-        <h4><?php print render($title_logos_partenaires); ?></h4>
-
-       <?php
-
-            for($i = 0; $i < count($idti); $i++) {
-
-            $collectionsg_logos_2 = $collectionsg_logos[$idti_logos[$i]];
-
-            //dpm($collectionsg_logos);
-
-            $title_logos = field_view_field('field_collection_item', $collectionsg_logos_2, 'field_title_logo_partenaire');
-
-            $image_logos = field_view_field('field_collection_item', $collectionsg_logos_2, 'field_image_logo_partenaire');
-
-            $link_logos = field_view_field('field_collection_item', $collectionsg_logos_2, 'field_link_logo_partenaire');
-        ?>
-
-            <div class="c-picto">
-
-                <a href="<?php print render($link_logos)?>" target="_blank">
-                    <?php print render($image_logos); ?>
-                    <h6><?php print render($title_logos); ?></h6>
-                </a>
-                
-            </div>
-
-        <?php } ?>
-
-      </div>
-
-
-
-   </div>
-
     <div class="c-block-histoire">
 
         <div class="c-blanc">
@@ -126,5 +86,42 @@
     </div>
 
     <?php } ?>
+
+       <div class="logos-partenaires">
+   <div class="gradient"></div>
+
+      <div class="va">
+
+        <h4><?php print render($title_logos_partenaires); ?></h4>
+
+       <?php
+
+            for($i = 0; $i < count($idti); $i++) {
+
+            $collectionsg_logos_2 = $collectionsg_logos[$idti_logos[$i]];
+
+            //dpm($collectionsg_logos);
+
+            $title_logos = field_view_field('field_collection_item', $collectionsg_logos_2, 'field_title_logo_partenaire');
+
+            $image_logos = field_view_field('field_collection_item', $collectionsg_logos_2, 'field_image_logo_partenaire');
+
+            $link_logos = field_view_field('field_collection_item', $collectionsg_logos_2, 'field_link_logo_partenaire');
+        ?>
+
+            <div class="c-picto">
+
+                <a href="<?php print render($link_logos)?>" target="_blank">
+                    <?php print render($image_logos); ?>
+                    <h6><?php print render($title_logos); ?></h6>
+                </a>
+
+            </div>
+
+        <?php } ?>
+
+      </div>
+
+    </div>
 
 </div>
