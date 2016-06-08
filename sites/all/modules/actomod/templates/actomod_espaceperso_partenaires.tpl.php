@@ -10,7 +10,7 @@
       <div class="titres">
 
             <h4>Espace partenaires</h4>
-            <h2>Accèder à votre espace privé</h2>
+            <h2>Cher partenaire, identifiez - vous :</h2>
 
       </div>
 

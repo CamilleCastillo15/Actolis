@@ -10,7 +10,7 @@
       <div class="titres">
 
             <h4>Espace consultants</h4>
-            <h2>Accèder à votre espace privé</h2>
+            <h2>Consultants</h2>
 
       </div>
 

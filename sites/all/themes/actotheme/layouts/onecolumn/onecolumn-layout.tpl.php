@@ -15,9 +15,9 @@
     <div class="user">
         <?php print render($page['user']); ?>
         <ul class="menu">
-            <li class="active-trail"><a href="">Consultants</a></li>
-            <li><a href="">Partenaires</a></li>
-            <li><a href="">Clients</a></li>
+            <li class="active-trail"><a href="/espace-personnel/consultants">Consultants</a></li>
+            <li><a href="/espace-personnel/partenaires">Partenaires</a></li>
+            <li><a href="/espace-personnel/clients">Clients</a></li>
         </ul>
              
     </div>
@@ -25,19 +25,16 @@
 </div>
 <div class="l-menu">
     <?php print render($page['header']); ?>
-<div class="domaine-menu">
-    <?php
+    <div class="domaine-menu">
+        <?php
 
-        $view_domaines = views_get_view('domaines');
-        $view_domaines->execute();
-        $result_domaines = $view_domaines->result;
+            $view_domaines = views_get_view('domaines');
+            $view_domaines->execute();
+            $result_domaines = $view_domaines->result;
 
-    ?>
-
+        ?>
         <ul class="menu">
-
             <?php foreach($result_domaines as $key => $value) { ?>
-
                     <?php
 
                           $n = node_load($value->nid);
@@ -56,10 +53,8 @@
 
                        }
                 ?>
-
         </ul>
-
-</div>
+    </div>
 </div>
 <div <?php print $attributes;?>>
     <div class="l-content">

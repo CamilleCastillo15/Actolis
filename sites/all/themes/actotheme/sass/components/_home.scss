@@ -199,6 +199,11 @@
             @include main-padding();
         }
        
+         .swiper-wrapper {
+
+             padding-bottom: 5rem;
+
+         }
 
         .swiper-pagination{
             //position: relative;
