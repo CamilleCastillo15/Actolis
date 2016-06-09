@@ -39,7 +39,7 @@
 
             .title-home {
 
-                text-transform: uppercase;
+//                text-transform: uppercase;
                 font-family: Actolis;
                 font-weight: bold;
                 
@@ -48,6 +48,8 @@
 
                 text-align: center;
                 letter-spacing: 1rem;
+
+                color:$orange;
 
                 @include breakpoint($tablet) {
                      @include fz(6);

@@ -592,26 +592,40 @@ h4{
                     display: inherit;
                     padding: 2rem;
                     position: relative;
+                    padding-top: 7rem;
 
                     h2 {
 
                         margin: 0 auto;
                         text-align: center;
                         max-width: 100%;
-                        width: 76rem;
+//                        width: 76rem;
 
                         font-weight: 800;
-                        @include fz(5);
+//                        @include fz(5);
 
                         &.valeur{
-                          position: relative;
-                          bottom: 0px;
-                          right: 0px;
+//                          position: relative;
+                          bottom: 60px;
+                          right: 30%;
                           display: inline;
-                          &:before{
-                            display: none;
-                          }
+                          font-size: 3rem;
                         }
+
+//                        &.valeur_cle {
+//
+//                            &:before{
+//                              content:"";
+//                              display: block;
+//                              width: 3rem;
+//                              height: 0.33rem;
+//                              @extend .gradient-h;
+//                              position: absolute;
+//                              right: -4rem;
+//                              bottom:0.5rem;
+//                            }
+//
+//                        }
 
                     }
 
