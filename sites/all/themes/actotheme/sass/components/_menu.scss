@@ -15,10 +15,12 @@
         text-align: left;
         
         width: 100%;
- top: 0px;
+        top: 0px;
         position: fixed;
         z-index: 100;
         
+        font-size: 1.5rem;
+
         visibility: hidden; 
         background-color: rgba(white,0.9);
         left:-90%;
@@ -198,7 +200,7 @@
                                 text-align: left;
                                 vertical-align: middle;
                                 text-transform: uppercase;
-                                @include fz(3);
+                                @include fz(4);
                                 font-weight: 700;
                                 max-width: 20vw;
                                 width: auto;
@@ -255,7 +257,6 @@
                            color:black;
                         }
                     }
-                
             }
         }
     }

@@ -49,6 +49,23 @@
 
     </div>
 
+    <div class="c-block-histoire">
+
+        <div class="c-blanc">
+
+            <div class="c-text">
+
+                <?php print render($texte); ?>
+
+            </div>
+            <div class="c-img">
+
+            </div>
+
+        </div>
+
+    </div>
+
     <div class="c-header">
 
         <div class="dark-layer">
@@ -73,23 +90,6 @@
 
         </div>
 
-    </div>
-
-    <div class="c-block-histoire">
-
-        <div class="c-blanc">
-                
-            <div class="c-text">
-               
-                <?php print render($texte); ?>
-
-            </div>
-            <div class="c-img"> 
-                
-            </div>
-
-        </div>
-    
     </div>
 
 </div>
