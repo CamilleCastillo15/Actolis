@@ -64,16 +64,27 @@
 
                     $collectiong_2_phrases_valeurs = $collectionsg_phrases_valeurs[$idti_phrases_valeurs[$i]];
 
+                    dpm($collectiong_2_phrases_valeurs);
+
                     $phrase = field_view_field('field_collection_item', $collectiong_2_phrases_valeurs, 'field_phrase');
 
                     $valeur = field_view_field('field_collection_item', $collectiong_2_phrases_valeurs, 'field_valeur');
+
+                    $picto_valeur = field_view_field('field_collection_item', $collectiong_2_phrases_valeurs, 'field_pictos');
+
+                    dpm($picto_valeur);
 
                 ?>
 
                 <div class="c-in">
                     <div class="c-picto">
                         <h2 class="phrase"><?php print render($phrase); ?></h2>
-                        <h2 class="valeur"><?php print render($valeur); ?></h2>
+
+                        <div class="valeur-container">
+                            <div class="picto_valeur"><?php print render($picto_valeur); ?></div>
+                            <h2 class="valeur"><?php print render($valeur); ?></h2>
+                        </div>
+
                     </div>
                 </div>
 
@@ -93,12 +104,19 @@
 
                     $valeur = field_view_field('field_collection_item', $collectiong_2_phrases_valeurs, 'field_valeur');
 
+                    $picto_valeur = field_view_field('field_collection_item', $collectiong_2_phrases_valeurs, 'field_pictos');
+
                 ?>
                 <div class="c-in">
-                <div class="c-picto">
-                    <h2 class="phrase"><?php print render($phrase); ?></h2>
-                    <h2 class="valeur"><?php print render($valeur); ?></h2>
-                </div>
+                    <div class="c-picto">
+                        <h2 class="phrase"><?php print render($phrase); ?></h2>
+
+                        <div class="valeur-container">
+                            <div class="picto_valeur"><?php print render($picto_valeur); ?></div>
+                            <h2 class="valeur"><?php print render($valeur); ?></h2>
+                        </div>
+
+                    </div>
                 </div>
 
 

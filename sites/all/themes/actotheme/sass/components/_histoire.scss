@@ -304,21 +304,16 @@ h4{
     margin-bottom: 1rem;
 
      @include breakpoint($tablet){
-
           margin-top:7rem;
           margin-bottom: 6rem;
-
      }
 
-
     .c-blanc{
-
        background-color: white;
        padding: 3rem;
        position: relative;
        perspective: 1000px;
        min-height: 27vh;
-
     }
 
     .c-text{
@@ -340,7 +335,6 @@ h4{
         a{
 
             display: inline-block ;
-
             margin-top: 2rem;
 
         }
@@ -348,7 +342,6 @@ h4{
              p, li{
                 font-size: 1.1rem;
                 line-height: 1.4rem;
-
              }
 
              strong{
@@ -363,13 +356,13 @@ h4{
     .c-img{
 
 
-         width:   100%;
+        width:   100%;
         height: 300px;
         position: relative;
         display: block;
         vertical-align: top;
         right: 0rem;
-         @include jpg(histoire_photo,50% 50%, cover);
+        @include jpg(histoire_photo,50% 50%, cover);
         min-height: 35vh;
         top:0%;
 
@@ -380,6 +373,7 @@ h4{
             position: absolute;
            width: 47%;
          }
+
         &:after{
 
             content:"";
@@ -432,16 +426,11 @@ h4{
           color:black;
           padding: 2rem;
 
-//          padding-top: 2rem;
-//          text-align: left;
-//          margin-left: 2rem;
-//          margin-right: 2rem;
-//
-//            margin: 4rem;
-//
            text-align: left;
         }
+
       }
+
     }
 
   }
@@ -502,26 +491,25 @@ h4{
         background-image: none !important;
         color:black;
 
-
         .dark-layer {
 
-          margin-bottom: 3rem;
-
+            margin-bottom: 3rem;
             background-color: transparent !important;
 
-            .c-in{
+            .c-in {
                    padding:2rem;
                    position: relative;
                    width: 100%;
                    
                    display: inline-block;
-                   @include breakpoint($tablet){
-                       padding:4rem;
-                      width: 49.8%;
-                      max-width: 40rem;
+
+               @include breakpoint($tablet){
+                   padding:4rem;
+                  width: 49.8%;
+                  max-width: 40rem;
 
 
-                   }
+               }
             }
 
                 .c-picto {
@@ -535,20 +523,15 @@ h4{
                     margin:0px !important;
                      min-height: 20rem;
                      padding-top: 15%;
-                    //min-height: 150px;
 
                 h2 {
-
-                   
                     text-align: center;
                     margin: 0 auto;
                     color:black;
                     font-weight: 200;
                     max-width: 100%;
 
-
                     &.phrase {
-
 
                         text-transform: lowercase;
                         font-style: italic;
@@ -568,13 +551,14 @@ h4{
                         font-weight: 200;
                         font-size:2rem;
                         padding-top:1rem;
-                        //text-align: right;
-                        position: absolute;
+//                        position: absolute;
                         bottom: 7rem;
-                        right: 7rem;
-                        display: block;
-                        width: auto;
 
+                        display: block;
+                        width: 100%;
+                        text-align: right;
+
+//                        position: relative;
 
                         &:before{
                           content:"";
@@ -586,14 +570,27 @@ h4{
                           right: -4rem;
                           bottom:0.5rem;
                         }
-
                     }
-
-
-
                 }
 
+                .valeur-container {
 
+                    position: absolute;
+                    right: 7rem;
+                    width: 12rem;
+                    position: absolute;
+                    vertical-align: top;
+//                    height: 10rem;
+
+                    .picto_valeur {
+//                        padding-top:1rem;
+//                        display: block;
+                        width: 4em;
+                        position: absolute;
+//                        right: 4rem;
+//                        bottom: 4rem;
+                    }
+                }
 
                 &.c-picto-cle {
 
@@ -608,40 +605,21 @@ h4{
                         margin: 0 auto;
                         text-align: center;
                         max-width: 100%;
-//                        width: 76rem;
 
                         font-weight: 800;
-//                        @include fz(5);
 
                         &.valeur{
-//                          position: relative;
                           bottom: 60px;
                           right: 30%;
                           display: inline;
                           font-size: 3rem;
                         }
 
-//                        &.valeur_cle {
-//
-//                            &:before{
-//                              content:"";
-//                              display: block;
-//                              width: 3rem;
-//                              height: 0.33rem;
-//                              @extend .gradient-h;
-//                              position: absolute;
-//                              right: -4rem;
-//                              bottom:0.5rem;
-//                            }
-//
-//                        }
-
                     }
 
                 }
 
             }
-
 
         }
 
