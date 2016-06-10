@@ -55,7 +55,8 @@
 						width: 33%;
 				 }
 				
-				height: 6rem;
+                min-height: 9rem;
+//				height: 6rem;
 				padding-top: 2rem;
 				background-color: $gris;
 				position: relative;	
@@ -121,6 +122,7 @@
 		text-align: center;	
 		padding: 4rem;
 		padding-bottom: 8rem;
+
 		p{
 			display: block;	
 			margin:0 auto;
@@ -129,6 +131,7 @@
 			font-weight: 	bold;
 
 		}
+
 	}
 	.cc-block{
 		@include main-padding();
