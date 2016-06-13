@@ -502,12 +502,12 @@ h4{
                    width: 100%;
                    
                    display: inline-block;
+                   vertical-align: top;
 
                @include breakpoint($tablet){
                    padding:4rem;
                   width: 49.8%;
                   max-width: 40rem;
-
 
                }
             }
@@ -525,6 +525,7 @@ h4{
                      padding-top: 15%;
 
                 h2 {
+
                     text-align: center;
                     margin: 0 auto;
                     color:black;
@@ -550,15 +551,14 @@ h4{
                         font-size:1.5rem;
                         font-weight: 200;
                         font-size:2rem;
-                        padding-top:1rem;
-                        // position: absolute;
-                        bottom: 7rem;
 
                         display: block;
                         width: 100%;
                         text-align: right;
 
-                        // position: relative;
+                        bottom: 7rem;
+                        position: absolute;
+                        right: 6rem;
 
                         &:before{
                           content:"";
@@ -577,18 +577,45 @@ h4{
 
                     right: 7rem;
                     width: 12rem;
-                    position: absolute;
                     vertical-align: top;
-//                    height: 10rem;
 
                     .picto_valeur {
-//                        padding-top:1rem;
-//                        display: block;
                         width: 4em;
-                        position: absolute;
-//                        right: 4rem;
-//                        bottom: 4rem;
-                    }
+
+                        bottom: 10rem;
+//                        display: block;
+
+                        display: inline-block;
+                        height: 2rem;
+
+                        img {
+                            width: 3.5rem;
+                            margin-right: 5px;
+                        }
+
+                        &.number_0 {
+                          right: 24rem;
+                        }
+
+                        &.number_1 {
+                           right: 22rem;
+                        }
+
+                        &.number_2 {
+
+                            img {
+                                width:1.5rem;
+//                                margin-right: 15px;
+                            }
+
+                        }
+
+                        &.number_3 {
+                           right: 18rem;
+                        }
+
+                   }
+
                 }
 
                 &.c-picto-cle {
@@ -628,9 +655,13 @@ h4{
 
         }
 
-
     }
 
 }
 
+h2.valeur_cle {
+
+    text-align: right !important;
+
+}
 

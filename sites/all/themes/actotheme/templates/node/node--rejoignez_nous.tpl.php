@@ -52,7 +52,7 @@
     
     </div>
 
-        <div class="c-header phrases-valeurs">
+    <div class="c-header phrases-valeurs">
 
         <div class="dark-layer">
 
@@ -81,8 +81,8 @@
                         <h2 class="phrase"><?php print render($phrase); ?></h2>
 
                         <div class="valeur-container">
-                            <div class="picto_valeur"><?php print render($picto_valeur); ?></div>
-                            <h2 class="valeur"><?php print render($valeur); ?></h2>
+
+                            <h2 class="valeur"><div class="picto_valeur <?php print "number_".$i; ?>"><?php print render($picto_valeur); ?></div><?php print render($valeur); ?></h2>
                         </div>
 
                     </div>
@@ -112,8 +112,7 @@
                         <h2 class="phrase"><?php print render($phrase); ?></h2>
 
                         <div class="valeur-container">
-                            <div class="picto_valeur"><?php print render($picto_valeur); ?></div>
-                            <h2 class="valeur"><?php print render($valeur); ?></h2>
+                            <h2 class="valeur"><div class="picto_valeur <?php print "number_".$i; ?>"><?php print render($picto_valeur); ?></div><?php print render($valeur); ?></h2>
                         </div>
 
                     </div>
