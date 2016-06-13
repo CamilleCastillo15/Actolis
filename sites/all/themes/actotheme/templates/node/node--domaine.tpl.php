@@ -8,26 +8,23 @@
     $titre_2 = field_view_field("node",$node,'field_titre_domaine_2');
     $icone = field_view_field("node",$node,'field_icone');
 
-    $fc_domaines = field_get_items('node', $node, 'field_titre_texte_image');
+    $fc_blocs_domaines = field_get_items('node', $node, 'field_titre_texte_image');
 
-    if($fc_domaines){
+    if($fc_blocs_domaines){
         $idti = array();
-        foreach ($fc_domaines as $fc_field) {
+        foreach ($fc_blocs_domaines as $fc_field) {
             $idti[] = $fc_field['value'];
         }
         $collectionsg =  field_collection_item_load_multiple($idti);
     }
+
+    dpm($idti);
+
     $images = field_get_items('node', $node, 'field_image');
     $icones = field_get_items('node', $node, 'field_icone');
 
-    //dpm($images[0]);
-
-    //$p = image_style_url("header",$images[0]["uri"]);
-
     $p = file_create_url($images[0]["uri"]);
     $m = file_create_url($icones[0]["uri"]);
-
-    //dpm($m);
 
     drupal_add_css('.domaine .c-header {background-image: url("'.$p.'"); !important} ', 'inline');
     drupal_add_css('.b2 .picto {background-image: url("'.$m.'"); !important} ', 'inline');
@@ -45,43 +42,30 @@
 
     <div class="c-block-domaine">
 
+       <?php
+
+           for($i = 0; $i < 7; $i++) {
+
+               $collectionsg_2 = $collectionsg[$idti[$i]];
+
+               $texte = field_view_field('field_collection_item', $collectionsg_2, 'field_texte');
+               $image = field_view_field('field_collection_item', $collectionsg_2, 'field_image');
+
+        ?>
+
         <div class="c-gris">
 
             <div class="c-text">
 
-                <?php print render($body); ?>
+                <?php print render($texte); ?>
 
             </div>
 
             <div class="clear"></div>
 
-            <?php
-
-                $image_domaine_1 = field_get_items('node', $node, 'field_image_domaine_1');
-                $image_domaine_2 = field_get_items('node', $node, 'field_image_domaine_2');
-                $image_domaine_3 = field_get_items('node', $node, 'field_image_domaine_3');
-                $image_domaine_4 = field_get_items('node', $node, 'field_image_domaine_4');
-
-                $p1 = file_create_url($image_domaine_1[0]["uri"]);
-                $p2 = file_create_url($image_domaine_2[0]["uri"]);
-                $p3 = file_create_url($image_domaine_3[0]["uri"]);
-                $p4 = file_create_url($image_domaine_4[0]["uri"]);
-
-                //dpm($p1);
-
-                drupal_add_css('.c-block-domaine .c-img-1 {background-image: url("'.$p1.'") !important; } ', 'inline');
-                drupal_add_css('.c-block-domaine .c-img-2 {background-image: url("'.$p2.'") !important; } ', 'inline');
-                drupal_add_css('.c-block-domaine .c-img-3 {background-image: url("'.$p3.'") !important; } ', 'inline');
-                drupal_add_css('.c-block-domaine .c-img-4 {background-image: url("'.$p4.'") !important; } ', 'inline');
-
-            ?>
-
-            <div class="c-img-1"></div>
-            <div class="c-img-2"></div>
-            <div class="c-img-3"></div>
-            <div class="c-img-4"></div>
-
         </div>
+
+        <?php } ?>
 
     </div>
 

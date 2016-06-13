@@ -64,7 +64,7 @@
 
                     $collectiong_2_phrases_valeurs = $collectionsg_phrases_valeurs[$idti_phrases_valeurs[$i]];
 
-                    dpm($collectiong_2_phrases_valeurs);
+//                    dpm($collectiong_2_phrases_valeurs);
 
                     $phrase = field_view_field('field_collection_item', $collectiong_2_phrases_valeurs, 'field_phrase');
 
@@ -72,7 +72,7 @@
 
                     $picto_valeur = field_view_field('field_collection_item', $collectiong_2_phrases_valeurs, 'field_pictos');
 
-                    dpm($picto_valeur);
+//                    dpm($picto_valeur);
 
                 ?>
 
