@@ -551,14 +551,14 @@ h4{
                         font-weight: 200;
                         font-size:2rem;
                         padding-top:1rem;
-//                        position: absolute;
+                        // position: absolute;
                         bottom: 7rem;
 
                         display: block;
                         width: 100%;
                         text-align: right;
 
-//                        position: relative;
+                        // position: relative;
 
                         &:before{
                           content:"";
@@ -575,7 +575,6 @@ h4{
 
                 .valeur-container {
 
-                    position: absolute;
                     right: 7rem;
                     width: 12rem;
                     position: absolute;
