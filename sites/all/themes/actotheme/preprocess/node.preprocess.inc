@@ -5,6 +5,10 @@
                 drupal_add_js($theme_path."/js/Swiper/dist/js/swiper.jquery.min.js");
                 drupal_add_js($theme_path."/js/actotheme.home.js");
             break;
+            case "domaine":
+                drupal_add_js($theme_path."/js/Swiper/dist/js/swiper.jquery.min.js");
+                drupal_add_js($theme_path."/js/actotheme.domaine.js");
+            break;
         }
     }
 ?>

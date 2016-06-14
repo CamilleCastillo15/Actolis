@@ -77,11 +77,11 @@
 
     <div class="e-d-c">
     
-        <div class="cc-block">  
+        <div class="cc-block ">
 
             <div class="c-block">
 
-                <div class="c-gradient">
+                <div class="c-gradient swiper-container">
 
                 <h1 class="titre">cases studies</h1>
 
@@ -89,6 +89,22 @@
 
                         <?php $view = views_embed_view('case_studies', 'default', $node->nid);
                         print $view; ?>
+
+                    <div class="grille swiper-wrapper">
+
+                           <?php $view = views_get_view('case_studies', 'default', $node->nid);
+
+//                                    if($view){
+//                                        $idti_view = array();
+//                                        foreach ($view as $fc_field) {
+//                                            $idti_view[] = $fc_field['value'];
+//                                        }
+//                                        $collections_view =  field_collection_item_load_multiple($idti_view);
+//                                    }
+//
+                                dpm($view);
+
+                            //print $view; ?>
 
                         <div class="clear"></div>
 

@@ -124,7 +124,6 @@
         padding:3rem;
         padding-right: 3rem;
         position: relative ;
-        display: inline-block;
         vertical-align: top;
         width: 100%;
 
@@ -169,11 +168,11 @@
              }
     }
 
- .c-img-1,.c-img-2,.c-img-3,.c-img-4{ 
+ .c-img{
                  display: none;    
            }
     @include breakpoint($tablet){
-           .c-img-1,.c-img-2,.c-img-3,.c-img-4{ 
+           .c-img-0,.c-img-1,.c-img-2,.c-img-3,.c-img-4,.c-img-5,.c-img-6{
                  display: block;    
            }
     }
@@ -209,15 +208,23 @@
         }
 
         &:nth-child(odd) {
-            .c-img{
+            .c-img {
+
                 left:2rem;
+
             }
-            .c-text{
-                float: right;
-                padding-left: 56.66%;
+
+            .c-text {
+
                 padding-right: 3rem;
 
-                ul{
+                @include breakpoint($tablet){
+                    padding-left: 56.66%;
+                    float: right;
+
+                  }
+
+                ul {
                     list-style-image: url(../imgs/bullet.png) !important;
                 }
 

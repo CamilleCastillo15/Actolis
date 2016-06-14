@@ -196,8 +196,7 @@
                    <h4>Candidature spontanée</h4>
 
                     <?php $form = node_load(13);
-
-                         $view = node_view($form);
+                          $view = node_view($form);
 
                         print render($view); ?>
                             
