@@ -4,7 +4,7 @@
 <div class="l-header">
     <div class="logo">
         <a href="/">
-            <img src="<?php print $theme ?>/imgs/logo_actolis.svg" alt="logo" title="logo" />
+            <img src="<?php print $theme ?>/imgs/logo_actolis_vrai_ombre.svg" alt="logo" title="logo" />
             <div class="c-txt">
                 <h1>ACTOLIS</h1>
                 <p>le partenaire des industrie de la santé</p>
@@ -27,30 +27,24 @@
     <?php print render($page['header']); ?>
     <div class="domaine-menu">
         <?php
-
             $view_domaines = views_get_view('domaines');
             $view_domaines->execute();
             $result_domaines = $view_domaines->result;
-
         ?>
         <ul class="menu">
             <?php foreach($result_domaines as $key => $value) { ?>
                     <?php
-
                           $n = node_load($value->nid);
                           $link =drupal_get_path_alias("node/".$value->nid);
                           $picto = field_view_field("node",$n,'field_icone');
                           $title = field_view_field("node",$n,'field_titre_domaine');
                           $title_2 = field_view_field("node",$n,'field_titre_domaine_2');
-
                           $title_render = '<span>'.render($title).'</span>';
                           $title_render = '<span>'.render($title_2).'</span>';
                           $picto_render = '<div class="c-img">'.render($picto).'</div>';
-
                           echo "<li>";
                           print l($picto_render.$title_render, $link,array("html"=>true, 'attributes' => array('class' => array('c-txt'))));
                           echo "</li>";
-
                        }
                 ?>
         </ul>

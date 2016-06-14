@@ -18,8 +18,6 @@
         $collectionsg =  field_collection_item_load_multiple($idti);
     }
 
-    dpm($idti);
-
     $images = field_get_items('node', $node, 'field_image');
     $icones = field_get_items('node', $node, 'field_icone');
 
@@ -44,12 +42,16 @@
 
        <?php
 
-           for($i = 0; $i < 7; $i++) {
+           for($i = 0; $i < count($idti); $i++) {
 
                $collectionsg_2 = $collectionsg[$idti[$i]];
 
                $texte = field_view_field('field_collection_item', $collectionsg_2, 'field_texte');
-               $image = field_view_field('field_collection_item', $collectionsg_2, 'field_image');
+               $image = field_get_items('field_collection_item', $collectionsg_2, 'field_image_bloc');
+
+               $p1 = file_create_url($image[0]["uri"]);
+
+                drupal_add_css('.c-block-domaine .c-img-'.$i.'{background-image: url("'.$p1.'") !important; } ', 'inline');
 
         ?>
 
@@ -61,11 +63,15 @@
 
             </div>
 
+            <div class='c-img-<?php print $i ?> c-img'></div>
+
             <div class="clear"></div>
 
         </div>
 
         <?php } ?>
+
+        <div class="clear"></div>
 
     </div>
 
@@ -78,11 +84,11 @@
                 <div class="c-gradient">
 
                 <h1 class="titre">cases studies</h1>
+
                     <div class="grille">
 
                         <?php $view = views_embed_view('case_studies', 'default', $node->nid);
                         print $view; ?>
-
 
                         <div class="clear"></div>
 

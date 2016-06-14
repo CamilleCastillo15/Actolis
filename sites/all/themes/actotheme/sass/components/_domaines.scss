@@ -11,100 +11,97 @@
     margin-bottom: 1rem;
 
         @include breakpoint($tablet) {
- margin-bottom: 8rem;
-
+            margin-bottom: 8rem;
         }
 
     @include jpg(pharma_bg_header ,50% 50%,cover);
 
-        h1{
-            background-image: none !important;
+    h1{
+        background-image: none !important;
+        text-align: center;
+        padding: 3rem 3rem;
+        .picto{
+            @extend .c-icone;
+            display: inline-block;
+            vertical-align: middle;
+            width: 10rem;
+            height: 10rem;
+            background-size: 60%;
+            margin:0px;
+            margin-right: 1rem;
+            &:before{
+                border-width: 4px;
+            }
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        .c-txt{
+
+            display: inline-block;
             text-align: center;
-            padding: 3rem 3rem;
-            .picto{
-                @extend .c-icone;
-                display: inline-block;
-                vertical-align: middle;
-                width: 10rem;
-                height: 10rem;
-                background-size: 60%;
-                margin:0px;
-                margin-right: 1rem;
-                &:before{
-                    border-width: 4px;
-                }
-                background-repeat: no-repeat;
-                background-position: center center;
-            }
-
-            .c-txt{
-
-                display: inline-block;
-                text-align: center;
-                vertical-align: middle;
-                text-transform: uppercase;
-                font-size: 2.3rem;
-                font-weight: 900;
-                line-height: 2.4rem;
-                max-width: 400px;
-                color:white;
-
-            }
+            vertical-align: middle;
+            text-transform: uppercase;
+            font-size: 2.3rem;
+            font-weight: 900;
+            line-height: 2.4rem;
+            max-width: 400px;
+            color:white;
 
         }
 
+    }
+
 }
 
 
-@include keyframes(photo1) {
-   0% { @include opacity(0); right:-10rem;  }
-  10% { @include opacity(1); right:-5rem;   }
-  30% { @include opacity(1); right:-5rem;   }
-  50% { @include opacity(0); right:-2rem;   }
- 100% { @include opacity(0); right:-2rem;   }
-}
-@include keyframes(photo2) {
-   0% { @include opacity(0); right:-10rem; }
-  10% { @include opacity(1); right:-8rem;  }
-  40% { @include opacity(1); right:-8rem;  }
-  50% { @include opacity(0); right:-2rem;  }
- 100% { @include opacity(0); right:-2rem;  }
-}
-
-
-@include keyframes(photo3) {
-   0% { @include opacity(0); right:-10rem; }
-  55% { @include opacity(0); right:-10rem; }
-  65% { @include opacity(1); right:-5rem;  }
-  90% { @include opacity(1); right:-5rem;  }
- 100% { @include opacity(0); right:-2rem;  }
-}
-
-@include keyframes(photo4) {
-   0% { @include opacity(0); right:-10rem; }
-  55% { @include opacity(0); right:-10rem; }
-  65% { @include opacity(1); right:-8rem;  }
-  90% { @include opacity(1); right:-8rem;  }
- 100% { @include opacity(0); right:-6rem;  }
-}
-
-.c-img-1{
-     @include animation(photo1 15s ease-in-out 3);
-}
-.c-img-2{
-     @include animation(photo2 16s ease-in-out 3);
-}
-
-.c-img-3{
-     @include animation(photo3 15s ease-in-out 3);
-}
-.c-img-4{
-     @include animation(photo4 16s ease-in-out 3);
-}
+//@include keyframes(photo1) {
+//   0% { @include opacity(0); right:-10rem;  }
+//  10% { @include opacity(1); right:-5rem;   }
+//  30% { @include opacity(1); right:-5rem;   }
+//  50% { @include opacity(0); right:-2rem;   }
+// 100% { @include opacity(0); right:-2rem;   }
+//}
+//@include keyframes(photo2) {
+//   0% { @include opacity(0); right:-10rem; }
+//  10% { @include opacity(1); right:-8rem;  }
+//  40% { @include opacity(1); right:-8rem;  }
+//  50% { @include opacity(0); right:-2rem;  }
+// 100% { @include opacity(0); right:-2rem;  }
+//}
+//
+//
+//@include keyframes(photo3) {
+//   0% { @include opacity(0); right:-10rem; }
+//  55% { @include opacity(0); right:-10rem; }
+//  65% { @include opacity(1); right:-5rem;  }
+//  90% { @include opacity(1); right:-5rem;  }
+// 100% { @include opacity(0); right:-2rem;  }
+//}
+//
+//@include keyframes(photo4) {
+//   0% { @include opacity(0); right:-10rem; }
+//  55% { @include opacity(0); right:-10rem; }
+//  65% { @include opacity(1); right:-8rem;  }
+//  90% { @include opacity(1); right:-8rem;  }
+// 100% { @include opacity(0); right:-6rem;  }
+//}
+//
+//.c-img-1{
+//     @include animation(photo1 15s ease-in-out 3);
+//}
+//.c-img-2{
+//     @include animation(photo2 16s ease-in-out 3);
+//}
+//
+//.c-img-3{
+//     @include animation(photo3 15s ease-in-out 3);
+//}
+//.c-img-4{
+//     @include animation(photo4 16s ease-in-out 3);
+//}
 
 .c-block-domaine{
-
-    //width: 70vw;
 
     display: block;
     margin: 0 auto;
@@ -118,9 +115,7 @@
      
        position: relative ;
        perspective: 1000px;
-       min-height: 27vh;
-
-    }
+       margin-bottom: 10rem;
 
     .c-text{
 
@@ -132,9 +127,11 @@
         display: inline-block;
         vertical-align: top;
         width: 100%;
+
       @include breakpoint($tablet){
-        width: 60%;
-        padding-right: 12rem;
+//        width: 70%;
+        padding-right: 60%;
+        float: left;
       
       }
 
@@ -181,116 +178,56 @@
            }
     }
 
-    .c-img-1,.c-img-3{
+        .c-img {
 
         z-index: 10;
 
-        width: 57%;
-        height: 47%;
-        right: -5rem;      
-        top:60%;
-
-        min-height: 35vh;
         position: absolute;
-        //display: block;
+        width: 50%;
+        height: 110%;
+        right: 2rem;
+        top:50%;
+        @include translate(0%,-50%);
+
         vertical-align: top;
-       
+
         @include jpg(pharma_affaire,50% 50%, cover);
-        @include translate(0px,-100%);
-        &:after{
 
-            content:"";
-            display: block ;
-            height: 5px;
-            width: 100%;
-            position: absolute;
-            bottom:-1px;
-            left:0px;
-            @extend .gradient-h;
+            &:after {
 
-        }
+                content:"";
+                display: block ;
+                height: 5px;
+                width: 100%;
+                position: absolute;
+                bottom:-1px;
+                left:0px;
+                @extend .gradient-h;
 
-        }
-
-            .c-img-2,.c-img-4{
-
-        width: 40%;
-        height: 20%;
-        top:84%;
-        right: -8rem;
-
-        position: absolute;
-        //display: block;
-        vertical-align: top;
-
-
-        min-height: 35vh;
-       
-        @include jpg(pharma_assurance,50% 50%, cover);
-        @include translate(0px,-100%);
-        &:after{
-
-            content:"";
-            display: block ;
-            height: 5px;
-            width: 100%;
-            position: absolute;
-            bottom:-1px;
-            left:0px;
-            @extend .gradient-h;
-
-        }
-
-        }
-
-        .c-img-3{
-            @include jpg(pharma_gestion,50% 50%, cover);
-   
-            @include opacity(0);
-        }
-        .c-img-4{
-            @include jpg(pharma_ingenierie,50% 50%, cover);
-        
-            @include opacity(0);
-        }
-
-    &:nth-child(odd) {
-        .c-img{
-            left:2rem;
-        }
-        .c-text{
-            float: right;
-            padding-left: 1rem;
-            ul{
-                list-style-image: url(../imgs/bullet.png) !important;
             }
-        }
-    }
 
-    &:nth-child(2) {
-       .c-img{
-            @include jpg(pharma_affaire,50% 50%, cover);
-       }
-    }
-     &:nth-child(3) {
-       .c-img{
-            @include jpg(pharma_assurance,50% 50%, cover);
-       }
-    }
-     &:nth-child(4) {
-       .c-img{
-            @include jpg(pharma_gestion,50% 50%, cover);
-       }
-    }
-     &:nth-child(5) {
-       .c-img{
-            @include jpg(pharma_ingenierie,50% 50%, cover);
-       }
+        }
+
+        &:nth-child(odd) {
+            .c-img{
+                left:2rem;
+            }
+            .c-text{
+                float: right;
+                padding-left: 56.66%;
+                padding-right: 3rem;
+
+                ul{
+                    list-style-image: url(../imgs/bullet.png) !important;
+                }
+
+            }
+
+        }
+
     }
 
 }
-
-
 
 .e-d-c{
     text-align: center;
@@ -418,8 +355,6 @@
                 }
 
              }
-
-
         }
     }
 }
