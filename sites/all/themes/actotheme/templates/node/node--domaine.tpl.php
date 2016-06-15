@@ -77,34 +77,43 @@
 
     <div class="e-d-c">
     
-        <div class="cc-block ">
+            <div class="cc-block ">
 
-            <div class="c-block">
+                <div class="c-block">
 
-                <div class="c-gradient swiper-container">
+                    <div class="c-gradient">
 
-                <h1 class="titre">cases studies</h1>
+                    <h1 class="titre">cases studies</h1>
 
-                    <div class="grille">
+                    <div class="grille swiper-container">
 
-                        <?php $view = views_embed_view('case_studies', 'default', $node->nid);
-                        print $view; ?>
+                        <div class="swiper-wrapper">
 
-                    <div class="grille swiper-wrapper">
+                            <?php
 
-                           <?php $view = views_get_view('case_studies', 'default', $node->nid);
+                            $view = views_get_view('case_studies');
+                            $view->set_arguments(array($node->nid));
+                            $view->execute();
+                            dpm($view->result);
 
-//                                    if($view){
-//                                        $idti_view = array();
-//                                        foreach ($view as $fc_field) {
-//                                            $idti_view[] = $fc_field['value'];
-//                                        }
-//                                        $collections_view =  field_collection_item_load_multiple($idti_view);
-//                                    }
-//
-                                dpm($view);
+                            foreach($view->result as $value){
 
-                            //print $view; ?>
+                                $node = node_load($value->nid);
+                                dpm($node);
+                                $titre = field_view_field('node',$node,'field_titre_de_la_case_study');
+                                ?>
+
+                                <div class="casestudy">
+                                    <div ><?php print render($titre); ?></div><br /><br />
+                                </div>
+
+                            <?php }
+
+                             $view = views_embed_view('case_studies', 'default', $node->nid);
+                            print $view; ?>
+
+                        </div>
+
 
                         <div class="clear"></div>
 

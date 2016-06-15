@@ -118,7 +118,18 @@
 
         .c-picto{
             display: inline-block;
-            margin:0rem 2rem;
+            margin:1rem 0.5rem;
+            width: 100%;
+
+            @include breakpoint($tablet){
+              width: 25%;
+            }
+
+            @include breakpoint($laptop){
+                margin:0rem 2rem;
+                 width: 25%;
+              }
+
             vertical-align: middle;
 
             &:nth-child(3) {
@@ -141,7 +152,8 @@
 
             img {
 
-                width:9em;
+//                width:9em;
+                height: 6rem;
 
             }
 
@@ -152,7 +164,15 @@
             color:white;
             text-transform: uppercase;
             font-size: 1.5rem;
-            max-width: 14rem;
+
+//            @include breakpoint($tablet){
+//                max-width: 14rem;
+//              }
+//
+//            @include breakpoint($laptop){
+//                max-width: none;
+//              }
+
         }
     }
 
@@ -515,9 +535,8 @@ h4{
                 .c-picto {
 
                   animation:none;
-
-                    padding: 3rem 2rem;
-                    width: 100%;
+                  padding: 3rem 2rem;
+                  width: 100%;
                     height: 100%;
                     background-color: $gris;
                     margin:0px !important;
