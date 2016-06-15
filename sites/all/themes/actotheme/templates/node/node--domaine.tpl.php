@@ -75,57 +75,90 @@
 
     </div>
 
-    <div class="e-d-c">
-    
-            <div class="cc-block ">
+        <div class="e-d-c">
 
-                <div class="c-block">
+                <div class="cc-block ">
 
-                    <div class="c-gradient">
+                    <div class="c-block">
 
-                    <h1 class="titre">cases studies</h1>
+                        <div class="c-gradient">
 
-                    <div class="grille swiper-container">
+                        <h1 class="titre">cases studies</h1>
 
-                        <div class="swiper-wrapper">
+                        <div class="grille">
 
-                            <?php /*
+                            <div class="swiper-container">
 
-                             $view = views_get_view('case_studies');
-                            $view->set_arguments(array($node->nid));
-                            $view->execute();
-                            dpm($view->result);
+                                <div class="swiper-wrapper">
 
-                            foreach($view->result as $value) {
+                                <?php
 
-                                    $node = node_load($value->nid);
-                                    dpm($node);
-                                    $titre = field_view_field('node',$node,'field_titre_de_la_case_study');
-                                    $texte = field_view_field('node',$node,'field_texte_case_study');
-                                    $domaine = field_view_field('node',$node,'field_domaine');
-                                    $blocs = field_view_field('node',$node,'field_blocs_chapitres_etudes_cas');
+                                 $view = views_get_view('case_studies');
+                                 $view->set_arguments(array($node->nid));
+                                 $view->execute();
+//                                 dpm($view->result);
 
-                                    $image = field_get_items('node',$node,'field_image_case_study');
+                                 $i = 0;
 
-                                    $p = file_create_url($images[0]["uri"]);
+                                 if($i % 3 == 0 || $i == 0) {  ?>
 
-                                    drupal_add_css('.e-d-c .c-bg {background-image: url("'.$p.'"); !important} ', 'inline');
-                                ?>
-                                <div class="c-bg">
-                                    <div class="casestudy swiper-slide">
-                                        <div ><?php print render($titre); ?></div><br /><br />
-                                        <div ><?php print render($texte); ?></div><br /><br />
-                                        <div class="cta">Lire la suite</div>
-                                    </div>
-                                </div>
+                                    <div class="views-row swiper-slide">
 
-                            <?php } */
-                             $view = views_embed_view('case_studies', 'default', $node->nid);
-                             print $view; ?>
+                                        <?php }
+
+                                        foreach($view->result as $value) {
+
+                                                $node = node_load($value->nid);
+//                                                dpm($node);
+                                                $titre = field_view_field('node',$node,'field_titre_de_la_case_study');
+                                                $texte = field_view_field('node',$node,'field_texte_case_study');
+                                                $domaine = field_view_field('node',$node,'field_domaine');
+                                                $blocs = field_view_field('node',$node,'field_blocs_chapitres_etudes_cas');
+
+                                                $image = field_get_items('node',$node,'field_image_case_study');
+
+                                                $p1 = file_create_url($image[0]["uri"]);
+
+                                                drupal_add_css('.e-d-c .grille .views-row .c-bg-'.$i.'{background-image: url("'.$p1.'") !important; } ', 'inline');
+
+                                            ?>
+
+                                        <div class="item ">
+                                            <div class="c-bg c-bg-<?php print $i ?>">
+                                                <a href="#">
+                                                    <div class="">
+                                                        <h2><?php print render($titre); ?></h2>
+                                                        <div class='sep'></div>
+                                                        <p><?php print render($texte); ?></p>
+                                                        <div class="cta">Lire la suite</div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+
+
+                                <?php $i++;
+
+                                    if($i % 3 == 0 ) {
+
+                                 ?>
+
+                                   </div>
+
+                                <?php }
+
+                                        } /*
+
+                                 $view = views_embed_view('case_studies', 'default', $node->nid);
+                                 print $view; */?>
+
+
+
+                                <div class="clear"></div>
+
+                            </div>
 
                         </div>
-
-                        <div class="clear"></div>
 
                     </div>
 
@@ -138,3 +171,4 @@
     </div>
 
 </div>
+

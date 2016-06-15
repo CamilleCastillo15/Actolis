@@ -225,7 +225,7 @@
                   }
 
                 ul {
-                    list-style-image: url(../imgs/bullet.png) !important;
+                    list-style-image: url(../imgs/bullet.png) !important
                 }
 
             }
@@ -236,32 +236,25 @@
 
 }
 
-.e-d-c {
+.e-d-c{
     text-align: center;
     @include main-padding(25vw,25vw);
-
-     @include breakpoint($laptop) {
-
-     }
 
     position: relative;
     display: block;
     width: 100%;
 
-    h1 {
+    h1{
         @include fz(5);
         text-transform: uppercase;
         font-weight: 800;
     }
-
-    .c-block {
+    .c-block{
         width: 100%;
     }
-
-    .grille {
+    .grille{
         
         width: 100%;
-        padding-top: 3rem;
 
         .view-case-studies{
             height: 100%;
@@ -270,12 +263,11 @@
             }
         }
             
-             padding-top: 8rem;
-
-        @include breakpoint($laptopl) {
-             padding-top: 10rem;
-             width: 55vw;
-             height: 55vw;
+           padding-top: 2rem;
+         @include breakpoint($laptopl) {
+            padding-top: 10rem;
+            width: 55vw;
+            height: 55vw;
              margin-left: -5.7vw;
          }
         
@@ -283,7 +275,6 @@
         display: block;
 
         .views-row {
-
             display: block;
             float: none;
             width: 100%;
@@ -291,25 +282,29 @@
             position: relative;
             padding: 0.2rem;
             min-height: 25rem;
+//            opacity: 1 !important;
 
               @include breakpoint($laptop){
-                 float: left;
-                 width: 50%;
-                 height: 50%;
-                 min-height: auto;
-             }
+                float: left;
+                height: 20rem;
+                min-height: auto;
+            }
+         }
 
              .item {
+                 float: left;
                 height: 100%;
-                width: 100%;
+                width: 33%;
+                 padding: 1rem;
              }
             
             .c-bg {
                 @include jpg(pharma_bg_header ,50% 50%,cover);
                 height: 100%;
+
             }
 
-            a {
+            a{
                 display: block;
                 color:black;
                 background-color: rgba(white,0.7);
@@ -319,19 +314,16 @@
                 padding: 3rem;
                 padding-top: 4rem;
                 @include opacity(1);
-                @include breakpoint($laptop) {
-
+                @include breakpoint($laptop){
                     @include opacity(0);
                     @include transition(all 0.2s ease-out);
-
                 }
-
-                h2 {
+                h2{
                     @include fz(3);
                     font-weight: 800;
                     text-transform: uppercase;  
                 }
-                .sep {
+                .sep{
                     height: 0.2rem;
                     display: block;
                     margin: 0 auto;
@@ -341,15 +333,15 @@
                     margin-bottom: 1.2rem;
                     @include transition(all 0.2s ease-out);
                 }
-                .cta {
+                .cta{
                     margin-top:1rem;
                 }
-                p {
+                p{
                     @include fz(2);
                 }
-                @include breakpoint($laptop) {
-                &:hover {
-                    @include opacity(1);
+                @include breakpoint($laptop){
+                    &:hover{
+                        @include opacity(1);
                         .sep{
                             margin-top:1rem;
                         }
@@ -359,6 +351,7 @@
 
              @include breakpoint($laptop){
 
+
                 &:nth-child(1){
                     margin-top:-100px;
                 }
@@ -367,6 +360,13 @@
                 }
 
              }
+
+
+        }
+
+        .swiper-wrapper {
+
+            box-sizing: inherit !important;
+
         }
     }
-}
