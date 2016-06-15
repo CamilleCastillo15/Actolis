@@ -89,31 +89,41 @@
 
                         <div class="swiper-wrapper">
 
-                            <?php
+                            <?php /*
 
-                            $view = views_get_view('case_studies');
+                             $view = views_get_view('case_studies');
                             $view->set_arguments(array($node->nid));
                             $view->execute();
                             dpm($view->result);
 
-                            foreach($view->result as $value){
+                            foreach($view->result as $value) {
 
-                                $node = node_load($value->nid);
-                                dpm($node);
-                                $titre = field_view_field('node',$node,'field_titre_de_la_case_study');
+                                    $node = node_load($value->nid);
+                                    dpm($node);
+                                    $titre = field_view_field('node',$node,'field_titre_de_la_case_study');
+                                    $texte = field_view_field('node',$node,'field_texte_case_study');
+                                    $domaine = field_view_field('node',$node,'field_domaine');
+                                    $blocs = field_view_field('node',$node,'field_blocs_chapitres_etudes_cas');
+
+                                    $image = field_get_items('node',$node,'field_image_case_study');
+
+                                    $p = file_create_url($images[0]["uri"]);
+
+                                    drupal_add_css('.e-d-c .c-bg {background-image: url("'.$p.'"); !important} ', 'inline');
                                 ?>
-
-                                <div class="casestudy">
-                                    <div ><?php print render($titre); ?></div><br /><br />
+                                <div class="c-bg">
+                                    <div class="casestudy swiper-slide">
+                                        <div ><?php print render($titre); ?></div><br /><br />
+                                        <div ><?php print render($texte); ?></div><br /><br />
+                                        <div class="cta">Lire la suite</div>
+                                    </div>
                                 </div>
 
-                            <?php }
-
+                            <?php } */
                              $view = views_embed_view('case_studies', 'default', $node->nid);
-                            print $view; ?>
+                             print $view; ?>
 
                         </div>
-
 
                         <div class="clear"></div>
 
