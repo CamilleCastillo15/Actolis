@@ -104,52 +104,48 @@
 
                                     <div class="views-row swiper-slide">
 
-                                        <?php }
+                                <?php }
 
-                                        foreach($view->result as $value) {
+                                    foreach($view->result as $value) {
 
-                                                $node = node_load($value->nid);
-//                                                dpm($node);
-                                                $titre = field_view_field('node',$node,'field_titre_de_la_case_study');
-//                                                $texte = field_view_field('node',$node,'field_texte_case_study');
+                                            $node = node_load($value->nid);
+                                            $titre = field_view_field('node',$node,'field_titre_de_la_case_study');
 
-                                                $texte = field_view_field("node",$node,'field_texte_case_study',array(
-                                                      'label'=>'hidden',
-                                                      'type' => 'text_summary_or_trimmed',
-                                                      'settings'=>array('trim_length' => 20),
-                                                ));
+                                            $texte = field_view_field("node",$node,'field_texte_case_study',array(
+                                                  'label'=>'hidden',
+                                                  'type' => 'text_summary_or_trimmed',
+                                                  'settings'=>array('trim_length' => 20),
+                                            ));
 
-                                                $domaine = field_view_field('node',$node,'field_domaine');
-                                                $blocs = field_view_field('node',$node,'field_blocs_chapitres_etudes_cas');
+                                            $domaine = field_view_field('node',$node,'field_domaine');
+                                            $blocs = field_view_field('node',$node,'field_blocs_chapitres_etudes_cas');
 
-                                                $image = field_get_items('node',$node,'field_image_case_study');
+                                            $image = field_get_items('node',$node,'field_image_case_study');
 
-                                                $p1 = file_create_url($image[0]["uri"]);
+                                            $p1 = file_create_url($image[0]["uri"]);
 
-                                                drupal_add_css('.e-d-c .grille .views-row .c-bg-'.$i.'{background-image: url("'.$p1.'") !important; } ', 'inline');
+                                            drupal_add_css('.e-d-c .grille .views-row .c-bg-'.$i.'{background-image: url("'.$p1.'") !important; } ', 'inline');
 
-//                                                $path = field_view_field('node',$node,'path');
-//                                                dpm($path);
+                                            $link = url('node/'.$node->nid, array('absolute' => TRUE));
+                                            $link2 = $node->nid;
+//                                            dpm($link);
 
-                                                $link = url('node/'.$node->nid, array('absolute' => TRUE));
-                                                dpm($link);
+                                            $titre_render =  render($titre);
+                                            $texte_render =  render($texte);
 
-                                                $titre_render =  render($titre);
-                                                $texte_render =  render($texte);
-                                                $i_print = print $i;
+                                            ?>
 
-                                                print l("<div class='item'>
-                                                            <div class='c-bg c-bg-".$i." ?>'>
-                                                                <a href='#'>
-                                                                    <div class=''>
-                                                                        <h2>".$titre_render." ?></h2>
-                                                                        <div class='sep'></div>
-                                                                        <p>".$texte_render." ?></p>
-                                                                        <div class='cta'>Lire la suite</div>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
-                                                        </div>",$link, array("html"=>true));
+                                            <div class="item">
+
+                                                <div class="c-bg c-bg-<?php print $i ?>">
+
+                                                    <?php print l("<div class=''><h2>".$titre_render."</h2><div class='sep'></div><p>".$texte_render."</p><div class='cta'>Lire la suite</div></div>",$link, array("html"=>true)); ?>
+
+                                                </div>
+
+                                            </div>
+
+                                    <?php
 
                                     $i++;
 
@@ -161,10 +157,7 @@
 
                                 <?php }
 
-                                        } /*
-
-                                 $view = views_embed_view('case_studies', 'default', $node->nid);
-                                 print $view; */?>
+                                        } ?>
 
                                 <div class="clear"></div>
 

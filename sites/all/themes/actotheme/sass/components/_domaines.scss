@@ -238,7 +238,7 @@
 
 .e-d-c{
     text-align: center;
-    @include main-padding(25vw,25vw);
+    @include main-padding(10vw,10vw);
 
     position: relative;
     display: block;
@@ -264,11 +264,12 @@
         }
             
            padding-top: 2rem;
+
          @include breakpoint($laptopl) {
-            padding-top: 10rem;
-            width: 55vw;
-            height: 55vw;
-             margin-left: -5.7vw;
+//            padding-top: 10rem;
+            width: 100%;
+            height: 100%;
+//             margin-left: -5.7vw;
          }
         
         position: relative;
@@ -292,10 +293,16 @@
          }
 
              .item {
-                 float: left;
-                height: 100%;
-                width: 33%;
+
+                 height: 100%;
+                 width: 100%;
                  padding: 1rem;
+
+                @include breakpoint($laptop){
+                    float: left;
+                    width: 33%;
+                }
+
              }
             
             .c-bg {
