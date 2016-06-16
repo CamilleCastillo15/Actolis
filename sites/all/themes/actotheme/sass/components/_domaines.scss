@@ -301,7 +301,7 @@
                  padding: 1rem;
                  vertical-align: top;
 
-                @include breakpoint($laptop){
+                @include breakpoint($tablet){
 //                    float: left;
                     display: inline-block;
                     width: 30%;
@@ -385,15 +385,38 @@
     .swiper-button-next {
 
         right: 7.5rem;
-        opacity: 1;
         margin-top: 0;
+        display:none;
+
+        @include breakpoint($tablet){
+            display: block;
+        }
     }
 
     .swiper-button-prev {
 
         left: 7.5rem;
-        opacity: 1;
         margin-top: 0;
+        display:none;
+
+        @include breakpoint($tablet){
+            display: block;
+        }
 
     }
+
+    .swiper-pagination {
+
+        display: block;
+        position: absolute;
+        left: 50%;
+        @include translate(-50%,0%);
+        bottom: 2%;
+
+        @include breakpoint($tablet){
+            display: none;
+        }
+
+    }
+
 }

@@ -83,6 +83,10 @@
          </div>
     </div>
 
+    <?php
+        $link = "content/formulaire-offres-de-formations";
+        print l("Pour plus de renseignements, demandez-nous nos fiches formation",$link, array("html"=>true, 'attributes' => array('class' => array('cta')))); ?>
+
 </div>
 
 
