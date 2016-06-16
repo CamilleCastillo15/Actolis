@@ -161,13 +161,18 @@
 
                                 <div class="clear"></div>
 
+
                             </div>
 
                         </div>
 
                     </div>
 
+
                 </div>
+
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
 
             </div>
 

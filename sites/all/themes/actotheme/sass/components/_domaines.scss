@@ -2,6 +2,8 @@
 @import "../variables/variables";
 @import "../variables/mixin";
 
+.domaine {
+
 .c-header{
 
     background-color: $gris;
@@ -297,10 +299,12 @@
                  height: 100%;
                  width: 100%;
                  padding: 1rem;
+                 vertical-align: top;
 
                 @include breakpoint($laptop){
-                    float: left;
-                    width: 33%;
+//                    float: left;
+                    display: inline-block;
+                    width: 30%;
                 }
 
              }
@@ -377,3 +381,19 @@
 
         }
     }
+
+    .swiper-button-next {
+
+        right: 7.5rem;
+        opacity: 1;
+        margin-top: 0;
+    }
+
+    .swiper-button-prev {
+
+        left: 7.5rem;
+        opacity: 1;
+        margin-top: 0;
+
+    }
+}
