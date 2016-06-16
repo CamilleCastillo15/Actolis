@@ -10,9 +10,9 @@
     width: 100%;
     margin-bottom: 1rem;
 
-        @include breakpoint($tablet) {
-            margin-bottom: 8rem;
-        }
+//        @include breakpoint($tablet) {
+//            margin-bottom: 8rem;
+//        }
 
     @include jpg(pharma_bg_header ,50% 50%,cover);
 

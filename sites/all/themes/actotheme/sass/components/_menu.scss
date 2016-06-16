@@ -242,8 +242,8 @@
                     }
                  }
             }
-//             @extend .gradient-h;
-             background-color:rgb(241, 241, 241);
+             @extend .gradient-h;
+//             background-color:rgb(241, 241, 241);
              width: 100%;
         }
 

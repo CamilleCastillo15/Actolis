@@ -10,6 +10,7 @@
             @include png(join_photo,50% 50%, cover);
         }
         width: 	100%;
+        height: 100%;
         @include main-padding();
 
         .c-blanc{
@@ -26,15 +27,14 @@
 	    display: block;
 	    margin: 0 auto;
 	    padding: 3rem;
-	    		  margin-top:2rem;
+        margin-top:2rem;
 	    margin-bottom: 2rem;
+
 	     @include breakpoint($tablet) {
+//	     	margin-top:7rem;
+//	        margin-bottom: 6rem;
+         }
 
-	     	margin-top:7rem;
-	    margin-bottom: 6rem;
-
-
-				 }
 	    @include main-padding();
 
 		h4{
@@ -44,8 +44,7 @@
 			text-align: center;
 
 
-			.views-row{
-
+			.views-row {
 
 				display: inline-block;
 				width: 100%;
@@ -110,6 +109,12 @@
     }
 
 .c-form{
+//          margin-top: 3rem;
+
+          @include breakpoint($tablet){
+             margin-top: 0rem;
+          }
+
 		h4{
 			padding-left: 0rem;
         	@include breakpoint($tablet){
