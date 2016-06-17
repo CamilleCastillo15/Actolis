@@ -23,9 +23,42 @@
 
 dpm($form);
 
-//$components = $['#node']->webform['components'];
+ function AddressList_webform_select_options_info() {
+  $items = array();
+  $items['reference_de_loffre'] = array(
+    'title' => t('Select Address'),
+    'options callback' => 'AddressList_options_Address'
+  );
+  return $items;
+}
+
+/**
+* Build an options list for use by webforms.
+*/
+//function AddressList_options_Address() {
+//  $options = array();
+//    $options[] = "1|city2 - Address1 - Floor - Building Name";
+//    $options[] = "2|city2 - Address2 - Floor - Building Name";
+//    $options[] = "3|city2 - Address3 - Floor - Building Name";
+//    $options[] = "4|city1 - Address4 - Floor - Building Name";
+//  return $options;
+//}
+////$components = $['#node']->webform['components'];
+//
+//    $options = array();
+//    $options[] = "1|city2 - Address1 - Floor - Building Name";
+//    $options[] = "2|city2 - Address2 - Floor - Building Name";
+//    $options[] = "3|city2 - Address3 - Floor - Building Name";
+//    $options[] = "4|city1 - Address4 - Floor - Building Name";
+
+    $test = array();
+    $test[0] = "test |test1";
+    $test[1] = "test |test1";
+    $test[2] = "test |test1";
+    $form['submitted']['reference_de_loffre'] = $test ;
 
 ?>
+
 <?php
   // Print out the progress bar at the top of the page
   print drupal_render($form['progressbar']);
@@ -46,6 +79,7 @@ dpm($form);
 //$form['submitted']['prenom']['#title'] = 'votre prénom';
 
 //dpm($form['submitted']);
+
 ?>
 
   <div class="form-col">
