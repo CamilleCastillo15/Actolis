@@ -10,7 +10,6 @@
 }
 .l-menu{
 
-        
         padding: 0rem;
         text-align: left;
         
@@ -64,7 +63,8 @@
            @extend .ul-nav;
            text-align:left;
             @include breakpoint($tablet) {
-                        text-align: center; 
+                text-align: center;
+                height: 50px;
             }
            li{
                 display: block;
@@ -100,7 +100,7 @@
                          font-weight: 300;
                         text-transform: none;
                         font-size:  inherit;
-                        padding:2rem;
+                        padding:1rem 2rem ;
                         width: auto;
                         background-color: transparent;
                     }
@@ -129,11 +129,11 @@
                         display: block;
                         content: "";
                         position: absolute;
-                        bottom:0.5rem;
+                        bottom:1rem;
                         width: 3rem;
                         left:2rem;
                          @include breakpoint($tablet) {
-                            bottom:1rem;
+                            bottom:0.33rem;
     left:50%;
      @include translate(-50%,0px);
                          }
