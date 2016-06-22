@@ -52,10 +52,10 @@ dpm($form);
 //    $options[] = "4|city1 - Address4 - Floor - Building Name";
 
     $test = array();
-    $test[0] = "test |test1";
-    $test[1] = "test |test1";
-    $test[2] = "test |test1";
-    $form['submitted']['reference_de_loffre'] = $test ;
+//    $test[0] = "test |test1";
+//    $test[1] = "test |test1";
+//    $test[2] = "test |test1";
+//    $form['submitted']['reference_de_loffre'] = $test ;
 
 ?>
 
