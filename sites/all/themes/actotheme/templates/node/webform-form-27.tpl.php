@@ -98,7 +98,11 @@ dpm($form);
   <div class="form-col">
 
       <?php print render($form['submitted']['message']) ?>
-      <?php print render($form['submitted']['reference_de_loffre']) ?>
+      <?php print render($form['submitted']['reference_de_loffre'])
+
+//             $form['submitted']['reference_de_loffre']['#default_value'] = 'BLAH BLAH';
+
+      ?>
 
   </div>
 

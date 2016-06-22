@@ -34,6 +34,8 @@
 
         $p = file_create_url($images_formation[0]["uri"]);
 
+//        dpm($nom);
+
         drupal_add_css('.formation-detail .dark-layer {background-image: url("'.$p.'") !important ; } ', 'inline');
 
 ?>
@@ -56,6 +58,12 @@
         </div>
 
 </div>
+
+<?php
+$nid = $node->nid;
+dpm($nid);
+$link = "content/formulaire-offres-de-formations?ref_offre=".$nid.";";
+print l("Pour plus de renseignements, demandez-nous nos fiches formation",$link, array("html"=>true, 'attributes' => array('class' => array('cta')))); ?>
 
 
 
