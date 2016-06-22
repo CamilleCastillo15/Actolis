@@ -51,11 +51,17 @@ dpm($form);
 //    $options[] = "3|city2 - Address3 - Floor - Building Name";
 //    $options[] = "4|city1 - Address4 - Floor - Building Name";
 
-    $test = array();
-//    $test[0] = "test |test1";
-//    $test[1] = "test |test1";
-//    $test[2] = "test |test1";
+//    $test = array();
+//    $test['option_1'] = "test |test1";
+//    $test['option_2'] = "test |test1";
+//    $test['option_3'] = "test |test1";
+//    $test['option_4'] = "test |test1";
 //    $form['submitted']['reference_de_loffre'] = $test ;
+//
+//    webform_option_by_bundle;
+//
+//    dpm($form);
+
 
 ?>
 
