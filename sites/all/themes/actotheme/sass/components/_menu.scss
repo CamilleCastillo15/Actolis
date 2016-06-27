@@ -12,8 +12,9 @@
     .l-region--header {
 
             ul{
-
-                height: 50px;
+                @include breakpoint($tablet) {
+                    height: 50px;
+                }
 
             }
 
@@ -32,8 +33,9 @@
         visibility: hidden; 
         background-color: rgba(white,0.9);
         left:-90%;
-      @include opacity(0);
-         @include transition(all 0.2s ease-in-out);
+
+        @include opacity(0);
+        @include transition(all 0.2s ease-in-out);
 
         @include breakpoint($tablet) {
             visibility: visible;    
@@ -254,21 +256,20 @@
                  }
             }
              @extend .gradient-h;
-//             background-color:rgb(241, 241, 241);
              width: 100%;
         }
 
-        .user{
-            display: block; 
-            .menu{
-                    padding-bottom: 3rem;
-                    li{
-                        background-color: white;
-                        a{
-                           background-color: white; 
-                           color:black;
-                        }
+    .user{
+        display: block;
+        .menu{
+                padding-bottom: 3rem;
+                li{
+                    background-color: white;
+                    a{
+                       background-color: white;
+                       color:black;
                     }
+                }
             }
         }
     }
@@ -283,7 +284,11 @@
             position: absolute;
             bottom:1rem;
             width: 7rem;
-            left:50%;
+            left:23.5%;
+            @include breakpoint($tablet) {
+                left:60%;
+                bottom:0rem;
+            }
             @include translate(-50%,0px);
             height: 0.22rem;
             background-color: #fff;
