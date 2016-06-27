@@ -29,7 +29,7 @@
                             $loginform["links"]["#children"] = null;
                             $loginform["links"]["#markup"] = null;
                             print drupal_render($loginform);
-                            dpm($loginform);?>
+                           // dpm($loginform);?>
 
                             <a href="/user/password" title="Request new password via e-mail.">Request new password</a>
 
@@ -56,7 +56,7 @@
                                 $registerform["account"]["name"]["#description"] = "qsd";
                             ?>
 
-                            <?php dpm($registerform); ?>
+                            <?php //dpm($registerform); ?>
                                 <!-- <hr/> -->
                             <?php print drupal_render($registerform); ?>
 

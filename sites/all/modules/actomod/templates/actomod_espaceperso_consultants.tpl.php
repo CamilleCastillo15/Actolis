@@ -39,7 +39,7 @@
                             $loginform["links"]["#children"] = null;
                             $loginform["links"]["#markup"] = null;
                             print drupal_render($loginform);
-                            dpm($loginform);?>
+                            //dpm($loginform);?>
 
                             <a href="/user/password" title="Request new password via e-mail.">Request new password</a>
                         </div>

@@ -310,28 +310,29 @@ select{
     }
 
      h1{
-    @include fz(5);
-    font-weight: 700;
-    display: block;
-    text-align: center;
-    padding: 2rem;
-    position: relative;
-    width: 100%;
-    padding-bottom: 0rem;
+        @include fz(5);
+        font-weight: 700;
+        display: block;
+        text-align: center;
+        padding: 2rem;
+        position: relative;
+        width: 100%;
+        padding-bottom: 0rem;
 
-    &:after{
-      content:"";
-      width: 10%;
-      height: 5px;
-      @extend .gradient-h;
-      margin:0 auto;
-      position: relative;
-      display: block;
-      margin-bottom: 0rem;
-      margin-top:2rem;
-    }
+        &:after{
+          content:"";
+          width: 10%;
+          height: 5px;
+          @extend .gradient-h;
+          margin:0 auto;
+          position: relative;
+          display: block;
+          margin-bottom: 0rem;
+          margin-top:2rem;
+        }
 
-  }
+      }
+
   }
   
 
