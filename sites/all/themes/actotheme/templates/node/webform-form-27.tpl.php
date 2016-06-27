@@ -21,7 +21,8 @@
  * - $form['preview']: A renderable representing the entire submission preview.
  */
 
-dpm($form);
+//dpm($form);
+//dpm($form['submitted']['reference_de_loffre']);
 
  function AddressList_webform_select_options_info() {
   $items = array();
@@ -35,33 +36,6 @@ dpm($form);
 /**
 * Build an options list for use by webforms.
 */
-//function AddressList_options_Address() {
-//  $options = array();
-//    $options[] = "1|city2 - Address1 - Floor - Building Name";
-//    $options[] = "2|city2 - Address2 - Floor - Building Name";
-//    $options[] = "3|city2 - Address3 - Floor - Building Name";
-//    $options[] = "4|city1 - Address4 - Floor - Building Name";
-//  return $options;
-//}
-////$components = $['#node']->webform['components'];
-//
-//    $options = array();
-//    $options[] = "1|city2 - Address1 - Floor - Building Name";
-//    $options[] = "2|city2 - Address2 - Floor - Building Name";
-//    $options[] = "3|city2 - Address3 - Floor - Building Name";
-//    $options[] = "4|city1 - Address4 - Floor - Building Name";
-
-//    $test = array();
-//    $test['option_1'] = "test |test1";
-//    $test['option_2'] = "test |test1";
-//    $test['option_3'] = "test |test1";
-//    $test['option_4'] = "test |test1";
-//    $form['submitted']['reference_de_loffre'] = $test ;
-//
-//    webform_option_by_bundle;
-//
-//    dpm($form);
-
 
 ?>
 
@@ -77,14 +51,13 @@ dpm($form);
     print '</div>';
   }
 
-  // Print out the main part of the form.
-  // Feel free to break this up and move the pieces within the array.
-  //print drupal_render($form['submitted']);
+if(isset($_GET['nid'])){
 
-//$form['submitted']['nom']['#title'] = 'votre nom';
-//$form['submitted']['prenom']['#title'] = 'votre prénom';
+    $nid = $_GET['nid'];
+    $node = node_load($nid);
+    $title = $node->title;
 
-//dpm($form['submitted']);
+}
 
 ?>
 <div class="c-form">
@@ -96,20 +69,41 @@ dpm($form);
             <div class="c-gradient">
 
                   <div class="form-col">
-
                       <?php print render($form['submitted']['nom']) ?>
                       <?php print render($form['submitted']['prenom']) ?>
-
                   </div>
 
                   <div class="form-col">
+                      <?php print render($form['submitted']['message']); ?>
+                      <?php $options_ref = $form['submitted']['reference_de_loffre'];
 
-                      <?php print render($form['submitted']['message']) ?>
-                      <?php print render($form['submitted']['reference_de_loffre'])
+                      $options = $form['submitted']['reference_de_loffre']['#options'];
 
-                //             $form['submitted']['reference_de_loffre']['#default_value'] = 'BLAH BLAH';
+                      if(isset($title)){
 
-                      ?>
+                          $def = array_search($title, $options);
+
+                          if($def){
+
+                            $options_ref = array(
+                              '#title' => 'Référence de l\'offre',
+                              '#type' => 'select',
+                              '#value' => $def,
+                              '#options' => $options);
+                          }
+
+                          $options_ref['#options'] = $options ;
+
+                      }
+
+                       ?>
+
+                      <div class="webform-component">
+
+                          <?php print render($options_ref);
+                                //dpm($form);?>
+
+                      </div>
 
                   </div>
 
@@ -123,4 +117,5 @@ dpm($form);
 
 </div>
 
-  <?php print drupal_render_children($form);
+  <?php  print render($form['actions']);
+  //<?php print drupal_render_children($form);

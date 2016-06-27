@@ -13,13 +13,6 @@
 
         ?>
 
-<!--
-             <div class="item-offre">
-                 <span class="nom"><?php //print render($nom) ?></span>
-                 <span class="date"><?php //print render($date) ?></span>
-                 <div class="sep"></div>
-             </div>
--->
 <div class='sep'></div>
 
             <?php print l("
@@ -33,8 +26,6 @@
         $images_formation = field_get_items('node', $node, 'field_image_formation');
 
         $p = file_create_url($images_formation[0]["uri"]);
-
-//        dpm($nom);
 
         drupal_add_css('.formation-detail .dark-layer {background-image: url("'.$p.'") !important ; } ', 'inline');
 
@@ -61,9 +52,17 @@
 
 <?php
 $nid = $node->nid;
+dpm($node);
+dpm($_SERVER['REQUEST_URI']);
+
+$p = $_SERVER['REQUEST_URI'];
+$a = explode("/",$p);
+$ref = $a[2];
+dpm($a);
+dpm($ref);
 dpm($nid);
-$link = "content/formulaire-offres-de-formations?ref_offre=".$nid.";";
-print l("Pour plus de renseignements, demandez-nous nos fiches formation",$link, array("html"=>true, 'attributes' => array('class' => array('cta')))); ?>
+$link = "content/formulaire-offres-de-formations";
+print l("Pour plus de renseignements, demandez-nous nos fiches formation",$link, array("html"=>true, 'attributes' => array('class' => array('cta')), 'query' => array('nid' => $nid))); ?>
 
 
 
