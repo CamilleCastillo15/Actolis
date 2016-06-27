@@ -137,7 +137,7 @@ body {
         @include fz(3);
         margin-bottom: 0.8rem;
       }
-    input, textarea{
+    input, textarea, select{
       background-color: $gris;
       border-radius: 0.3rem;
       padding: 0.666rem;
@@ -156,7 +156,9 @@ body {
           .form-required{
             color:$bleu;
           }
+
       }
+
     }
 
     textarea{

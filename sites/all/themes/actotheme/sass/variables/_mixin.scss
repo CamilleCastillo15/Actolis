@@ -85,7 +85,6 @@ $fallback-extension: 'png' !default;
     @if($poz){
         background-position: $poz;
     }
-
 }
 
 @mixin jpg($name, $poz:false, $size:false){
@@ -105,7 +104,6 @@ $fallback-extension: 'png' !default;
     padding-right: 2rem;
 
     @include breakpoint($laptop) {
-
            @if($left != 0){
              padding-left:$left/2;
           } @else {
@@ -116,12 +114,11 @@ $fallback-extension: 'png' !default;
           } @else {
             padding-right:$m-padding/2;
           }
-
     }
 
     @include breakpoint($laptopl) {
        
-           @if($left != 0){
+          @if($left != 0){
              padding-left:$left;
           } @else {
             padding-left:$m-padding;
@@ -131,10 +128,7 @@ $fallback-extension: 'png' !default;
           } @else {
             padding-right:$m-padding;
           }
-
     }
-
-    
 }
 
 @mixin main-50(){

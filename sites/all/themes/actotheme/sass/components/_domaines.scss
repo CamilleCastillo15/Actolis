@@ -56,52 +56,51 @@
 
 }
 
+@include keyframes(photo1) {
+  0% { @include opacity(0); right:-10rem;  }
+ 10% { @include opacity(1); right:-5rem;   }
+ 30% { @include opacity(1); right:-5rem;   }
+ 50% { @include opacity(0); right:-2rem;   }
+100% { @include opacity(0); right:-2rem;   }
+}
 
-//@include keyframes(photo1) {
-//   0% { @include opacity(0); right:-10rem;  }
-//  10% { @include opacity(1); right:-5rem;   }
-//  30% { @include opacity(1); right:-5rem;   }
-//  50% { @include opacity(0); right:-2rem;   }
-// 100% { @include opacity(0); right:-2rem;   }
-//}
-//@include keyframes(photo2) {
-//   0% { @include opacity(0); right:-10rem; }
-//  10% { @include opacity(1); right:-8rem;  }
-//  40% { @include opacity(1); right:-8rem;  }
-//  50% { @include opacity(0); right:-2rem;  }
-// 100% { @include opacity(0); right:-2rem;  }
-//}
-//
-//
-//@include keyframes(photo3) {
-//   0% { @include opacity(0); right:-10rem; }
-//  55% { @include opacity(0); right:-10rem; }
-//  65% { @include opacity(1); right:-5rem;  }
-//  90% { @include opacity(1); right:-5rem;  }
-// 100% { @include opacity(0); right:-2rem;  }
-//}
-//
-//@include keyframes(photo4) {
-//   0% { @include opacity(0); right:-10rem; }
-//  55% { @include opacity(0); right:-10rem; }
-//  65% { @include opacity(1); right:-8rem;  }
-//  90% { @include opacity(1); right:-8rem;  }
-// 100% { @include opacity(0); right:-6rem;  }
-//}
-//
-//.c-img-1{
-//     @include animation(photo1 15s ease-in-out 3);
-//}
-//.c-img-2{
-//     @include animation(photo2 16s ease-in-out 3);
-//}
-//
-//.c-img-3{
-//     @include animation(photo3 15s ease-in-out 3);
-//}
-//.c-img-4{
-//     @include animation(photo4 16s ease-in-out 3);
-//}
+@include keyframes(photo2) {
+  0% { @include opacity(0); right:-10rem; }
+ 10% { @include opacity(1); right:-8rem;  }
+ 40% { @include opacity(1); right:-8rem;  }
+ 50% { @include opacity(0); right:-2rem;  }
+100% { @include opacity(0); right:-2rem;  }
+}
+
+@include keyframes(photo3) {
+  0% { @include opacity(0); right:-10rem; }
+ 55% { @include opacity(0); right:-10rem; }
+ 65% { @include opacity(1); right:-5rem;  }
+ 90% { @include opacity(1); right:-5rem;  }
+100% { @include opacity(0); right:-2rem;  }
+}
+
+@include keyframes(photo4) {
+  0% { @include opacity(0); right:-10rem; }
+ 55% { @include opacity(0); right:-10rem; }
+ 65% { @include opacity(1); right:-8rem;  }
+ 90% { @include opacity(1); right:-8rem;  }
+100% { @include opacity(0); right:-6rem;  }
+}
+
+.c-img-1{
+    @include animation(photo1 15s ease-in-out 3);
+}
+.c-img-2{
+    @include animation(photo2 16s ease-in-out 3);
+}
+
+.c-img-3{
+    @include animation(photo3 15s ease-in-out 3);
+}
+.c-img-4{
+    @include animation(photo4 16s ease-in-out 3);
+}
 
 .c-block-domaine{
 

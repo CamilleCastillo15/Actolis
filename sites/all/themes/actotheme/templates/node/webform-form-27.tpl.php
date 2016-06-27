@@ -87,23 +87,40 @@ dpm($form);
 //dpm($form['submitted']);
 
 ?>
+<div class="c-form">
 
-  <div class="form-col">
+    <div class="cc-block">
 
-      <?php print render($form['submitted']['nom']) ?>
-      <?php print render($form['submitted']['prenom']) ?>
+        <div class="c-block">
 
-  </div>
+            <div class="c-gradient">
 
-  <div class="form-col">
+                  <div class="form-col">
 
-      <?php print render($form['submitted']['message']) ?>
-      <?php print render($form['submitted']['reference_de_loffre'])
+                      <?php print render($form['submitted']['nom']) ?>
+                      <?php print render($form['submitted']['prenom']) ?>
 
-//             $form['submitted']['reference_de_loffre']['#default_value'] = 'BLAH BLAH';
+                  </div>
 
-      ?>
+                  <div class="form-col">
 
-  </div>
+                      <?php print render($form['submitted']['message']) ?>
+                      <?php print render($form['submitted']['reference_de_loffre'])
+
+                //             $form['submitted']['reference_de_loffre']['#default_value'] = 'BLAH BLAH';
+
+                      ?>
+
+                  </div>
+
+                  <div class="clear"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
   <?php print drupal_render_children($form);
