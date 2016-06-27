@@ -12,7 +12,7 @@
  * - $form: The complete form array.
  * - $nid: The node ID of the Webform.
  *
- * The $form array contains two main pieces:
+ * The $form array conwtains two main pieces:
  * - $form['submitted']: The main content of the user-created form.
  * - $form['details']: Internal information stored by Webform.
  *
