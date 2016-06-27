@@ -33,13 +33,15 @@
     print '</div>';
   }
 
-  // Print out the main part of the form.
-  // Feel free to break this up and move the pieces within the array.
-  //print drupal_render($form['submitted']);
+if(isset($_GET['nid'])){
 
-//$form['submitted']['nom']['#title'] = 'votre nom';
+    $nid = $_GET['nid'];
+    $node = node_load($nid);
+    $title = $node->title;
 
-//dpm($form['submitted']); ?>
+}
+
+?>
 
   <div class="form-col">
 

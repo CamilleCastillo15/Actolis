@@ -15,14 +15,6 @@
 
         ?>
 
-<!--
-             <div class="item-offre">
-                 <span class="nom"><?php //print render($nom) ?></span>
-                 <span class="date"><?php //print render($date) ?></span>
-                 <div class="sep"></div>
-             </div>
--->
-
             <?php print l("
                 <div class='item-offre'>
                     <span class='nom'>".$nom_render."</span>
@@ -45,7 +37,17 @@
         <div class="qualites"><h4>Qualités requises :</h4>
         <?php print render($qualites); ?></div>
 
-        <?php print l("Postuler", "/content/formulaire-rejoignez-nous", array("html"=>true, 'attributes' => array('class' => array('cta')))); ?>
+        <?php
+
+        $nid = $node->nid;
+
+        $p = $_SERVER['REQUEST_URI'];
+        $a = explode("/",$p);
+        $poste = $a[2];
+
+        dpm($nid);
+
+        print l("Postuler", "/content/formulaire-rejoignez-nous", array("html"=>true, 'attributes' => array('class' => array('cta')), 'query' => array('nid' => $nid))); ?>
 
 <?php    }
 
