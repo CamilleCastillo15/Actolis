@@ -52,15 +52,15 @@
 
 <?php
 $nid = $node->nid;
-dpm($node);
-dpm($_SERVER['REQUEST_URI']);
+//dpm($node);
+//dpm($_SERVER['REQUEST_URI']);
 
 $p = $_SERVER['REQUEST_URI'];
 $a = explode("/",$p);
 $ref = $a[2];
-dpm($a);
-dpm($ref);
-dpm($nid);
+//dpm($a);
+//dpm($ref);
+//dpm($nid);
 $link = "content/formulaire-offres-de-formations";
 print l("Pour plus de renseignements, demandez-nous nos fiches formation",$link, array("html"=>true, 'attributes' => array('class' => array('cta')), 'query' => array('nid' => $nid))); ?>
 
