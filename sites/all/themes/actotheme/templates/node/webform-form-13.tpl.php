@@ -54,9 +54,39 @@ if(isset($_GET['nid'])){
 
   <div class="form-col">
 
+      <?php $options_ref = $form['submitted']['reference_du_poste'];
+            $options = $form['submitted']['reference_du_poste']['#options'];
+
+                      if(isset($title)){
+
+                          $def = array_search($title, $options);
+
+                          if($def){
+
+                            $options_ref = array(
+                              '#title' => 'Référence du poste : *',
+                              '#type' => 'select',
+                              '#value' => $def,
+                              '#options' => $options);
+                          }
+
+                          $options_ref['#options'] = $options ;
+
+                      }
+
+                       ?>
+      <div class="webform-component">
+
+          <?php print render($options_ref); ?>
+
+      </div>
+
       <?php print render($form['submitted']['parcourir']) ?>
 
   </div>
-  <div class="clear"></div>
 
-<?php print drupal_render_children($form);
+
+
+  <div class="clear"></div>
+ <?php  print render($form['actions']);
+//<?php //print drupal_render_children($form);
