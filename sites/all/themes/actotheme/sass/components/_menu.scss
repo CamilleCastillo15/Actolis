@@ -7,18 +7,7 @@
     display:block;
 
 }
-.l-menu{
-
-    .l-region--header {
-
-            ul{
-                @include breakpoint($tablet) {
-                    height: 50px;
-                }
-
-            }
-
-        }
+.l-menu {
 
         padding: 0rem;
         text-align: left;
@@ -107,10 +96,10 @@
                         font-weight: 700;
                         text-transform: uppercase;  
                     @include breakpoint($tablet) {
-                         font-weight: 300;
+
+                        font-weight: 300;
                         text-transform: none;
-                        font-size: inherit;
-                        padding:1.25rem 2rem;
+                        font-size: 1.25rem;
                         width: auto;
                         background-color: transparent;
                     }
@@ -130,6 +119,7 @@
 
                              background-color: rgba(#fff,0.3);
                         }
+
                     }
 
                 }
@@ -139,6 +129,7 @@
 
                             }
                     }
+
                     &:after {
 
                         display: block;
@@ -169,17 +160,18 @@
                         text-align: center; 
             }
                  li{
-                    padding: 0rem 0rem;
+                     padding: 0rem 0rem;
                      background-color: transparent;
-                    a{
+
+                    a {
                         background-image: none !important;
                         background-image: url("") !important;
                         background-color: transparent;
+
                     @include breakpoint($tablet) {
-                        
                         background-color: transparent;
                     }
-                        //padding: 2rem 2rem;
+
                         .c-img{
                              display: inline-block;
                               vertical-align: middle;
@@ -199,16 +191,19 @@
                                     @include translate(0px,0px);
                                     @include transition(all 0.2s ease-out);
                                 }
-                                img{
+
+                                img {
                                     width: 60%;
                                     height: auto;
                                     left: 20%;
                                     top:20%;
                                     position: relative;
                                 }
+
                                 margin-right:2rem;
                         }
-                        span{
+
+                        span {
                                 display: inline-block;
                                 text-align: left;
                                 vertical-align: middle;
@@ -217,12 +212,9 @@
                                 font-weight: 700;
                                 max-width: 20vw;
                                 width: auto;
-                                //padding-left: 2rem;
 
                                 @include breakpoint($laptop) {
-
-                                        text-align: center; 
-
+                                        text-align: center;
                                 }
                         }
 
@@ -255,7 +247,9 @@
                     }
                  }
             }
-             @extend .gradient-h;
+//             @extend .gradient-h;
+
+             background-color: $lightgris;
              width: 100%;
         }
 

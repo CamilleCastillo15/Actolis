@@ -36,7 +36,7 @@
                     <?php
                           $n = node_load($value->nid);
                           $link =drupal_get_path_alias("node/".$value->nid);
-                          $picto = field_view_field("node",$n,'field_icone');
+                          $picto = field_view_field("node",$n,'field_ic_ne_menu');
                           $title = field_view_field("node",$n,'field_titre_domaine');
                           $title_2 = field_view_field("node",$n,'field_titre_domaine_2');
                           $title_render = '<span>'.render($title).'</span>';
