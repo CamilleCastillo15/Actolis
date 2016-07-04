@@ -11,14 +11,11 @@
 
         padding: 0rem;
         text-align: left;
-        
         width: 100%;
         top: 0px;
         position: fixed;
         z-index: 100;
-        
         font-size: 1.5rem;
-
         visibility: hidden; 
         background-color: rgba(white,0.9);
         left:-90%;
@@ -30,8 +27,8 @@
             visibility: visible;    
             @include opacity(1);
             left:0%;
-             text-align: center;
-                background-color: $orange;
+            text-align: center;
+            background-color: $orange;
             position: relative;
             display: block;
             z-index: 1;
@@ -130,30 +127,39 @@
                             }
                     }
 
-                    &:after {
+                    span {
 
-                        display: block;
-                        content: "";
-                        position: absolute;
-                        bottom:0m;
-                        width: 3rem;
-                        left:2rem;
-                        @include breakpoint($tablet) {
-                            bottom:0.33rem;
+                        width:50%;
+                        position: relative;
+
+                        &:after{
+                            display: none;
+                            content: "";
+                            position: absolute;
+                            top:4.5rem;
+                            width: 7rem;
                             left:50%;
-                             @include translate(-50%,0px);
+                            @include breakpoint($tablet) {
+                                left:50%;
+                            }
+                            @include translate(-50%,0px);
+                            height: 0.22rem;
+                            background-color: #fff;
+
                         }
-                        height: 0.22rem;
-                        background-color: rgba(#fff,0);
+
                     }
+
                 }
+
            }
+
       }
 
         .domaine-menu{
             ul{
                  @extend .ul-nav;
-                 padding:1rem 0rem;
+//                 padding:1rem 0rem;
                  font-size: 0px;
                   text-align:left;
             @include breakpoint($tablet) {
@@ -167,6 +173,7 @@
                         background-image: none !important;
                         background-image: url("") !important;
                         background-color: transparent;
+                        padding:1rem 2rem;
 
                     @include breakpoint($tablet) {
                         background-color: transparent;
@@ -185,10 +192,13 @@
                                 height: 5rem;
                                 background-size: 60%;
                                 margin:0px;
+                                background-repeat: no-repeat;
+                                background-position: center center;
+
                                 @include transition(all 0.2s ease-out);
                                 &:before{
                                     border-width: 2px;
-                                    @include translate(0px,0px);
+                                    @include translate(-50%,0px);
                                     @include transition(all 0.2s ease-out);
                                 }
 
@@ -220,11 +230,12 @@
 
                          &:hover{
                             background-color: transparent;
+                            color:white;
+//                            border: 0.15rem solid white;
 
                             &:after {
                                 
                                 background-color:transparent;
-
 
                             }
 
@@ -240,14 +251,13 @@
 
                         @include breakpoint($laptop) {
 
-                            border-left:2px solid white;
-                            border-right:2px solid white;
+//                            border-left:2px solid white;
+//                            border-right:2px solid white;
 
                         }
                     }
                  }
             }
-//             @extend .gradient-h;
 
              background-color: $lightgris;
              width: 100%;
@@ -272,22 +282,6 @@
 .active-bt{
     a{
         position: relative;
-        &:after{
-            display: block;
-            content: "";
-            position: absolute;
-            bottom:1rem;
-            width: 7rem;
-            left:23.5%;
-            @include breakpoint($tablet) {
-                left:60%;
-                bottom:0rem;
-            }
-            @include translate(-50%,0px);
-            height: 0.22rem;
-            background-color: #fff;
-
-        }
     }
 }
 

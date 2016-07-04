@@ -8,6 +8,9 @@
     $titre_2 = field_view_field("node",$node,'field_titre_domaine_2');
     $icone = field_view_field("node",$node,'field_icone');
 
+    $couleur = field_get_items("node",$node,'field_couleur')[0]['rgb'];
+//    dpm($couleur);
+
     $fc_blocs_domaines = field_get_items('node', $node, 'field_titre_texte_image');
 
     if($fc_blocs_domaines){

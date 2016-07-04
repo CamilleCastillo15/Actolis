@@ -1,16 +1,16 @@
 -----------------------------------------------------------------------------
 CURRENT FEATURES
 -----------------------------------------------------------------------------
-Formatter
+Formater
 
   Plain text HEX code (#FFFFFF)
   Css Declaration (color/background-color)
 
 Widget
 
-  Plain Text
-  Pre-selected Color Boxes
-  Simple Query Color 
+  Plain text
+  Pre-selected color boxes
+  Simple jquery color
   (http://recursive-design.com/projects/jquery-simple-color/)
 
 -----------------------------------------------------------------------------
@@ -36,8 +36,9 @@ INSTALLATION - jQuery simple color
 If you want to use the jquery simple color plugin you need to download it and 
 place it in your libraries folder (this will usually be "sites/all/libraries/").
 You can download the plugin by using the following links or by Drush.
+Make sure you rename the folder jquery-simple-color so you get
+sites/all/libraries/jquery-simple-color/jquery.simple-color.js.
 
-  http://recursive-design.com/projects/jquery-simple-color/
   https://github.com/recurser/jquery-simple-color
 
 -----------------------------------------------------------------------------
@@ -55,13 +56,3 @@ Maintainer and developer: targoo
 
 Development sponsored by Marique Calcus and written by Calcus David. 
 For professional support and development services contact targoo@gmail.com.
-
------------------------------------------------------------------------------
-More info
------------------------------------------------------------------------------
-http://www.w3.org/TR/css3-color/#color
-https://github.com/mikeemoo/ColorJizz-PHP
-http://www.colorhexa.com/ff0000
-https://github.com/PrimalPHP/Color/blob/master/lib/Primal/Color/Parser.php
-https://github.com/matthewbaggett/php-color/blob/master/Color.php
-
