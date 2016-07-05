@@ -47,24 +47,17 @@
                 </div>
             </div>
             <?php }  ?>
-
         </div>
-
     </div>
 
     <div class="c-big-cta">
-
     <?php
-
         $view_domaines = views_get_view('domaines');
         $view_domaines->execute();
         $result_domaines = $view_domaines->result;
         $i = 1;
-
         foreach($result_domaines as $key => $value) { ?>
-
             <?php
-
                   $n = node_load($value->nid);
                   $link =drupal_get_path_alias("node/".$value->nid);
                   $picto = field_view_field("node",$n,'field_icone');
@@ -74,26 +67,19 @@
                   $picto_render = '<div class="picto">'.render($picto).'</div>';
 
                   echo "<div class='b-big-cta b".$i."'>";
-                    echo "<div class='gradient'></div>";
-//                    print $picto_render;
-//                    print $title_render;
-                    print l($picto_render.$title_render."<div class='cta'>voir plus</div>",$link,array("html"=>true));
+                  echo "<div class='gradient'></div>";
+                  print l($picto_render.$title_render."<div class='cta'>voir plus</div>",$link,array("html"=>true));
                   echo "</div>";
 
                   $i++;
-
                }
         ?>
-
     </div>
 
     <div class="c-header">
        <div class="dark-layer">
-
         <?php
-
             $image_bkg_pictos = field_view_field("node",$node,'field_image_background_pictos');
-            //drupal_add_css('.c-header:'.$image_bkg_pictos.' !important;}', 'inline');
             $fc_textpictos = field_get_items('node', $node, 'field_pictos_textes');
             if($fc_textpictos){
                 $idti_pictos = array();
@@ -108,8 +94,6 @@
                 $chiffres = field_view_field('field_collection_item', $collectionsg_pictos_2, 'field_chiffres');
                 $textes = field_view_field('field_collection_item', $collectionsg_pictos_2, 'field_textes');
         ?>
-
-
             <div class="c-picto">
                 <?php print render($pictos); ?>
                 <h2 class="chiffres"><?php print render($chiffres); ?></h2>
@@ -166,26 +150,13 @@
     </div>
 
      <div class="c-block">
-
        <?php
-             $title_rejoignez_nous = field_view_field("node",$node,'field_title_rejoignez_nous');
-
-             //dpm($title_rejoignez_nous);
-
-             $texte_rejoignez_nous = field_view_field("node",$node,'field_texte_rejoignez_nous');
-
+            $title_rejoignez_nous = field_view_field("node",$node,'field_title_rejoignez_nous');
+            $texte_rejoignez_nous = field_view_field("node",$node,'field_texte_rejoignez_nous');
             $images_rejoignez_nous_bloc = field_get_items('node', $node, 'field_image_background_pictos');
-
-            //dpm($images_rejoignez_nous_bloc[0]);
-
-            //$p = image_style_url("large",$images_rejoignez_nous_bloc[0]["uri"]);
             $p = file_create_url($images_rejoignez_nous_bloc[0]["uri"]);
-            //dpm($m);
-
             drupal_add_css('.home .c-header {background-image: url("'.$p.'") !important ; } ', 'inline');
-
         ?>
-
         <div class="c-gradient">
             <div class="c-text">
                 <h4><?php print render($title_rejoignez_nous); ?></h4>
@@ -197,9 +168,7 @@
             <div class="c-img">
             </div>
         </div>
-
     </div>
-
 </div>
 
 
