@@ -40,21 +40,19 @@
         <h1 class="b2"><div class="picto"></div><span class="c-txt"><?php print render($titre_2); ?></span></h1>
         <div class="sep"></div>
     </div>
-    <nav class="nav">
-        <div class="frise-actions">
-            <?php
-               for($i = 0; $i < count($idti); $i++) {
-                   $collectionsg_2 = $collectionsg[$idti[$i]];
-                   $titre_actions = field_view_field('field_collection_item', $collectionsg_2, 'field_titre_frise');
-                   drupal_add_css('.domaine .frise-actions .titre-actions:after {border-right: 2px solid '.$couleur.' !important; } ', 'inline');
-                   drupal_add_css('.domaine .frise-actions .titre-actions:hover {background-color: '.$couleur.' !important; color: white !important; cursor :pointer !important; } ', 'inline');
-            ?>
-               <div class="titre-actions titre-actions-<?php print $i ?>">
-                    <?php print render($titre_actions); ?>
-                </div>
-            <?php } ?>
-        </div>
-    </nav>
+    <div class="frise-actions">
+        <?php
+           for($i = 0; $i < count($idti); $i++) {
+               $collectionsg_2 = $collectionsg[$idti[$i]];
+               $titre_actions = field_view_field('field_collection_item', $collectionsg_2, 'field_titre_frise');
+               drupal_add_css('.domaine .frise-actions .titre-actions:after {border-right: 2px solid '.$couleur.' !important; } ', 'inline');
+               drupal_add_css('.domaine .frise-actions .titre-actions:hover {background-color: '.$couleur.' !important; color: white !important; cursor :pointer !important; } ', 'inline');
+        ?>
+           <div class="titre-actions titre-<?php print $i." "; if ($i == 0){ print "active"; } ?>">
+               <a href="#"<?php print render($titre_actions); ?></a>
+            </div>
+        <?php } ?>
+    </div>
     <div class="c-block-domaine">
        <?php
            for($i = 0; $i < count($idti); $i++) {
@@ -83,18 +81,12 @@
         ?>
 
         <div class="c-gris">
-
             <div class="c-text">
-
-                <h4 class="title titre-<?php print $i ?>"><?php print render($titre); ?></h4>
+                <h4 class="title titre-<?php print $i ?> liens"><?php print render($titre); ?></h4>
                 <?php print render($texte); ?>
-
             </div>
-
             <div class='c-img-<?php print $i ?> c-img'></div>
-
             <div class="clear"></div>
-
         </div>
 
     <?php
@@ -146,13 +138,11 @@
                                             $texte_render =  render($texte);
 
                                             ?>
-
                                             <div class="item">
                                                 <div class="c-bg c-bg-<?php print $i ?>">
                                                     <?php print l("<div class=''><h2>".$titre_render."</h2><div class='sep'></div><p>".$texte_render."</p><div class='cta'>Lire la suite</div></div>",$link, array("html"=>true)); ?>
                                                 </div>
                                             </div>
-
                                     <?php
                                         $i++;
                                         if($i % 3 == 0 ) {
