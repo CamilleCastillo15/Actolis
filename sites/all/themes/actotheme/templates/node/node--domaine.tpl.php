@@ -46,12 +46,12 @@
                $collectionsg_2 = $collectionsg[$idti[$i]];
                $titre_actions = field_view_field('field_collection_item', $collectionsg_2, 'field_titre_frise');
                drupal_add_css('.domaine .frise-actions .titre-actions:after {border-right: 2px solid '.$couleur.' !important; } ', 'inline');
-               drupal_add_css('.domaine .frise-actions .titre-actions:hover {background-color: '.$couleur.' !important; color: white !important; cursor :pointer !important; } ', 'inline');
+               drupal_add_css('.domaine .frise-actions .titre-actions:hover,  .domaine .frise-actions .titre-actions.active{background-color: '.$couleur.' !important; color: white !important; cursor :pointer !important; } ', 'inline');
         ?>
            <div class="titre-actions titre-<?php print $i." "; if ($i == 0){ print "active"; } ?>">
                <a href="#"<?php print render($titre_actions); ?></a>
             </div>
-        <?php } ?>
+        <?php } ?>
     </div>
     <div class="c-block-domaine">
        <?php

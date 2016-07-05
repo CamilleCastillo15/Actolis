@@ -27,17 +27,28 @@
 
 //        console.log("swiperdomaine");
 
-        $('.frise-actions a').click(function(){
+        $(window).bind('scroll', function() {
+            var scrollTop = $(window).scrollTop();
+            console.log(scrollTop);
+
+            if(scrollTop > 498){
+                $('.frise-actions').addClass('fixed');
+            }else {
+                $('.frise-actions').removeClass('fixed');
+            }
+
+        });
+
+        $('.frise-actions .titre-actions').click(function(){
 
             event.preventDefault();
 //            console.log("nav-actions");
 
-            //Toggle Class
             $(".active").removeClass("active");
 //            console.log(this);
 //
             var divClosest = $(this).closest('div');
-            console.log(divClosest);
+//            console.log(divClosest);
 
             var classes = divClosest.attr('class');
             var theClass = classes.split(' ')[1];
