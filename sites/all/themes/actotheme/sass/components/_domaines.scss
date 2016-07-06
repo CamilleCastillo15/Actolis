@@ -40,7 +40,6 @@
         }
 
         .c-txt{
-
             display: inline-block;
             text-align: center;
             vertical-align: middle;
@@ -50,11 +49,8 @@
             line-height: 2.4rem;
             max-width: 400px;
             color:white;
-
         }
-
     }
-
 }
 
 //@include keyframes(photo1) {
@@ -168,6 +164,21 @@
              p, li{
                 @include fz(2);
              }
+
+        h4 {
+
+            p {
+
+                 @include fz(4);
+                 line-height: 2rem;
+                 font-weight:   600;
+                 margin-bottom: 1rem;
+                 text-transform: uppercase;
+
+            }
+
+        }
+
     }
 
  .c-img{
@@ -495,9 +506,39 @@
 
             @include link(black);
 
+            -webkit-transition: all ease 0.8s;
+            -moz-transition: all ease 0.8s;
+            transition: all ease 0.8s;
+
             &:hover, &.active {
 
                 @include link(white);
+
+            }
+
+            &.bg {
+
+//                background-size: 200% 100%;
+                background-position:right bottom;
+
+                 &:before {
+                    content: "";
+                    position: absolute;
+                    overflow: hidden;
+                    white-space: nowrap;
+
+                    color: black;
+                    background-color: black;
+                    background-size: 50%;
+
+                    width: 50%;
+                    height: 100%;
+                  }
+
+            }
+
+             &.fill {
+
 
             }
 
