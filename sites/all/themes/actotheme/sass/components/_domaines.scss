@@ -53,37 +53,37 @@
     }
 }
 
-//@include keyframes(photo1) {
-//  0% { @include opacity(0); right:-10rem;  }
-// 10% { @include opacity(1); right:-5rem;   }
-// 30% { @include opacity(1); right:-5rem;   }
-// 50% { @include opacity(0); right:-2rem;   }
-//100% { @include opacity(0); right:-2rem;   }
-//}
-//
-//@include keyframes(photo2) {
-//  0% { @include opacity(0); right:-10rem; }
-// 10% { @include opacity(1); right:-8rem;  }
-// 40% { @include opacity(1); right:-8rem;  }
-// 50% { @include opacity(0); right:-2rem;  }
-//100% { @include opacity(0); right:-2rem;  }
-//}
-//
-//@include keyframes(photo3) {
-//  0% { @include opacity(0); right:-10rem; }
-// 55% { @include opacity(0); right:-10rem; }
-// 65% { @include opacity(1); right:-5rem;  }
-// 90% { @include opacity(1); right:-5rem;  }
-//100% { @include opacity(0); right:-2rem;  }
-//}
-//
-//@include keyframes(photo4) {
-//  0% { @include opacity(0); right:-10rem; }
-// 55% { @include opacity(0); right:-10rem; }
-// 65% { @include opacity(1); right:-8rem;  }
-// 90% { @include opacity(1); right:-8rem;  }
-//100% { @include opacity(0); right:-6rem;  }
-//}
+@include keyframes(photo1) {
+  0% { @include opacity(0); right:-10rem;  }
+ 10% { @include opacity(1); right:-5rem;   }
+ 30% { @include opacity(1); right:-5rem;   }
+ 50% { @include opacity(1); right:-2rem;   }
+100% { @include opacity(1); right:-2rem;   }
+}
+
+@include keyframes(photo2) {
+  0% { @include opacity(0); right:-10rem; }
+ 10% { @include opacity(1); right:-8rem;  }
+ 40% { @include opacity(1); right:-8rem;  }
+ 50% { @include opacity(1); right:-2rem;  }
+100% { @include opacity(1); right:-2rem;  }
+}
+
+@include keyframes(photo3) {
+  0% { @include opacity(0); right:-10rem; }
+ 55% { @include opacity(0); right:-10rem; }
+ 65% { @include opacity(1); right:-5rem;  }
+ 90% { @include opacity(1); right:-5rem;  }
+100% { @include opacity(1); right:-2rem;  }
+}
+
+@include keyframes(photo4) {
+  0% { @include opacity(0); right:-10rem; }
+ 55% { @include opacity(0); right:-10rem; }
+ 65% { @include opacity(1); right:-8rem;  }
+ 90% { @include opacity(1); right:-8rem;  }
+100% { @include opacity(1); right:-6rem;  }
+}
 
 .c-img-1{
     @include animation(photo1 15s ease-in-out 3);
@@ -435,33 +435,28 @@
         width: 100%;
         margin: 0 auto;
         text-align: center;
-
         margin: 0 auto;
-
         position: absolute;
 //        top: 0;
         left: 50%;
         @include translate(-50%,-50%);
 
-         display: block;
+        display: block;
         margin: 0 auto;
+        width: 100%;
 
-        min-width: 20rem;
-
-//        @include main-padding();
-
-        padding-left:2rem;
-        padding-right: 2rem;
-
-        @include breakpoint($laptop) {
-                padding-left:6.5%;
-                padding-right:6.5%;
-              }
-
-        @include breakpoint($laptopl) {
-                padding-left:13%;
-                padding-right:13%;
-            }
+//        padding-left:2rem;
+//        padding-right: 2rem;
+//
+//        @include breakpoint($laptop) {
+//                padding-left:6.5%;
+//                padding-right:6.5%;
+//              }
+//
+//        @include breakpoint($laptopl) {
+//                padding-left:13%;
+//                padding-right:13%;
+//            }
 
         &.fixed {
 
@@ -471,44 +466,28 @@
             top: 0;
             z-index: 10;
             @include translate(0%,0%);
-
             background-color: $lightgris;
-
             padding-left:0;
             padding-right: 0;
-
-//            @include breakpoint($laptop) {
-//                    padding-left:6.5%;
-//                    padding-right:6.5%;
-//                  }
-//
-//            @include breakpoint($laptopl) {
-//                    padding-left:13%;
-//                    padding-right:13%;
-//                }
 
         }
 
         .titre-actions {
 
             display: inline-block;
-
             background-color: $lightgris;
-
             text-transform: uppercase;
             position: relative;
             vertical-align: middle;
-
             padding: 1rem 3rem;
             margin-right: -5.5px;
-
             min-height: 5rem;
 
             @include link(black);
 
-            -webkit-transition: all ease 0.8s;
-            -moz-transition: all ease 0.8s;
-            transition: all ease 0.8s;
+//            -webkit-transition: all ease 0.8s;
+//            -moz-transition: all ease 0.8s;
+//            transition: all ease 0.8s;
 
             &:hover, &.active {
 
@@ -518,7 +497,6 @@
 
             &.bg {
 
-//                background-size: 200% 100%;
                 background-position:right bottom;
 
                  &:before {
@@ -526,26 +504,28 @@
                     position: absolute;
                     overflow: hidden;
                     white-space: nowrap;
-
                     color: black;
-                    background-color: black;
                     background-size: 50%;
-
-                    width: 50%;
                     height: 100%;
+                    left: 0;
+                    top: 0;
                   }
-
             }
 
              &.fill {
 
+                @include link(white);
+
+                 a {
+
+                     position: relative;
+
+                 }
 
             }
 
             a {
-
 //                padding: 1rem 3rem;
-
             }
 
             &:after {
@@ -563,6 +543,12 @@
 
         }
 
+    }
+
+    .nos-actions {
+
+        @include main-padding();
+        padding-top: 5rem;
     }
 
 }

@@ -52,8 +52,8 @@
           });
 
 var aItems = $('.c-text .title.liens');
-//console.log(aItems);
-
+var lastScroll = 0;
+var curPos = $(window).scrollTop() + $(window).height() /2;
 var aItemsTop = [];
 
     aItems.each(function(i){
@@ -65,54 +65,119 @@ var aItemsTop = [];
 //$(aItems[0]).addClass('in-view');
 //
         $(window).on('scroll', function(){
-//          console.log(aItems.slice(1));
-          itemInView(aItems.slice(1));
-          bgColour(aItemsTop);
+        itemInView(aItems.slice(1));
+
+          var scrollTop = true;
+
+          if (curPos > lastScroll) {
+               scrollTop = true;
+               bgColour(aItemsTop, scrollTop);
+           } else {
+              scrollTop = false;
+              bgColour(aItemsTop, scrollTop);
+           }
+
+           lastScroll = curPos;
+           console.log(curPos);
+           console.log(lastScroll);
+
         });
-//
-        function itemInView(items) {
-          items.each(function(){
-            if (($(this).offset().top - $(window).scrollTop()) <= $(window).height()/2) {
-              $(this).addClass('in-view');
-            } else {
-              $(this).removeClass('in-view');
-            }
-          });
+
+    function itemInView(items) {
+      items.each(function(){
+        if (($(this).offset().top - $(window).scrollTop()) <= $(window).height()/2) {
+          $(this).addClass('in-view');
+        } else {
+          $(this).removeClass('in-view');
+        }
+      });
+    }
+
+        var width = 0;
+        var lastScrollTop = 0;
+
+    function bgColour(aItemsTop, scrolltop){
+      var curPos = $(window).scrollTop() + $(window).height() /2;
+      var _leng = $(aItems).length;
+
+
+//      console.log(scrollTop);
+
+      aItems.each(function(i){
+
+//        console.log($(aItems[i]));
+
+        var closest = $(aItems[i]).closest('div');
+        var closestParent = closest.parent('div');
+
+        if(!(i+1 == _leng)) {
+
+            var height = $(aItems[i+1]).offset().top - $(aItems[i]).offset().top;
+
+        }  else {
+
+            var height = closest.height();
         }
 
-        function bgColour(){
-          var curPos = $(window).scrollTop() + $(window).height() /2;
-//          console.log(curPos);
-          var _leng = $(aItems).length;
-          aItems.each(function(i){
-            if (curPos > $(aItems[i]).offset().top && i+1 == _leng || curPos > $(aItems[i]).offset().top && curPos < $(aItems[i+1]).offset().top) {
+        var UnitPercentFill = 100 / height;
+
+//       if (scrollTop){
+           width = width + UnitPercentFill;
+           $('<style>.bg:before{width:'+width+'%;}</style>').appendTo('head');
+//       } else {
+//          width = width - UnitPercentFill;
+//          $('<style>.bg:before{width:'+width+'%;}</style>').appendTo('head');
+//       }
+
+        if (width == 100 || width > 100){ width = 0;}
+
+//            console.log(width);
+
+        if (curPos > $(aItems[i]).offset().top && i+1 == _leng || curPos > $(aItems[i]).offset().top && curPos < $(aItems[i+1]).offset().top) {
+
+            var div = $(aItems[i]).closest('div');
+
+//                $(div).addClass('bg-div');
+//                $('<style>.bg-div:before{width:'+width+'%;}</style>').appendTo('head');
+
+            var elementTop = div.offset().top;
+
+              var distance = (height - $(window).scrollTop());
+
               var itemClass = ($(this).attr('class'));
               var theClass = itemClass.split(' ')[1];
-//              console.log(theClass);
+
               $('.titre-actions.'+theClass).addClass('bg');
+
               var currentaItemPos = $(aItems[i]).offset().top;
+
+              var scrollTop = $(window).scrollTop();
+
               aItems.each(function(i){
-
                   if($(aItems[i]).offset().top < currentaItemPos) {
-
                       var itemClass = ($(this).attr('class'));
                       var theClass = itemClass.split(' ')[1];
-
                       $('.titre-actions.'+theClass).addClass('fill');
                   }
-
               });
+        } else {
+          var itemClass = ($(this).attr('class'));
+          var theClass = itemClass.split(' ')[1];
 
-            } else {
-              var itemClass = ($(this).attr('class'));
-              var theClass = itemClass.split(' ')[1];
+          $('.titre-actions.'+theClass).closest('div').removeClass('bg');
+          $('.titre-actions.'+theClass).removeClass('bg');
+          $('.titre-actions.'+theClass).removeClass('fill');
 
-              $('.titre-actions.'+theClass).removeClass('bg');
-              $('.titre-actions.'+theClass).removeClass('fill');
-            }
-          });
         }
+
+          lastScrollTop = curPos;
+
+      });
+
     }
+
+}
+
 };
 
 })(jQuery);

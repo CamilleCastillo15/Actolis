@@ -47,13 +47,24 @@
                $titre_actions = field_view_field('field_collection_item', $collectionsg_2, 'field_titre_frise');
                drupal_add_css('.domaine .frise-actions .titre-actions:after {border-right: 2px solid '.$couleur.' !important; } ', 'inline');
                drupal_add_css('.domaine .frise-actions .titre-actions:hover,  .domaine .frise-actions .titre-actions.active, .domaine .frise-actions .titre-actions.fill{background-color: '.$couleur.' !important; color: white !important; cursor :pointer !important; } ', 'inline');
-               drupal_add_css('.domaine .frise-actions .titre-actions.bg{background-color: '.$couleur.' !important; } ', 'inline');
+//               drupal_add_css('.domaine .frise-actions .titre-actions.bg{background-color: '.$couleur.' !important; } ', 'inline');
+               drupal_add_css('.domaine .frise-actions .titre-actions.bg::before{background-color: '.$couleur.' !important; } ', 'inline');
 
         ?>
            <div class="titre-actions titre-<?php print $i." "; if ($i == 0){ print "active"; } ?>">
                <a href="#"<?php print render($titre_actions); ?></a>
             </div>
         <?php } ?>
+    </div>
+    <div class="nos-actions">
+
+        <h4>Nos actions</h4>
+        <?php
+
+            $actions = field_view_field("node",$node,'field_nos_actions');
+        ?>
+        <?php print render($actions) ?>
+
     </div>
     <div class="c-block-domaine">
        <?php
