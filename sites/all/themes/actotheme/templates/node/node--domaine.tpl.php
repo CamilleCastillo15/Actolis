@@ -7,7 +7,6 @@
     $titre_2 = field_view_field("node",$node,'field_titre_domaine_2');
     $icone = field_view_field("node",$node,'field_icone');
     $couleur = field_get_items("node",$node,'field_couleur')[0]['rgb'];
-//    dpm($couleur);
     $fc_blocs_domaines = field_get_items('node', $node, 'field_titre_texte_image');
     if($fc_blocs_domaines){
         $idti = array();
@@ -15,18 +14,14 @@
             $idti[] = $fc_field['value'];
         }
         $collectionsg =  field_collection_item_load_multiple($idti);
-        dpm($collectionsg);
-        dpm("^^^^^^^^^^^^^");
     }
     $images = field_get_items('node', $node, 'field_image');
     $icones = field_get_items('node', $node, 'field_icone');
     $couleur = field_get_items("node",$node,'field_couleur')[0]['rgb'];
-    dpm($couleur);
     $p = file_create_url($images[0]["uri"]);
     $m = file_create_url($icones[0]["uri"]);
     drupal_add_css('.domaine .c-header {background-image: url("'.$p.'") !important; } ', 'inline');
     drupal_add_css('.b2 .picto {background-image: url("'.$m.'"); !important} ', 'inline');
-
 ?>
 
 <div class="domaine">
@@ -46,7 +41,7 @@
 
         ?>
            <div class="titre-actions titre-<?php print $i." "; if ($i == 0){ print "active"; } ?>">
-               <a href="#"<?php print render($titre_actions); ?></a>
+               <a href="#"><?php print render($titre_actions); ?></a>
             </div>
         <?php } ?>
     </div>
@@ -70,22 +65,21 @@
 
 
     ?>
-        <div class="c-gris">
-            <div class="c-text">
-                <h4 class="title titre-<?php print $i ?> liens"><?php print render($titre); ?></h4>
-                <?php print render($texte); ?>
-            </div>
+
+    <div class="c-gris">
+        <div class="c-text">
+            <h4 class="title titre-<?php print $i ?> liens"><?php print render($titre); ?></h4>
+            <?php print render($texte); ?>
+        </div>
+
     <?php
-
        $fc_blocs_specs = field_get_items('field_collection_item', $collectionsg_2, 'field_specifications');
-
        if($fc_blocs_specs){
             $idti_specs = array();
             foreach ($fc_blocs_specs as $fc_field) {
                 $idti_specs[] = $fc_field['value'];
             }
             $collectionsg_specs =  field_collection_item_load_multiple($idti_specs);
-
           for($j = 0; $j < count($idti_specs); $j++) {
               dpm(count($idti_specs));
               $collectionsg_specs_2 = $collectionsg_specs[$idti_specs[$j]];
@@ -93,7 +87,6 @@
               $spec_type = field_view_field('field_collection_item', $collectionsg_specs_2, 'field_type_spec');
               $spec_num = field_view_field('field_collection_item', $collectionsg_specs_2, 'field_numero');
               drupal_add_css('.c-block-domaine .c-gris .specs{background-color: '.$couleur.' !important; } ', 'inline');
-
             ?>
 
             <div class="specs specs-<?php print $j ?>">

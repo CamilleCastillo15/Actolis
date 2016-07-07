@@ -215,65 +215,71 @@
                 }
             }
 
+        @include breakpoint($tablet){
+
             .specs {
-                right: 10%;
+//                right: 10%;
 
                 &.specs-0 {
 
-                    right: 10%;
+                    right: 3%;
 
                 }
 
                 &.specs-1 {
 
-                    right: 20%;
+                    right: 13%;
 
                 }
 
                 &.specs-2 {
 
-                   right: 30%;
+                   right: 23%;
 
                 }
 
                 &.specs-3 {
 
-                    right: 40%;
+                    right: 33%;
 
                 }
             }
         }
+    }
 
-        &:nth-child(even) {
+            @include breakpoint($tablet){
 
-            .specs {
-                left: 10%;
+                &:nth-child(even) {
+
+                    .specs {
+    //                    left: 10%;
+
+
+                    &.specs-0 {
+
+                        left: 3%;
+
+                    }
+
+                    &.specs-1 {
+
+                        left: 13%;
+
+                    }
+
+                    &.specs-2 {
+
+                       left: 23%;
+
+                    }
+
+                    &.specs-3 {
+
+                        left: 33%;
+
+                    }
+                }
             }
-
-                &.specs-0 {
-
-                    left: 10%;
-
-                }
-
-                &.specs-1 {
-
-                    left: 20%;
-
-                }
-
-                &.specs-2 {
-
-                   left: 30%;
-
-                }
-
-                &.specs-3 {
-
-                    left: 40%;
-
-                }
-
         }
     }
 }
@@ -328,7 +334,6 @@
          }
 
              .item {
-
                  height: 100%;
                  width: 100%;
                  padding: 1rem;
@@ -342,7 +347,6 @@
             .c-bg {
                 @include jpg(pharma_bg_header ,50% 50%,cover);
                 height: 100%;
-
             }
 
             a{
@@ -455,6 +459,11 @@
         display: block;
         margin: 0 auto;
         width: 100%;
+        display: none;
+
+        @include breakpoint($tablet){
+            display: block;
+        }
 
         &.fixed {
             width: 100%;
@@ -500,6 +509,13 @@
                     left: 0;
                     top: 0;
                   }
+
+                a {
+
+                    color: white;
+                    position: relative;
+
+                }
             }
 
              &.fill {
@@ -535,13 +551,25 @@
     .specs {
 
         text-align: center;
-        width: 100px;
-        height: 100px;
-        border-radius: 75px;
-        position: absolute;
-        vertical-align: middle;
-        bottom: 0%;
-        @include translate(0%,50%);
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 2rem;
+        border-top: 2px solid white;
+
+        @include breakpoint($tablet){
+            border-top: none;
+            width: 6.5rem;
+            height: 6.5rem;
+            position: absolute;
+            border-radius: 75px;
+            vertical-align: middle;
+            bottom: 0%;
+            padding: 0;
+            @include translate(0%,50%);
+        }
+
+        position: relative;
         color:white;
 
         .spec-textes {
@@ -551,23 +579,36 @@
             top: 50%;
             @include translate(-50%,-50%);
             line-height: 1rem;
-                font-size: 0.75rem;
+            font-size: 1rem;
 
             .spec-title {
 
-                font-weight: bold;
-
+                font-weight: 900;
+                display: inline;
+                @include breakpoint($tablet){
+                    display: block;
+                }
             }
 
             .spec-type {
 
-                font-size: 0.6rem;
+                display: inline;
+                font-weight: 200;
+                @include breakpoint($tablet){
+                    display: block;
+                    font-size: 0.7rem;
+                }
 
             }
 
             .spec-num {
 
-                font-size: 0.6rem;
+                display: inline;
+                font-weight: 200;
+                @include breakpoint($tablet){
+                    display: block;
+                    font-size: 0.7rem;
+                }
 
             }
 

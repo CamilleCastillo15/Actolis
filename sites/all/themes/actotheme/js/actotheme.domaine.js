@@ -65,21 +65,23 @@ var aItemsTop = [];
 //$(aItems[0]).addClass('in-view');
 //
         $(window).on('scroll', function(){
-        itemInView(aItems.slice(1));
+//        itemInView(aItems.slice(1));
+//
+//          var scrollTop = true;
+//
+//          if (curPos > lastScroll) {
+//               scrollTop = true;
+//               bgColour(aItemsTop, scrollTop);
+//           } else {
+//              scrollTop = false;
+//              bgColour(aItemsTop, scrollTop);
+//           }
+//
+//           lastScroll = curPos;
+//           console.log(curPos);
+//           console.log(lastScroll);
 
-          var scrollTop = true;
-
-          if (curPos > lastScroll) {
-               scrollTop = true;
-               bgColour(aItemsTop, scrollTop);
-           } else {
-              scrollTop = false;
-              bgColour(aItemsTop, scrollTop);
-           }
-
-           lastScroll = curPos;
-           console.log(curPos);
-           console.log(lastScroll);
+           progress();
 
         });
 
@@ -95,6 +97,40 @@ var aItemsTop = [];
 
         var width = 0;
         var lastScrollTop = 0;
+
+    function progress(){
+
+        var scroll = $(window).scrollTop();
+        $('.c-gris').each(function(i){
+
+//            console.log(i);
+            var offsetTop = $(this).offset().top;
+            var offsetBottom = $(this).height()  + offsetTop;
+
+            if(scroll > offsetTop && scroll < offsetBottom){
+
+//                break;
+
+                var id = i;
+                var progressBox = scroll-offsetTop;
+                var h = $(this).height();
+
+                var percent = (100 / h) * progressBox;
+                console.log(percent);
+
+            }else if(scroll > offsetTop){
+
+                //ceux passés
+
+            }else{
+
+                //ceux à venir
+
+            }
+
+        });
+
+    }
 
     function bgColour(aItemsTop, scrolltop){
       var curPos = $(window).scrollTop() + $(window).height() /2;
@@ -120,39 +156,20 @@ var aItemsTop = [];
         }
 
         var UnitPercentFill = 100 / height;
-
-//       if (scrollTop){
            width = width + UnitPercentFill;
            $('<style>.bg:before{width:'+width+'%;}</style>').appendTo('head');
-//       } else {
-//          width = width - UnitPercentFill;
-//          $('<style>.bg:before{width:'+width+'%;}</style>').appendTo('head');
-//       }
 
         if (width == 100 || width > 100){ width = 0;}
 
-//            console.log(width);
-
         if (curPos > $(aItems[i]).offset().top && i+1 == _leng || curPos > $(aItems[i]).offset().top && curPos < $(aItems[i+1]).offset().top) {
-
             var div = $(aItems[i]).closest('div');
-
-//                $(div).addClass('bg-div');
-//                $('<style>.bg-div:before{width:'+width+'%;}</style>').appendTo('head');
-
             var elementTop = div.offset().top;
-
               var distance = (height - $(window).scrollTop());
-
               var itemClass = ($(this).attr('class'));
               var theClass = itemClass.split(' ')[1];
-
               $('.titre-actions.'+theClass).addClass('bg');
-
               var currentaItemPos = $(aItems[i]).offset().top;
-
               var scrollTop = $(window).scrollTop();
-
               aItems.each(function(i){
                   if($(aItems[i]).offset().top < currentaItemPos) {
                       var itemClass = ($(this).attr('class'));
@@ -163,11 +180,9 @@ var aItemsTop = [];
         } else {
           var itemClass = ($(this).attr('class'));
           var theClass = itemClass.split(' ')[1];
-
           $('.titre-actions.'+theClass).closest('div').removeClass('bg');
           $('.titre-actions.'+theClass).removeClass('bg');
           $('.titre-actions.'+theClass).removeClass('fill');
-
         }
 
           lastScrollTop = curPos;
