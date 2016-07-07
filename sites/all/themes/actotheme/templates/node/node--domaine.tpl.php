@@ -1,35 +1,29 @@
 <?php
 
     $styles  = drupal_get_css();
-
     $body = field_view_field("node",$node,'body');
     $image = field_view_field("node",$node,'field_image');
     $titre = field_view_field("node",$node,'field_titre_domaine');
     $titre_2 = field_view_field("node",$node,'field_titre_domaine_2');
     $icone = field_view_field("node",$node,'field_icone');
-
     $couleur = field_get_items("node",$node,'field_couleur')[0]['rgb'];
 //    dpm($couleur);
-
     $fc_blocs_domaines = field_get_items('node', $node, 'field_titre_texte_image');
-
     if($fc_blocs_domaines){
         $idti = array();
         foreach ($fc_blocs_domaines as $fc_field) {
             $idti[] = $fc_field['value'];
         }
         $collectionsg =  field_collection_item_load_multiple($idti);
+        dpm($collectionsg);
+        dpm("^^^^^^^^^^^^^");
     }
-
     $images = field_get_items('node', $node, 'field_image');
     $icones = field_get_items('node', $node, 'field_icone');
-
     $couleur = field_get_items("node",$node,'field_couleur')[0]['rgb'];
     dpm($couleur);
-
     $p = file_create_url($images[0]["uri"]);
     $m = file_create_url($icones[0]["uri"]);
-
     drupal_add_css('.domaine .c-header {background-image: url("'.$p.'") !important; } ', 'inline');
     drupal_add_css('.b2 .picto {background-image: url("'.$m.'"); !important} ', 'inline');
 
@@ -57,58 +51,68 @@
         <?php } ?>
     </div>
     <div class="nos-actions">
-
         <h4>Nos actions</h4>
         <?php
-
             $actions = field_view_field("node",$node,'field_nos_actions');
         ?>
         <?php print render($actions) ?>
-
     </div>
     <div class="c-block-domaine">
-       <?php
-           for($i = 0; $i < count($idti); $i++) {
-               $collectionsg_2 = $collectionsg[$idti[$i]];
-               $titre = field_view_field('field_collection_item', $collectionsg_2, 'field_titre_frise');
-               $texte = field_view_field('field_collection_item', $collectionsg_2, 'field_texte');
-               $image = field_get_items('field_collection_item', $collectionsg_2, 'field_image_bloc');
-               $p1 = file_create_url($image[0]["uri"]);
-                drupal_add_css('.c-block-domaine .c-img-'.$i.'{background-image: url("'.$p1.'") !important; } ', 'inline');
-                $fc_blocs_specs = field_get_items('field_collection_item', $collectionsg_2, 'field_specifications');
+    <?php
+       for($i = 0; $i < count($idti); $i++) {
+           $collectionsg_2 = $collectionsg[$idti[$i]];
+           $titre = field_view_field('field_collection_item', $collectionsg_2, 'field_titre_frise');
+           $titre_render = render($titre);
+           $texte = field_view_field('field_collection_item', $collectionsg_2, 'field_texte');
+           $image = field_get_items('field_collection_item', $collectionsg_2, 'field_image_bloc');
+           $p1 = file_create_url($image[0]["uri"]);
+           drupal_add_css('.c-block-domaine .c-img-'.$i.'{background-image: url("'.$p1.'") !important; } ', 'inline');
 
-                if($fc_blocs_specs){
-                    $idti_specs = array();
-                    foreach ($fc_blocs_specs as $fc_field) {
-                        $idti_specs[] = $fc_field['value'];
-                    }
-                    $collectionsg_specs =  field_collection_item_load_multiple($idti_specs);
-//                    dpm($collectionsg_specs);
 
-//                    for($j = 0; $j < count($idti_specs); $j++) {
-//                        $spec_title = field_view_field('field_collection_item', $collectionsg_specs, 'field_titre');
-//                      $spec_type = field_view_field('field_collection_item', $collectionsg_specs, 'field_type_spec');
-//                      $spec_num = field_view_field('field_collection_item', $collectionsg_specs, 'field_numero');
-//                    }
-                }
-        ?>
-
+    ?>
         <div class="c-gris">
             <div class="c-text">
                 <h4 class="title titre-<?php print $i ?> liens"><?php print render($titre); ?></h4>
                 <?php print render($texte); ?>
             </div>
+    <?php
+
+       $fc_blocs_specs = field_get_items('field_collection_item', $collectionsg_2, 'field_specifications');
+
+       if($fc_blocs_specs){
+            $idti_specs = array();
+            foreach ($fc_blocs_specs as $fc_field) {
+                $idti_specs[] = $fc_field['value'];
+            }
+            $collectionsg_specs =  field_collection_item_load_multiple($idti_specs);
+
+          for($j = 0; $j < count($idti_specs); $j++) {
+              dpm(count($idti_specs));
+              $collectionsg_specs_2 = $collectionsg_specs[$idti_specs[$j]];
+              $spec_title = field_view_field('field_collection_item', $collectionsg_specs_2, 'field_titre');
+              $spec_type = field_view_field('field_collection_item', $collectionsg_specs_2, 'field_type_spec');
+              $spec_num = field_view_field('field_collection_item', $collectionsg_specs_2, 'field_numero');
+              drupal_add_css('.c-block-domaine .c-gris .specs{background-color: '.$couleur.' !important; } ', 'inline');
+
+            ?>
+
+            <div class="specs specs-<?php print $j ?>">
+                <div class="spec-textes">
+                    <div class="spec-title"><?php print render($spec_title); ?></div>
+                    <div class="spec-type"><?php print render($spec_type); ?></div>
+                    <div class="spec-num"><?php print render($spec_num); ?></div>
+                </div>
+            </div>
+
+            <?php }
+                    } ?>
+
             <div class='c-img-<?php print $i ?> c-img'></div>
             <div class="clear"></div>
         </div>
-
-    <?php
-                } ?>
-
+    <?php } ?>
         <div class="clear"></div>
-
     </div>
-
         <div class="e-d-c">
                 <div class="cc-block ">
                     <div class="c-block">
@@ -136,21 +140,18 @@
                                             ));
                                             $domaine = field_view_field('node',$node,'field_domaine');
                                             $blocs = field_view_field('node',$node,'field_blocs_chapitres_etudes_cas');
-
                                             $image = field_get_items('node',$node,'field_image_case_study');
-
                                             $p1 = file_create_url($image[0]["uri"]);
-
                                             drupal_add_css('.e-d-c .grille .views-row .c-bg-'.$i.'{background-image: url("'.$p1.'") !important; } ', 'inline');
-
                                             $link = url('node/'.$node->nid, array('absolute' => TRUE));
                                             $link2 = $node->nid;
-//                                            dpm($link);
+    //                                      dpm($link);
 
                                             $titre_render =  render($titre);
                                             $texte_render =  render($texte);
 
                                             ?>
+
                                             <div class="item">
                                                 <div class="c-bg c-bg-<?php print $i ?>">
                                                     <?php print l("<div class=''><h2>".$titre_render."</h2><div class='sep'></div><p>".$texte_render."</p><div class='cta'>Lire la suite</div></div>",$link, array("html"=>true)); ?>
@@ -164,24 +165,15 @@
                                 <?php }
                                         } ?>
                                 <div class="clear"></div>
-
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
-
                     <div class="swiper-pagination"></div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
-
             </div>
-
         </div>
-
     </div>
-
 </div>
 
