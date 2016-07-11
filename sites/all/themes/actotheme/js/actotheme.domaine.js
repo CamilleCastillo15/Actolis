@@ -36,13 +36,13 @@
 
             event.preventDefault();
 
-            $(".active").removeClass("active");
+//            $(".active").removeClass("active");
             var divClosest = $(this).closest('div');
 
             var classes = divClosest.attr('class');
             var theClass = classes.split(' ')[1];
 
-//            $(this).closest('div').addClass("active");
+//          $(this).closest('div').addClass("active");
 
             var scrollDiv = $(this).attr('href');
 
@@ -62,9 +62,8 @@ var aItemsTop = [];
        aItemsTop[i] = offsetTop;
     });
 
-//$(aItems[0]).addClass('in-view');
-//
         $(window).on('scroll', function(){
+
 //        itemInView(aItems.slice(1));
 //
 //          var scrollTop = true;
@@ -81,6 +80,8 @@ var aItemsTop = [];
 //           console.log(curPos);
 //           console.log(lastScroll);
 
+//           itemInView(aItems.slice(1));
+//           bgColour();
            progress();
 
         });
@@ -103,28 +104,42 @@ var aItemsTop = [];
         var scroll = $(window).scrollTop();
         $('.c-gris').each(function(i){
 
-//            console.log(i);
             var offsetTop = $(this).offset().top;
             var offsetBottom = $(this).height()  + offsetTop;
 
             if(scroll > offsetTop && scroll < offsetBottom){
 
-//                break;
-
                 var id = i;
+                var div = $('.titre-actions.titre-'+id);
+
                 var progressBox = scroll-offsetTop;
                 var h = $(this).height();
 
+                div.addClass('bg');
+                $('.titre-actions.titre-'+id).removeClass('fill');
+
                 var percent = (100 / h) * progressBox;
-                console.log(percent);
 
-            }else if(scroll > offsetTop){
+                $('<style>.bg:before{width:'+percent+'%;}</style>').appendTo('head');
 
-                //ceux passés
 
-            }else{
+            } else if(scroll > offsetTop && scroll > offsetBottom) {
 
-                //ceux à venir
+                var id = i;
+                var div = $('.titre-actions.titre-'+id);
+
+                div.removeClass('in-view');
+                div.removeClass('bg');
+                $('.titre-actions.titre-'+id).addClass('fill');
+
+            } else if (scroll < offsetTop) {
+
+                var id = i;
+                var div = $('.titre-actions.titre-'+id);
+
+                div.removeClass('in-view');
+                div.removeClass('bg');
+                $('.titre-actions.titre-'+id).removeClass('fill');
 
             }
 
@@ -133,33 +148,29 @@ var aItemsTop = [];
     }
 
     function bgColour(aItemsTop, scrolltop){
-      var curPos = $(window).scrollTop() + $(window).height() /2;
+//      var curPos = $(window).scrollTop() + $(window).height() /2;
+      var offsetTop = $(this).offset().top;
+
       var _leng = $(aItems).length;
 
-
-//      console.log(scrollTop);
-
       aItems.each(function(i){
-
-//        console.log($(aItems[i]));
 
         var closest = $(aItems[i]).closest('div');
         var closestParent = closest.parent('div');
 
-        if(!(i+1 == _leng)) {
+        var offsetBottom = closestParent.height()  + offsetTop;
 
-            var height = $(aItems[i+1]).offset().top - $(aItems[i]).offset().top;
+//        if(!(i+1 == _leng)) {
+//            var height = $(aItems[i+1]).offset().top - $(aItems[i]).offset().top;
+//        }  else {
+//            var height = closest.height();
+//        }
 
-        }  else {
+        var h = closestParent.height();
 
-            var height = closest.height();
-        }
+        var percent = (100 / h) * progressBox;
 
-        var UnitPercentFill = 100 / height;
-           width = width + UnitPercentFill;
-           $('<style>.bg:before{width:'+width+'%;}</style>').appendTo('head');
-
-        if (width == 100 || width > 100){ width = 0;}
+        $('<style>.bg:before{width:'+percent+'%;}</style>').appendTo('head');
 
         if (curPos > $(aItems[i]).offset().top && i+1 == _leng || curPos > $(aItems[i]).offset().top && curPos < $(aItems[i+1]).offset().top) {
             var div = $(aItems[i]).closest('div');

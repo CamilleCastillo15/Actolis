@@ -39,8 +39,10 @@
 //               drupal_add_css('.domaine .frise-actions .titre-actions.bg{background-color: '.$couleur.' !important; } ', 'inline');
                drupal_add_css('.domaine .frise-actions .titre-actions.bg::before{background-color: '.$couleur.' !important; } ', 'inline');
 
+               /*if ($i == 0){ print "active"; } */
+
         ?>
-           <div class="titre-actions titre-<?php print $i." "; if ($i == 0){ print "active"; } ?>">
+           <div class="titre-actions titre-<?php print $i." "; ?>">
                <a href="#"><?php print render($titre_actions); ?></a>
             </div>
         <?php } ?>
