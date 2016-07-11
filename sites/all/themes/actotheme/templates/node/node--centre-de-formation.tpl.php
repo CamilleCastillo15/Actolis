@@ -75,12 +75,17 @@
             <?php print render($titre_offres_formations) ?>
          </p>
         
-         <div class="cc">
+         <?php $i == 0; ?>
 
-         <?php $view = views_embed_view('offres_de_formations', 'default', $node->nid);
+         <div class="cc cc-<?php print $i ?>">
+
+             <?php $view = views_embed_view('offres_de_formations', 'default', $node->nid);
             print $view; ?>
 
          </div>
+
+         <?php $i++; ?>
+
     </div>
 
     <?php

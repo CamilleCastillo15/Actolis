@@ -51,31 +51,30 @@
     </div>
 
     <div class="c-big-cta">
-    <?php
-        $view_domaines = views_get_view('domaines');
-        $view_domaines->execute();
-        $result_domaines = $view_domaines->result;
-        $i = 1;
-        foreach($result_domaines as $key => $value) { ?>
-            <?php
-                  $n = node_load($value->nid);
-                  $link =drupal_get_path_alias("node/".$value->nid);
-                  $picto = field_view_field("node",$n,'field_icone');
-                  $title = field_view_field("node",$n,'field_titre_domaine');
+        <?php
+            $view_domaines = views_get_view('domaines');
+            $view_domaines->execute();
+            $result_domaines = $view_domaines->result;
+            $i = 1;
+            foreach($result_domaines as $key => $value) {
+                      $n = node_load($value->nid);
+                      $link =drupal_get_path_alias("node/".$value->nid);
+                      $picto = field_view_field("node",$n,'field_icone');
+                      $title = field_view_field("node",$n,'field_titre_domaine');
 
-                  $title_render = '<h3>'.render($title).'</h3>';
-                  $picto_render = '<div class="picto">'.render($picto).'</div>';
+                      $title_render = '<h3>'.render($title).'</h3>';
+                      $picto_render = '<div class="picto">'.render($picto).'</div>';
 
-                  echo "<div class='b-big-cta b".$i."'>";
-                  echo "<div class='color-home color-home-".$i."'></div>";
-                  $couleur = field_get_items("node",$n,'field_couleur')[0]['rgb'];
-                  drupal_add_css('.home .color-home-'.$i.' {background-color: '.$couleur.' !important ; } ', 'inline');
-                  print l($picto_render.$title_render."<div class='cta'>voir plus</div>",$link,array("html"=>true));
-                  echo "</div>";
+                      echo "<div class='b-big-cta b".$i."'>";
+                      echo "<div class='color-home color-home-".$i."'></div>";
+                      $couleur = field_get_items("node",$n,'field_couleur')[0]['rgb'];
+                      drupal_add_css('.home .color-home-'.$i.' {background-color: '.$couleur.' !important ; } ', 'inline');
+                      print l($picto_render.$title_render."<div class='cta'>voir plus</div>",$link,array("html"=>true));
+                      echo "</div>";
 
-                  $i++;
-               }
-        ?>
+                      $i++;
+                   }
+            ?>
     </div>
 
     <div class="c-header">
