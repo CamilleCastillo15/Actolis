@@ -1,4 +1,5 @@
 <?php
+
     $styles  = drupal_get_css();
     $body = field_view_field("node",$node,'field_body');
     $image = field_view_field("node",$node,'field_image');
@@ -11,6 +12,7 @@
         }
         $collectionsg =  field_collection_item_load_multiple($idti);
     }
+
 ?>
 
 <div class="home">

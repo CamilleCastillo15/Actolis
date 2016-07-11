@@ -42,8 +42,8 @@
 
         $picto_render = '<div class="picto">'.render($picto).'</div>';
 
-//        dpm($couleur);
-        if($i ==1){
+if($domaine){
+        if($i ==1  ){
             $picto_render = '<div class="picto cosmeto-'.$node->nid.'">'.render($picto).'</div>';
             $couleur_first = field_get_items("node",$n,'field_couleur')[0]['rgb'];
         }
@@ -55,7 +55,7 @@
             $picto_render = '<div class="picto pharma-'.$node->nid.'">'.render($picto).'</div>';
             $couleur_third = field_get_items("node",$n,'field_couleur')[0]['rgb'];
         }
-    if($domaine){
+
         if (render($domaine['0']) == 'cosmetiques' || render($domaine['1']) == 'cosmetiques' || render($domaine['2']) == 'cosmetiques') {
              drupal_add_css('.cosmeto-'.$node->nid.':before {background-color: '.$couleur_first.' !important ; } ', 'inline');
           }
