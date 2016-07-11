@@ -3,12 +3,9 @@
 @import "../variables/mixin";
 
 .menu {
-
     display:block;
-
 }
 .l-menu {
-
         padding: 0rem;
         text-align: left;
         width: 100%;
@@ -19,10 +16,8 @@
         visibility: hidden; 
         background-color: rgba(white,0.9);
         left:-90%;
-
         @include opacity(0);
         @include transition(all 0.2s ease-in-out);
-
         @include breakpoint($tablet) {
             visibility: visible;    
             @include opacity(1);
@@ -33,6 +28,23 @@
             display: block;
             z-index: 1;
         }
+        .active{
+                background-color: rgba(white,0.1);
+            &:after {
+                content: "";
+                position: absolute;
+                top:2.4rem;
+                width: 5rem;
+                height: 0.15rem;
+                left:50%;
+                @include breakpoint($tablet) {
+                    left:50%;
+                }
+                @include translate(-50%,0px);
+//                @include opacity(0.7);
+                background-color: #fff;
+            }
+        }
         &.o {
             display: block;
             visibility: visible;    
@@ -40,10 +52,8 @@
             width: 80%;
             overflow: auto;
             top: 0px;
-          
             left:0%;
             @include opacity(1);
-           
         }
          &.h {
            display: block;
@@ -54,7 +64,6 @@
             top: 0px;
              @include opacity(0);
             left:-90%;
-           
         }
         ul{
            @extend .ul-nav;
@@ -72,16 +81,16 @@
                 &.last{
                     padding-bottom:1rem;
                 };
-                @include breakpoint($tablet) {
-                    display: inline-block;
-                    width: auto;
-                     &.first{
-                    padding-top:0rem;
-                };
-                &.last{
-                    padding-bottom:0rem;
-                };
-             }
+                    @include breakpoint($tablet) {
+                        display: inline-block;
+                        width: auto;
+                         &.first{
+                        padding-top:0rem;
+                    };
+                    &.last{
+                        padding-bottom:0rem;
+                    };
+                 }
                 a {
                     padding:2rem;
                     padding-top: 1rem;
@@ -89,11 +98,10 @@
                     position: relative;
                     width: 100%;
                     background-color: $orange;
-                        @include fz(3);
-                        font-weight: 700;
-                        text-transform: uppercase;  
+                    @include fz(3);
+                    font-weight: 700;
+                    text-transform: uppercase;
                     @include breakpoint($tablet) {
-
                         font-weight: 300;
                         text-transform: none;
                         font-size: 1.25rem;
@@ -101,38 +109,21 @@
                         background-color: transparent;
                     }
                     @include breakpoint($laptop) {
-
                         padding:0.5rem 2rem;
-
                     }
-
                     @include transition(all 0.2s ease-out);
                     @include breakpoint($tablet) {
-
-                    &:hover{
-                        background-color: rgba(white,0.1);
-
-                        &:after {
-
-                             background-color: rgba(#fff,0.3);
-                        }
-
-                    }
-
-                }
-                    &.active{
+                        &:hover{
+                            background-color: rgba(white,0.1);
                             &:after {
-                        background-color: rgba(#fff,1);
-
+                                 background-color: rgba(#fff,0.3);
                             }
+                        }
                     }
-
                     span {
-
                         width:50%;
                         position: relative;
-
-                        &:after{
+                        &:after {
                             display: none;
                             content: "";
                             position: absolute;
@@ -145,21 +136,14 @@
                             @include translate(-50%,0px);
                             height: 0.22rem;
                             background-color: #fff;
-
                         }
-
                     }
-
                 }
-
            }
-
       }
-
         .domaine-menu{
             ul{
                  @extend .ul-nav;
-//                 padding:1rem 0rem;
                  font-size: 0px;
                   text-align:left;
             @include breakpoint($tablet) {
@@ -168,17 +152,14 @@
                  li{
                      padding: 0rem 0rem;
                      background-color: transparent;
-
                     a {
                         background-image: none !important;
                         background-image: url("") !important;
                         background-color: transparent;
                         padding:1rem 2rem;
-
                     @include breakpoint($tablet) {
                         background-color: transparent;
                     }
-
                         .c-img{
                              display: inline-block;
                               vertical-align: middle;
@@ -204,7 +185,6 @@
                                     border-width: 2px;
                                     @include transition(all 0.2s ease-out);
                                 }
-
                                 img {
                                     width: 60%;
                                     height: auto;
@@ -212,38 +192,30 @@
                                     top:20%;
                                     position: relative;
                                 }
-
                                 margin-right:2rem;
                         }
-
                         span {
-                                display: inline-block;
-                                text-align: left;
-                                vertical-align: middle;
-                                text-transform: uppercase;
-                                @include fz(4);
-                                font-weight: 700;
-                                max-width: 20vw;
-                                width: auto;
+                            display: inline-block;
+                            text-align: left;
+                            vertical-align: middle;
+                            text-transform: uppercase;
+                            @include fz(4);
+                            font-weight: 700;
+                            max-width: 20vw;
+                            width: auto;
 
-                                @include breakpoint($laptop) {
-                                        text-align: center;
-                                }
+                            @include breakpoint($laptop) {
+                                    text-align: center;
+                            }
                         }
 
                          &:hover{
                             background-color: transparent;
                             color:white;
-//                            border: 0.15rem solid white;
-
                             &:after {
-                                
                                 background-color:transparent;
-
                             }
-
                             .c-img{
-  
                                 &:before{
                                     background-color: rgba(white,0.1);
                                 }
@@ -251,35 +223,30 @@
                         }
                     }
                     &:nth-child(2){
-
                         @include breakpoint($laptop) {
-
-//                            border-left:2px solid white;
-//                            border-right:2px solid white;
-
                         }
                     }
                  }
             }
 
-             background-color: $lightgris;
-             width: 100%;
-        }
+         background-color: $lightgris;
+         width: 100%;
+    }
 
-    .user{
-        display: block;
-        .menu{
-                padding-bottom: 3rem;
-                li{
-                    background-color: white;
-                    a{
-                       background-color: white;
-                       color:black;
-                    }
+.user {
+    display: block;
+    .menu{
+            padding-bottom: 3rem;
+            li{
+                background-color: white;
+                a{
+                   background-color: white;
+                   color:black;
                 }
             }
         }
     }
+}
 
 
 .active-bt{

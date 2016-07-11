@@ -74,6 +74,8 @@
             <?php print render($texte); ?>
         </div>
 
+        <div class="specs-container">
+
     <?php
        $fc_blocs_specs = field_get_items('field_collection_item', $collectionsg_2, 'field_specifications');
        if($fc_blocs_specs){
@@ -101,6 +103,8 @@
 
             <?php }
                     } ?>
+
+            </div>
 
             <div class='c-img-<?php print $i ?> c-img'></div>
             <div class="clear"></div>
