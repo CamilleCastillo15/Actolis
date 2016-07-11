@@ -426,11 +426,9 @@
         }
         @include transform(rotate3d(0, 0, 0, 0deg));
         @include transition(all 2s ease-in-out);
-
-        display: none;  
-
+        display: none;
           @include breakpoint($tablet){
-                        display: block;  
+            display: block;
           }
     }
 
@@ -462,19 +460,12 @@
 }
 
 .c-text{
-
     p{
          @include fz(2);
     }
-
     ul{
-
         @extend .ul-style;
-          
-
-
     }
-
 }
 
 .c-big-cta{
@@ -491,22 +482,22 @@
 
     .b-big-cta{
         
-        width: 30vw;
-        height: 30vw;
+    width: 30vw;
+    height: 30vw;
        
-         text-align: center;
-         position: relative;
-         display: inline-block;
-         vertical-align: top;
-         margin:0px;
-         min-height: 16rem;
-          @include breakpoint($tablet){
-                margin:2vw;
-                width: 22vw;
-                height: 22vw;
-                min-height: 100%;
-                 min-height: 100%;
-          }
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin:0px;
+    min-height: 16rem;
+    @include breakpoint($tablet){
+        margin:2vw;
+        width: 22vw;
+        height: 22vw;
+        min-height: 100%;
+        min-height: 100%;
+      }
         
         .gradient{
             z-index: 1;
@@ -517,14 +508,11 @@
             height: 100%;
             @include transition(opacity 0.2s ease-in-out);
         }
-
         a{
-
             position: relative;
             z-index: 20;
             display: block;
             height: 100%;
-
             .cta{
                 position: absolute;
 //                bottom:4rem;
@@ -532,13 +520,11 @@
                 white-space: nowrap;
                 left:50%;
                  @include translate(-50%,0px);
-                 display: none; 
-
+                 display: none;
                 @include breakpoint($tablet){
                   display: block;   
                 }
             }
-
             h3{
                  @include fz(3);
                 text-transform: uppercase;
@@ -555,12 +541,8 @@
                  @include fz(4);
                 }
             }
-
             text-align: center;
-
             .picto{
-                
-
                 @extend .c-icone_2;
                 img{
                     width:  60%;
@@ -570,36 +552,27 @@
                     top:20%; 
                     position: relative; 
                 }
-             
             }
-
         }
-
         &:hover{
             .gradient{
                 @include opacity(0.6);
             }
+            .color-home {
+                @include opacity(1);
+            }
             .cta{
                  background-color: $orange;
                 color:white;
-//               bottom:-4.2rem;
             }
             .picto{
-              
                 &:before{
                      background-color: rgba(white,0.2);
-
-                      border:0.25rem solid white;
-
+                     border:0.25rem solid white;
                 }
-
-
-               
             }
         }
-
     }
-
 }
 
 .b1{

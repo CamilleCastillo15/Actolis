@@ -67,7 +67,9 @@
                   $picto_render = '<div class="picto">'.render($picto).'</div>';
 
                   echo "<div class='b-big-cta b".$i."'>";
-                  echo "<div class='gradient'></div>";
+                  echo "<div class='color-home color-home-".$i."'></div>";
+                  $couleur = field_get_items("node",$n,'field_couleur')[0]['rgb'];
+                  drupal_add_css('.home .color-home-'.$i.' {background-color: '.$couleur.' !important ; } ', 'inline');
                   print l($picto_render.$title_render."<div class='cta'>voir plus</div>",$link,array("html"=>true));
                   echo "</div>";
 

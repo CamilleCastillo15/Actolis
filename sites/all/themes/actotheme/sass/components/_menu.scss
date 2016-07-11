@@ -197,8 +197,11 @@
 
                                 @include transition(all 0.2s ease-out);
                                 &:before{
+                                    @include translate(0%,0%);
+                                    @include breakpoint($tablet) {
+                                        @include translate(-50%,0px);
+                                    }
                                     border-width: 2px;
-                                    @include translate(-50%,0px);
                                     @include transition(all 0.2s ease-out);
                                 }
 
