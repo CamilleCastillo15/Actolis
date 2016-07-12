@@ -87,11 +87,13 @@
          <?php $i++; ?>
 
     </div>
+    <div class="renseignements-container">
 
-    <?php
-        $link = "content/formulaire-offres-de-formations";
-        print l("Pour plus de renseignements, demandez-nous nos fiches formation",$link, array("html"=>true, 'attributes' => array('class' => array('cta')))); ?>
+            <?php
+            $link = "content/formulaire-offres-de-formations";
+            print l("Pour plus de renseignements, demandez-nous nos fiches formation",$link, array("html"=>true, 'attributes' => array('class' => array('renseignements')))); ?>
 
+    </div>
 </div>
 
 
