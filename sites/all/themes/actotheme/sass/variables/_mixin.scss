@@ -98,6 +98,7 @@ $fallback-extension: 'png' !default;
     }
 
 }
+
 @mixin main-padding($left:0, $right:0){
     
     padding-left:2rem;
@@ -127,6 +128,38 @@ $fallback-extension: 'png' !default;
               padding-right:$right;
           } @else {
             padding-right:$m-padding;
+          }
+    }
+}
+
+@mixin main-margin($left:0, $right:0){
+
+    margin-left:2rem;
+    margin-right: 2rem;
+
+    @include breakpoint($laptop) {
+           @if($left != 0){
+            margin-left:$left/2;
+          } @else {
+            margin-left:$m-padding/2;
+          }
+          @if($right != 0){
+            margin-right:$right/2;
+          } @else {
+            margin-right:$m-padding/2;
+          }
+    }
+
+    @include breakpoint($laptopl) {
+          @if($left != 0){
+            margin-left:$left;
+          } @else {
+            margin-left:$m-padding;
+          }
+          @if($right != 0){
+            margin-right:$right;
+          } @else {
+            margin-right:$m-padding;
           }
     }
 }

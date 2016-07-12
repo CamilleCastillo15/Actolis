@@ -98,72 +98,77 @@ if($domaine){
         }
 
         $p = file_create_url($images_formation[0]["uri"]);
-        drupal_add_css('.formation-detail .dark-layer {background-image: url("'.$p.'") !important ; } ', 'inline');
+        drupal_add_css('.formation-detail .c-block-offres-detail .c-img {background-image: url("'.$p.'") !important ; } ', 'inline');
+
+        $nid = $node->nid;
+
+        $nid_prev = prev_next_nid($node->nid, 'prev');
+        $link_prev = url('node/'.$nid_prev, array('absolute' => TRUE));
+        dpm($link_prev);
+
+        $nid_next = prev_next_nid($nid, 'next');
+        $link_next = url('node/'.$nid_next, array('absolute' => TRUE));
+        dpm($link_next);
 
 ?>
 
 <div class="formation-detail">
-    <h3><?php print render($nom); ?></h3>
-
-    <div class="c-block-offres-detail">
+   <div class="c-block-offres-detail">
         <div class="c-blanc">
-           <div class="c-text">
-               <h4>Les objectifs de cette formation</h4>
-               <?php print render($objectifs); ?>
-           </div>
-       </div>
-    </div>
-
-
-    <div class="c-block-offres-detail">
-        <div class="c-blanc">
-           <div class="c-text">
-               <h4>Public concerné</h4>
-               <?php print render($public); ?>
-           </div>
+           <div class="c-text img-bloc">
+                <h3><?php print render($nom); ?></h3>
+                <h4>Les objectifs de cette formation</h4>
+                <?php print render($objectifs); ?>
+                <h4>Public concerné</h4>
+                <?php print render($public); ?>
+            </div>
+            <div class="c-img">
+            </div>
        </div>
     </div>
 
     <div class="bloc-gris">
-
-        <?php
-
-            print render($icone_duree);
-            print render($duree);
-
-            print render($icone_contact_formation);
-            print render($contact_formation);
-
-            print render($icone_prix);
-            print render($prix);
-
-        ?>
-
+       <div class="duree c-picto">
+           <div class="center">
+                <?php print render($icone_duree); ?>
+                <h4><?php print render($duree); ?></h4>
+            </div>
+       </div>
+       <div class="contact-formation c-picto">
+           <div class="center">
+                <?php print render($icone_contact_formation); ?>
+                <h4><?php print render($contact_formation); ?></h4>
+            </div>
+       </div>
+        <div class="prix c-picto">
+           <div class="center">
+            <?php
+                print render($icone_prix); ?>
+                <h4><?php print render($prix); ?></h4>
+            </div>
+        </div>
     </div>
 
-    <h3>Programme de formation</h3>
+    <div class="c-block-offres-detail">
+        <div class="c-blanc">
+           <div class="c-text">
+                <h3>Programme de formation</h3>
 
     <?php
-
-    for($i = 0; $i < count($idti); $i++) {
-
-        $collectionsg_2 = $collectionsg[$idti[$i]];
-        $titre = field_view_field('field_collection_item', $collectionsg_2, 'field_titre');
-        $description = field_view_field('field_collection_item', $collectionsg_2, 'field_description');
-
+        for($i = 0; $i < count($idti); $i++) {
+            $collectionsg_2 = $collectionsg[$idti[$i]];
+            $titre = field_view_field('field_collection_item', $collectionsg_2, 'field_titre');
+            $description = field_view_field('field_collection_item', $collectionsg_2, 'field_description');
     ?>
 
-       <div class="c-block-offres-detail">
-            <div class="c-blanc">
-               <div class="c-text">
                    <h4><?php print render($titre); ?></h4>
                    <?php print render($description); ?>
-               </div>
-           </div>
-       </div>
+
 
     <?php } ?>
 
+        </div>
+    </div>
 </div>
 
 <?php

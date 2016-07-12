@@ -107,6 +107,8 @@ if(isset($_GET['nid'])){
 
                   </div>
 
+                   <?php  print render($form['actions']); ?>
+
                   <div class="clear"></div>
 
             </div>
@@ -117,5 +119,5 @@ if(isset($_GET['nid'])){
 
 </div>
 
-  <?php  print render($form['actions']);
-  //<?php print drupal_render_children($form);
+
+  <?php //print drupal_render_children($form);

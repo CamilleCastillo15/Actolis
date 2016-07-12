@@ -192,7 +192,6 @@ h4{
 
 .c-block-histoire {
 
-    
     display: block;
     margin: 0 auto;
     padding:5px;
@@ -201,12 +200,9 @@ h4{
     margin-bottom: 1rem;
 
      @include breakpoint($tablet){
-
           margin-top:7rem;
           margin-bottom: 6rem;
-
      }
-
 
     .c-blanc{
 
@@ -216,11 +212,8 @@ h4{
        perspective: 1000px;
        min-height: 27vh;
        @include breakpoint($tablet) {
-
             padding: 3rem;
-
        }
-
     }
 
     .c-text{
