@@ -67,7 +67,9 @@
 
                         <div class="valeur-container">
 
-                            <h2 class="valeur"><div class="picto_valeur <?php print "number_".$i; ?>"><?php print render($picto_valeur); ?></div><?php print render($valeur); ?></h2>
+                            <h2 class="valeur">
+                            <div class="picto_valeur <?php print "number_".$i; ?>"><?php print render($picto_valeur); ?></div>
+                            <?php print render($valeur); ?></h2>
                         </div>
                     </div>
                 </div>
@@ -110,7 +112,11 @@
 
                 <div class="c-picto c-picto-cle">
                     <h2 class="phrase phrase_cle"><?php print render($phrase_valeur_cle); ?></h2>
-                    <h2 class="valeur valeur_cle"><?php print render($valeur_cle); ?></h2>
+                    <h2 class="valeur valeur_cle">
+                    <div class="picto_valeur_cle">
+                        <?php print render($picto_valeur_cle); ?>
+                    </div>
+                            <?php print render($valeur_cle); ?></h2>
                 </div>
             </div>
         </div>

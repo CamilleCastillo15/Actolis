@@ -28,16 +28,8 @@
         margin-top:2rem;
 	    margin-bottom: 2rem;
 
-	     @include breakpoint($tablet) {
-//	     	margin-top:7rem;
-//	        margin-bottom: 6rem;
-         }
-
 	    @include main-padding();
 
-		h4{
-
-		}
 		.cc{
 			text-align: center;
 
