@@ -187,47 +187,45 @@
 
         }
 
-        .montpellier{
-          position: absolute;
-           top: 71%;
-    left: 61%;
-        }
-
-        .bt-nord,.bt-sud{
+        .bt-nord,.bt-sud,.bt-montpellier{
           position: absolute; 
           height:  50%;
-          width:  100%;
-
-          
+//          width:  100%;
           top:0px;
         }
         .bt-sud{
           top:50%;
+          left: 68%;
           .pointer{
              top: 1%;
-             left: 68%;
-          }
-          &:hover{
-            .pointer{
-                @include opacity(1);
-                top: -2%;
+            &:hover{
+                    @include opacity(1);
+                    top: -2%;
             }
           }
         }
-        .bt-nord{
-           .pointer{
-               top: 38%;
-               left: 50.5%;
-           }
-           &:hover{
-            .pointer{
+        .bt-montpellier{
+          top:50%;
+          left: 61%;
+          .pointer{
+              top: 42%;
+            &:hover{
+                @include opacity(1);
+                top: 39%;
+            }
+          }
+        }
+    .bt-nord{
+        left: 50.5%;
+       .pointer{
+           top: 38%;
+            &:hover{
                 @include opacity(1);
                 top: 35%;
-            }
           }
-        }
-
+       }
     }
+}
 
 }
 

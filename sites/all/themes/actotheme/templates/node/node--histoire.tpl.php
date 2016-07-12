@@ -49,7 +49,7 @@
 
     </div>
 
-    <div class="c-block-histoire">
+    <div class="c-block-histoire odd-block">
 
         <div class="c-blanc">
 

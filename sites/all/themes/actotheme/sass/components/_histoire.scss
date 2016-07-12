@@ -122,12 +122,12 @@
             width: 100%;
 
             @include breakpoint($tablet){
-              width: 25%;
+              width: 14%;
             }
 
             @include breakpoint($laptop){
                 margin:0rem 2rem;
-                 width: 25%;
+                 width: 14%;
               }
 
             vertical-align: middle;
@@ -277,7 +277,6 @@ h4{
             top:50%;
             position: absolute;
             width: 47%;
-//         height: 115%;
            height: 100%;
          }
         &:after{
@@ -290,6 +289,38 @@ h4{
             bottom:-1px;
             left:0px;
             @extend .gradient-h;
+
+        }
+
+    }
+
+    &.odd-block {
+
+        .c-blanc {
+
+            padding: 0 3rem;
+
+            .c-text{
+
+                @include breakpoint($tablet){
+
+                    display: inline-block;
+                    width:  47%;
+                    position: relative;
+                    margin-left: 50%;
+                    padding: 3rem;
+
+                 }
+
+            }
+
+            .c-img{
+
+                @include breakpoint($tablet){
+                    left: 2rem;
+                }
+
+            }
 
         }
 
@@ -589,9 +620,7 @@ h4{
 
                     .picto_valeur {
                         width: 4em;
-
                         bottom: 10rem;
-//                        display: block;
 
                         display: inline-block;
                         height: 2rem;
@@ -613,7 +642,6 @@ h4{
 
                             img {
                                 width:1.5rem;
-//                                margin-right: 15px;
                             }
 
                         }
@@ -634,6 +662,9 @@ h4{
                     position: relative;
                     padding-top: 7rem;
 
+                    background-attachment: fixed;
+                    @include jpg(histoire_bg_header,50% 50%,cover);
+
                     h2 {
 
                         margin: 0 auto;
@@ -641,6 +672,7 @@ h4{
                         max-width: 100%;
 
                         font-weight: 800;
+                        color: white;
 
                         &.valeur{
                           bottom: 60px;
