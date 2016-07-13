@@ -107,11 +107,11 @@ if($domaine){
 
         $nid_prev = prev_next_nid($node->nid, 'prev');
         $link_prev = url('node/'.$nid_prev, array('absolute' => TRUE));
-        dpm($link_prev);
+//        dpm($link_prev);
 
         $nid_next = prev_next_nid($nid, 'next');
         $link_next = url('node/'.$nid_next, array('absolute' => TRUE));
-        dpm($link_next);
+//        dpm($link_next);
 
 ?>
 
@@ -157,22 +157,31 @@ if($domaine){
            <div class="c-text">
                 <h3>Programme de formation</h3>
 
-    <?php
-        for($i = 0; $i < count($idti); $i++) {
-            $collectionsg_2 = $collectionsg[$idti[$i]];
-            $titre = field_view_field('field_collection_item', $collectionsg_2, 'field_titre');
-            $description = field_view_field('field_collection_item', $collectionsg_2, 'field_description');
-    ?>
-
-                   <h4><?php print render($titre); ?></h4>
-                   <?php print render($description); ?>
-
-
-    <?php } ?>
-
+        <?php
+            for($i = 0; $i < count($idti); $i++) {
+                $collectionsg_2 = $collectionsg[$idti[$i]];
+                $titre = field_view_field('field_collection_item', $collectionsg_2, 'field_titre');
+                $description = field_view_field('field_collection_item', $collectionsg_2, 'field_description');
+        ?>
+               <h4><?php print render($titre); ?></h4>
+               <?php print render($description); ?>
+        <?php } ?>
+            </div>
         </div>
     </div>
-</div>
+
+    <div class="c-block-offres-detail">
+        <div class="offres_liens">
+            <?php
+                if($nid_prev != 0) {
+                    print l("Offre précédente", $link_prev, array("html"=>true, 'attributes' => array('class' => array('cta', 'offre_precedente', 'offres_boutons_liens'))));
+                }
+                if($nid_next != 0) {
+                    print l("Offre suivante", $link_next, array("html"=>true, 'attributes' => array('class' => array('cta', 'offre_suivante', 'offres_boutons_liens'))));
+                }
+            } ?>
+        </div>
+    </div>
 
 <?php
 
@@ -182,8 +191,8 @@ if($domaine){
     $a = explode("/",$p);
     $ref = $a[2];
     $link = "content/formulaire-offres-de-formations";
-    print l("Pour plus de renseignements, demandez-nous nos fiches formation",$link, array("html"=>true, 'attributes' => array('class' => array('cta')), 'query' => array('nid' => $nid)));
+//    print l("Pour plus de renseignements, demandez-nous nos fiches formation",$link, array("html"=>true, 'attributes' => array('class' => array('cta')), 'query' => array('nid' => $nid)));
+?>
 
-} ?>
 
 

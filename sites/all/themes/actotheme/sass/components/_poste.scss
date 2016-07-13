@@ -1,63 +1,4 @@
-.formation-detail {
-
-    .dark-layer {
-
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-color: transparent;
-        background-size: cover;
-
-        h4 {
-
-            color:white;
-            margin-bottom: 0;
-
-        }
-
-    }
-
-    .bloc-texte-formation-detail {
-
-        @include main-padding();
-
-        .c-text {
-
-            -webkit-column-count: 1; /* Chrome, Safari, Opera */
-            -moz-column-count: 1; /* Firefox */
-            column-count: 1;
-            -webkit-column-gap: 0px; /* Chrome, Safari, Opera */
-            -moz-column-gap: 0px; /* Firefox */
-            column-gap: 0px;
-
-            @include breakpoint($tablet){
-
-
-                 -webkit-column-count: 2; /* Chrome, Safari, Opera */
-            -moz-column-count: 2; /* Firefox */
-            column-count: 2;
-            -webkit-column-gap: 30px; /* Chrome, Safari, Opera */
-            -moz-column-gap: 30px; /* Firefox */
-            column-gap: 30px;
-
-            }
-
-            @include breakpoint($laptop){
-
-
-                 -webkit-column-count: 3; /* Chrome, Safari, Opera */
-            -moz-column-count: 3; /* Firefox */
-            column-count: 3;
-            -webkit-column-gap: 5rem; /* Chrome, Safari, Opera */
-            -moz-column-gap: 5rem; /* Firefox */
-            column-gap: 5rem;
-
-            }
-
-        }
-
-        margin-bottom: 1.5rem;
-
-    }
+.poste-detail {
 
     .c-block-offres-detail {
 
@@ -68,9 +9,7 @@
         }
 
         h4 {
-
-        margin-top: 1.5rem;
-
+            margin-top: 1.5rem;
         }
 
         display: block;
@@ -167,13 +106,16 @@
         }
     }
 
-    .bloc-gris {
+        .bloc-gris {
         background-color: $lightgris;
         text-align: center;
         padding:1.5rem;
         @include main-margin();
         position: relative;
-//        min-height: 5rem;
+
+        @include breakpoint($tablet){
+            width: 47%;
+        }
 
          .c-picto {
 
@@ -183,9 +125,11 @@
             position: relative;
             text-align: left;
 
-            @include breakpoint($tablet){
-                width: 33%;
-            }
+            padding: 1.5rem;
+
+//            @include breakpoint($tablet){
+//                width: 33%;
+//            }
 
             vertical-align: middle;
 
@@ -195,16 +139,18 @@
 
                 @include breakpoint($tablet){
                     padding: 0rem;
-                    text-align: center;
+//                    text-align: center;
                 }
 
              }
+
         }
 
         img {
             height: 2rem;
             vertical-align: middle;
             display: inline-block;
+            padding-right: 0.5rem;
         }
 
         h4 {
@@ -215,10 +161,6 @@
             vertical-align: middle;
             margin-bottom: 0;
             text-align: left;
-
-//            @include breakpoint($tablet){
-//                text-align: center;
-//            }
 
             p {
 

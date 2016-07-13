@@ -40,16 +40,16 @@
 				width: 100%;
 
 				 @include breakpoint($tablet) {
-
 						width: 33%;
 				 }
 				
                 min-height: 9rem;
-//				height: 6rem;
 				padding-top: 2rem;
 				background-color: $gris;
 				position: relative;	
 				margin-bottom: 0.3rem;
+                vertical-align: top;
+                cursor: pointer;
 
 				&:hover{
 					background-color: white;
@@ -133,7 +133,7 @@
 		.c-block{
 
 		    margin: 0 auto;
-    		margin-top: -4rem;
+//    		margin-top: -4rem;
     		width: 	100%;
 
 		}

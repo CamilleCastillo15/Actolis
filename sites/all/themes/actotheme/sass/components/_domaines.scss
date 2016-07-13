@@ -210,9 +210,9 @@
                     float: right;
 
                   }
-                ul {
-                    list-style-image: url(../imgs/bullet.png) !important
-                }
+//                ul {
+//                    list-style-image: url(../imgs/bullet.png) !important
+//                }
             }
 
         @include breakpoint($tablet){
