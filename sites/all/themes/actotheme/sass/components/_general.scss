@@ -62,20 +62,21 @@ body {
   border:none;
   padding: 0.5rem;
   @include fz(2);
+  z-index: 10;
 }
 
 .bt-top{
   background-color: $orange;
   border-radius:50%;
   position: fixed;
-  bottom: 10rem;
+  bottom: 13rem;
   right: 2rem;
   width: 3rem;
   height: 3rem;
   @include svg(picto_fleche_t, 50% 50%, 60%);
   @include opacity(0);
   @include transition(opacity 0.2s ease-out);
-
+  z-index: 20;
 }
 
 .ok{

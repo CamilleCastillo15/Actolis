@@ -44,7 +44,9 @@
 
                 text-align: center;
                 letter-spacing: 1rem;
-                color:$orange;
+//                color:$orang;e;
+
+                text-transform: capitalize;
 
                 @include breakpoint($tablet) {
                      @include fz(6);

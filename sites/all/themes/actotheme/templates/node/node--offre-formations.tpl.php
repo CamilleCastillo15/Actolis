@@ -1,9 +1,7 @@
 <?php
 
     $domaine = field_view_field("node",$node,'field_domaines_concernes');
-
     $nom = field_view_field("node",$node,'field_nom_formation');
-
     $link = url('node/'.$node->nid, array('absolute' => TRUE));
     if($teaser){
         $nom_render =  render($nom);
@@ -50,7 +48,6 @@ if($domaine){
             $picto_render = '<div class="picto pharma pharma-'.$node->nid.'">'.render($picto).'</div>';
             $couleur_third = field_get_items("node",$n,'field_couleur')[0]['rgb'];
         }
-
         if ((render($domaine['0']) == 'cosmetiques' || render($domaine['1']) == 'cosmetiques' || render($domaine['2']) == 'cosmetiques') && isset($couleur_first)) {
              drupal_add_css('.cosmeto-'.$node->nid.':before {background-color: '.$couleur_first.' !important ; } ', 'inline');
              $picto_render = '<div class="picto checked cosmeto cosmeto-'.$node->nid.'">'.render($picto).'</div>';
@@ -73,6 +70,7 @@ if($domaine){
     print $picto_render;
 
             echo"</div>";
+
 
               $i++;
            }
