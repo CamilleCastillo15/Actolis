@@ -19,6 +19,20 @@
         padding-right: 0% !important;
     }
 
+    .checkboxes {
+
+        margin-bottom: 2rem;
+
+        .nom {
+            font-weight: bold;
+            text-transform: uppercase;
+            width: 	100%;
+            font-size: 	1.2rem;
+            font-weight: 700;
+        }
+    }
+
+
 .pictos-container {
 
    display: inline-block;
@@ -31,8 +45,7 @@
             width: 1.75rem;
             position: relative;
 
-            &:before{
-
+            &:before {
                 content:"";
                 position: absolute;
                 width: 3rem;
@@ -42,10 +55,8 @@
                 border-radius: 100%;
                 border:0.3rem solid transparent;
                 @include translate(-50%,-50%);
-
                 background-color: $darkgris;
                 @include transition(all 0.2s ease-in-out);
-
             }
 
             img {

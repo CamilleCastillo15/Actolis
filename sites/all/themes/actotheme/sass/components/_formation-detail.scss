@@ -174,7 +174,7 @@
     .bloc-gris {
         background-color: $lightgris;
         text-align: center;
-        padding:5px;
+        padding:1.5rem;
         @include main-margin();
         position: relative;
 //        min-height: 5rem;
@@ -199,16 +199,18 @@
             vertical-align: middle;
 
              .center {
-                 position: absolute;
-                 left:50%;
-                 top:50%;
-                 @include translate(-50%,-50%);
+//                 position: absolute;
+//                 left:50%;
+//                 top:50%;
+//                 @include translate(-50%,-50%);
+                 text-align: center;
              }
         }
 
         img {
             height: 2rem;
-                vertical-align: middle;
+            vertical-align: middle;
+            display: inline-block;
         }
 
         h4 {
@@ -219,7 +221,20 @@
             vertical-align: middle;
             margin-bottom: 0;
 
+            p {
+
+                color: black;
+
+                a {
+
+                    color: black;
+
+                }
+
+            }
+
         }
 
     }
+
 }

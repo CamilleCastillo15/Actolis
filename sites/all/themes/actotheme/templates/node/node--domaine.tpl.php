@@ -1,5 +1,4 @@
 <?php
-
     $styles  = drupal_get_css();
     $body = field_view_field("node",$node,'body');
     $image = field_view_field("node",$node,'field_image');
@@ -61,7 +60,6 @@
            $p1 = file_create_url($image[0]["uri"]);
            drupal_add_css('.c-block-domaine .c-img-'.$i.'{background-image: url("'.$p1.'") !important; } ', 'inline');
 
-
     ?>
 
     <div class="c-gris">
@@ -81,7 +79,7 @@
             }
             $collectionsg_specs =  field_collection_item_load_multiple($idti_specs);
           for($j = 0; $j < count($idti_specs); $j++) {
-              dpm(count($idti_specs));
+//              dpm(count($idti_specs));
               $collectionsg_specs_2 = $collectionsg_specs[$idti_specs[$j]];
               $spec_title = field_view_field('field_collection_item', $collectionsg_specs_2, 'field_titre');
               $spec_type = field_view_field('field_collection_item', $collectionsg_specs_2, 'field_type_spec');
@@ -120,7 +118,6 @@
                                  $view = views_get_view('case_studies');
                                  $view->set_arguments(array($node->nid));
                                  $view->execute();
-//                                 dpm($view->result);
                                  $i = 0;
                                  if($i % 3 == 0 || $i == 0) {  ?>
                                     <div class="views-row swiper-slide">
@@ -140,7 +137,6 @@
                                             drupal_add_css('.e-d-c .grille .views-row .c-bg-'.$i.'{background-image: url("'.$p1.'") !important; } ', 'inline');
                                             $link = url('node/'.$node->nid, array('absolute' => TRUE));
                                             $link2 = $node->nid;
-    //                                      dpm($link);
 
                                             $titre_render =  render($titre);
                                             $texte_render =  render($texte);

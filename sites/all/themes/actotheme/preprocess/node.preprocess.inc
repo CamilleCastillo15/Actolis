@@ -9,6 +9,10 @@
                 drupal_add_js($theme_path."/js/Swiper/dist/js/swiper.jquery.min.js");
                 drupal_add_js($theme_path."/js/actotheme.domaine.js");
             break;
+            case "centre_de_formation":
+                drupal_add_js($theme_path."/js/Swiper/dist/js/swiper.jquery.min.js");
+                drupal_add_js($theme_path."/js/actotheme.centre_formation.js");
+            break;
         }
     }
 ?>
