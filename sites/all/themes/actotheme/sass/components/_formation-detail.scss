@@ -161,9 +161,11 @@
         }
         .offre_precedente {
             float:left;
+            @include btn_g();
         }
         .offre_suivante {
             float: right;
+            @include btn_d();
         }
     }
 

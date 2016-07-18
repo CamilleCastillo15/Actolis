@@ -584,4 +584,30 @@ $fallback-extension: 'png' !default;
   }
 }
 
+@mixin btn_d() {
 
+    background-image : url(../imgs/picto_fleche_d.svg);
+
+    background-repeat: no-repeat;
+    background-size : 20% 55%;
+    background-position: 100% center;
+
+    &:hover {
+        background-image : url(../imgs/picto_fleche_d_b.svg);
+    }
+
+}
+
+@mixin btn_g() {
+
+    background-image : url(../imgs/picto_fleche_l.svg);
+
+    background-repeat: no-repeat;
+    background-size : 20% 55%;
+    background-position: 0% center;
+
+    &:hover {
+        background-image : url(../imgs/picto_fleche_g_b.svg);
+    }
+
+}

@@ -45,6 +45,17 @@
 
             $icone_renumeration = field_view_field("node",$node,'field_icone_renumeration');
             $renumeration = field_view_field("node",$node,'field_renumeration');
+
+            $nid = $node->nid;
+
+            $nid_prev = prev_next_nid($node->nid, 'prev');
+            $link_prev = url('node/'.$nid_prev, array('absolute' => TRUE));
+//            dpm($link_prev);
+
+            $nid_next = prev_next_nid($nid, 'next');
+            $link_next = url('node/'.$nid_next, array('absolute' => TRUE));
+//            dpm($link_next);
+
         ?>
 
         <div class="poste-detail">
@@ -121,6 +132,18 @@
                </div>
             </div>
 
+            <div class="c-block-offres-detail">
+                <div class="offres_liens">
+                    <?php
+                        if($nid_prev != 0) {
+                            print l("Offre précédente", $link_prev, array("html"=>true, 'attributes' => array('class' => array('cta', 'offre_precedente', 'offres_boutons_liens'))));
+                        }
+                        if($nid_next != 0) {
+                            print l("Offre suivante", $link_next, array("html"=>true, 'attributes' => array('class' => array('cta', 'offre_suivante', 'offres_boutons_liens'))));
+                        } ?>
+                </div>
+            </div>
+
         </div>
 
         <?php
@@ -134,6 +157,8 @@
 //        print l("Postuler", "/content/formulaire-rejoignez-nous", array("html"=>true, 'attributes' => array('class' => array('cta')), 'query' => array('nid' => $nid)));
 
 ?>
+
+
 
 <?php    }
 
