@@ -99,6 +99,69 @@
 
     }
 
+    .acto-news {
+        background-color: $gris;
+        padding: 0rem 2rem;
+        padding-bottom: 6rem;
+         @include breakpoint($tablet) {
+            padding: 0rem 9rem;
+              .swiper-pagination{
+            bottom:2rem;
+        }
+        @include breakpoint($laptopl) {
+            @include main-padding();
+        }
+
+         .swiper-wrapper {
+             padding-bottom: 5rem;
+         }
+
+        .swiper-pagination{
+            bottom:2rem;
+        }
+
+        .swiper-button-next,.swiper-button-prev{
+            top:92%;
+        }
+
+        .swiper-button-next,.swiper-button-prev{
+            top:50%;
+            }
+        }
+
+        h4{
+            margin-top:2rem;
+            margin-bottom: 1rem;
+        }
+        .body-acto-news {
+            display: inline-block;
+            vertical-align: middle;
+            text-align: left;
+            width: 100%;
+            padding-bottom: 3rem;
+            @include breakpoint($tablet) {
+                padding-bottom: 1rem;
+               width: 60%;
+               margin-left: 2%;
+            }
+            h1{
+                @include fz(4);
+                display: block;
+            }
+        }
+        .image-acto-news {
+            display: inline-block;
+            vertical-align: middle;
+            width: 100%;
+            @include breakpoint($tablet) {
+              width: 35%;
+            }
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
 }
 
 .c-block-temoignage{

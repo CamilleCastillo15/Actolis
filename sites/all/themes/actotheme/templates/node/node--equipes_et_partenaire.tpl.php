@@ -90,11 +90,11 @@
 
           <div class="va">
 
-            <h4><?php print render($title_logos_partenaires); ?></h4>
+            <h4><?php //print render($title_logos_partenaires); ?></h4>
 
        <?php
 
-            for($i = 0; $i < count($idti); $i++) {
+            for($i = 0; $i < count($idti); $i++) { /*
 
             $collectionsg_logos_2 = $collectionsg_logos[$idti_logos[$i]];
             $title_logos = field_view_field('field_collection_item', $collectionsg_logos_2, 'field_title_logo_partenaire');
@@ -111,22 +111,23 @@
 
             </div>
 
-        <?php }
+        <?php */}
 
                 $view = views_get_view('partenaires');
-//                $view->set_display('blockhome');
+
+              $view->set_display('blockhome');
+
                 $view->execute();
                 $result = $view->result;
 
               ?>
 
-          <div class="swiper-containerrgg ">
+          <div class="acto-news swiper-container">
             <div class="swiper-wrapper">
                 <?php foreach($result as $key => $value) { ?>
                    <div class="swiper-slide">
                        <?php
                             $n = node_load($value->nid);
-
                             $img = field_view_field("node",$n,'field_image');
                             $title = field_view_field("node",$n,'field_titre');
                             $desc = field_view_field("node",$n,'field_description');

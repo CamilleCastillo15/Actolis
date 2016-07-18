@@ -1,0 +1,112 @@
+@import "breakpoint";
+@import "../variables/variables";
+@import "../variables/mixin";
+
+.partenaires_list {
+
+&.c-gris {
+
+       position: relative ;
+       perspective: 1000px;
+       margin-bottom: 10rem;
+       @extend .gradient-h;
+        width: 80%;
+
+    .c-text{
+
+        background-color: $gris;
+
+        padding:3rem;
+        padding-right: 3rem;
+        position: relative ;
+        vertical-align: top;
+        width: 100%;
+
+      @include breakpoint($tablet){
+        padding-right: 60%;
+        float: left;
+      }
+
+        .c-cta{
+            display: block ;
+            width:  100%;
+            text-align: center  ;
+        }
+
+        strong{
+            @include fz(3);
+            text-transform: uppercase;
+            font-weight:    600;
+            margin-top: 2rem;
+            display: block;
+            width:  100%;
+            position: relative;
+        }
+
+        a{
+            display: inline-block ;
+            margin-top: 2rem;
+        }
+          h1{
+              @include fz(4);
+             font-weight: 900;
+             margin-bottom: 1.5rem;
+             text-transform: uppercase;
+         }
+             p, li{
+                @include fz(2);
+             }
+
+        h4 {
+            p {
+                 @include fz(4);
+                 line-height: 2rem;
+                 font-weight:   600;
+                 margin-bottom: 1rem;
+                 text-transform: uppercase;
+            }
+        }
+    }
+
+        .c-img {
+
+            z-index: 10;
+            position: absolute;
+            width: 50%;
+            height: 110%;
+            right: 2rem;
+            top:50%;
+            right: 50%;
+            background-size: contain;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            @include translate(-50%,-50%);
+            vertical-align: top;
+
+            &:after {
+                content:"";
+                display: block ;
+                height: 5px;
+                width: 100%;
+                position: absolute;
+                bottom:-1px;
+                left:0px;
+                @extend .gradient-h;
+            }
+        }
+
+        &:nth-child(odd) {
+            .c-img {
+                left:2rem;
+            }
+            .c-text {
+                padding-right: 3rem;
+                @include breakpoint($tablet){
+                    padding-left: 56.66%;
+                    float: right;
+
+                  }
+            }
+        }
+    }
+}

@@ -175,7 +175,6 @@
         padding:1.5rem;
         @include main-margin();
         position: relative;
-//        min-height: 5rem;
 
          .c-picto {
 
@@ -217,10 +216,6 @@
             vertical-align: middle;
             margin-bottom: 0;
             text-align: left;
-
-//            @include breakpoint($tablet){
-//                text-align: center;
-//            }
 
             p {
 
