@@ -43,7 +43,7 @@
                     $collectiong_2 = $collectionsg[$idti[$i]];
                     $picto_centre_formation = field_view_field('field_collection_item', $collectiong_2, 'field_picto_centre_formation');
                     $titre_picto_formation = field_view_field('field_collection_item', $collectiong_2, 'field_titre_picto_formation');
-                    dpm(get_defined_vars());
+//                    dpm(get_defined_vars());
                 ?>
                 <div class="c-picto">
                     <?php print render($picto_centre_formation); ?>
@@ -63,12 +63,12 @@
              <input name="radio" type="radio" class='checkboxe dispositifs'><span class='nom'> Dispositifs médicaux </span>
              <input name="radio" type="radio" class='checkboxe pharma'><span class='nom'> Pharma & Biotech </span>
          </div>
-         <?php $i == 0; ?>
-         <div class="cc cc-<?php print $i ?>">
+         <?php //$i == 0; ?>
+         <div class="cc cc-1">
              <?php $view = views_embed_view('offres_de_formations', 'default', $node->nid);
             print $view; ?>
          </div>
-         <?php $i++; ?>
+         <?php //$i++; ?>
     </div>
     <div class="renseignements-container">
             <?php

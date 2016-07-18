@@ -68,10 +68,7 @@ if($domaine){
     drupal_add_css('.home .color-home-'.$i.' {background-color: '.$couleur.' !important ; } ', 'inline');
 
     print $picto_render;
-
             echo"</div>";
-
-
               $i++;
            }
 
