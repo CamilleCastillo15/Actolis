@@ -61,11 +61,8 @@
         for($i = 0; $i < count($idti); $i++) {
 
         $collectiong_2 = $collectionsg[$idti[$i]];
-
         $title = field_view_field('field_collection_item', $collectiong_2, 'field_titre');
-
         $image = field_view_field('field_collection_item', $collectiong_2, 'field_image_temoignage');
-
         $title_image = field_view_field('field_collection_item', $collectiong_2, 'field_titre_image');
         $texte = field_view_field('field_collection_item', $collectiong_2, 'field_texte_temoignage');
 
@@ -87,25 +84,21 @@
 
     <?php } ?>
 
-       <div class="logos-partenaires">
-   <div class="gradient"></div>
+    <div class="logos-partenaires">
 
-      <div class="va">
+       <div class="gradient"></div>
 
-        <h4><?php print render($title_logos_partenaires); ?></h4>
+          <div class="va">
+
+            <h4><?php print render($title_logos_partenaires); ?></h4>
 
        <?php
 
             for($i = 0; $i < count($idti); $i++) {
 
             $collectionsg_logos_2 = $collectionsg_logos[$idti_logos[$i]];
-
-            //dpm($collectionsg_logos);
-
             $title_logos = field_view_field('field_collection_item', $collectionsg_logos_2, 'field_title_logo_partenaire');
-
             $image_logos = field_view_field('field_collection_item', $collectionsg_logos_2, 'field_image_logo_partenaire');
-
             $link_logos = field_view_field('field_collection_item', $collectionsg_logos_2, 'field_link_logo_partenaire');
         ?>
 
@@ -118,10 +111,44 @@
 
             </div>
 
-        <?php } ?>
+        <?php }
+
+                $view = views_get_view('partenaires');
+//                $view->set_display('blockhome');
+                $view->execute();
+                $result = $view->result;
+
+              ?>
+
+          <div class="swiper-containerrgg ">
+            <div class="swiper-wrapper">
+                <?php foreach($result as $key => $value) { ?>
+                   <div class="swiper-slide">
+                       <?php
+                            $n = node_load($value->nid);
+
+                            $img = field_view_field("node",$n,'field_image');
+                            $title = field_view_field("node",$n,'field_titre');
+                            $desc = field_view_field("node",$n,'field_description');
+                       ?>
+                        <h4>Nos partenaires</h4>
+                        <div class="image-acto-news">
+                            <?php print render($img); ?>
+                        </div>
+                        <div class="body-acto-news">
+                            <h1 class="title"> <?php print render($title); ?> </h1>
+                            <br />
+                            <br />
+                            <?php print render($desc); ?>
+                        </div>
+                    </div>
+                <?php  } ?>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
 
       </div>
-
     </div>
-
 </div>

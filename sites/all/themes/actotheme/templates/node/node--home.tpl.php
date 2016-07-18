@@ -129,7 +129,7 @@
                         'type' => 'image',
                         'settings' => array(
                             'image_style' => 'medium',
-                        )));
+                        )) );
                     $title_acto_news = field_view_field('field_collection_item', $collectionsg_acto_news_2, 'field_titre_acto_news');
                     $body_acto_news = field_view_field('field_collection_item', $collectionsg_acto_news_2, 'field_texte_acto_news');
             ?>

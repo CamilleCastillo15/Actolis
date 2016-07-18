@@ -174,9 +174,11 @@ if($domaine){
                 if($nid_next != 0) {
                     print l("Offre suivante", $link_next, array("html"=>true, 'attributes' => array('class' => array('cta', 'offre_suivante', 'offres_boutons_liens'))));
                 }
-            } ?>
-        </div>
+            ?>
+            </div>
     </div>
+    <?php } ?>
+
 
 <?php
 

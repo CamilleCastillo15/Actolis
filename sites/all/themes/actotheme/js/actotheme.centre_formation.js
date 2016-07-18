@@ -13,7 +13,7 @@
                 var classes = $(this).attr('class');
                 var domaine = classes.split(' ')[1];
 
-                console.log(domaine);
+//                console.log(domaine);
 
                 var picto = $(".picto."+domaine);
                 var j = 0;
@@ -34,9 +34,10 @@
                 });
 
                 if(j == long && domaine != "tous"){
-                    $('.cc').prepend($('<span class="nom"> Aucune offre ne correspond à vos critères </span>'));
+                    $('.cc').prepend($('<span class="nom aucune"> Aucune offre ne correspond à vos critères </span>'));
+                }else{
+                    $('.cc .nom.aucune').hide();
                 }
-
             });
         }
     };

@@ -13,6 +13,10 @@
                 drupal_add_js($theme_path."/js/Swiper/dist/js/swiper.jquery.min.js");
                 drupal_add_js($theme_path."/js/actotheme.centre_formation.js");
             break;
+            case "partenaires":
+                drupal_add_js($theme_path."/js/Swiper/dist/js/swiper.jquery.min.js");
+                drupal_add_js($theme_path."/js/actotheme.partenaires.js");
+            break;
         }
     }
 ?>
