@@ -121,6 +121,7 @@
             margin:1rem 0.5rem;
             width: 100%;
 
+
             @include breakpoint($tablet){
               width: 14%;
             }
@@ -153,6 +154,7 @@
             img {
 
                 height: 6rem;
+                width: 8rem;
 
             }
 
@@ -507,7 +509,7 @@ h4{
 
                 height: 7em;
                 margin-bottom: 2rem;
-                width: auto;
+//                width: auto;
 
             }
 

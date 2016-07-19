@@ -54,7 +54,7 @@
     </div>
     <div class="c-block-offres">
          <h4>nos offres</h4>
-         <p class="ss">
+         <p>
             <?php print render($titre_offres_formations) ?><br />
          </p>
          <div class="checkboxes">

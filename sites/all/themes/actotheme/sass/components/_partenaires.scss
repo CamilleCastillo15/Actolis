@@ -78,7 +78,10 @@
                     width: 50%;
                     height: 110%;
 
-
+                    display: none;
+                    @include breakpoint($tablet){
+                        display: block;
+                      }
 
                     background-size: contain;
                     background-position: 50% 50%;
@@ -110,7 +113,7 @@
         &:nth-child(odd) {
             .c-img {
                 right:50%;
-                @include translate(-50%,-50%);
+                @include translate(0%,-50%);
             }
             .c-text {
                 padding-left: 3rem;
@@ -126,7 +129,7 @@
         &:nth-child(even) {
             .c-img {
                 left:50%;
-               @include translate(50%,-50%);
+               @include translate(0%,-50%);
             }
             .c-text {
                 padding-right: 3rem;

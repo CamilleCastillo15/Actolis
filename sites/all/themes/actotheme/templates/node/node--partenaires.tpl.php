@@ -6,7 +6,7 @@
     $description = field_view_field("node",$node,'field_description');
 
     $nid = $node->nid;
-    dpm($nid);
+//    dpm($nid);
 
     $image = field_get_items("node",$node,'field_image');
     $p = image_style_url("large",$image[0]["uri"]);

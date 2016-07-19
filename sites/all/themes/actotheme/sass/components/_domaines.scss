@@ -48,27 +48,27 @@
     }
 
 @include keyframes(photo1) {
-  0% { @include opacity(0); right:-10rem;  }
- 10% { @include opacity(1); right:-5rem;   }
- 30% { @include opacity(1); right:-5rem;   }
- 50% { @include opacity(1); right:-2rem;   }
-100% { @include opacity(1); right:-2rem;   }
+  0% { @include opacity(0); left:-10rem;  }
+ 10% { @include opacity(1); left:-5rem;   }
+ 30% { @include opacity(1); left:-2rem;   }
+ 50% { @include opacity(1); left:0rem;   }
+100% { @include opacity(1); left:2rem;   }
 }
 
 @include keyframes(photo2) {
   0% { @include opacity(0); right:-10rem; }
  10% { @include opacity(1); right:-8rem;  }
- 40% { @include opacity(1); right:-8rem;  }
- 50% { @include opacity(1); right:-2rem;  }
-100% { @include opacity(1); right:-2rem;  }
+ 40% { @include opacity(1); right:-6rem;  }
+ 50% { @include opacity(1); right:0rem;  }
+100% { @include opacity(1); right:2rem;  }
 }
 
 @include keyframes(photo3) {
-  0% { @include opacity(0); right:-10rem; }
- 55% { @include opacity(0); right:-10rem; }
- 65% { @include opacity(1); right:-5rem;  }
- 90% { @include opacity(1); right:-5rem;  }
-100% { @include opacity(1); right:-2rem;  }
+  0% { @include opacity(0); left:-10rem; }
+ 55% { @include opacity(0); left:-10rem; }
+ 65% { @include opacity(1); left:-5rem;  }
+ 90% { @include opacity(1); left:-5rem;  }
+100% { @include opacity(1); left:2rem;  }
 }
 
 @include keyframes(photo4) {
@@ -76,22 +76,24 @@
  55% { @include opacity(0); right:-10rem; }
  65% { @include opacity(1); right:-8rem;  }
  90% { @include opacity(1); right:-8rem;  }
-100% { @include opacity(1); right:-6rem;  }
+100% { @include opacity(1); right:2rem;  }
 }
 
+.c-img-0{
+    @include animation(photo1 5s ease-in-out 1);
+}
 .c-img-1{
-    @include animation(photo1 15s ease-in-out 3);
+    @include animation(photo2 10s ease-in-out 1);
 }
 .c-img-2{
-    @include animation(photo2 16s ease-in-out 3);
+    @include animation(photo3 15s ease-in-out 1);
 }
-
 .c-img-3{
-    @include animation(photo3 15s ease-in-out 3);
+    @include animation(photo4 15s ease-in-out 1);
 }
-.c-img-4{
-    @include animation(photo4 16s ease-in-out 3);
-}
+//.c-img-4{
+//    @include animation(photo4 16s ease-in-out 1);
+//}
 
 .c-block-domaine{
 
@@ -159,20 +161,10 @@
                  @include fz(4);
                  line-height: 2rem;
                  font-weight:   600;
-                 margin-bottom: 1rem;
+//                 margin-bottom: 1rem;
                  text-transform: uppercase;
             }
         }
-    }
-
-     .c-img{
-
-         display: none;
-    }
-                @include breakpoint($tablet){
-               .c-img-0,.c-img-1,.c-img-2,.c-img-3,.c-img-4,.c-img-5,.c-img-6{
-                     display: block;
-               }
     }
 
         .c-img {
@@ -197,6 +189,12 @@
                 left:0px;
                 @extend .gradient-h;
             }
+
+            display: none;
+
+            @include breakpoint($tablet){
+                 display: block;
+           }
         }
 
         &:nth-child(odd) {
@@ -539,6 +537,13 @@
                 right: 0;
                 top: 50%;
                 @include translate(0%,-50%);
+                z-index: 10;
+            }
+
+            &:last-child {
+                &:after {
+                    border-right: none !important;
+                }
             }
         }
     }

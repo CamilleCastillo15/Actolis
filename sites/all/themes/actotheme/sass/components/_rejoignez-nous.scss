@@ -17,6 +17,9 @@
         	padding-left: 0px;
         }
     }
+    .webform-component--message {
+        @include padding(2rem);
+    }
 }
 
  .c-block-offres{

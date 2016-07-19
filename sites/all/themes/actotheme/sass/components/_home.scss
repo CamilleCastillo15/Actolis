@@ -39,14 +39,13 @@
             .title-home {
 
                 font-family: Actolis;
-                font-weight: bold;
+                font-weight: 900;
                 font-size: 2.5rem;
 
                 text-align: center;
                 letter-spacing: 1rem;
-//                color:$orang;e;
 
-                text-transform: capitalize;
+                text-transform: uppercase;
 
                 @include breakpoint($tablet) {
                      @include fz(6);
@@ -71,7 +70,6 @@
 
             .par-home {
 
-               // margin: 2rem 0;
                 @include fz(5);
                 padding-top: 1.2rem;
                  text-align: center;
@@ -117,38 +115,48 @@
 }
     .c-picto {
         display: inline-block;
-        margin:0rem 2rem;
+        margin: 0rem 5rem;
+        vertical-align: top;
+
         &:nth-child(1) {
            @include animation(picto3 1.5s ease-in-out 1);
         }
+
         &:nth-child(2) {
            @include animation(picto2 1.5s ease-in-out 1);
             img {
                 width:6em;
             }
         }
+
         &:nth-child(3) {
            @include animation(picto1 1.5s ease-in-out 1);
         }
+
         &:nth-child(4) {
            @include animation(picto2 1.5s ease-in-out 1);
         }
+
         &:nth-child(5) {
            @include animation(picto3 1.5s ease-in-out 1);
         }
+
         img {
             height: 5rem;
-            width:  auto;
+            width: 6rem;
         }
+
          width: 40%;
          margin:2rem 0rem;
+
         @include breakpoint($tablet){
               display: inline-block;
-              width:    auto;
-                margin:0rem 2rem;
+              width:    10%;
+              margin:0rem 4rem;
+
               img {
                 height: 7rem;
-                width:  auto;
+                width: 6rem;
             }
         }
     }
@@ -164,15 +172,20 @@
         background-color: $gris;
         padding: 0rem 2rem;
         padding-bottom: 6rem;
-         @include breakpoint($tablet) {
-            padding: 0rem 9rem;
-              .swiper-pagination{
-            bottom:2rem;
-        }
+        margin-top: 1rem;
+
         @include breakpoint($laptopl) {
             @include main-padding();
         }
-       
+
+        @include breakpoint($tablet) {
+            margin-top: 6rem;
+            padding: 0rem 9rem;
+
+        .swiper-pagination{
+            bottom:2rem;
+        }
+
          .swiper-wrapper {
              padding-bottom: 5rem;
          }
@@ -191,8 +204,13 @@
         }
 
         h4{
-            margin-top:2rem;
-            margin-bottom: 1rem;
+            margin-top:3rem;
+            margin-bottom: 3rem;
+
+            @include fz(5);
+            line-height: 2rem;
+            font-weight:   600;
+            text-transform: uppercase;
         }
         .body-acto-news {
             display: inline-block;
@@ -201,13 +219,14 @@
             width: 100%;
             padding-bottom: 3rem;
             @include breakpoint($tablet) {
-                padding-bottom: 1rem;
-               width: 60%;
-               margin-left: 2%;
+               padding-bottom: 1rem;
+               width: 40%;
+               margin-left: 3rem;
             }
             h1{
                 @include fz(4);
                 display: block;
+                text-transform: uppercase;
             }
         }
         .image-acto-news {
@@ -221,6 +240,10 @@
                 width: 100%;
                 height: auto;
             }
+        }
+
+        .swiper-slide {
+            text-align: center;
         }
     }
     .color-home {

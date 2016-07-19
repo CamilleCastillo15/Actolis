@@ -47,7 +47,6 @@ if(isset($_GET['nid'])){
       <?php print render($form['submitted']['nom']) ?>
       <?php print render($form['submitted']['prenom']) ?>
       <?php print render($form['submitted']['e___mail']) ?>
-      <?php print render($form['submitted']['message']) ?>
   </div>
   <div class="form-col">
       <?php $options_ref = $form['submitted']['reference_du_poste'];
@@ -68,8 +67,12 @@ if(isset($_GET['nid'])){
       <div class="webform-component">
           <?php print render($options_ref); ?>
       </div>
-      <?php print render($form['submitted']['parcourir']) ?>
+      <div class="message">
+          <?php print render($form['submitted']['parcourir']) ?>
+      </div>
   </div>
+  <div class="clear"></div>
+  <?php print render($form['submitted']['message']) ?>
 
   <div class="clear"></div>
  <?php  print render($form['actions']);

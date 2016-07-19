@@ -4,6 +4,8 @@
 
              $(".checkboxes .checkboxe").click(function(){
 
+                $(".nom.aucune").remove();
+
                 $(".views-row").each(function(i){
                     $(this).show();
                 });
@@ -12,8 +14,6 @@
 
                 var classes = $(this).attr('class');
                 var domaine = classes.split(' ')[1];
-
-//                console.log(domaine);
 
                 var picto = $(".picto."+domaine);
                 var j = 0;
@@ -26,8 +26,7 @@
 
                     if(checked != "checked") {
                         j++;
-
-                        console.log(j);
+//                        console.log(j);
                         var parent = $(this).parents().eq(1);
                         parent.hide();
                     }

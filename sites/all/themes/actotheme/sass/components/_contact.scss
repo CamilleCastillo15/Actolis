@@ -36,7 +36,6 @@
     width: 50%;
     float: left;
   }
-
 }
 
 .c-block-contact{
@@ -149,84 +148,83 @@
              }
     }
 
-    .c-img{
+        .c-img{
 
-        position: absolute;
-        z-index: 10;
-        display: none;
-        vertical-align: top;
-        right: 2rem;
-        @include jpg(map,50% 50%, 100%);
-        height: 35vw;
-        width: 35vw;
+            position: absolute;
+            z-index: 10;
+            display: none;
+            vertical-align: top;
+            right: 2rem;
+            @include jpg(map,50% 50%, 100%);
+            height: 35vw;
+            width: 35vw;
 
-        @include breakpoint($tablet){
-            display: block;
+            @include breakpoint($tablet){
+                display: block;
 
-        }
+            }
 
-        @include breakpoint($laptop) {
-            
-            max-width: 560px;
-            max-height: 560px;
-            
-        }
+            @include breakpoint($laptop) {
+
+                max-width: 560px;
+                max-height: 560px;
+
+            }
 
 
-        top:50%;
-        @include translate(0px,-50%);
+            top:50%;
+            @include translate(0px,-50%);
 
-        .pointer{
-           position: absolute;
-           width:   2rem;
-           height:  4rem;
-           @include png(pointer-map, 50% 50%, contain);
-           display: block;  
-            @include opacity(0.9);
-             @include transition(all 0.2s ease-out);
+            .pointer{
+               position: absolute;
+               width:   2rem;
+               height:  4rem;
+               @include png(pointer-map, 50% 50%, contain);
+               display: block;
+                @include opacity(0.9);
+                 @include transition(all 0.2s ease-out);
 
-        }
+            }
 
-        .bt-nord,.bt-sud,.bt-montpellier{
-          position: absolute; 
-          height:  50%;
-//          width:  100%;
-          top:0px;
-        }
-        .bt-sud{
-          top:50%;
-          left: 68%;
-          .pointer{
-             top: 1%;
-            &:hover{
+            .bt-nord,.bt-sud,.bt-montpellier{
+              position: absolute;
+              height:  50%;
+    //          width:  100%;
+              top:0px;
+            }
+            .bt-sud{
+              top:50%;
+              left: 68%;
+              .pointer{
+                 top: 1%;
+                &:hover{
+                        @include opacity(1);
+                        top: -2%;
+                }
+              }
+            }
+            .bt-montpellier{
+              top:50%;
+              left: 61%;
+              .pointer{
+                  top: 42%;
+                &:hover{
                     @include opacity(1);
-                    top: -2%;
+                    top: 39%;
+                }
+              }
             }
-          }
+        .bt-nord{
+            left: 50.5%;
+           .pointer{
+               top: 38%;
+                &:hover{
+                    @include opacity(1);
+                    top: 35%;
+              }
+           }
         }
-        .bt-montpellier{
-          top:50%;
-          left: 61%;
-          .pointer{
-              top: 42%;
-            &:hover{
-                @include opacity(1);
-                top: 39%;
-            }
-          }
-        }
-    .bt-nord{
-        left: 50.5%;
-       .pointer{
-           top: 38%;
-            &:hover{
-                @include opacity(1);
-                top: 35%;
-          }
-       }
     }
-}
-
 }
 
 

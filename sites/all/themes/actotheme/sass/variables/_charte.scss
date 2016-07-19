@@ -94,6 +94,7 @@
         .c-text{
             padding-left:$m-padding;
             width: 47rem;
+
             h1{
                 text-transform: uppercase;
                 font-weight: 800;
@@ -311,7 +312,7 @@
             width: 65%;
             padding-left:2rem;
             h4{
-                  @include fz(4);
+                 @include fz(4);
                  line-height: 2rem;
                  font-weight:   600;
                  margin-bottom: 1rem;
@@ -353,8 +354,8 @@
     margin-bottom: 1rem;
   
   @include breakpoint($tablet){
-   margin-top:10rem;
-    margin-bottom: 10rem;
+      margin-top:6rem;
+      margin-bottom: 6rem;
   }
 
      @extend .gradient-h;
@@ -475,9 +476,8 @@
     margin-bottom: 1rem;
 
      @include breakpoint($tablet){
-    margin-top:-15vh;
-    margin-bottom: 8rem;
-
+        margin-top:-15vh;
+        margin-bottom: 6rem;
      }
 
     .b-big-cta{
@@ -491,7 +491,9 @@
     vertical-align: top;
     margin:0px;
     min-height: 16rem;
+
     @include breakpoint($tablet){
+//        margin:2vw;
         margin:2vw;
         width: 22vw;
         height: 22vw;
@@ -526,19 +528,23 @@
                 }
             }
             h3{
-                 @include fz(3);
-                text-transform: uppercase;
-                font-weight: 700;
+
+                @include fz(4);
+                 line-height: 2.5rem;
+                 font-weight: 600;
+                 margin-bottom: 1rem;
+                 text-transform: uppercase ;
+
                 color:white;
-                line-height: 2rem;
+
                 letter-spacing: 0rem;
                 height: 40%;
                 padding: 0rem 0.1rem;
                 padding-top: 1.2rem;
                  @include breakpoint($tablet){
-                 padding: 0rem 3rem;
-                 etter-spacing: 0.2rem;
-                 @include fz(4);
+                     @include fz(5);
+                     padding: 0rem 3rem;
+                     letter-spacing: 0.2rem;
                 }
             }
             text-align: center;

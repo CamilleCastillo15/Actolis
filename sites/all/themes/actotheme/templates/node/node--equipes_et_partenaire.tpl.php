@@ -50,10 +50,7 @@
             <div class="c-img"> 
                 
             </div>
-
-
         </div>
-    
     </div>
 
    <?php
@@ -131,7 +128,14 @@
                             $nid = $value->nid;
                             $img = field_view_field("node",$n,'field_image');
                             $title = field_view_field("node",$n,'field_titre');
-                            $desc = field_view_field("node",$n,'field_description');
+//                            $desc = field_view_field("node",$n,'field_description');
+
+                            $desc = field_view_field("node",$node,'field_description',array(
+                                  'label'=>'hidden',
+                                  'type' => 'text_summary_or_trimmed',
+                                  'settings'=>array('trim_length' => 300),
+                            ));
+
                        ?>
                         <h4>Nos partenaires</h4>
                         <div class="image-acto-news">
