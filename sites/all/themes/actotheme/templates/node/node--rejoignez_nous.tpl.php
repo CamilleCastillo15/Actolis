@@ -36,7 +36,7 @@
     <div class="c-block-histoire">
         <div class="c-blanc">
             <div class="c-text">
-                <h4><?php print $title ?></h4>
+                <h3><?php print $title ?></h3>
                 <?php print render($body) ?>
 
             </div>

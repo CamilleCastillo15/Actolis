@@ -249,7 +249,7 @@
         margin-top: 2rem;
         @include breakpoint($tablet){
             margin-top: 0px;
-            right: 2rem;
+            right: 0rem;
             @include translate(0px,-50%);
             top:50%;
             position: absolute;
@@ -505,19 +505,19 @@
         .dark-layer {
 
             padding:0rem;
-            margin-bottom: 3rem;
+//            margin-bottom: 3rem;
             background-color: transparent !important;
 
             .c-in {
-                   padding:2rem;
-                   position: relative;
-                   width: 100%;
-                   
-                   display: inline-block;
-                   vertical-align: top;
+
+               padding:  1rem 2rem;
+               position: relative;
+               width: 100%;
+
+               display: inline-block;
+               vertical-align: top;
 
                @include breakpoint($tablet){
-//                   padding:4rem;
                   width: 49.8%;
                   max-width: 40rem;
 
@@ -567,9 +567,9 @@
                         width: 100%;
                         text-align: right;
 
-                        bottom: 7rem;
+                        bottom: 3rem;
                         position: absolute;
-                        right: 6rem;
+                        right: 4.5rem;
 
                         text-transform: capitalize;
 
@@ -654,11 +654,8 @@
                           display: inline;
                           font-size: 3rem;
                         }
-
                     }
-
                     .picto_valeur_cle {
-
                         width: 4em;
                         bottom: 10rem;
                         display: inline-block;
@@ -668,23 +665,14 @@
                             width: 4.5rem;
                             margin-right: 5px;
                         }
-
                     }
-
                 }
-
             }
-
         }
-
         .phrases-container-2 {
-
-           margin-top:2.5rem;
-
+           margin-top:1rem;
         }
-
     }
-
 }
 
 h2.valeur_cle {
