@@ -6,6 +6,7 @@
     .c-block-histoire{
         .c-img{
             @include png(equipe_photo,50% 50%, cover);
+            right: 0;
         }
     }
 
@@ -14,11 +15,7 @@
             background-color: white;
            
             text-align: center;
-//            padding: 0rem 2rem;
-            //padding-bottom: 6rem;
             position: relative;
-
-//            @include main-padding(15vw,15vw);
 
             .gradient{
                  @extend .gradient-light;
@@ -34,13 +31,16 @@
             }
 
             .va {
-                    h4{
-                        text-align: left;
-                    }
+
+                h3{
+                    text-align: left;
+                }
 
                     position: relative;
                     z-index: 2;
-                    padding: 0rem 0rem 6rem 0rem;
+//                    padding: 0rem 0rem 6rem 0rem;
+
+                padding: 3rem 0rem 5rem 0rem;
 
                 .c-picto{
 
@@ -96,6 +96,14 @@
 
             }
 
+            .swiper-slide {
+                text-align: left;
+            }
+
+            .image-acto-news {
+                max-width: 14rem;
+            }
+
         }
 
         .en_savoir_plus {
@@ -106,69 +114,6 @@
 
     }
 
-    .acto-news {
-        background-color: $gris;
-        padding: 0rem 2rem;
-        padding-bottom: 6rem;
-         @include breakpoint($tablet) {
-            padding: 0rem 9rem;
-              .swiper-pagination{
-            bottom:2rem;
-        }
-        @include breakpoint($laptopl) {
-            @include main-padding();
-        }
-
-         .swiper-wrapper {
-             padding-bottom: 5rem;
-         }
-
-        .swiper-pagination{
-            bottom:2rem;
-        }
-
-        .swiper-button-next,.swiper-button-prev{
-            top:92%;
-        }
-
-        .swiper-button-next,.swiper-button-prev{
-            top:50%;
-            }
-        }
-
-        h4{
-            margin-top:2rem;
-            margin-bottom: 1rem;
-        }
-        .body-acto-news {
-            display: inline-block;
-            vertical-align: middle;
-            text-align: left;
-            width: 100%;
-            padding-bottom: 3rem;
-            @include breakpoint($tablet) {
-                padding-bottom: 1rem;
-               width: 60%;
-               margin-left: 2%;
-            }
-            h1{
-                @include fz(4);
-                display: block;
-            }
-        }
-        .image-acto-news {
-            display: inline-block;
-            vertical-align: middle;
-            width: 100%;
-            @include breakpoint($tablet) {
-              width: 35%;
-            }
-            img {
-                width: 100%;
-                height: auto;
-            }
-        }
-    }
 }
 
 .c-block-temoignage{
@@ -176,16 +121,8 @@
     width: 100%;
     display: block;
     margin: 0 auto;
-    padding:5px;
-    margin-top:7rem;
-    margin-bottom: 6rem;
-    padding: 3rem 6rem;
 
-    background-color: $gris;
-
-     @include breakpoint($tablet){
-        width: 65vw;
-     }
+    @include main-padding();
 
     h5{
         font-size: 1.5rem;
@@ -209,8 +146,9 @@
          margin-bottom: 3rem;
 
           @include breakpoint($tablet){
-           float: right;
-           width: 90%;
+           position: absolute;
+           left: 0;
+           width: 100%;
          }
     }
 
@@ -221,8 +159,9 @@
       width: 100%;
       margin-bottom: 1rem;
         @include breakpoint($tablet){
-       width: 20%;
-       min-width: 6rem;
+           width: 20%;
+           min-width: 6rem;
+           margin-top: 4rem;
         }
 
        .c-img{
@@ -280,6 +219,25 @@
     .c-cta{
         text-align: right;
         margin-right: -3rem;
+
+    }
+
+    .c-blanc{
+
+//       padding: 0rem;
+//       position: relative;
+//       perspective: 1000px;
+//       min-height: 27vh;
+//       @include breakpoint($tablet) {
+//            padding: 3rem;
+//       }
+
+        &.bkg {
+
+            background-color: $gris;
+            padding: 3rem;
+
+        }
 
     }
 }

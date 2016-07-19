@@ -9,9 +9,8 @@
 
 //            effect:"fade",
             spaceBetween: 0,
-            autoHeight:true,
-            autoplay : 5000,
-            autoHeight:true,
+//            autoHeight:true,
+//            autoplay : 5000,
             pagination: '.swiper-pagination',
             paginationClickable: true,
             nextButton: '.swiper-button-next',

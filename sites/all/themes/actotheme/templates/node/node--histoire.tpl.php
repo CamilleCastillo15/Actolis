@@ -54,7 +54,7 @@
         <div class="c-blanc">
 
             <div class="c-text">
-
+                <h3>Les valeurs clés</h3>
                 <?php print render($texte); ?>
 
             </div>
@@ -71,19 +71,17 @@
         <div class="dark-layer">
 
            <?php
-
                 for($i = 0; $i < count($idti); $i++) {
 
                 $collectiong_2 = $collectionsg[$idti[$i]];
 
                 $title = field_view_field('field_collection_item', $collectiong_2, 'field_titre');
                 $icone = field_view_field('field_collection_item', $collectiong_2, 'field_icone');
-
             ?>
 
                 <div class="c-picto">
                     <?php print render($icone); ?>
-                    <h2><?php print render($title); ?></h2>
+                    <h5><?php print render($title); ?></h5>
                 </div>
 
             <?php } ?>

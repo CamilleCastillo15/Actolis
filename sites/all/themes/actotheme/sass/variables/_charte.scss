@@ -6,6 +6,115 @@
     src: url("../fonts/actolis.otf") format("opentype");
 }
 
+h3 {
+    @include fz(5);
+    line-height: 2rem;
+    font-weight:   600;
+    text-transform: uppercase;
+}
+
+h4{
+  display: block;
+  @include fz(4);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+h5 {
+    text-align: left;
+    @include fz(3);
+    text-transform: uppercase;
+}
+
+.c-blanc{
+   background-color: white;
+   padding: 3rem 0rem 2rem 0rem;
+   position: relative;
+   perspective: 1000px;
+   min-height: 27vh;
+}
+
+.acto-news {
+    background-color: $gris;
+    padding: 0rem 2rem;
+    padding-bottom: 6rem;
+    margin-top: 1rem;
+
+    @include breakpoint($laptopl) {
+        @include main-padding();
+    }
+
+    @include breakpoint($tablet) {
+        margin-top: 6rem;
+        padding: 0rem 9rem;
+
+    .swiper-pagination{
+        bottom:2rem;
+    }
+
+     .swiper-wrapper {
+         padding-bottom: 5rem;
+     }
+
+    .swiper-pagination{
+        bottom:2rem;
+    }
+
+    .swiper-button-next,.swiper-button-prev{
+        top:92%;
+    }
+
+    .swiper-button-next,.swiper-button-prev{
+        top:50%;
+        }
+    }
+
+    h3{
+        margin-top:3rem;
+        margin-bottom: 3rem;
+        text-align: left;
+
+        @include fz(5);
+        line-height: 2rem;
+        font-weight:   600;
+        text-transform: uppercase;
+    }
+
+    .body-acto-news {
+        display: inline-block;
+        vertical-align: middle;
+        text-align: left;
+        width: 100%;
+        padding-bottom: 3rem;
+        @include breakpoint($tablet) {
+           padding-bottom: 1rem;
+           width: 40%;
+           margin-left: 3rem;
+        }
+        h4{
+          display: block;
+          @include fz(4);
+          font-weight: 900;
+          text-transform: uppercase;
+          text-align: left;
+        }
+    }
+    .image-acto-news {
+        display: inline-block;
+        vertical-align: middle;
+        width: 100%;
+        @include breakpoint($tablet) {
+          width: 35%;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+    .swiper-slide {
+        text-align: center;
+    }
+}
 
 .c-form{
   margin-top: 3rem;
@@ -391,16 +500,16 @@
             margin-top: 2rem;
        
         }
-          h4{
-                  @include fz(5);
-                 line-height: 2rem;
-                 font-weight:   600;
-                 margin-bottom: 1rem;
-                 text-transform: uppercase ;
-             }
-             p{
-                         @include fz(3);
-             }
+        h3{
+              @include fz(5);
+             line-height: 2rem;
+             font-weight:   600;
+             margin-bottom: 1rem;
+             text-transform: uppercase ;
+         }
+         p{
+                     @include fz(3);
+         }
     }
 
     .c-img{
