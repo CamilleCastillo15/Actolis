@@ -21,6 +21,11 @@
     $m = file_create_url($icones[0]["uri"]);
     drupal_add_css('.domaine .c-header {background-image: url("'.$p.'") !important; } ', 'inline');
     drupal_add_css('.b2 .picto {background-image: url("'.$m.'"); !important} ', 'inline');
+
+
+    $bullet = field_get_items('node', $node, 'field_url_bullets');
+    $n = file_create_url($bullet[0]["uri"]);
+    drupal_add_css('.ul-style, .c-text ul, .node-type-poste .l-content ul {list-style-image: url("'.$n.'") !important; } ', 'inline');
 ?>
 
 <div class="domaine">

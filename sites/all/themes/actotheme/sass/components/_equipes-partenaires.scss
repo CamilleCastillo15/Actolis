@@ -97,6 +97,12 @@
 
         }
 
+        .en_savoir_plus {
+            margin-top: 2rem;
+            @include btn_d();
+            float: left;
+        }
+
     }
 
     .acto-news {

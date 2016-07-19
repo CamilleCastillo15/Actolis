@@ -115,7 +115,7 @@
 
                 $view = views_get_view('partenaires');
 
-              $view->set_display('blockhome');
+                $view->set_display('blockhome');
 
                 $view->execute();
                 $result = $view->result;
@@ -128,6 +128,7 @@
                    <div class="swiper-slide">
                        <?php
                             $n = node_load($value->nid);
+                            $nid = $value->nid;
                             $img = field_view_field("node",$n,'field_image');
                             $title = field_view_field("node",$n,'field_titre');
                             $desc = field_view_field("node",$n,'field_description');
@@ -140,7 +141,9 @@
                             <h1 class="title"> <?php print render($title); ?> </h1>
                             <br />
                             <br />
-                            <?php print render($desc); ?>
+                            <?php print render($desc);
+                            print l("En savoir plus", "/partenaires", array("html"=>true, 'fragment' => "num-".$nid, 'attributes' => array('class' => array('cta', 'en_savoir_plus'))));
+                            //print l("En savoir plus", "/partenaires", array("html"=>true, 'attributes' => array('class' => array('cta', 'en_savoir_plus')))); ?>
                         </div>
                     </div>
                 <?php  } ?>

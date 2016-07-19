@@ -18,7 +18,7 @@
 <div class="c-block-histoire">
 
     <div class="partenaires_list c-gris">
-        <div class="c-text">
+        <div class="c-text" id="num-<?php print render($nid); ?>">
             <h4 class="title liens"><?php print render($title); ?></h4>
             <?php print render($description); ?>
         </div>

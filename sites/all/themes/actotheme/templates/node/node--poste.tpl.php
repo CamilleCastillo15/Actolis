@@ -26,6 +26,15 @@
             $qualites = field_view_field("node",$node,'field_qualit_s_requises');
 
             $icone_formation = field_view_field("node",$node,'field_icone_formation_demandee');
+
+            $picto_formation = variable_get(actomod_pictos_postes_formation);
+            dpm($picto_formation);
+            $file = file_load($picto_formation);
+            $img_picto_formation = image_style_url("header", $file->uri);
+//            print render($img_picto_formation);
+
+//            $icone_formation = $file;
+
             $formation_demandee = field_view_field("node",$node,'field_formation_demandee');
 
             $icone_type = field_view_field("node",$node,'field_icone_type_de_poste');
@@ -77,7 +86,8 @@
                <div class="desc-pictos">
                     <div class="formation c-picto">
                         <div class="center">
-                            <?php print render($icone_formation); ?>
+                            <?php //print render($icone_formation); ?>
+                            <img src="<?php print $img_picto_formation ?>" />
                             <div class="desc"><?php print render($formation_demandee); ?></div>
                         </div>
                    </div>

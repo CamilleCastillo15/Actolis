@@ -52,7 +52,7 @@ function actomod_admin(){
         '#collapsible' => TRUE, // Added
         '#collapsed' => FALSE,  // Added
     );
-    $fid = variable_get('actomod_pictos_offres');
+    $fid = variable_get('actomod_pictos_offres_duree');
     $form['actomod_fsvisuels_offres']['actomod_pictos_offres_duree'] = array(
         '#type' => 'media',
         '#tree' => TRUE,
@@ -69,11 +69,12 @@ function actomod_admin(){
         '#description' => t("Pictos dans le détail des offres"),
         '#required' => FALSE,
     );
+
     $form['actomod_fsvisuels_offres']['actomod_pictos_offres_contact'] = array(
         '#type' => 'media',
         '#tree' => TRUE,
         '#title' => t('Picto offre détail contact'),
-        '#default_value' => $fid,
+        '#default_value' => variable_get('actomod_pictos_offres_contact'),
         '#media_options' => array(
             'global' => array(
                 'file_extensions' => 'jpg png svg', // File extensions
@@ -89,7 +90,7 @@ function actomod_admin(){
         '#type' => 'media',
         '#tree' => TRUE,
         '#title' => t('Picto offre détail prix'),
-        '#default_value' => $fid,
+        '#default_value' =>  variable_get('actomod_pictos_offres_prix'),
         '#media_options' => array(
             'global' => array(
                 'file_extensions' => 'jpg png svg', // File extensions
@@ -111,7 +112,7 @@ function actomod_admin(){
         '#type' => 'media',
         '#tree' => TRUE,
         '#title' => t('Picto poste détail formation'),
-        '#default_value' => $fid,
+        '#default_value' => variable_get('actomod_pictos_postes_formation'),
         '#media_options' => array(
             'global' => array(
                 'file_extensions' => 'jpg png svg', // File extensions
@@ -127,7 +128,7 @@ function actomod_admin(){
         '#type' => 'media',
         '#tree' => TRUE,
         '#title' => t('Picto poste détail contrat'),
-        '#default_value' => $fid,
+        '#default_value' => variable_get('actomod_pictos_postes_contrat'),
         '#media_options' => array(
             'global' => array(
                 'file_extensions' => 'jpg png svg', // File extensions
@@ -143,7 +144,7 @@ function actomod_admin(){
         '#type' => 'media',
         '#tree' => TRUE,
         '#title' => t('Picto poste détail localisation du poste'),
-        '#default_value' => $fid,
+        '#default_value' => variable_get('actomod_pictos_postes_localisation'),
         '#media_options' => array(
             'global' => array(
                 'file_extensions' => 'jpg png svg', // File extensions
@@ -159,7 +160,7 @@ function actomod_admin(){
         '#type' => 'media',
         '#tree' => TRUE,
         '#title' => t('Picto poste détail expérience demandée'),
-        '#default_value' => $fid,
+        '#default_value' => variable_get('actomod_pictos_postes_experience'),
         '#media_options' => array(
             'global' => array(
                 'file_extensions' => 'jpg png svg', // File extensions
@@ -175,7 +176,7 @@ function actomod_admin(){
         '#type' => 'media',
         '#tree' => TRUE,
         '#title' => t('Picto poste détail langues demandées'),
-        '#default_value' => $fid,
+        '#default_value' => variable_get('actomod_pictos_postes_langues'),
         '#media_options' => array(
             'global' => array(
                 'file_extensions' => 'jpg png svg', // File extensions
@@ -191,7 +192,7 @@ function actomod_admin(){
         '#type' => 'media',
         '#tree' => TRUE,
         '#title' => t('Picto poste détail disponibilité'),
-        '#default_value' => $fid,
+        '#default_value' => variable_get('actomod_pictos_postes_disponibilite'),
         '#media_options' => array(
             'global' => array(
                 'file_extensions' => 'jpg png svg', // File extensions
@@ -207,7 +208,7 @@ function actomod_admin(){
         '#type' => 'media',
         '#tree' => TRUE,
         '#title' => t('Picto poste détail salaire'),
-        '#default_value' => $fid,
+        '#default_value' => variable_get('actomod_pictos_postes_salaire'),
         '#media_options' => array(
             'global' => array(
                 'file_extensions' => 'jpg png svg', // File extensions

@@ -2,109 +2,138 @@
 @import "../variables/variables";
 @import "../variables/mixin";
 
-.partenaires_list {
+.view-content {
 
-&.c-gris {
+    .views-row {
 
-       position: relative ;
-       perspective: 1000px;
-       margin-bottom: 10rem;
-       @extend .gradient-h;
-        width: 80%;
+        .partenaires_list {
 
-    .c-text{
+            &.c-gris {
 
-        background-color: $gris;
+               position: relative ;
+               perspective: 1000px;
+               margin-bottom: 10rem;
+               @extend .gradient-h;
+                width: 80%;
 
-        padding:3rem;
-        padding-right: 3rem;
-        position: relative ;
-        vertical-align: top;
-        width: 100%;
+                margin-left: auto;
+                margin-right: auto;
 
-      @include breakpoint($tablet){
-        padding-right: 60%;
-        float: left;
-      }
+                .c-text{
 
-        .c-cta{
-            display: block ;
-            width:  100%;
-            text-align: center  ;
-        }
+                    background-color: $gris;
 
-        strong{
-            @include fz(3);
-            text-transform: uppercase;
-            font-weight:    600;
-            margin-top: 2rem;
-            display: block;
-            width:  100%;
-            position: relative;
-        }
+                    padding-top:3rem;
+                    padding-bottom:3rem;
 
-        a{
-            display: inline-block ;
-            margin-top: 2rem;
-        }
-          h1{
-              @include fz(4);
-             font-weight: 900;
-             margin-bottom: 1.5rem;
-             text-transform: uppercase;
-         }
-             p, li{
-                @include fz(2);
-             }
+                    position: relative ;
+                    vertical-align: top;
+                    width: 100%;
 
-        h4 {
-            p {
-                 @include fz(4);
-                 line-height: 2rem;
-                 font-weight:   600;
-                 margin-bottom: 1rem;
-                 text-transform: uppercase;
-            }
-        }
-    }
+                    .c-cta{
+                        display: block ;
+                        width:  100%;
+                        text-align: center  ;
+                    }
 
-        .c-img {
+                    strong{
+                        @include fz(3);
+                        text-transform: uppercase;
+                        font-weight:    600;
+                        margin-top: 2rem;
+                        display: block;
+                        width:  100%;
+                        position: relative;
+                    }
 
-            z-index: 10;
-            position: absolute;
-            width: 50%;
-            height: 110%;
-            right: 2rem;
-            top:50%;
-            right: 50%;
-            background-size: contain;
-            background-position: 50% 50%;
-            background-repeat: no-repeat;
-            @include translate(-50%,-50%);
-            vertical-align: top;
+                    a{
+                        display: inline-block ;
+                        margin-top: 2rem;
+                    }
+                      h1{
+                          @include fz(4);
+                         font-weight: 900;
+                         margin-bottom: 1.5rem;
+                         text-transform: uppercase;
+                     }
+                         p, li{
+                            @include fz(2);
+                         }
 
-            &:after {
-                content:"";
-                display: block ;
-                height: 5px;
-                width: 100%;
-                position: absolute;
-                bottom:-1px;
-                left:0px;
-                @extend .gradient-h;
+                    h4 {
+                        p {
+                             @include fz(4);
+                             line-height: 2rem;
+                             font-weight:   600;
+                             margin-bottom: 1rem;
+                             text-transform: uppercase;
+                        }
+                    }
+                }
+
+                .c-img {
+
+                    z-index: 10;
+                    position: absolute;
+                    width: 50%;
+                    height: 110%;
+
+
+
+                    background-size: contain;
+                    background-position: 50% 50%;
+                    background-repeat: no-repeat;
+
+                    top:50%;
+
+                    vertical-align: top;
+
+                    &:after {
+                        background-color: transparent;
+                        background-image: none;
+                    }
+                }
+
+                &:after {
+                    content:"";
+                    display: block ;
+                    height: 5px;
+                    width: 100%;
+                    position: absolute;
+                    bottom:-1px;
+                    left:0px;
+                    @extend .gradient-h;
+                }
             }
         }
 
         &:nth-child(odd) {
             .c-img {
-                left:2rem;
+                right:50%;
+                @include translate(-50%,-50%);
             }
             .c-text {
+                padding-left: 3rem;
                 padding-right: 3rem;
                 @include breakpoint($tablet){
                     padding-left: 56.66%;
                     float: right;
 
+                  }
+            }
+        }
+
+        &:nth-child(even) {
+            .c-img {
+                left:50%;
+               @include translate(50%,-50%);
+            }
+            .c-text {
+                padding-right: 3rem;
+                padding-left: 3rem;
+                  @include breakpoint($tablet){
+                    padding-right: 60%;
+                    float: left;
                   }
             }
         }
