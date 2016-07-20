@@ -123,7 +123,7 @@
     </div>
 
     <div class="c-block-offres">
-         <h4>nos offres</h4>
+         <h3>nos offres</h3>
          <div class="cc">
          <?php $view = views_embed_view('offres_de_postes', 'default', $node->nid);
                         print $view; ?>

@@ -415,28 +415,29 @@
       text-align: center;
     }
 
-    .cc{
-      .views-row{
+    .cc {
+
+      .views-row {
         padding: 0px;
         vertical-align: top;
         min-height: 11rem;
-       
-        ul{
 
-       width: 100%;
-          height: 100%;
-        }
-        li{
+        ul {
           width: 100%;
           height: 100%;
         }
-        a{
-          display: block;
+
+        li {
           width: 100%;
           height: 100%;
-          color:black;
-          padding: 2rem;
+        }
 
+        a {
+           display: block;
+           width: 100%;
+           height: 100%;
+           color:black;
+           padding: 2rem;
            text-align: left;
         }
 
@@ -526,14 +527,14 @@
 
                 .c-picto {
 
-                  animation:none;
-                  padding: 3rem 2rem;
-                  width: 100%;
-                    height: 100%;
-                    background-color: $gris;
-                    margin:0px !important;
-                     min-height: 20rem;
-                     padding-top: 15%;
+                animation:none;
+                padding: 3rem 2rem;
+                width: 100%;
+                height: 100%;
+                background-color: $gris;
+                margin:0px !important;
+                min-height: 21rem;
+                padding-top: 15%;
 
                 h2 {
 
@@ -650,7 +651,7 @@
 
                         &.valeur{
                           bottom: 60px;
-                          right: 30%;
+                          right: 24%;
                           display: inline;
                           font-size: 3rem;
                         }

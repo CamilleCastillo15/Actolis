@@ -156,7 +156,8 @@
                         background-image: none !important;
                         background-image: url("") !important;
                         background-color: transparent;
-                        padding:1rem 2rem;
+//                        padding:1rem 2rem;
+                        padding:2rem 4rem;
                     @include breakpoint($tablet) {
                         background-color: transparent;
                     }

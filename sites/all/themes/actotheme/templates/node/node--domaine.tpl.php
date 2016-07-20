@@ -48,7 +48,7 @@
         <?php } ?>
     </div>
     <div class="nos-actions">
-        <h4>Nos actions</h4>
+        <h3>Nos actions</h3>
         <?php
             $actions = field_view_field("node",$node,'field_nos_actions');
         ?>
@@ -69,7 +69,7 @@
 
     <div class="c-gris">
         <div class="c-text">
-            <h4 class="title titre-<?php print $i ?> liens"><?php print render($titre); ?></h4>
+            <h3 class="title titre-<?php print $i ?> liens"><?php print render($titre); ?></h3>
             <?php print render($texte); ?>
         </div>
 

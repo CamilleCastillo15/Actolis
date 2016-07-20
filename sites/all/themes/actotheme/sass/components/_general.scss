@@ -155,10 +155,8 @@ body {
     }
 
     textarea{
-      min-height: 15rem;
+      min-height: 10rem;
     }
-
-
 
     .form-required{
       color:$nuit;
@@ -192,17 +190,23 @@ select{
 
     }
 
-.webform-submit{
-    @extend .cta;
-    background-color: #fff;
-    cursor:pointer;
-    float: right;
-    margin-right: 0rem;
+.form-actions {
+
+    margin-right: 2rem;
+
+    .webform-submit{
+        @extend .cta;
+        background-color: #fff;
+        cursor:pointer;
+        float: right;
+        margin-right: 0rem;
 
         @include breakpoint($tablet){
           margin-right: 2rem;
         }
+    }
 }
+
 
 .webform-client-form .webform-component {
 

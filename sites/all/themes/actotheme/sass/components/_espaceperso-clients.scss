@@ -59,35 +59,37 @@
                 margin-bottom: 2.8rem;
             }
         }
-    }
 
-    .c-gradient {
+            .c-gradient {
 
-        div {
+            div {
 
-            &:second-child {
+                &:second-child {
 
-                border-left: 1px solid blue;
+                    border-left: 1px solid blue;
 
+                }
             }
-        }
 
-        .form-col {
+            .form-col {
 
-            @include breakpoint($laptop) {
+                @include breakpoint($laptop) {
 
-                    padding-left: 6rem;
-                    padding-right: 6rem;
-                    border-left: 2px solid #02bce8;
+                        padding-left: 6rem;
+                        padding-right: 6rem;
+                        border-left: 2px solid #02bce8;
 
-                &:first-child {
+                    &:first-child {
 
-                    border-left: 0px solid blue;
+                        border-left: 0px solid blue;
 
+                    }
                 }
             }
         }
     }
+
+
 
     &.consultants, &.partenaires {
 

@@ -68,7 +68,7 @@ if(isset($_GET['nid'])){
           <?php print render($options_ref); ?>
       </div>
       <div class="message">
-          <?php print render($form['submitted']['parcourir']) ?>
+          <?php print render($form['submitted']['votre_cv']) ?>
       </div>
   </div>
   <div class="clear"></div>
