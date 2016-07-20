@@ -30,7 +30,8 @@
             $picto_formation = variable_get(actomod_pictos_postes_formation);
             dpm($picto_formation);
             $file = file_load($picto_formation);
-            $img_picto_formation = image_style_url("header", $file->uri);
+
+            $img_picto_formation = file_create_url($file->uri);
 //            print render($img_picto_formation);
 
 //            $icone_formation = $file;

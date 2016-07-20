@@ -74,6 +74,8 @@ if(isset($_GET['nid'])){
   <div class="clear"></div>
   <?php print render($form['submitted']['message']) ?>
 
-  <div class="clear"></div>
- <?php  print render($form['actions']);
-//<?php //print drupal_render_children($form);
+
+ <?php  print render($form['actions']); ?>
+ <div class="clear"></div>
+
+ <?php //print drupal_render_children($form);

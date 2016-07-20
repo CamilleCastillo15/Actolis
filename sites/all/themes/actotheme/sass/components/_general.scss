@@ -3,23 +3,15 @@
 @import "../variables/mixin";
 
 body {
-
     img {
-
         height: auto;
-
     }
-
-
    &.blocus{
       overflow: hidden;
    }
-   
-
 }
 
 .not-logged-in{
-
     &:before{
       position: fixed;
       display: block;
@@ -120,7 +112,6 @@ body {
 
 .webform-client-form {
   display: block;
-  padding: 2rem;
 
   .webform-component{
 
@@ -189,23 +180,6 @@ select{
       }
 
     }
-
-.form-actions {
-
-    margin-right: 2rem;
-
-    .webform-submit{
-        @extend .cta;
-        background-color: #fff;
-        cursor:pointer;
-        float: right;
-        margin-right: 0rem;
-
-        @include breakpoint($tablet){
-          margin-right: 2rem;
-        }
-    }
-}
 
 
 .webform-client-form .webform-component {

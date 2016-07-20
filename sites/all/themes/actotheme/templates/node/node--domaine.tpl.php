@@ -115,7 +115,7 @@
                 <div class="cc-block ">
                     <div class="c-block">
                         <div class="c-gradient">
-                        <h1 class="titre">cases studies</h1>
+                        <h3>cases studies</h3>
                         <div class="grille">
                             <div class="swiper-container">
                                 <div class="swiper-wrapper">

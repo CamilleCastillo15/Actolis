@@ -109,10 +109,13 @@
     background-color: rgba(black,0.51);
     text-align: center;
     color: white;
- @include breakpoint($tablet){
-         padding: 4rem 0rem;
+    margin-bottom: 6rem;
+
+     @include breakpoint($tablet){
+             padding: 4rem 0rem;
+        }
+
     }
-}
     .c-picto {
         display: inline-block;
         margin: 0rem 5rem;

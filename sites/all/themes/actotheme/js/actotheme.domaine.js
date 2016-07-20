@@ -10,7 +10,6 @@
                 $(".block-all").css("height","auto");
             }
         });
-
         var swiper = new Swiper('.swiper-container', {
             spaceBetween: 0,
             autoplay : 5000,
@@ -20,29 +19,21 @@
             nextButton: '.swiper-button-next',
             prevButton: '.swiper-button-prev'
         });
-
         $(window).bind('scroll', function() {
             var scrollTop = $(window).scrollTop();
-
-            if(scrollTop > 498){
+            console.log(scrollTop);
+            if(scrollTop > 650){
                 $('.frise-actions').addClass('fixed');
             }else {
                 $('.frise-actions').removeClass('fixed');
             }
-
         });
-
         $('.frise-actions .titre-actions').click(function(){
-
             event.preventDefault();
-
             var divClosest = $(this).closest('div');
-
             var classes = divClosest.attr('class');
             var theClass = classes.split(' ')[1];
-
             var scrollDiv = $(this).attr('href');
-
             $('html, body').stop().animate({
                 scrollTop: $('.'+theClass+'.liens').offset().top - 160
             }, 400);
@@ -57,11 +48,8 @@ var aItemsTop = [];
        var offsetTop = $(this).offset().top;
        aItemsTop[i] = offsetTop;
     });
-
         $(window).on('scroll', function(){
-
            progress();
-
         });
 
         var width = 0;
@@ -80,18 +68,12 @@ var aItemsTop = [];
 
                 var id = i;
                 var div = $('.titre-actions.titre-'+id);
-
                 var progressBox = curPos-offsetTop;
-//                console.log(progressBox);
                 var h = $(this).height();
-
                 div.addClass('bg');
                 $('.titre-actions.titre-'+id).removeClass('fill');
-
                 var percent = (100 / h) * progressBox;
-
                 $('<style>.bg:before{width:'+percent+'%;}</style>').appendTo('head');
-
 
             } else if(curPos > offsetTop && curPos > offsetBottom) {
 
@@ -112,11 +94,8 @@ var aItemsTop = [];
                 $('.titre-actions.titre-'+id).removeClass('fill');
 
             }
-
         });
-
     }
-
 }
 
 };

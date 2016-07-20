@@ -28,7 +28,7 @@
     <div class="c-block-histoire">
         <div class="c-blanc">
             <div class="c-text">
-                <h4><?php print render($title) ?></h4>
+                <h3><?php print render($title) ?></h3>
                 <?php print render($texte_formation) ?>
 
             </div>
@@ -47,13 +47,13 @@
                 ?>
                 <div class="c-picto">
                     <?php print render($picto_centre_formation); ?>
-                    <h2><?php print render($titre_picto_formation); ?></h2>
+                    <h5><?php print render($titre_picto_formation); ?></h5>
                 </div>
             <?php } ?>
         </div>
     </div>
     <div class="c-block-offres">
-         <h4>nos offres</h4>
+         <h3>nos offres</h3>
          <p>
             <?php print render($titre_offres_formations) ?><br />
          </p>

@@ -52,71 +52,49 @@
   }
 
 if(isset($_GET['nid'])){
-
     $nid = $_GET['nid'];
     $node = node_load($nid);
     $title = $node->title;
-
 }
 
 ?>
-<div class="c-form">
-
+<div class="c-form webform-27">
     <div class="cc-block">
-
         <div class="c-block">
-
             <div class="c-gradient">
-
                   <div class="form-col">
                       <?php print render($form['submitted']['nom']) ?>
                       <?php print render($form['submitted']['prenom']) ?>
                   </div>
-
                   <div class="form-col">
+
                       <?php print render($form['submitted']['message']); ?>
+
                       <?php $options_ref = $form['submitted']['reference_de_loffre'];
 
                       $options = $form['submitted']['reference_de_loffre']['#options'];
 
                       if(isset($title)){
-
                           $def = array_search($title, $options);
-
                           if($def){
-
                             $options_ref = array(
                               '#title' => 'Référence de l\'offre',
                               '#type' => 'select',
                               '#value' => $def,
                               '#options' => $options);
                           }
-
                           $options_ref['#options'] = $options ;
-
                       }
-
                        ?>
-
                       <div class="webform-component">
-
-                          <?php print render($options_ref);
-                                //dpm($form);?>
-
+                          <?php print render($options_ref); ?>
                       </div>
-
                   </div>
-
                    <?php  print render($form['actions']); ?>
-
                   <div class="clear"></div>
-
             </div>
-
         </div>
-
     </div>
-
 </div>
 
 

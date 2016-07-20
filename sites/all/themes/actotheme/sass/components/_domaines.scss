@@ -73,7 +73,12 @@
      
        position: relative ;
        perspective: 1000px;
-       margin-bottom: 10rem;
+
+       @include breakpoint($tablet){
+            margin-bottom: 10rem;
+        }
+
+       margin-bottom: 5rem;
 
     .c-text {
 
@@ -126,6 +131,7 @@
                 line-height: 2.5rem;
                 font-weight:   600;
                 text-transform: uppercase;
+                display: inline;
             }
             margin-bottom: 1rem;
         }
@@ -201,9 +207,7 @@
     }
 
         @include breakpoint($tablet){
-
             &:nth-child(even) {
-
                 .specs {
 
                     &.specs-0 {
@@ -433,7 +437,7 @@
             padding: 1rem 3rem;
             margin-right: -5.5px;
             min-height: 5rem;
-            min-width: 16rem;
+            min-width: 14rem;
 
             @include link(black);
 

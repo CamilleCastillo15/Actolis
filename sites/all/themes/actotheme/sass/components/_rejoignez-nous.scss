@@ -23,6 +23,21 @@
   padding-right: 2rem;
   padding-bottom: 2rem;
     }
+
+    .c-form {
+
+        margin-top: 0rem;
+        margin-bottom: 0rem;
+
+        .cc-block {
+
+            bottom: 10%;
+            @include translate(0%,-10%);
+
+        }
+
+    }
+
 }
 
  .c-block-offres{
@@ -42,6 +57,7 @@
                 text-align: center;
 				display: inline-block;
 				width: 100%;
+                margin-left: 0.3rem;
 
 				 @include breakpoint($tablet) {
 						width: 33%;
@@ -103,16 +119,6 @@
 
 .c-form{
 
-          @include breakpoint($tablet){
-             margin-top: 0rem;
-          }
-
-		h4{
-			padding-left: 0rem;
-        	@include breakpoint($tablet){
-         	 padding-left: 4rem;
-        	}
-		}
 	.c-text{
 		@include main-padding();
 		background-color: $gris;
@@ -132,8 +138,6 @@
 	}
 	.cc-block{
 		@include main-padding();
-        bottom: 10%;
-        @include translate(0%,-10%);
 
 		.c-block{
 		    margin: 0 auto;
