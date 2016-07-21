@@ -106,14 +106,70 @@ if($domaine){
 
         $nid_next = prev_next_nid($nid, 'next');
         $link_next = url('node/'.$nid_next, array('absolute' => TRUE));
-//        dpm($link_next);
 
-?>
+    $view_domaines = views_get_view('domaines');
+    $view_domaines->execute();
+    $result_domaines = $view_domaines->result;
 
-<div class="formation-detail">
+//    dpm($result_domaines);
+
+    $i = 1; ?>
+
+ <div class="formation-detail">
    <div class="c-block-offres-detail">
-        <div class="c-blanc">
-           <div class="c-text img-bloc">
+    <div class="c-blanc">
+       <div class="c-text img-bloc">
+        <div class="pictos-container-all">
+
+
+<?php
+
+    foreach($result_domaines as $key => $value) {
+
+        $n = node_load($value->nid);
+
+        $picto = field_view_field("node",$n,'field_icone');
+        $picto_render = '<div class="picto">'.render($picto).'</div>';
+
+        if($domaine){
+
+            if($i ==1  ){
+                $picto_render = '<div class="picto cosmeto cosmeto-'.$node->nid.'">'.render($picto).'</div>';
+                $couleur_first = field_get_items("node",$n,'field_couleur')[0]['rgb'];
+            }
+            if($i ==2){
+                $picto_render = '<div class="picto dispositifs dispositifs-'.$node->nid.'">'.render($picto).'</div>';
+                $couleur_second = field_get_items("node",$n,'field_couleur')[0]['rgb'];
+            }
+            if($i ==3){
+                $picto_render = '<div class="picto pharma pharma-'.$node->nid.'">'.render($picto).'</div>';
+                $couleur_third = field_get_items("node",$n,'field_couleur')[0]['rgb'];
+            }
+            if ((render($domaine['0']) == 'cosmetiques' || render($domaine['1']) == 'cosmetiques' || render($domaine['2']) == 'cosmetiques') && isset($couleur_first)) {
+                 drupal_add_css('.cosmeto-'.$node->nid.':before {background-color: '.$couleur_first.' !important ; } ', 'inline');
+                 $picto_render = '<div class="picto checked cosmeto cosmeto-'.$node->nid.'">'.render($picto).'</div>';
+              }
+            if ((render($domaine['0']) == 'dispositifs' || render($domaine['1']) == 'dispositifs' || render($domaine['2']) == 'dispositifs') && isset($couleur_second)) {
+                 drupal_add_css('.dispositifs-'.$node->nid.':before {background-color: '.$couleur_second.' !important ; } ', 'inline');
+                 $picto_render = '<div class="picto checked dispositifs dispositifs-'.$node->nid.'">'.render($picto).'</div>';
+              }
+            if ((render($domaine['0']) == 'pharma' || render($domaine['1']) == 'pharma' || render($domaine['2']) == 'pharma') && isset($couleur_third)) {
+                 drupal_add_css('.pharma-'.$node->nid.':before {background-color: '.$couleur_third.' !important ; } ', 'inline');
+                 $picto_render = '<div class="picto checked pharma pharma-'.$node->nid.'">'.render($picto).'</div>';
+              }
+    }
+
+    echo"<div class='pictos-container pictos-container-".$i."'>";
+    echo "<div class='color-home color-home-".$i."'></div>";
+    $couleur = field_get_items("node",$n,'field_couleur')[0]['rgb'];
+    drupal_add_css('.home .color-home-'.$i.' {background-color: '.$couleur.' !important ; } ', 'inline');
+
+    print $picto_render;
+            echo"</div>";
+              $i++;
+           }
+        ?>
+               </div>
                 <h3><?php print render($nom); ?></h3>
                 <h4>Les objectifs de cette formation</h4>
                 <?php print render($objectifs); ?>

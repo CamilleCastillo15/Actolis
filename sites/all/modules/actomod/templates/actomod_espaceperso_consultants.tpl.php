@@ -9,14 +9,12 @@
 
       <div class="titres">
 
-            <h4>Espace consultants</h4>
-            <h2>Consultants</h2>
+            <h3>Espace consultants</h3>
+            Consultants
 
       </div>
 
         <div class="cc-block">
-
-            <h4>Espace client</h4>
 
             <div class="c-block">
 

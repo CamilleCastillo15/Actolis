@@ -21,7 +21,6 @@
 
      $titre_offres_formations = field_view_field("node",$node,'field_titre_offres_formations');
      $texte_mobilite = field_view_field("node",$node,'field_texte_mobilite');
-
 ?>
 
 <div class="centre-formation">
@@ -38,18 +37,20 @@
     </div>
     <div class="c-header">
         <div class="dark-layer">
-            <h4><?php print render($titre_fc_formation) ?></h4>
-             <?php for($i = 0; $i < count($idti); $i++){
-                    $collectiong_2 = $collectionsg[$idti[$i]];
-                    $picto_centre_formation = field_view_field('field_collection_item', $collectiong_2, 'field_picto_centre_formation');
-                    $titre_picto_formation = field_view_field('field_collection_item', $collectiong_2, 'field_titre_picto_formation');
-//                    dpm(get_defined_vars());
-                ?>
-                <div class="c-picto">
-                    <?php print render($picto_centre_formation); ?>
-                    <h5><?php print render($titre_picto_formation); ?></h5>
-                </div>
-            <?php } ?>
+            <div class="container-vertical">
+                <h4><?php print render($titre_fc_formation) ?></h4>
+                 <?php for($i = 0; $i < count($idti); $i++){
+                        $collectiong_2 = $collectionsg[$idti[$i]];
+                        $picto_centre_formation = field_view_field('field_collection_item', $collectiong_2, 'field_picto_centre_formation');
+                        $titre_picto_formation = field_view_field('field_collection_item', $collectiong_2, 'field_titre_picto_formation');
+    //                    dpm(get_defined_vars());
+                    ?>
+                    <div class="c-picto">
+                        <?php print render($picto_centre_formation); ?>
+                        <h5><?php print render($titre_picto_formation); ?></h5>
+                    </div>
+                <?php } ?>
+            </div>
         </div>
     </div>
     <div class="c-block-offres">

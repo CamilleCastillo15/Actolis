@@ -8,7 +8,6 @@ h3 {
     font-weight:   900;
     text-transform: uppercase;
     font-family: "SourceSansProUltraBold", sans-serif;
-//    font: 900 45.72px 'Source Sans Pro';
 }
 
 h4{
@@ -19,7 +18,6 @@ h4{
 }
 
 h5 {
-    text-align: left;
     @include fz(3);
     text-transform: uppercase;
 }
@@ -81,20 +79,24 @@ h5 {
     .body-acto-news {
         display: inline-block;
         vertical-align: middle;
-        text-align: left;
+        text-align: center;
         width: 100%;
         padding-bottom: 3rem;
         @include breakpoint($tablet) {
            padding-bottom: 1rem;
            width: 40%;
            margin-left: 3rem;
+           text-align: left;
         }
         h4{
           display: block;
           @include fz(4);
           font-weight: 900;
           text-transform: uppercase;
-          text-align: left;
+          text-align: center;
+          @include breakpoint($tablet) {
+              text-align: left;
+            }
         }
     }
     .image-acto-news {
@@ -210,6 +212,52 @@ h5 {
 
    }
 
+.pictos-container-all {
+
+    margin-bottom: 1rem;
+
+    .pictos-container {
+
+       display: inline-block;
+       width: 1rem;
+       margin-left: 0rem;
+       &.pictos-container-2, &.pictos-container-3 {
+            margin-left: 3rem;
+       }
+       margin-bottom: 1.5rem;
+
+        .picto {
+
+            width: 1.75rem;
+            position: relative;
+
+            &:before {
+                content:"";
+                position: absolute;
+                width: 3rem;
+                height: 3rem;
+                left:50%;
+                top:50%;
+                border-radius: 100%;
+                border:0.3rem solid transparent;
+                @include translate(-50%,-50%);
+                background-color: $darkgris;
+                @include transition(all 0.2s ease-in-out);
+            }
+
+            img {
+
+                position: relative;
+                vertical-align: middle;
+
+            }
+
+        }
+
+    }
+
+}
+
 
 ////////////////////////////////// CHARTE ////////////////////////////////// 
 
@@ -282,8 +330,7 @@ h5 {
        
    }
 
-  100% { 
-     
+  100% {
 
       @include translate(0px,0%);
       background-position: 50% 50%;
@@ -478,12 +525,12 @@ h5 {
     display: block;
     margin: 0 auto;
     padding:5px;
-    margin-top:1rem;
-    margin-bottom: 1rem;
+    margin-top:3rem;
+    margin-bottom: 3rem;
   
   @include breakpoint($tablet){
-      margin-top:6rem;
-      margin-bottom: 6rem;
+      margin-top:5rem;
+      margin-bottom: 5rem;
   }
 
      @extend .gradient-h;
@@ -576,9 +623,11 @@ h5 {
 
 
 .ul-style{
-            list-style-image: url(../imgs/bullet_orange.svg);
+
+        list-style-image: url(../imgs/bullet_orange.svg);
         list-style-position: outside;
         padding-left: 1rem;
+
         li{
                 
             padding-left: 0.1rem;
@@ -600,12 +649,12 @@ h5 {
 .c-big-cta{
     
     text-align: center;
-    margin-top:5px;
-    margin-bottom: 1rem;
+    margin-top:3rem;
+    margin-bottom: 3rem;
 
      @include breakpoint($tablet){
         margin-top:-15vh;
-        margin-bottom: 6rem;
+        margin-bottom: 5rem;
      }
 
     .b-big-cta{
@@ -750,17 +799,6 @@ h5 {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 ////     ////     ////     ////     ////     ////     ////     ////     ////

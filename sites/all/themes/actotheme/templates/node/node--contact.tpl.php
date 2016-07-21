@@ -2,7 +2,7 @@
 
     $styles  = drupal_get_css();
 
-    $body = field_view_field("node",$node,'body');
+    $body = field_view_field("node",$node,'field_description');
     $image = field_view_field("node",$node,'field_image');
 
     $fc_adresses = field_get_items('node', $node, 'field_fc_adresses');
@@ -48,11 +48,8 @@
                     for($i = 0; $i < count($idti); $i++) {
 
                     $collectiong_2 = $collectionsg[$idti[$i]];
-
                     $title_adresse = field_view_field('field_collection_item', $collectiong_2, 'field_title_adresse');
-
                     $adresse = field_view_field('field_collection_item', $collectiong_2, 'field_adresse');
-
                     $telephone = field_view_field('field_collection_item', $collectiong_2, 'field_telephone');
 
                 ?>

@@ -82,12 +82,12 @@
                        <?php
                             $n = node_load($value->nid);
                             $nid = $value->nid;
-                            $img = field_view_field("node",$n,'field_image');
+                            $img_nb = field_view_field("node",$n,'field_image_nb');
                             $title = field_view_field("node",$n,'field_titre');
-//                            $desc = field_view_field("node",$n,'field_description');
+//                          $desc = field_view_field("node",$n,'field_description');
 
-                            $desc = field_view_field("node",$node,'field_description',array(
-                                  'label'=>'hidden',
+                            $desc = field_view_field("node",$n,'field_description',array(
+                                  'label' => 'hidden',
                                   'type' => 'text_summary_or_trimmed',
                                   'settings'=>array('trim_length' => 300),
                             ));
@@ -95,7 +95,7 @@
                        ?>
 
                         <div class="image-acto-news">
-                            <?php print render($img); ?>
+                            <?php print render($img_nb); ?>
                         </div>
                         <div class="body-acto-news">
                             <h4> <?php print render($title); ?> </h4>

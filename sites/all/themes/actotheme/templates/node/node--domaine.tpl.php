@@ -64,17 +64,13 @@
            $image = field_get_items('field_collection_item', $collectionsg_2, 'field_image_bloc');
            $p1 = file_create_url($image[0]["uri"]);
            drupal_add_css('.c-block-domaine .c-img-'.$i.'{background-image: url("'.$p1.'") !important; } ', 'inline');
-
     ?>
-
     <div class="c-gris">
         <div class="c-text">
             <h3 class="title titre-<?php print $i ?> liens"><?php print render($titre); ?></h3>
             <?php print render($texte); ?>
         </div>
-
         <div class="specs-container">
-
     <?php
        $fc_blocs_specs = field_get_items('field_collection_item', $collectionsg_2, 'field_specifications');
        if($fc_blocs_specs){
@@ -84,14 +80,12 @@
             }
             $collectionsg_specs =  field_collection_item_load_multiple($idti_specs);
           for($j = 0; $j < count($idti_specs); $j++) {
-//              dpm(count($idti_specs));
               $collectionsg_specs_2 = $collectionsg_specs[$idti_specs[$j]];
               $spec_title = field_view_field('field_collection_item', $collectionsg_specs_2, 'field_titre');
               $spec_type = field_view_field('field_collection_item', $collectionsg_specs_2, 'field_type_spec');
               $spec_num = field_view_field('field_collection_item', $collectionsg_specs_2, 'field_numero');
               drupal_add_css('.c-block-domaine .c-gris .specs{background-color: '.$couleur.' !important; } ', 'inline');
             ?>
-
             <div class="specs specs-<?php print $j ?>">
                 <div class="spec-textes">
                     <div class="spec-title"><?php print render($spec_title); ?></div>
@@ -99,77 +93,74 @@
                     <div class="spec-num"><?php print render($spec_num); ?></div>
                 </div>
             </div>
-
             <?php }
                     } ?>
-
             </div>
-
             <div class='c-img-<?php print $i ?> c-img'></div>
             <div class="clear"></div>
         </div>
     <?php } ?>
         <div class="clear"></div>
     </div>
-        <div class="e-d-c">
-                <div class="cc-block ">
-                    <div class="c-block">
-                        <div class="c-gradient">
-                        <h3>cases studies</h3>
-                        <div class="grille">
-                            <div class="swiper-container">
-                                <div class="swiper-wrapper">
-                                <?php
-                                 $view = views_get_view('case_studies');
-                                 $view->set_arguments(array($node->nid));
-                                 $view->execute();
-                                 $i = 0;
-                                 if($i % 3 == 0 || $i == 0) {  ?>
-                                    <div class="views-row swiper-slide">
-                                <?php }
-                                    foreach($view->result as $value) {
-                                            $node = node_load($value->nid);
-                                            $titre = field_view_field('node',$node,'field_titre_de_la_case_study');
-                                            $texte = field_view_field("node",$node,'field_texte_case_study',array(
-                                                  'label'=>'hidden',
-                                                  'type' => 'text_summary_or_trimmed',
-                                                  'settings'=>array('trim_length' => 20),
-                                            ));
-                                            $domaine = field_view_field('node',$node,'field_domaine');
-                                            $blocs = field_view_field('node',$node,'field_blocs_chapitres_etudes_cas');
-                                            $image = field_get_items('node',$node,'field_image_case_study');
-                                            $p1 = file_create_url($image[0]["uri"]);
-                                            drupal_add_css('.e-d-c .grille .views-row .c-bg-'.$i.'{background-image: url("'.$p1.'") !important; } ', 'inline');
-                                            $link = url('node/'.$node->nid, array('absolute' => TRUE));
-                                            $link2 = $node->nid;
+    <div class="e-d-c">
+            <div class="cc-block ">
+                <div class="c-block">
+                    <div class="c-gradient">
+                    <h3>cases studies</h3>
+                    <div class="grille">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                            <?php
+                             $view = views_get_view('case_studies');
+                             $view->set_arguments(array($node->nid));
+                             $view->execute();
+                             $i = 0;
+                             if($i % 3 == 0 || $i == 0) {  ?>
+                                <div class="views-row swiper-slide">
+                            <?php }
+                                foreach($view->result as $value) {
+                                        $node = node_load($value->nid);
+                                        $titre = field_view_field('node',$node,'field_titre_de_la_case_study');
+                                        $texte = field_view_field("node",$node,'field_texte_case_study',array(
+                                              'label'=>'hidden',
+                                              'type' => 'text_summary_or_trimmed',
+                                              'settings'=>array('trim_length' => 20),
+                                        ));
+                                        $domaine = field_view_field('node',$node,'field_domaine');
+                                        $blocs = field_view_field('node',$node,'field_blocs_chapitres_etudes_cas');
+                                        $image = field_get_items('node',$node,'field_image_case_study');
+                                        $p1 = file_create_url($image[0]["uri"]);
+                                        drupal_add_css('.e-d-c .grille .views-row .c-bg-'.$i.'{background-image: url("'.$p1.'") !important; } ', 'inline');
+                                        $link = url('node/'.$node->nid, array('absolute' => TRUE));
+                                        $link2 = $node->nid;
 
-                                            $titre_render =  render($titre);
-                                            $texte_render =  render($texte);
+                                        $titre_render =  render($titre);
+                                        $texte_render =  render($texte);
 
-                                            ?>
+                                        ?>
 
-                                            <div class="item">
-                                                <div class="c-bg c-bg-<?php print $i ?>">
-                                                    <?php print l("<div class=''><h2>".$titre_render."</h2><div class='sep'></div><p>".$texte_render."</p><div class='cta'>Lire la suite</div></div>",$link, array("html"=>true)); ?>
-                                                </div>
+                                        <div class="item">
+                                            <div class="c-bg c-bg-<?php print $i ?>">
+                                                <?php print l("<div class=''><h2>".$titre_render."</h2><div class='sep'></div></div>","", array("html"=>true)); ?>
                                             </div>
-                                    <?php
-                                        $i++;
-                                        if($i % 3 == 0 ) {
-                                     ?>
-                                   </div>
-                                <?php }
-                                        } ?>
-                                <div class="clear"></div>
-                            </div>
+                                        </div>
+                                <?php
+                                    $i++;
+                                    if($i % 3 == 0 ) {
+                                 ?>
+                               </div>
+                            <?php }
+                                    } ?>
+                            <div class="clear"></div>
                         </div>
                     </div>
                 </div>
-                    <div class="swiper-pagination"></div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
             </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
         </div>
     </div>
+</div>
 </div>
 

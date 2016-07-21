@@ -9,13 +9,10 @@
 
         $title_render = render($title);
 
-
-         $link = url('node/'.$node->nid, array('absolute' => TRUE));
+        $link = url('node/'.$node->nid, array('absolute' => TRUE));
 
         $images = field_get_items('node', $node, 'field_image_case_study');
         $m = file_create_url($images[0]["uri"]);
-
-        //drupal_add_css('.e-d-c .grille .item .c-bg {background-image: url("'.$m.'") !important; } ', 'inline');
 
         $texte = field_view_field("node",$node,'field_texte_case_study',array(
               'label'=>'hidden',
@@ -29,11 +26,9 @@
 
         <div class="item">
             <div class="c-bg" style="background-image: url(<?php print $m ?>);">
-                    <?php print l("
-                    <h2>".$title_render."</h2>
-                    <div class='sep'></div>
-                    <p>".$texte_render."</p>
-                    <div class='cta'>lire la suite</div>", $link, array("html"=>true)); ?>
+                <h2> <?php print $title_render ?></h2>
+                <div class='sep'></div>
+                <p><?php print $texte_render ?></p>
             </div>
         </div>
 
@@ -44,7 +39,6 @@
         $p = file_create_url($images_case_studies[0]["uri"]);
 
         drupal_add_css('.case-studies .dark-layer {background-image: url("'.$p.'") !important ; } ', 'inline');
-
         $fc_blocscasestudies = field_get_items('node', $node, 'field_blocs_chapitres_etudes_cas');
 
         if($fc_blocscasestudies){
@@ -58,31 +52,21 @@
 ?>
 
 <div class="case-studies">
-
-        <div class="dark-layer">
-
-            <div class="c-picto">
-                <h4><?php print render($title); ?></h4>
-            </div>
-
+    <div class="dark-layer">
+        <div class="c-picto">
+            <h4><?php print render($title); ?></h4>
         </div>
+    </div>
+    <div class="bloc-texte-case-studies">
+        <?php for($j = 0; $j < count($idti); $j++) {
+            $collectionsg_2 = $collectionsg[$idti[$j]];
+            $title = field_view_field('field_collection_item', $collectionsg_2, 'field_title_etude_cas');
+            $texte = field_view_field('field_collection_item', $collectionsg_2, 'field_texte_etude_cas'); ?>
 
-        <div class="bloc-texte-case-studies">
-
-            <?php for($j = 0; $j < count($idti); $j++) {
-
-                $collectionsg_2 = $collectionsg[$idti[$j]];
-
-                $title = field_view_field('field_collection_item', $collectionsg_2, 'field_title_etude_cas');
-                $texte = field_view_field('field_collection_item', $collectionsg_2, 'field_texte_etude_cas'); ?>
-
-                <h4><?php print render($title); ?></h4>
-                <div class="c-text"><?php print render($texte); ?></div>
-
-            <?php  }  ?>
-
-        </div>
-
+            <h4><?php print render($title); ?></h4>
+            <div class="c-text"><?php print render($texte); ?></div>
+        <?php  }  ?>
+    </div>
 </div>
 
 <?php } ?>

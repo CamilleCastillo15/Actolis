@@ -103,8 +103,24 @@
             padding: 6rem 0rem;
             display: block;
             width: 100%;
-            height: 100%;
             background-color: rgba(black,0.51);
+
+            @include breakpoint($tablet){
+                padding: 0rem;
+                height: 30rem;
+                position: relative;
+            }
+
+            .container-vertical {
+
+                @include breakpoint($tablet){
+                    position: absolute;
+                    width: 100%;
+                    top: 50%;
+                    left: 50%;
+                    @include translate(-50%, -50%);
+                }
+            }
         }
 
         .c-picto{
@@ -450,10 +466,8 @@
         }
 
         .dark-layer{
-            padding: 1.85rem 0rem;
             display: block;
             width: 100%;
-            height: 100%;
             background-color: rgba(black,0.51);
 
             h4{
@@ -492,6 +506,10 @@
 
         background-image: none !important;
         color:black;
+
+        @include breakpoint($tablet){
+            margin-top: 5rem;
+        }
 
         .dark-layer {
 
@@ -624,10 +642,15 @@
                     display: inherit;
                     padding: 2rem;
                     position: relative;
-                    padding-top: 7rem;
+                    padding-top: 7em;
 
                     background-attachment: fixed;
                     @include jpg(histoire_bg_header,50% 50%,cover);
+
+                    @include breakpoint($tablet){
+                        height: 30rem;
+                        padding-top: 13rem;
+                    }
 
                     h2 {
 

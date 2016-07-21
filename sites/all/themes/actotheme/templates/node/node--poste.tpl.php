@@ -27,33 +27,54 @@
 
             $icone_formation = field_view_field("node",$node,'field_icone_formation_demandee');
 
-            $picto_formation = variable_get(actomod_pictos_postes_formation);
-            dpm($picto_formation);
+            $picto_formation = variable_get("actomod_pictos_postes_formation");
             $file = file_load($picto_formation);
 
             $img_picto_formation = file_create_url($file->uri);
-//            print render($img_picto_formation);
-
-//            $icone_formation = $file;
 
             $formation_demandee = field_view_field("node",$node,'field_formation_demandee');
 
-            $icone_type = field_view_field("node",$node,'field_icone_type_de_poste');
+            $picto_contrat = variable_get("actomod_pictos_postes_contrat");
+            $file = file_load($picto_contrat);
+
+            $img_picto_contrat = file_create_url($file->uri);
+
             $type = field_view_field("node",$node,'field_type_de_poste');
 
-            $icone_emplacement = field_view_field("node",$node,'field_icone_emplacement_poste');
+            $picto_localisation = variable_get("actomod_pictos_postes_localisation");
+            $file = file_load($picto_localisation);
+
+            $img_picto_localisation = file_create_url($file->uri);
+
             $emplacement = field_view_field("node",$node,'field_emplacement_du_poste');
 
-            $icone_experience = field_view_field("node",$node,'field_icone_experiece');
+            $picto_experience = variable_get("actomod_pictos_postes_experience");
+            $file = file_load($picto_experience);
+
+            $img_picto_experience = file_create_url($file->uri);
+
             $experience = field_view_field("node",$node,'field_exp_rience_demandee');
 
-            $icone_langues = field_view_field("node",$node,'field_icone_langues');
+            $picto_langues = variable_get("actomod_pictos_postes_langues");
+            $file = file_load($picto_langues);
+
+            $img_picto_langues = file_create_url($file->uri);
+
             $langues = field_view_field("node",$node,'field_langues_demandees');
 
-            $icone_disponibilite = field_view_field("node",$node,'field_icone_disponibilite');
+            $picto_disponibilite = variable_get("actomod_pictos_postes_disponibilite");
+            $file = file_load($picto_disponibilite);
+
+            $img_picto_disponibilite = file_create_url($file->uri);
+
             $disponibilite = field_view_field("node",$node,'field_disponibilite_du_poste');
 
-            $icone_renumeration = field_view_field("node",$node,'field_icone_renumeration');
+
+            $picto_salaire = variable_get("actomod_pictos_postes_salaire");
+            $file = file_load($picto_salaire);
+
+            $img_picto_salaire = file_create_url($file->uri);
+
             $renumeration = field_view_field("node",$node,'field_renumeration');
 
             $nid = $node->nid;
@@ -87,44 +108,43 @@
                <div class="desc-pictos">
                     <div class="formation c-picto">
                         <div class="center">
-                            <?php //print render($icone_formation); ?>
                             <img src="<?php print $img_picto_formation ?>" />
                             <div class="desc"><?php print render($formation_demandee); ?></div>
                         </div>
                    </div>
                    <div class="type c-picto">
                         <div class="center">
-                            <?php print render($icone_type); ?>
+                            <img src="<?php print $img_picto_contrat ?>" />
                             <div class="desc"><?php print render($type); ?></div>
                         </div>
                     </div>
                     <div class="emplacement c-picto">
                         <div class="center">
-                            <?php print render($icone_emplacement); ?>
-                            <div class="desc"><?php print render($emplacement); ?></div>
+                            <img src="<?php print $img_picto_localisation ?>" />
+                             <div class="desc"><?php print render($emplacement); ?></div>
                         </div>
                     </div>
                     <div class="experience c-picto">
                         <div class="center">
-                            <?php print render($icone_experience); ?>
+                            <img src="<?php print $img_picto_experience ?>" />
                             <div class="desc"><?php print render($experience); ?></div>
                         </div>
                     </div>
                     <div class="langues c-picto">
                         <div class="center">
-                            <?php print render($icone_langues); ?>
+                            <img src="<?php print $img_picto_langues ?>" />
                             <div class="desc"><?php print render($langues); ?></div>
                         </div>
                     </div>
                     <div class="disponibilite c-picto">
                         <div class="center">
-                            <?php print render($icone_disponibilite); ?>
+                            <img src="<?php print $img_picto_disponibilite ?>" />
                             <div class="desc"><?php print render($disponibilite); ?></div>
                         </div>
                     </div>
                     <div class="renumeration c-picto">
                         <div class="center">
-                            <?php print render($icone_renumeration); ?>
+                            <img src="<?php print $img_picto_salaire ?>" />
                             <div class="desc"><?php print render($renumeration); ?></div>
                         </div>
                     </div>
@@ -143,6 +163,7 @@
                </div>
             </div>
 
+            <?php if($nid_prev != 0 || $nid_next != 0 ) { ?>
             <div class="c-block-offres-detail">
                 <div class="offres_liens">
                     <?php
@@ -153,7 +174,7 @@
                             print l("Offre suivante", $link_next, array("html"=>true, 'attributes' => array('class' => array('cta', 'offre_suivante', 'offres_boutons_liens'))));
                         } ?>
                 </div>
-            </div>
+            </div> <?php } ?>
 
         </div>
 
@@ -165,12 +186,5 @@
         $a = explode("/",$p);
         $poste = $a[2];
 
-//        print l("Postuler", "/content/formulaire-rejoignez-nous", array("html"=>true, 'attributes' => array('class' => array('cta')), 'query' => array('nid' => $nid)));
-
-?>
-
-
-
-<?php    }
-
+            }
     ?>

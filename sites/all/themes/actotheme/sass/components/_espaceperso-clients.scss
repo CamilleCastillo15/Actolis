@@ -2,8 +2,6 @@
 
     .c-form {
       display: block;
-      //width: 50%;
-      padding: 2rem;
 
         .c-block {
             label{
@@ -41,10 +39,7 @@
 
         .titres {
             margin: 0rem 3rem;
-
-            h4 {
-                margin-bottom: 1rem;
-            }
+            margin-bottom: 3rem;
 
             h2 {
 
@@ -89,27 +84,19 @@
         }
     }
 
-
-
     &.consultants, &.partenaires {
 
         .cc-block {
-
             text-align: center;
-
             .form-col {
 
             @include breakpoint($tablet) {
-
                      padding-left: 12rem;
                      padding-right: 12rem;
                      border-left: 2px solid #02bce8;
                      width:100%;
-
                     &:first-child {
-
                         border-left: 0px solid blue;
-
                     }
 
                 }
@@ -130,7 +117,6 @@
         @include breakpoint($tablet){
             width:  74.1%;
         };
-        //@include main-padding();
 
         display: block;
         margin: 0 auto;
@@ -200,17 +186,16 @@
         @include breakpoint($tablet){
             width:  74.1%;
         };
-        //@include main-padding();
 
         display: block;
         margin: 0 auto;
         padding:5px;
-        margin-top:1rem;
-        margin-bottom: 1rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
 
           @include breakpoint($tablet){
-           margin-top:10rem;
-            margin-bottom: 10rem;
+            margin-top:5rem;
+            margin-bottom: 5rem;
           }
 
          @extend .gradient-h;
@@ -255,17 +240,11 @@
                 .form-required{
                   color:$nuit;
                 }
-
             }
-
-
         }
-
     }
 
 #edit-submit, #edit-submit--2 {
-
     background-color: white;
     width:auto;
-
 }

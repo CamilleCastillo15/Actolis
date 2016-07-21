@@ -65,7 +65,7 @@
 
     display: block;
     margin: 0 auto;
-    margin-top:7rem;
+    margin-top:3rem;
     @include main-padding();
     margin-bottom: 0rem;
 
@@ -514,16 +514,18 @@
 
     .nos-actions {
         @include main-padding();
-        margin-top: 9rem;
+        margin-top: 3rem;
     }
 
     .specs-container {
 
         text-align: center;
+        height: 0;
 
         @include breakpoint($tablet){
 
             text-align: inherit;
+            height: 100%;
 
         }
 

@@ -30,20 +30,6 @@
         }
         .active{
                 background-color: rgba(white,0.1);
-//            &:after {
-//                content: "";
-//                position: absolute;
-//                top:2.4rem;
-//                width: 5rem;
-//                height: 0.15rem;
-//                left:50%;
-//                @include breakpoint($tablet) {
-//                    left:50%;
-//                }
-//                @include translate(-50%,0px);
-////                @include opacity(0.7);
-//                background-color: #fff;
-//            }
         }
         &.o {
             display: block;
@@ -136,6 +122,27 @@
                             @include translate(-50%,0px);
                             height: 0.22rem;
                             background-color: #fff;
+                        }
+                    }
+
+                    &.active {
+
+                        @include breakpoint($tablet) {
+
+                            &:after {
+                                content: "";
+                                position: absolute;
+                                top:2.4rem;
+                                width: 5rem;
+                                height: 0.15rem;
+                                left:50%;
+                                @include breakpoint($tablet) {
+                                    left:50%;
+                                }
+                                @include translate(-50%,0px);
+                //                @include opacity(0.7);
+                                background-color: #fff;
+                            }
                         }
                     }
                 }

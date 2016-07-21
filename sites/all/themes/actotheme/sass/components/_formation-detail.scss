@@ -11,9 +11,7 @@
 
             color:white;
             margin-bottom: 0;
-
         }
-
     }
 
     .bloc-texte-formation-detail {
@@ -31,25 +29,23 @@
 
             @include breakpoint($tablet){
 
-
-                 -webkit-column-count: 2; /* Chrome, Safari, Opera */
-            -moz-column-count: 2; /* Firefox */
-            column-count: 2;
-            -webkit-column-gap: 30px; /* Chrome, Safari, Opera */
-            -moz-column-gap: 30px; /* Firefox */
-            column-gap: 30px;
+                -webkit-column-count: 2; /* Chrome, Safari, Opera */
+                -moz-column-count: 2; /* Firefox */
+                column-count: 2;
+                -webkit-column-gap: 30px; /* Chrome, Safari, Opera */
+                -moz-column-gap: 30px; /* Firefox */
+                column-gap: 30px;
 
             }
 
             @include breakpoint($laptop){
 
-
-                 -webkit-column-count: 3; /* Chrome, Safari, Opera */
-            -moz-column-count: 3; /* Firefox */
-            column-count: 3;
-            -webkit-column-gap: 5rem; /* Chrome, Safari, Opera */
-            -moz-column-gap: 5rem; /* Firefox */
-            column-gap: 5rem;
+                -webkit-column-count: 3; /* Chrome, Safari, Opera */
+                -moz-column-count: 3; /* Firefox */
+                column-count: 3;
+                -webkit-column-gap: 5rem; /* Chrome, Safari, Opera */
+                -moz-column-gap: 5rem; /* Firefox */
+                column-gap: 5rem;
 
             }
 
@@ -73,16 +69,17 @@
 
         }
 
+        position: relative;
         display: block;
         margin: 0 auto;
         padding:5px;
         @include main-padding();
-        margin-top:1rem;
-        margin-bottom: 1rem;
+        margin-top:3rem;
+        margin-bottom: 3rem;
 
          @include breakpoint($tablet){
-              margin-top:7rem;
-              margin-bottom: 6rem;
+              margin-top:5rem;
+              margin-bottom: 5rem;
          }
 
         .c-blanc{
@@ -159,14 +156,29 @@
                 @extend .gradient-h;
             }
         }
-        .offre_precedente {
-            float:left;
-            @include btn_g();
+
+        .offres_liens {
+
+            height: 2.5rem;
+            position: absolute;
+            top: 50%;
+            @include translate(0%, -50%);
+
+            .offre_precedente {
+                @include breakpoint($tablet) {
+                    float:left;
+                }
+                @include btn_g();
+            }
+            .offre_suivante {
+                @include breakpoint($tablet) {
+                    float:right;
+                }
+                @include btn_d();
+            }
+
         }
-        .offre_suivante {
-            float: right;
-            @include btn_d();
-        }
+
     }
 
     .bloc-gris {
@@ -198,7 +210,6 @@
                     padding: 0rem;
                     text-align: center;
                 }
-
              }
         }
 

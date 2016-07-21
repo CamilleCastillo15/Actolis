@@ -9,14 +9,12 @@
 
       <div class="titres">
 
-            <h4>Espace partenaires</h4>
-            <h2>Cher partenaire, identifiez - vous :</h2>
+            <h3>Espace partenaires</h3>
+            Cher partenaire, identifiez - vous :
 
       </div>
 
         <div class="cc-block">
-
-            <h4>Espace client</h4>
 
             <div class="c-block">
 

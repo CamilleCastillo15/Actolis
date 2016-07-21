@@ -9,14 +9,12 @@
 
       <div class="titres">
 
-            <h4>Espace client</h4>
-           <h2>Accèder à votre espace privé</h2>
+            <h3>Espace client</h3>
+            Accèder à votre espace privé
 
       </div>
 
         <div class="cc-block">
-
-            <h4>Espace client</h4>
 
             <div class="c-block">
 

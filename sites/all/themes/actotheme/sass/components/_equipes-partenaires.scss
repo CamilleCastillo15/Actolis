@@ -33,14 +33,15 @@
             .va {
 
                 h3{
-                    text-align: left;
+                    @include breakpoint($tablet){
+                        text-align: left;
+                     }
+                    text-align: center;
                 }
 
                     position: relative;
                     z-index: 2;
-//                    padding: 0rem 0rem 6rem 0rem;
-
-                padding: 3rem 0rem 5rem 0rem;
+                    padding: 3rem 0rem 5rem 0rem;
 
                 .c-picto{
 
@@ -97,7 +98,10 @@
             }
 
             .swiper-slide {
-                text-align: left;
+                @include breakpoint($tablet){
+                    text-align: left;
+                 }
+                text-align: center;
             }
 
             .image-acto-news {
@@ -109,7 +113,11 @@
         .en_savoir_plus {
             margin-top: 2rem;
             @include btn_d();
-            float: left;
+
+            @include breakpoint($tablet){
+                float: left;
+             }
+
         }
 
     }
@@ -130,9 +138,10 @@
         color:black;
         text-transform: uppercase;
         text-align: center;
+
          @include breakpoint($tablet){
-        text-align: left;
-     }
+            text-align: left;
+         }
     }
 
     .sep{
@@ -174,12 +183,12 @@
                 position: relative;
                 margin:0 auto;
 
-                  @include breakpoint($tablet){
-                height: 10rem;
-                width: 10rem;
+          @include breakpoint($tablet){
 
-                  }
+            height: 10rem;
+            width: 10rem;
 
+          }
        }
 
        img{
@@ -204,7 +213,7 @@
     .c-text{
        display: inline-block;
        vertical-align: middle;
-       text-align:left;
+       text-align:center;
        width: 100%;
        padding-left: 0%;
        p{
@@ -212,7 +221,8 @@
        }
        @include breakpoint($tablet){
          padding-left: 5%;
-            width: 75%;
+         width: 75%;
+         text-align:left;
        }
     }
 
@@ -223,14 +233,6 @@
     }
 
     .c-blanc{
-
-//       padding: 0rem;
-//       position: relative;
-//       perspective: 1000px;
-//       min-height: 27vh;
-//       @include breakpoint($tablet) {
-//            padding: 3rem;
-//       }
 
         &.bkg {
 
