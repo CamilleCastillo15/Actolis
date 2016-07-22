@@ -114,6 +114,11 @@ h5 {
     .swiper-slide {
         text-align: center;
     }
+    .cta {
+        margin-top: 3rem;
+        float: right;
+        @include btn_d();
+    }
 }
 
 .c-form{

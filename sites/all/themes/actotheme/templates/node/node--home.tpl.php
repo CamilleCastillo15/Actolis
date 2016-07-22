@@ -118,7 +118,7 @@
                         $idti_acto_news[] = $fc_field_acto_news['value'];
                     }
                     $collectionsg_acto_news =  field_collection_item_load_multiple($idti_acto_news);
-                }
+
                 for($j = 0; $j < count($idti_acto_news); $j++) {
                     $collectionsg_acto_news_2 = $collectionsg_acto_news[$idti_acto_news[$j]];
                     $image_acto_news = field_get_items('field_collection_item', $collectionsg_acto_news_2, 'field_image_acto_news');
@@ -134,6 +134,12 @@
                         )) );
                     $title_acto_news = field_view_field('field_collection_item', $collectionsg_acto_news_2, 'field_titre_acto_news');
                     $body_acto_news = field_view_field('field_collection_item', $collectionsg_acto_news_2, 'field_texte_acto_news');
+                    $link_acto_news = field_view_field('field_collection_item', $collectionsg_acto_news_2, 'field_lien_externe');
+
+                    $link_acto_news_render = render($link_acto_news);
+
+                    dpm($link_acto_news_render);
+
             ?>
             <div class="swiper-slide">
                 <h3>acto - news</h3>
@@ -144,7 +150,10 @@
                     <h4> <?php print render($title_acto_news); ?> </h4>
                     <br />
                     <br />
-                    <?php print render($body_acto_news); ?>
+                    <?php print render($body_acto_news);
+                    if($link_acto_news_render != ""){ ?>
+                        <?php print l("en savoir plus", $link_acto_news_render, array("html"=>true, 'external' => TRUE,  'attributes' => array('class' => array( 'cta', 'offre_suivante'),'target'=>'_blank'))); ?>
+                    <?php } ?>
                 </div>
             </div>
             <?php }  ?>
@@ -153,6 +162,8 @@
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
     </div>
+
+    <?php } ?>
 
      <div class="c-block">
        <?php
