@@ -111,36 +111,31 @@
     <div class="acto-news swiper-container">
         <div class="swiper-wrapper">
             <?php
-                $fc_acto_news = field_get_items('node', $node, 'field_acto_news');
-                if($fc_acto_news){
-                    $idti_acto_news = array();
-                    foreach ($fc_acto_news as $fc_field_acto_news) {
-                        $idti_acto_news[] = $fc_field_acto_news['value'];
-                    }
-                    $collectionsg_acto_news =  field_collection_item_load_multiple($idti_acto_news);
 
-                for($j = 0; $j < count($idti_acto_news); $j++) {
-                    $collectionsg_acto_news_2 = $collectionsg_acto_news[$idti_acto_news[$j]];
-                    $image_acto_news = field_get_items('field_collection_item', $collectionsg_acto_news_2, 'field_image_acto_news');
-                    $image_acto_news_render = field_view_value('field_collection_item', $collectionsg_acto_news_2, 'field_image_acto_news', $image_acto_news[0], array(
+                $view_acto_news = views_get_view('acto_news');
+                $view_acto_news->execute();
+                $result_acto_news = $view_acto_news->result;
+                $i = 1;
+
+                dpm($view_acto_news);
+
+                foreach($result_acto_news as $key => $value) {
+
+                    $n = node_load($value->nid);
+
+                    $image_acto_news = field_get_items("node",$n, 'field_image_acto_news');
+                    $image_acto_news_render = field_view_value("node",$n, 'field_image_acto_news', $image_acto_news[0], array(
                         'type' => 'image',
                         'settings' => array(
                             'image_style' => 'header',
                         )));
-                    $image_acto_news_render_mobile = field_view_value('field_collection_item', $collectionsg_acto_news_2, 'field_image', $image_acto_news[0], array(
-                        'type' => 'image',
-                        'settings' => array(
-                            'image_style' => 'medium',
-                        )) );
-                    $title_acto_news = field_view_field('field_collection_item', $collectionsg_acto_news_2, 'field_titre_acto_news');
-                    $body_acto_news = field_view_field('field_collection_item', $collectionsg_acto_news_2, 'field_texte_acto_news');
-                    $link_acto_news = field_view_field('field_collection_item', $collectionsg_acto_news_2, 'field_lien_externe');
 
+                    $title_acto_news = field_view_field("node",$n,'field_titre_acto_news');
+                    $body_acto_news = field_view_field("node",$n,'field_texte_acto_news');
+                    $link_acto_news = field_view_field("node",$n,'field_lien_externe');
                     $link_acto_news_render = render($link_acto_news);
-
-                    dpm($link_acto_news_render);
-
             ?>
+
             <div class="swiper-slide">
                 <h3>acto - news</h3>
                 <div class="image-acto-news">
@@ -163,7 +158,7 @@
         <div class="swiper-button-prev"></div>
     </div>
 
-    <?php } ?>
+    <?php //} */?>
 
      <div class="c-block">
        <?php
