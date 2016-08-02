@@ -1,7 +1,6 @@
 <?php
     $styles  = drupal_get_css();
     $texte_formation = field_view_field("node",$node,'field_texte_centre_formation');
-    $image_formation = field_view_field("node",$node,'field_image_centre_formation');
     $titre_fc_formation = field_view_field("node",$node,'field_titre_fc_centre_formation');
 
     $fc_centre_formation = field_get_items('node', $node, 'field_fc_centre_formation');
@@ -14,10 +13,13 @@
         $collectionsg =  field_collection_item_load_multiple($idti);
     }
 
-     $bkg_fc_formation = field_get_items("node",$node,'field_bkg_fc_formation');
-     $p = image_style_url("large",$bkg_fc_formation[0]["uri"]);
+     $image_formation = field_get_items("node",$node,'field_image_centre_formation');
+     $m = image_style_url("bloc_image",$image_formation[0]["uri"]);
+     drupal_add_css('.centre-formation .c-block-histoire .c-img {background-image: url("'.$m.'") !important; } ', 'inline');
 
-     drupal_add_css('.centre-formation .c-header .c-img {background-image: url("'.$p.'") !important; } ', 'inline');
+     $bkg_fc_formation = field_get_items("node",$node,'field_bkg_fc_formation');
+     $p = image_style_url("header",$bkg_fc_formation[0]["uri"]);
+     drupal_add_css('.centre-formation .c-header {background-image: url("'.$p.'") !important; } ', 'inline');
 
      $titre_offres_formations = field_view_field("node",$node,'field_titre_offres_formations');
      $texte_mobilite = field_view_field("node",$node,'field_texte_mobilite');

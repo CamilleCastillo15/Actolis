@@ -16,7 +16,7 @@
     }
 
     $images = field_get_items("node",$node,'field_image_rejoignez_nous');
-    $p = image_style_url("large",$images[0]["uri"]);
+    $p = image_style_url("bloc_image",$images[0]["uri"]);
 
     drupal_add_css('.rejoignez_nous .c-block-histoire .c-img {background-image: url("'.$p.'") !important; } ', 'inline');
 
@@ -101,7 +101,7 @@
 
             <?php
                     $image_fond_valeur_cle = field_get_items("node", $node, 'field_image_fond_confiance');
-                    $p = image_style_url("large",$image_fond_valeur_cle[0]["uri"]);
+                    $p = image_style_url("header",$image_fond_valeur_cle[0]["uri"]);
 
                     drupal_add_css('.rejoignez_nous .c-picto-cle {background-image: url("'.$p.'") !important; } ', 'inline');
 

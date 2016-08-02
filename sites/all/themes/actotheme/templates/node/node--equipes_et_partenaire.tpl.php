@@ -13,7 +13,7 @@
         $collectionsg =  field_collection_item_load_multiple($idti);
     }
     $images = field_get_items("node",$node,'field_image_equipe_partenaire');
-    $p = image_style_url("large",$images[0]["uri"]);
+    $p = image_style_url("original",$images[0]["uri"]);
     drupal_add_css('.equipes_et_partenaire .c-block-histoire .c-img {background-image: url("'.$p.'") !important; } ', 'inline');
     $fc_logos_partenaires = field_get_items('node', $node, 'field_fc_partenaires');
     if($fc_logos_partenaires){

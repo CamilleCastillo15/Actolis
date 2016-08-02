@@ -3,13 +3,13 @@
     $styles  = drupal_get_css();
     $body = field_view_field("node",$node,'field_body');
     $images = field_get_items("node",$node,'field_image_bloc');
-    $p = image_style_url("large",$images[0]["uri"]);
+    $p = image_style_url("bloc_image",$images[0]["uri"]);
 
     drupal_add_css('.c-block-histoire .c-img {background-image: url("'.$p.'") !important; } ', 'inline');
 
     $texte = field_view_field("node",$node,'field_texte');
     $image_intro = field_get_items("node",$node,'field_image_introduction');
-    $p_intro = image_style_url("large",$image_intro[0]["uri"]);
+    $p_intro = image_style_url("bloc_image",$image_intro[0]["uri"]);
 
     drupal_add_css('.c-block-histoire-introduction .c-img {background-image: url("'.$p_intro.'") !important; } ', 'inline');
 

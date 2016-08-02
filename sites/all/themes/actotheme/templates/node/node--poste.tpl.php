@@ -18,7 +18,7 @@
             $description = field_view_field("node",$node,'field_description_de_l_offre');
 
             $bkg_image = field_get_items("node",$node,'field_image');
-            $p = image_style_url("large",$bkg_image[0]["uri"]);
+            $p = image_style_url("bloc_image",$bkg_image[0]["uri"]);
 
             drupal_add_css('.poste-detail .c-block-offres-detail .c-img {background-image: url("'.$p.'") !important; } ', 'inline');
 

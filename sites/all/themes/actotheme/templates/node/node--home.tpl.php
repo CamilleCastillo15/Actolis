@@ -164,9 +164,14 @@
        <?php
             $title_rejoignez_nous = field_view_field("node",$node,'field_title_rejoignez_nous');
             $texte_rejoignez_nous = field_view_field("node",$node,'field_texte_rejoignez_nous');
-            $images_rejoignez_nous_bloc = field_get_items('node', $node, 'field_image_background_pictos');
-            $p = file_create_url($images_rejoignez_nous_bloc[0]["uri"]);
+
+            $images_rejoignez_nous_bkg_pictos = field_get_items('node', $node, 'field_image_background_pictos');
+            $p = image_style_url("header",$images_rejoignez_nous_bkg_pictos[0]["uri"]);
             drupal_add_css('.home .c-header {background-image: url("'.$p.'") !important ; } ', 'inline');
+
+            $images_rejoignez_nous_bloc = field_get_items('node', $node, 'field_image_rejoignez_nous_bloc');
+            $m = image_style_url("bloc_image",$images_rejoignez_nous_bloc[0]["uri"]);
+            drupal_add_css('.home .c-block .c-gradient .c-img {background-image: url("'.$m.'") !important ; } ', 'inline');
         ?>
         <div class="c-gradient">
             <div class="c-text">

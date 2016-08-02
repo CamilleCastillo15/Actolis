@@ -19,7 +19,7 @@
             spaceBetween: 0,
 //            autoHeight:true,
             autoplay : 5000,
-            autoHeight:true,
+//            autoHeight:true,
             pagination: '.swiper-pagination',
             paginationClickable: true
 //            nextButton: '.swiper-button-next',
@@ -34,7 +34,7 @@
             spaceBetween: 0,
 //            autoHeight:true,
             autoplay : 5000,
-            autoHeight:true,
+//            autoHeight:true,
             pagination: '.swiper-pagination',
             paginationClickable: true,
             nextButton: '.swiper-button-next',

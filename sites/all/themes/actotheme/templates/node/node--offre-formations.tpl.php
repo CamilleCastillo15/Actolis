@@ -95,7 +95,7 @@ if($domaine){
             $collectionsg =  field_collection_item_load_multiple($idti);
         }
 
-        $p = file_create_url($images_formation[0]["uri"]);
+        $p = image_style_url("bloc_image",$images_formation[0]["uri"]);
         drupal_add_css('.formation-detail .c-block-offres-detail .c-img {background-image: url("'.$p.'") !important ; } ', 'inline');
 
         $nid = $node->nid;

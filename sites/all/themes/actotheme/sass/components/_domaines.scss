@@ -21,6 +21,7 @@
             background-image: none !important;
             text-align: center;
             padding: 7rem 0rem;
+
             .picto{
                 @extend .c-icone;
                 display: inline-block;
@@ -46,7 +47,7 @@
                 font-weight: 900;
                 line-height: 2.4rem;
                 max-width: 400px;
-                color:white;
+                color:black;
             }
         }
     }

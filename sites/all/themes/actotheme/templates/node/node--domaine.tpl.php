@@ -17,7 +17,7 @@
     $images = field_get_items('node', $node, 'field_image');
     $icones = field_get_items('node', $node, 'field_icone');
     $couleur = field_get_items("node",$node,'field_couleur')[0]['rgb'];
-    $p = file_create_url($images[0]["uri"]);
+    $p = image_style_url("header",$images[0]["uri"]);
     $m = file_create_url($icones[0]["uri"]);
     drupal_add_css('.domaine .c-header {background-image: url("'.$p.'") !important; } ', 'inline');
     drupal_add_css('.b2 .picto {background-image: url("'.$m.'"); !important} ', 'inline');
@@ -62,8 +62,8 @@
            $titre_render = render($titre);
            $texte = field_view_field('field_collection_item', $collectionsg_2, 'field_texte');
            $image = field_get_items('field_collection_item', $collectionsg_2, 'field_image_bloc');
-           $p1 = file_create_url($image[0]["uri"]);
-           drupal_add_css('.c-block-domaine .c-img-'.$i.'{background-image: url("'.$p1.'") !important; } ', 'inline');
+           $n = image_style_url("bloc_image",$image[0]["uri"]);
+           drupal_add_css('.c-block-domaine .c-img-'.$i.'{background-image: url("'.$n.'") !important; } ', 'inline');
     ?>
     <div class="c-gris">
         <div class="c-text">
@@ -129,8 +129,8 @@
                                         $domaine = field_view_field('node',$node,'field_domaine');
                                         $blocs = field_view_field('node',$node,'field_blocs_chapitres_etudes_cas');
                                         $image = field_get_items('node',$node,'field_image_case_study');
-                                        $p1 = file_create_url($image[0]["uri"]);
-                                        drupal_add_css('.e-d-c .grille .views-row .c-bg-'.$i.'{background-image: url("'.$p1.'") !important; } ', 'inline');
+                                        $o = image_style_url("case_studies",$image[0]["uri"]);
+                                        drupal_add_css('.e-d-c .grille .views-row .c-bg-'.$i.'{background-image: url("'.$o.'") !important; } ', 'inline');
                                         $link = url('node/'.$node->nid, array('absolute' => TRUE));
                                         $link2 = $node->nid;
 

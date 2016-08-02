@@ -96,7 +96,6 @@ $fallback-extension: 'png' !default;
     @if($poz){
         background-position: $poz;
     }
-
 }
 
 @mixin main-padding($left:0, $right:0){
