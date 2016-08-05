@@ -24,8 +24,12 @@
 
 
     $bullet = field_get_items('node', $node, 'field_url_bullets');
+    $bullet_firefox = field_get_items('node', $node, 'field_url_bullets_firefox');
+
     $n = file_create_url($bullet[0]["uri"]);
-    drupal_add_css('.ul-style, .c-text ul, .node-type-poste .l-content ul {list-style-image: url("'.$n.'") !important; } ', 'inline');
+    $o = file_create_url($bullet_firefox[0]["uri"]);
+
+    drupal_add_css('.ul-style, .c-text ul, .node-type-poste .l-content ul {list-style-image: url("'.$n.'") !important; list-style-image: url("'.$o.'") !important; } ', 'inline');
 ?>
 
 <div class="domaine">
@@ -62,6 +66,12 @@
            $titre_render = render($titre);
            $texte = field_view_field('field_collection_item', $collectionsg_2, 'field_texte');
            $image = field_get_items('field_collection_item', $collectionsg_2, 'field_image_bloc');
+           $image_alignement = field_view_field('field_collection_item', $collectionsg_2, 'field_alignement_image');
+//           dpm($image_alignement);
+//           dpm($image_alignement['#items']);
+//           dpm($image_alignement['#items']['0']);
+           $alignment = render($image_alignement['#items']['0']['value']);
+           drupal_add_css('.c-block-domaine .c-img-'.$i.'{background-position: '.$alignment.' !important; } ', 'inline');
            $n = image_style_url("bloc_image",$image[0]["uri"]);
            drupal_add_css('.c-block-domaine .c-img-'.$i.'{background-image: url("'.$n.'") !important; } ', 'inline');
     ?>

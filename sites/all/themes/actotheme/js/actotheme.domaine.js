@@ -28,7 +28,7 @@
                 $('.frise-actions').removeClass('fixed');
             }
         });
-        $('.frise-actions .titre-actions').click(function(){
+        $('.frise-actions .titre-actions').click(function(event){
             event.preventDefault();
             var divClosest = $(this).closest('div');
             var classes = divClosest.attr('class');

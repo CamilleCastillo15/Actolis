@@ -568,7 +568,14 @@
 
                     font-weight: 900;
                     display: inline;
-                    @include breakpoint($tablet){
+                    max-width: 5rem;
+                    word-wrap: break-word;
+                    -webkit-hyphens: auto;
+                    -moz-hyphens: auto;
+                    -ms-hyphens: auto;
+                    -o-hyphens: auto;
+                    hyphens: auto;
+                        @include breakpoint($tablet){
                         display: block;
                     }
                 }
