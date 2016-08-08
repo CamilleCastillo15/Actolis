@@ -322,25 +322,19 @@ h5 {
 }
 
 @include keyframes(scroll) {
-  0% { 
-      
+  0% {
     @include translate(0px,0%);
     background-position: 50% 50%;
-       
    }
 
-  60% { 
-      
+  60% {
     @include translate(0px,-20%);
     background-position: 50% -100%;
-       
    }
 
   100% {
-
       @include translate(0px,0%);
       background-position: 50% 50%;
-
    }
 }
 
@@ -360,17 +354,14 @@ h5 {
     bottom:54vh;
 
     @include breakpoint($tablet) {
-//        bottom:38vh;
         bottom: 80%;
     }
 
     @include breakpoint($laptop) {
-//        bottom:50vh;
         bottom: 30%;
     }
 
     @include breakpoint($laptopl) {
-//        bottom:74vh;
         bottom: 40%;
     }
 
@@ -406,11 +397,9 @@ h5 {
     @include transition(all 0.2s ease-out);
 
     &:hover{
-
         background-color: $orange;
         color:white;
         @include transform(scale(0.95));
-               
     }
     
 }
@@ -431,15 +420,13 @@ h5 {
         color:white;
          text-align: center;
 
-
         h3{
              @include fz(4);
             text-transform: uppercase;
             font-weight: 600;
             letter-spacing: 0.2rem;
-//            margin-bottom: 0.3rem;
-
         }
+
         p{
              @include fz(2);
             line-height: 1.5rem;
@@ -890,11 +877,9 @@ h5 {
             }
 
             h2 {
-                @include opacity(1);
+
                 display: none;
-                @include breakpoint($laptop){
-                    @include opacity(0);
-                }
+
                 @include fz(3);
                 font-weight: 800;
                 text-transform: uppercase;
@@ -904,7 +889,7 @@ h5 {
             p {
 
                 display: block;
-                text-align: left;
+                text-align: center;
 
                 @include breakpoint($laptop){
                     display: none;
@@ -916,6 +901,9 @@ h5 {
             .sep {
                 height: 0.2rem;
                 display: block;
+                @include breakpoint($laptop){
+                    display: none;
+                }
                 margin: 0 auto;
                 width: 70%;
                 @extend .gradient-h;
@@ -945,13 +933,24 @@ h5 {
                     }
                     img {
                         display: none;
-
+                    }
+                    .sep {
+                        display: block;
+                    }
+                    .ab {
+                        @include translate(-50%, -60%);
                     }
                 }
             }
 
             .ab {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                @include translate(-50%, -50%);
                 text-align: center;
+                @include transition(all 0.2s ease-out);
+                width: 80%;
             }
 
             img {

@@ -23,7 +23,7 @@
 //            padding: 7rem 0rem;
             padding: 5rem 0rem;
 
-            .picto{
+            .picto {
                 @extend .c-icone;
                 display: inline-block;
                 vertical-align: middle;
@@ -490,23 +490,30 @@
 
         .grille {
 
-            a {
+            .item {
 
                 height: 100%;
 
-                @include breakpoint($laptop){
-                    @include opacity(0);
-                }
-                @include breakpoint($laptop){
-                    &:hover{
-                        @include opacity(1);
-                        h2{
-                            @include opacity(1);
-                        }
-                        .sep{
-                            margin-top:1rem;
-                        }
+                a {
+
+                    height: 100%;
+
+                    @include breakpoint($laptop){
+
+                        height: 300px
+
                     }
+
+                }
+
+            }
+
+            h2 {
+
+                display: block;
+
+                @include breakpoint($laptop){
+                    display: none;
                 }
 
             }
