@@ -62,9 +62,10 @@
         </div>
     </div>
     <?php } ?>
-    <div class="logos-partenaires">
-          <div class="va">
-            <h4><?php //print render($title_logos_partenaires); ?></h4>
+    <div class="logos-partenaires e-d-c">
+         <div class="cc-block ">
+              <div class="grille">
+                <h4><?php //print render($title_logos_partenaires); ?></h4>
        <?php
             $view = views_get_view('partenaires');
             $view->set_display('blockhome');
@@ -74,39 +75,60 @@
           ?>
 
           <div class="acto-news swiper-container">
+
            <h3>Nos partenaires</h3>
+
             <div class="swiper-wrapper">
 
-                <?php foreach($result as $key => $value) { ?>
-                   <div class="swiper-slide">
-                       <?php
-                            $n = node_load($value->nid);
-                            $nid = $value->nid;
-                            $img_nb = field_view_field("node",$n,'field_image_nb');
-                            $title = field_view_field("node",$n,'field_titre');
-//                          $desc = field_view_field("node",$n,'field_description');
+                <?php
 
-                            $desc = field_view_field("node",$n,'field_description',array(
-                                  'label' => 'hidden',
-                                  'type' => 'text_summary_or_trimmed',
-                                  'settings'=>array('trim_length' => 300),
-                            ));
+                    $i = 0;
+                    foreach($result as $key => $value) {
+                    $n = node_load($value->nid);
+                    $nid = $value->nid;
+                    $img_nb = field_view_field("node",$n,'field_image_nb');
+                    $img_nb_render = render($img_nb);
+                    $title = field_view_field("node",$n,'field_titre');
+                    $title_render = render($title);
 
-                       ?>
+                    $desc = field_view_field("node",$n,'field_description',array(
+                          'label' => 'hidden',
+                          'type' => 'trimmed',
+                          'settings'=>array('trim_length' => 300),
+                    ));
+                    $desc = field_view_field("node",$n,'field_description');
+//                    $desc = trim($desc);
+                    $desc_render = render($desc);
+//                    $desc_render = trim($desc_render);
+                    $desc_render = substr($desc_render, 0, 100);
 
-                        <div class="image-acto-news">
-                            <?php print render($img_nb); ?>
+                    $sentences = explode(".", $desc_render);
+                    $first_sentence = $sentences[0];
+
+                if($i % 3 == 0 || $i == 0) {
+                ?>
+                   <div class="views-row swiper-slide">
+
+                       <?php } ?>
+
+                        <div class="item">
+                            <?php print l("
+                            <div class='ab'> <h2>".$title_render."</h2>".$img_nb_render."".$desc_render."
+                                <div class='sep'></div>
+                                <div class='en_savoir_plus cta'>en savoir plus</div>
+                            </div>",
+                            "/partenaires", array("html"=>true, 'fragment' => "num-".$nid, 'attributes' => array('class' => array('')))); ?>
                         </div>
-                        <div class="body-acto-news">
-                            <h4> <?php print render($title); ?> </h4>
-                            <br />
-                            <br />
-                            <?php print render($desc);
-                            print l("En savoir plus", "/partenaires", array("html"=>true, 'fragment' => "num-".$nid, 'attributes' => array('class' => array('cta', 'en_savoir_plus'))));
-                            //print l("En savoir plus", "/partenaires", array("html"=>true, 'attributes' => array('class' => array('cta', 'en_savoir_plus')))); ?>
-                        </div>
-                    </div>
-                <?php  } ?>
+                <?php
+
+                        $i++;
+                        if($i % 3 == 0 ) { ?>
+
+                  </div> <?php }
+
+                     } ?>
+                <div class="clear"></div>
+              </div>
             </div>
             <div class="swiper-pagination"></div>
             <div class="swiper-button-next"></div>

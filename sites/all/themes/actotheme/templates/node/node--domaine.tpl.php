@@ -133,32 +133,34 @@
                              $view->set_arguments(array($node->nid));
                              $view->execute();
                              $i = 0;
-                             if($i % 3 == 0 || $i == 0) {  ?>
-                                <div class="views-row swiper-slide">
-                            <?php }
-                                foreach($view->result as $value) {
-                                        $node = node_load($value->nid);
-                                        $titre = field_view_field('node',$node,'field_titre_de_la_case_study');
-                                        $texte = field_view_field("node",$node,'field_texte_case_study',array(
-                                              'label'=>'hidden',
-                                              'type' => 'text_summary_or_trimmed',
-                                              'settings'=>array('trim_length' => 20),
-                                        ));
-                                        $domaine = field_view_field('node',$node,'field_domaine');
-                                        $blocs = field_view_field('node',$node,'field_blocs_chapitres_etudes_cas');
-                                        $image = field_get_items('node',$node,'field_image_case_study');
-                                        $o = image_style_url("case_studies",$image[0]["uri"]);
-                                        drupal_add_css('.e-d-c .grille .views-row .c-bg-'.$i.'{background-image: url("'.$o.'") !important; } ', 'inline');
-                                        $link = url('node/'.$node->nid, array('absolute' => TRUE));
-                                        $link2 = $node->nid;
 
-                                        $titre_render =  render($titre);
-                                        $texte_render =  render($texte);
+                                      foreach($view->result as $value) {
+                                              $node = node_load($value->nid);
+                                              $titre = field_view_field('node',$node,'field_titre_de_la_case_study');
+                                              $texte = field_view_field("node",$node,'field_texte_case_study',array(
+                                                    'label'=>'hidden',
+                                                    'type' => 'text_summary_or_trimmed',
+                                                    'settings'=>array('trim_length' => 20),
+                                              ));
+                                              $domaine = field_view_field('node',$node,'field_domaine');
+                                              $blocs = field_view_field('node',$node,'field_blocs_chapitres_etudes_cas');
+                                              $image = field_get_items('node',$node,'field_image_case_study');
+                                              $o = image_style_url("case_studies",$image[0]["uri"]);
+                                              drupal_add_css('.e-d-c .grille .views-row .c-bg-'.$i.'{background-image: url("'.$o.'") !important; } ', 'inline');
+                                              $link = url('node/'.$node->nid, array('absolute' => TRUE));
+                                              $link2 = $node->nid;
 
-                                        $nid = $node->nid;
+                                              $titre_render =  render($titre);
+                                              $texte_render =  render($texte);
 
-                                        ?>
+                                              $nid = $node->nid;
 
+
+                                        if($i % 3 == 0 || $i == 0) {  ?>
+
+                                            <div class="views-row swiper-slide">
+
+                                        <?php } ?>
                                         <div class="item">
                                             <div class="c-bg c-bg-<?php print $i ?>">
                                                 <?php print l("<div class=''><h2>".$titre_render."</h2><div class='sep'></div></div>","/case-studies/".$path_alias, array("html"=>true, 'fragment' => "num-".$nid));
@@ -167,23 +169,23 @@
                                                 ?>
                                             </div>
                                         </div>
-                                <?php
-                                    $i++;
-                                    if($i % 3 == 0 ) {
-                                 ?>
-                               </div>
-                            <?php }
-                                    } ?>
-                            <div class="clear"></div>
+                                    <?php
+                                        $i++;
+                                        if($i % 3 == 0 ) {
+                                     ?>
+                                   </div>
+                                <?php }
+                                        } ?>
+                                <div class="clear"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-<!--            </div>-->
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-<!--        </div>-->
+    <!--            </div>-->
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+    <!--        </div>-->
+        </div>
     </div>
-</div>
 </div>
 

@@ -41,7 +41,7 @@
 
                     position: relative;
                     z-index: 2;
-                    padding: 3rem 0rem 5rem 0rem;
+//                    padding: 3rem 0rem 5rem 0rem;
 
                 .c-picto{
 
@@ -99,7 +99,7 @@
 
             .swiper-slide {
                 @include breakpoint($tablet){
-                    text-align: left;
+                    text-align: center;
                  }
                 text-align: center;
             }
@@ -117,6 +117,16 @@
             @include breakpoint($tablet){
                 float: left;
              }
+
+        }
+
+    }
+
+    .e-d-c {
+
+        .en_savoir_plus {
+
+            float: none;
 
         }
 
