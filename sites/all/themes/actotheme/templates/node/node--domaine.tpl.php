@@ -6,6 +6,10 @@
     $titre_2 = field_view_field("node",$node,'field_titre_domaine_2');
     $icone = field_view_field("node",$node,'field_icone');
     $couleur = field_get_items("node",$node,'field_couleur')[0]['rgb'];
+    $path = current_path();
+    dpm($path);
+    $path_alias = drupal_lookup_path('alias',$path);
+    dpm($path_alias);
     $fc_blocs_domaines = field_get_items('node', $node, 'field_titre_texte_image');
     if($fc_blocs_domaines){
         $idti = array();
@@ -59,43 +63,43 @@
         <?php print render($actions) ?>
     </div>
     <div class="c-block-domaine">
-    <?php
-       for($i = 0; $i < count($idti); $i++) {
-           $collectionsg_2 = $collectionsg[$idti[$i]];
-           $titre = field_view_field('field_collection_item', $collectionsg_2, 'field_titre_frise');
-           $titre_render = render($titre);
-           $texte = field_view_field('field_collection_item', $collectionsg_2, 'field_texte');
-           $image = field_get_items('field_collection_item', $collectionsg_2, 'field_image_bloc');
-           $image_alignement = field_view_field('field_collection_item', $collectionsg_2, 'field_alignement_image');
-//           dpm($image_alignement);
-//           dpm($image_alignement['#items']);
-//           dpm($image_alignement['#items']['0']);
-           $alignment = render($image_alignement['#items']['0']['value']);
-           drupal_add_css('.c-block-domaine .c-img-'.$i.'{background-position: '.$alignment.' !important; } ', 'inline');
-           $n = image_style_url("bloc_image",$image[0]["uri"]);
-           drupal_add_css('.c-block-domaine .c-img-'.$i.'{background-image: url("'.$n.'") !important; } ', 'inline');
-    ?>
+        <?php
+           for($i = 0; $i < count($idti); $i++) {
+               $collectionsg_2 = $collectionsg[$idti[$i]];
+               $titre = field_view_field('field_collection_item', $collectionsg_2, 'field_titre_frise');
+               $titre_render = render($titre);
+               $texte = field_view_field('field_collection_item', $collectionsg_2, 'field_texte');
+               $image = field_get_items('field_collection_item', $collectionsg_2, 'field_image_bloc');
+               $image_alignement = field_view_field('field_collection_item', $collectionsg_2, 'field_alignement_image');
+    //           dpm($image_alignement);
+    //           dpm($image_alignement['#items']);
+    //           dpm($image_alignement['#items']['0']);
+               $alignment = render($image_alignement['#items']['0']['value']);
+               drupal_add_css('.c-block-domaine .c-img-'.$i.'{background-position: '.$alignment.' !important; } ', 'inline');
+               $n = image_style_url("bloc_image",$image[0]["uri"]);
+               drupal_add_css('.c-block-domaine .c-img-'.$i.'{background-image: url("'.$n.'") !important; } ', 'inline');
+        ?>
     <div class="c-gris">
         <div class="c-text">
             <h3 class="title titre-<?php print $i ?> liens"><?php print render($titre); ?></h3>
             <?php print render($texte); ?>
         </div>
         <div class="specs-container">
-    <?php
-       $fc_blocs_specs = field_get_items('field_collection_item', $collectionsg_2, 'field_specifications');
-       if($fc_blocs_specs){
-            $idti_specs = array();
-            foreach ($fc_blocs_specs as $fc_field) {
-                $idti_specs[] = $fc_field['value'];
-            }
-            $collectionsg_specs =  field_collection_item_load_multiple($idti_specs);
-          for($j = 0; $j < count($idti_specs); $j++) {
-              $collectionsg_specs_2 = $collectionsg_specs[$idti_specs[$j]];
-              $spec_title = field_view_field('field_collection_item', $collectionsg_specs_2, 'field_titre');
-              $spec_type = field_view_field('field_collection_item', $collectionsg_specs_2, 'field_type_spec');
-              $spec_num = field_view_field('field_collection_item', $collectionsg_specs_2, 'field_numero');
-              drupal_add_css('.c-block-domaine .c-gris .specs{background-color: '.$couleur.' !important; } ', 'inline');
-            ?>
+        <?php
+           $fc_blocs_specs = field_get_items('field_collection_item', $collectionsg_2, 'field_specifications');
+           if($fc_blocs_specs){
+                $idti_specs = array();
+                foreach ($fc_blocs_specs as $fc_field) {
+                    $idti_specs[] = $fc_field['value'];
+                }
+                $collectionsg_specs =  field_collection_item_load_multiple($idti_specs);
+              for($j = 0; $j < count($idti_specs); $j++) {
+                  $collectionsg_specs_2 = $collectionsg_specs[$idti_specs[$j]];
+                  $spec_title = field_view_field('field_collection_item', $collectionsg_specs_2, 'field_titre');
+                  $spec_type = field_view_field('field_collection_item', $collectionsg_specs_2, 'field_type_spec');
+                  $spec_num = field_view_field('field_collection_item', $collectionsg_specs_2, 'field_numero');
+                  drupal_add_css('.c-block-domaine .c-gris .specs{background-color: '.$couleur.' !important; } ', 'inline');
+                ?>
             <div class="specs specs-<?php print $j ?>">
                 <div class="spec-textes">
                     <div class="spec-title"><?php print render($spec_title); ?></div>
@@ -151,11 +155,16 @@
                                         $titre_render =  render($titre);
                                         $texte_render =  render($texte);
 
+                                        $nid = $node->nid;
+
                                         ?>
 
                                         <div class="item">
                                             <div class="c-bg c-bg-<?php print $i ?>">
-                                                <?php print l("<div class=''><h2>".$titre_render."</h2><div class='sep'></div></div>","", array("html"=>true)); ?>
+                                                <?php print l("<div class=''><h2>".$titre_render."</h2><div class='sep'></div></div>","/case-studies/".$path_alias, array("html"=>true, 'fragment' => "num-".$nid));
+//                                                dpm($nid_domaine);
+                                                //print l("En savoir plus", "/case-studies/".$nid_domaine, array("html"=>true, 'fragment' => "num-".$nid, 'attributes' => array('class' => array('cta', 'en_savoir_plus'))));
+                                                ?>
                                             </div>
                                         </div>
                                 <?php

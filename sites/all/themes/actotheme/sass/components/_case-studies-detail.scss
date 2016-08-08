@@ -1,0 +1,173 @@
+.case-studies-detail {
+
+    .c-block-domaine{
+
+        display: block;
+        margin: 0 auto;
+        margin-top:3rem;
+        @include main-padding();
+        margin-bottom: 0rem;
+
+        .c-gris {
+
+           position: relative ;
+           perspective: 1000px;
+
+           @include breakpoint($tablet){
+                margin-bottom: 10rem;
+            }
+
+           margin-bottom: 5rem;
+
+        .c-text {
+
+            background-color: $gris;
+
+            padding:3rem;
+            padding-right: 3rem;
+            position: relative ;
+            vertical-align: top;
+            width: 100%;
+
+          @include breakpoint($tablet){
+            padding-right: 60%;
+            float: left;
+          }
+
+            .c-cta{
+                display: block ;
+                width:  100%;
+                text-align: center  ;
+            }
+
+            strong{
+                @include fz(3);
+                text-transform: uppercase;
+                font-weight:    600;
+                margin-top: 2rem;
+                display: block;
+                width:  100%;
+                position: relative;
+            }
+
+            a{
+                display: inline-block ;
+                margin-top: 2rem;
+            }
+              h1{
+                  @include fz(4);
+                 font-weight: 900;
+                 margin-bottom: 1.5rem;
+                 text-transform: uppercase;
+             }
+                 p, li{
+                    @include fz(2);
+                 }
+
+            h3 {
+                p {
+                    @include fz(5);
+                    line-height: 2.5rem;
+                    font-weight:   600;
+                    text-transform: uppercase;
+                    display: inline;
+                }
+                margin-bottom: 1rem;
+            }
+        }
+
+            .c-img {
+
+            z-index: 10;
+            position: absolute;
+            width: 50%;
+            height: 110%;
+            right: 2rem;
+            top:50%;
+            @include translate(0%,-50%);
+            vertical-align: top;
+            @include jpg(pharma_affaire,50% 50%, cover);
+            @include animation(photo_even 5s ease-in-out 1);
+
+                &:after {
+                    content:"";
+                    display: block ;
+                    height: 5px;
+                    width: 100%;
+                    position: absolute;
+                    bottom:-1px;
+                    left:0px;
+                    @extend .gradient-h;
+                }
+
+                display: none;
+
+                @include breakpoint($tablet){
+                     display: block;
+               }
+            }
+
+            &:nth-child(odd) {
+                .c-img {
+                    left:2rem;
+                    @include animation(photo_odd 5s ease-in-out 1);
+                }
+                .c-text {
+                    padding-right: 3rem;
+                    @include breakpoint($tablet){
+                        padding-left: 56.66%;
+                        float: right;
+
+                      }
+
+                }
+
+            @include breakpoint($tablet){
+
+                .specs {
+
+                    &.specs-0 {
+                        right: 3%;
+                    }
+
+                    &.specs-1 {
+                        right: 13%;
+                    }
+
+                    &.specs-2 {
+                       right: 23%;
+                    }
+
+                    &.specs-3 {
+                        right: 33%;
+                    }
+                }
+            }
+        }
+
+            @include breakpoint($tablet){
+                &:nth-child(even) {
+                    .specs {
+
+                        &.specs-0 {
+                            left: 3%;
+                        }
+
+                        &.specs-1 {
+                            left: 13%;
+                        }
+
+                        &.specs-2 {
+                           left: 23%;
+                        }
+
+                        &.specs-3 {
+                            left: 33%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

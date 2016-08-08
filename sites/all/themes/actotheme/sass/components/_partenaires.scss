@@ -2,7 +2,7 @@
 @import "../variables/variables";
 @import "../variables/mixin";
 
-.view-content {
+.view-content{
 
     .views-row {
 
@@ -120,7 +120,7 @@
             }
         }
 
-                        &:nth-child(odd) {
+        &:nth-child(odd) {
 
                 .c-block-histoire {
                     @include breakpoint($tablet){
@@ -173,5 +173,6 @@
                   }
             }
         }
+
     }
 }
