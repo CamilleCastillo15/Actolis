@@ -51,6 +51,8 @@
 
 ?>
 
+COUCOU
+
 <div class="case-studies">
     <div class="dark-layer">
         <div class="c-picto">

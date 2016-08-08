@@ -86,7 +86,7 @@
                 right: 0rem;
                 margin-top: 2rem;
                 @include jpg(histoire_photo,50% 50%, cover);
-                min-height: 35vh;
+//                min-height: 35vh;
                 top:0%;
 
                  @include breakpoint($tablet){

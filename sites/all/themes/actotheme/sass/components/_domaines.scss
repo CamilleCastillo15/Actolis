@@ -20,7 +20,8 @@
         h1{
             background-image: none !important;
             text-align: center;
-            padding: 7rem 0rem;
+//            padding: 7rem 0rem;
+            padding: 5rem 0rem;
 
             .picto{
                 @extend .c-icone;
@@ -234,7 +235,7 @@
 
 .e-d-c{
     text-align: center;
-    @include main-padding(10vw,10vw);
+//    @include main-padding(10vw,10vw);
     position: relative;
     display: block;
     width: 100%;
@@ -244,6 +245,15 @@
         text-transform: uppercase;
         font-weight: 800;
     }
+
+    h3{
+
+        background-color: #f1f1f1;
+        padding: 2rem;
+        margin-bottom: 0;
+
+    }
+
     .c-block{
         width: 100%;
     }
@@ -354,6 +364,12 @@
 
         .swiper-wrapper {
             box-sizing: inherit !important;
+        }
+
+        .acto-news {
+
+            padding:  0rem 9rem 3rem 9rem;
+
         }
     }
 

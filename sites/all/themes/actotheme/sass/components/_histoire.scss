@@ -258,7 +258,7 @@
         vertical-align: top;
         right: 0rem;
         @include jpg(histoire_photo,50% 50%, cover);
-        min-height: 35vh;
+//        min-height: 35vh;
         top:0%;
         margin-top: 2rem;
         @include breakpoint($tablet){

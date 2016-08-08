@@ -104,7 +104,8 @@ h5 {
         vertical-align: middle;
         width: 100%;
         @include breakpoint($tablet) {
-          width: 35%;
+//          width: 35%;
+          width: 25%;
         }
         img {
             max-width: 100%;
@@ -359,15 +360,18 @@ h5 {
     bottom:54vh;
 
     @include breakpoint($tablet) {
-        bottom:38vh;
+//        bottom:38vh;
+        bottom: 80%;
     }
 
     @include breakpoint($laptop) {
-        bottom:50vh;
+//        bottom:50vh;
+        bottom: 30%;
     }
 
     @include breakpoint($laptopl) {
-        bottom:74vh;
+//        bottom:74vh;
+        bottom: 40%;
     }
 
     @include breakpoint($laptopxl) {

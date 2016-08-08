@@ -114,11 +114,15 @@
     </div>
     <div class="e-d-c">
             <div class="cc-block ">
-                <div class="c-block">
-                    <div class="c-gradient">
-                    <h3>cases studies</h3>
+<!--                <div class="c-block">-->
+<!--                    <div class="c-gradient">-->
+
                     <div class="grille">
-                        <div class="swiper-container">
+
+                        <h3>cases studies</h3>
+
+                        <div class="acto-news swiper-container">
+
                             <div class="swiper-wrapper">
                             <?php
                              $view = views_get_view('case_studies');
@@ -165,11 +169,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
+<!--            </div>-->
                 <div class="swiper-pagination"></div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
-        </div>
+<!--        </div>-->
     </div>
 </div>
 </div>
