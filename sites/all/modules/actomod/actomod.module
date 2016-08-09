@@ -275,11 +275,11 @@ function actomod_casestudies($arg,$hop){
         case "dispositifs-medicaux":
             $idview=8; 
             break;
-        case "partenaires":
-           
+        case "pharma-biotech":
+            $idview=2; 
             break;
-        case "consultants":
-           
+        case "cosmetiques-otc":
+            $idview=9; 
             break;
         default:
            

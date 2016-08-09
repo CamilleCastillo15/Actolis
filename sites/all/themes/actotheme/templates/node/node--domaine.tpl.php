@@ -59,8 +59,11 @@
         <h3>Nos actions</h3>
         <?php
             $actions = field_view_field("node",$node,'field_nos_actions');
-        ?>
-        <?php print render($actions) ?>
+            $ancre_case_studies = field_view_field("node",$node,'field_phrase_ancre_case_studies');
+
+            print render($actions); ?>
+
+            <a href="#anchor"><?php print render($ancre_case_studies); ?></a>
     </div>
     <div class="c-block-domaine">
         <?php
@@ -116,74 +119,82 @@
     <?php } ?>
         <div class="clear"></div>
     </div>
-    <div class="e-d-c">
+    <?php
+
+         $view = views_get_view('case_studies');
+         $view->set_arguments(array($node->nid));
+         $view->execute();
+         $i = 0;
+
+         if($view->result) {
+
+    ?>
+
+    <div id="anchor" class="e-d-c">
             <div class="cc-block ">
 <!--                <div class="c-block">-->
 <!--                    <div class="c-gradient">-->
 
-                    <div class="grille">
+                <div class="grille">
 
-                        <h3>cases studies</h3>
+                    <h3>cases studies</h3>
 
-                        <div class="acto-news swiper-container">
+                    <div class="acto-news swiper-container">
 
-                            <div class="swiper-wrapper">
-                            <?php
-                             $view = views_get_view('case_studies');
-                             $view->set_arguments(array($node->nid));
-                             $view->execute();
-                             $i = 0;
+                        <div class="swiper-wrapper">
+                        <?php
 
-                                      foreach($view->result as $value) {
-                                              $node = node_load($value->nid);
-                                              $titre = field_view_field('node',$node,'field_titre_de_la_case_study');
-                                              $texte = field_view_field("node",$node,'field_texte_case_study',array(
-                                                    'label'=>'hidden',
-                                                    'type' => 'text_summary_or_trimmed',
-                                                    'settings'=>array('trim_length' => 20),
-                                              ));
-                                              $domaine = field_view_field('node',$node,'field_domaine');
-                                              $blocs = field_view_field('node',$node,'field_blocs_chapitres_etudes_cas');
-                                              $image = field_get_items('node',$node,'field_image_case_study');
-                                              $o = image_style_url("case_studies",$image[0]["uri"]);
-                                              drupal_add_css('.e-d-c .grille .views-row .c-bg-'.$i.'{background-image: url("'.$o.'") !important; } ', 'inline');
-                                              $link = url('node/'.$node->nid, array('absolute' => TRUE));
-                                              $link2 = $node->nid;
+                                  foreach($view->result as $value) {
+                                          $node = node_load($value->nid);
+                                          $titre = field_view_field('node',$node,'field_titre_de_la_case_study');
+                                          $texte = field_view_field("node",$node,'field_texte_case_study',array(
+                                                'label'=>'hidden',
+                                                'type' => 'text_summary_or_trimmed',
+                                                'settings'=>array('trim_length' => 20),
+                                          ));
+                                          $domaine = field_view_field('node',$node,'field_domaine');
+                                          $blocs = field_view_field('node',$node,'field_blocs_chapitres_etudes_cas');
+                                          $image = field_get_items('node',$node,'field_image_case_study');
+                                          $o = image_style_url("case_studies",$image[0]["uri"]);
+                                          drupal_add_css('.e-d-c .grille .views-row .c-bg-'.$i.'{background-image: url("'.$o.'") !important; } ', 'inline');
+                                          $link = url('node/'.$node->nid, array('absolute' => TRUE));
+                                          $link2 = $node->nid;
 
-                                              $titre_render =  render($titre);
-                                              $texte_render =  render($texte);
+                                          $titre_render =  render($titre);
+                                          $texte_render =  render($texte);
 
-                                              $nid = $node->nid;
+                                          $nid = $node->nid;
 
 
-                                        if($i % 3 == 0 || $i == 0) {  ?>
+                                    if($i % 3 == 0 || $i == 0) {  ?>
 
-                                            <div class="views-row swiper-slide">
+                                        <div class="views-row swiper-slide">
 
-                                        <?php } ?>
-                                        <div class="item">
-                                            <div class="c-bg c-bg-<?php print $i ?>">
-                                                <?php print l("<div class=''><h2>".$titre_render."</h2><div class='sep'></div></div>","/case-studies/".$path_alias, array("html"=>true, 'fragment' => "num-".$nid));
-//                                                dpm($nid_domaine);
-                                                //print l("En savoir plus", "/case-studies/".$nid_domaine, array("html"=>true, 'fragment' => "num-".$nid, 'attributes' => array('class' => array('cta', 'en_savoir_plus'))));
-                                                ?>
-                                            </div>
+                                    <?php } ?>
+                                    <div class="item">
+                                        <div class="c-bg c-bg-<?php print $i ?>">
+                                            <?php print l("<div class=''><h2>".$titre_render."</h2><div class='sep'></div></div>","/case-studies/".$path_alias, array("html"=>true, 'fragment' => "num-".$nid));
+                                            ?>
                                         </div>
-                                    <?php
-                                        $i++;
-                                        if($i % 3 == 0 ) {
-                                     ?>
-                                   </div>
-                                <?php }
-                                        } ?>
-                                <div class="clear"></div>
-                            </div>
+                                    </div>
+                                <?php
+                                    $i++;
+                                    if($i % 3 == 0 ) {
+                                 ?>
+                               </div>
+                            <?php }
+                                    } ?>
+                            <div class="clear"></div>
                         </div>
-                            <div class="swiper-pagination"></div>
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
                     </div>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                </div>
         </div>
     </div>
+
+    <?php } ?>
+
 </div>
 

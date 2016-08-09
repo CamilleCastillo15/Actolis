@@ -12,6 +12,10 @@
                 $image = field_get_items("node",$node,'field_image_case_study');
 
                 $nid = $node->nid;
+//                dpm($nid);
+
+                $url = $_GET['fragment'];
+                dpm($url);
 
                 $p = image_style_url("bloc_image",$image[0]["uri"]);
 
@@ -23,7 +27,7 @@
 
             ?>
 
-            <div class="c-gris">
+            <div class="c-gris num_<?php print $nid ?>">
                 <div class="c-text" id="num-<?php print render($nid);?>" >
                     <h3 class="title titre-<?php print $i ?> liens"><?php print render($title); ?></h3>
                     <?php print render($description); ?>
