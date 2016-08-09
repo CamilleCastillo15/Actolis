@@ -17,7 +17,9 @@
 
                 drupal_add_css('.c-block-domaine .c-img-'.$i.'{background-image: url("'.$p.'") !important; } ', 'inline');
 
-        //        $img = field_view_field("node",$node,'field_image_case_study');
+                $image_alignement = field_view_field("node",$node,'field_alignement_image');
+                $alignment = render($image_alignement['#items']['0']['value']);
+                drupal_add_css('.c-block-domaine .c-img-'.$i.' {background-position: '.$alignment.' !important; } ', 'inline');
 
             ?>
 

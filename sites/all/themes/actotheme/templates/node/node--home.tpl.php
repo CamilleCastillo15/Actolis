@@ -178,7 +178,7 @@
                 <h3><?php print render($title_rejoignez_nous); ?></h3>
                 <?php print render($texte_rejoignez_nous); ?>
                 <div class="c-cta">
-                    <?php print l("en savoir plus", "/content/lecoindestalents", array("html"=>true, 'attributes' => array('class' => array('cta')))); ?>
+                    <?php print l("en savoir plus", "/rejoignez-nous", array("html"=>true, 'attributes' => array('class' => array('cta')))); ?>
                 </div>
             </div>
             <div class="c-img">

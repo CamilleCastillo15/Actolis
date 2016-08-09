@@ -2,6 +2,9 @@
 
     $domaine = field_view_field("node",$node,'field_domaines_concernes');
     $nom = field_view_field("node",$node,'field_nom_formation');
+    $clic = field_view_field("node",$node,'field_cliquable_non_cliquable');
+    $render_clic = render($clic["0"]);
+
     $link = url('node/'.$node->nid, array('absolute' => TRUE));
     if($teaser){
         $nom_render =  render($nom);
@@ -13,13 +16,25 @@
         $view_domaines = views_get_view('domaines');
         $view_domaines->execute();
         $result_domaines = $view_domaines->result;
+
         $i = 1;
 
-        ?>
-    <?php print l("
-        <div class='item-offre'>
-            <span class='nom'>".$nom_render."</span>
-        </div>", $link, array("html"=>true)); ?>
+        if($render_clic == "cliquable") {?>
+
+        <?php print l("
+            <div class='item-offre'>
+                <span class='nom'>".$nom_render."</span>
+            </div>", $link, array("html"=>true));
+
+         } else { ?>
+
+         <div class="container-offre">
+            <div class='item-offre'>
+                <span class='nom'><?php print $nom_render ?></span>
+             </div>
+         </div>
+
+        <?php } ?>
 
 <?php
 
@@ -102,7 +117,7 @@ if($domaine){
 
         $nid_prev = prev_next_nid($node->nid, 'prev');
         $link_prev = url('node/'.$nid_prev, array('absolute' => TRUE));
-//        dpm($link_prev);
+//      dpm($link_prev);
 
         $nid_next = prev_next_nid($nid, 'next');
         $link_next = url('node/'.$nid_next, array('absolute' => TRUE));
@@ -160,9 +175,9 @@ if($domaine){
     }
 
     echo"<div class='pictos-container pictos-container-".$i."'>";
-    echo "<div class='color-home color-home-".$i."'></div>";
-    $couleur = field_get_items("node",$n,'field_couleur')[0]['rgb'];
-    drupal_add_css('.home .color-home-'.$i.' {background-color: '.$couleur.' !important ; } ', 'inline');
+        echo "<div class='color-home color-home-".$i."'></div>";
+            $couleur = field_get_items("node",$n,'field_couleur')[0]['rgb'];
+                drupal_add_css('.home .color-home-'.$i.' {background-color: '.$couleur.' !important ; } ', 'inline');
 
     print $picto_render;
             echo"</div>";
@@ -238,12 +253,12 @@ if($domaine){
 
 <?php
 
-    $nid = $node->nid;
-
-    $p = $_SERVER['REQUEST_URI'];
-    $a = explode("/",$p);
-    $ref = $a[2];
-    $link = "content/formulaire-offres-de-formations";
+//    $nid = $node->nid;
+//
+//    $p = $_SERVER['REQUEST_URI'];
+//    $a = explode("/",$p);
+//    $ref = $a[2];
+//    $link = "content/formulaire-offres-de-formations";
 //    print l("Pour plus de renseignements, demandez-nous nos fiches formation",$link, array("html"=>true, 'attributes' => array('class' => array('cta')), 'query' => array('nid' => $nid)));
 ?>
 
