@@ -27,14 +27,13 @@
     //display: none;
     display: block;
     
-    @include main-padding();
+    @include main-padding(1%,1%);
+
     @include breakpoint($tablet) {
         display: block;
         position: relative;
         margin:auto;
     }
-
-
 
     .logo {
 

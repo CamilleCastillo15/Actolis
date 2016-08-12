@@ -21,7 +21,7 @@
  * - $form['preview']: A renderable representing the entire submission preview.
  */
 
-//dpm($form);
+dpm($form);
 //dpm($form['submitted']['reference_de_loffre']);
 
  function AddressList_webform_select_options_info() {
@@ -65,6 +65,8 @@ if(isset($_GET['nid'])){
                   <div class="form-col">
                       <?php print render($form['submitted']['nom']) ?>
                       <?php print render($form['submitted']['prenom']) ?>
+                      <?php print render($form['submitted']['societe']) ?>
+                      <?php print render($form['submitted']['email']) ?>
                   </div>
                   <div class="form-col">
 

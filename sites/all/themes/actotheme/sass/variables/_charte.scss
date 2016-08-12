@@ -340,47 +340,50 @@ h5 {
 
 
 .bt-scroll{
-    background-color: $orange;
-    width: 4rem;
-    height: 4rem;
-    border-radius:50%;
-    display: block;
-    @include svg(picto_scroll,50% 50%, 1.4rem);
-    position: absolute;
-    left:50%;
-    margin-left:-2rem;
-    z-index: 10;
 
-    bottom:54vh;
+      display: none;
 
-    @include breakpoint($tablet) {
-        bottom: 80%;
-    }
-
-    @include breakpoint($laptop) {
-        bottom: 30%;
-    }
-
-    @include breakpoint($laptopl) {
-        bottom: 40%;
-    }
-
-    @include breakpoint($laptopxl) {
-        bottom:95vh;
-    }
-
-    @include opacity(1);
-    @include transition(opacity 0.2s ease-out);
-    @include animation(scroll 1.5s ease-in-out 3);
-
-    display: none;
-
-     @include breakpoint($tablet){
-      display: block;
-  }
-    &:hover{
-        @include opacity(0.8);
-    }
+//    background-color: $orange;
+//    width: 4rem;
+//    height: 4rem;
+//    border-radius:50%;
+//    display: block;
+//    @include svg(picto_scroll,50% 50%, 1.4rem);
+//    position: absolute;
+//    left:50%;
+//    margin-left:-2rem;
+//    z-index: 10;
+//
+//    bottom:54vh;
+//
+//    @include breakpoint($tablet) {
+//        bottom: 80%;
+//    }
+//
+//    @include breakpoint($laptop) {
+//        bottom: 30%;
+//    }
+//
+//    @include breakpoint($laptopl) {
+//        bottom: 40%;
+//    }
+//
+//    @include breakpoint($laptopxl) {
+//        bottom:95vh;
+//    }
+//
+//    @include opacity(1);
+//    @include transition(opacity 0.2s ease-out);
+//    @include animation(scroll 1.5s ease-in-out 3);
+//
+//    display: none;
+//
+//     @include breakpoint($tablet){
+//      display: block;
+//  }
+//    &:hover{
+//        @include opacity(0.8);
+//    }
     
 }
 

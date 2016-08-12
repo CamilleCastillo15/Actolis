@@ -7,9 +7,9 @@
     $icone = field_view_field("node",$node,'field_icone');
     $couleur = field_get_items("node",$node,'field_couleur')[0]['rgb'];
     $path = current_path();
-    dpm($path);
+//    dpm($path);
     $path_alias = drupal_lookup_path('alias',$path);
-    dpm($path_alias);
+//    dpm($path_alias);
     $fc_blocs_domaines = field_get_items('node', $node, 'field_titre_texte_image');
     if($fc_blocs_domaines){
         $idti = array();
@@ -61,9 +61,18 @@
             $actions = field_view_field("node",$node,'field_nos_actions');
             $ancre_case_studies = field_view_field("node",$node,'field_phrase_ancre_case_studies');
 
-            print render($actions); ?>
+             $view = views_get_view('case_studies');
+             $view->set_arguments(array($node->nid));
+             $view->execute();
+             $i = 0;
+
+            print render($actions);
+            if($view->result) { ?>
 
             <a href="#anchor"><?php print render($ancre_case_studies); ?></a>
+
+            <?php } ?>
+
     </div>
     <div class="c-block-domaine">
         <?php
@@ -121,10 +130,7 @@
     </div>
     <?php
 
-         $view = views_get_view('case_studies');
-         $view->set_arguments(array($node->nid));
-         $view->execute();
-         $i = 0;
+
 
          if($view->result) {
 

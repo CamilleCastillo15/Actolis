@@ -22,6 +22,7 @@
 
         $texte_render = render($texte);
 
+
         ?>
 
         <div class="item">
@@ -48,6 +49,46 @@
             }
             $collectionsg =  field_collection_item_load_multiple($idti);
         }
+
+        $nid = $node ->nid;
+        dpm("COUCOUCOCU");
+
+//        $path = request_path($nid);
+//        $b = explode("/", $path);
+//
+//        $source_url = drupal_lookup_path('source', $url);
+//        dpm($source_url);
+
+//    if ($node && $node->type=="atelier") { // Get the nid
+//        $nid = $node->nid;
+//    }else {
+//        $p = drupal_get_normal_path(arg(0)."/".arg(1));
+//
+//        $a = explode("/",$p);
+//
+//        $nid = $a[1];
+//        $path = request_path($nid);
+//        $b = explode("/", $path);
+//
+//        if(count($b) > 1) {
+//
+//            $url = $b[0]."/".$b[1];
+//
+//
+//
+//            $c = explode("/", $source_url);
+//
+//            if(count($c) > 1) {
+//                $nid = $c[1];
+//            }
+//
+//        } else {
+//
+//            $nid = 0;
+//
+//        }
+//
+//    }
 
 ?>
 

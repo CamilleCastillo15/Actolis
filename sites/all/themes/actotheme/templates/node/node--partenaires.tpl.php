@@ -15,6 +15,19 @@
 
     $img = field_view_field("node",$node,'field_image');
 
+    drupal_add_css('a[href*="partenaires"] {background-color: rgba(255, 255, 255, 0.1) !important;} ', 'inline');
+     drupal_add_css('a[href*="partenaires"]::after {
+                                                content: "";
+                                                position: absolute;
+                                                top: 2.4rem;
+                                                width: 5rem;
+                                                height: 0.15rem;
+                                                left: 50%;
+                                                -webkit-transform: translate(-50%, 0px);
+                                                -ms-transform: translate(-50%, 0px);
+                                                transform: translate(-50%, 0px);
+                                                background-color: #fff;} ', 'inline');
+
     ?>
 
 <div class="partenaires-detail">

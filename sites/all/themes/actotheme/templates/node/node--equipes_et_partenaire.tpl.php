@@ -3,6 +3,11 @@
     $styles  = drupal_get_css();
     //$title = field_view_field("node",$node,'title');
     $body = field_view_field("node",$node,'body');
+
+    $class = field_view_field("node",$node,'field_class');
+    $class_test = $class['#items']['0']['value'];
+    dpm($class_test);
+
     $image = field_view_field("node",$node,'field_image_equipe_partenaire');
     $fc_temoignage = field_get_items('node', $node, 'field_temoignage');
     if($fc_temoignage){
@@ -100,7 +105,7 @@
 //                    $desc = trim($desc);
                     $desc_render = render($desc);
 //                    $desc_render = trim($desc_render);
-                    $desc_render = substr($desc_render, 0, 100);
+                    $desc_render = substr($desc_render, 0, 100)."...";
 
                     $sentences = explode(".", $desc_render);
                     $first_sentence = $sentences[0];

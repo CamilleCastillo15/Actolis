@@ -15,7 +15,7 @@
 //                dpm($nid);
 
                 $url = $_GET['fragment'];
-                dpm($url);
+//                dpm($url);
 
                 $p = image_style_url("bloc_image",$image[0]["uri"]);
 

@@ -35,6 +35,10 @@
                       $n = node_load($value->nid);
                       $link =drupal_get_path_alias("node/".$value->nid);
 
+                      $class = field_get_items("node",$n,'field_class');
+                      $class_test = $class['0']['value'];
+                      dpm($class['0']['value']);
+
                       $comp = $value->nid;
 
                       $title = field_view_field("node",$n,'field_titre_domaine');
@@ -52,7 +56,13 @@
                       $a = explode("/",$p);
                       $nid = $a[1];
 
-                      if($comp == $nid){
+                      $path = current_path();
+
+                      $c = explode("/",$path);
+                      $test_2 = $c[1];
+
+                      if($comp == $nid || $test_2 == $class_test){
+
 
                           drupal_add_css('.l-menu .domaine-menu ul li a.c-txt-'.$num.' {background-color:'.$couleur.' !important; } ', 'inline');
 
@@ -61,7 +71,7 @@
                           drupal_add_css('.l-menu .domaine-menu ul li a.c-txt-'.$num.' span:after {display:block; background-color: white !important; } ', 'inline');
                           drupal_add_css('.l-menu .domaine-menu ul li a.c-txt-'.$num.' .c-img:hover::before {border: 0.15rem solid '.$couleur.' !important; } ', 'inline');
 
-                      }else {
+                      } else {
 
                           drupal_add_css('.l-menu .domaine-menu ul li a .c-img-'.$num.':before {border: 0.15rem solid '.$couleur.' !important; } ', 'inline');
                           drupal_add_css('.l-menu .domaine-menu ul li a .c-img-'.$num.' { background-image:url("'.$picto_bkg.'");} ', 'inline');
@@ -77,12 +87,12 @@
 
                       }
 
-
-//                      $title_render = '<span>'.render($title).'</span>';
                       $title_render = '<span>'.render($title_2).'</span>';
                       $picto_render = '<div class="c-img c-img-'.$num.'"></div>';
                       echo "<li>";
+
                       print l($picto_render.$title_render, $link,array("html"=>true, 'attributes' => array('class' => array('c-txt', 'c-txt-'.$num))));
+
                       echo "</li>";
                       $num++;
                    }
