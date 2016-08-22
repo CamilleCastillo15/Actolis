@@ -38,8 +38,12 @@
 
 <div class="domaine">
     <div class="c-header">
-        <h1 class="b2"><div class="picto"></div><span class="c-txt"><?php print render($titre_2); ?></span></h1>
-        <div class="sep"></div>
+       <div class="dark-layer">
+
+            <h1 class="b2"><div class="picto"></div><span class="c-txt"><?php print render($titre_2); ?></span></h1>
+            <div class="sep"></div>
+
+        </div>
     </div>
     <div class="frise-actions">
         <?php

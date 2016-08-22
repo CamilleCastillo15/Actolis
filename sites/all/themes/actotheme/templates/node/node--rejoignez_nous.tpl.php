@@ -98,25 +98,24 @@
 
             </div>
             <div class="c-phrases-container phrases-container-2">
+                <div class="dark-layer">
+                    <?php
+                            $image_fond_valeur_cle = field_get_items("node", $node, 'field_image_fond_confiance');
+                            $p = image_style_url("header",$image_fond_valeur_cle[0]["uri"]);
+                            drupal_add_css('.rejoignez_nous .c-picto-cle {background-image: url("'.$p.'") !important; } ', 'inline');
+                            $valeur_cle = field_view_field("node", $node, 'field_valeur_cle');
+                            $phrase_valeur_cle = field_view_field("node", $node, 'field_phrase_valeur_cle');
+                            $picto_valeur_cle = field_view_field("node", $node, 'field_picto_valeur_cle');
+                    ?>
 
-            <?php
-                    $image_fond_valeur_cle = field_get_items("node", $node, 'field_image_fond_confiance');
-                    $p = image_style_url("header",$image_fond_valeur_cle[0]["uri"]);
-
-                    drupal_add_css('.rejoignez_nous .c-picto-cle {background-image: url("'.$p.'") !important; } ', 'inline');
-
-                    $valeur_cle = field_view_field("node", $node, 'field_valeur_cle');
-                    $phrase_valeur_cle = field_view_field("node", $node, 'field_phrase_valeur_cle');
-                    $picto_valeur_cle = field_view_field("node", $node, 'field_picto_valeur_cle');
-            ?>
-
-                <div class="c-picto c-picto-cle">
-                    <h2 class="phrase phrase_cle"><?php print render($phrase_valeur_cle); ?></h2>
-                    <h2 class="valeur valeur_cle">
-                    <div class="picto_valeur_cle">
-                        <?php print render($picto_valeur_cle); ?>
+                    <div class="c-picto c-picto-cle">
+                        <h2 class="phrase phrase_cle"><?php print render($phrase_valeur_cle); ?></h2>
+                        <h2 class="valeur valeur_cle">
+                        <div class="picto_valeur_cle">
+                            <?php print render($picto_valeur_cle); ?>
+                        </div>
+                                <?php print render($valeur_cle); ?></h2>
                     </div>
-                            <?php print render($valeur_cle); ?></h2>
                 </div>
             </div>
         </div>

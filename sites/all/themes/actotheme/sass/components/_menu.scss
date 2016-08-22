@@ -100,9 +100,23 @@
                     @include transition(all 0.2s ease-out);
                     @include breakpoint($tablet) {
                         &:hover{
-                            background-color: rgba(white,0.1);
+//                            background-color: rgba(white,0.1);
+//                            &:after {
+//                                 background-color: rgba(#fff,0.3);
+//                            }
+
                             &:after {
-                                 background-color: rgba(#fff,0.3);
+                                content: "";
+                                position: absolute;
+                                top:2.4rem;
+                                width: 5rem;
+                                height: 0.15rem;
+                                left:50%;
+                                @include breakpoint($tablet) {
+                                    left:50%;
+                                }
+                                @include translate(-50%,0px);
+                                background-color: #fff;
                             }
                         }
                     }
@@ -239,21 +253,42 @@
          background-color: $lightgris;
          width: 100%;
     }
+}
 
 .user {
     display: block;
+    position: relative;
     .menu{
-            padding-bottom: 3rem;
+        padding-bottom: 3rem;
+        position: relative;
             li{
                 background-color: white;
+                position: relative;
                 a{
                    background-color: white;
                    color:black;
+
+                    &:hover {
+
+                        &:after {
+                                content: "";
+                                position: absolute;
+                                bottom:0rem;
+                                width: 5rem;
+                                height: 0.15rem;
+                                left:50%;
+                                @include breakpoint($tablet) {
+                                    left:50%;
+                                }
+                                @include translate(-50%,0px);
+                                background-color: $orange;
+                        }
+
+                    }
                 }
             }
         }
     }
-}
 
 
 .active-bt{

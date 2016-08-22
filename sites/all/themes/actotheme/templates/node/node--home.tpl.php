@@ -64,6 +64,9 @@
                       $picto = field_view_field("node",$n,'field_icone');
                       $title = field_view_field("node",$n,'field_titre_domaine');
 
+                      $img_bkg = field_get_items("node",$n,'field_image');
+                      $o = image_style_url("bloc_image",$img_bkg[0]["uri"]);
+
                       $title_render = '<h3>'.render($title).'</h3>';
                       $picto_render = '<div class="picto">'.render($picto).'</div>';
 
@@ -71,8 +74,14 @@
                       echo "<div class='color-home color-home-".$i."'></div>";
                       $couleur = field_get_items("node",$n,'field_couleur')[0]['rgb'];
                       drupal_add_css('.home .color-home-'.$i.' {background-color: '.$couleur.' !important ; } ', 'inline');
-                      print l($picto_render.$title_render."<div class='cta'>voir plus</div>",$link,array("html"=>true));
+
+                      print l($picto_render.$title_render,$link,array("html"=>true));
+
+                      print l("<div class='cta'>voir plus</div>",$link,array("html"=>true));
+
                       echo "</div>";
+
+                      drupal_add_css('.c-big-cta .b-big-cta.b'.$i.' {background-image: url("'.$o.'") !important ; } ', 'inline');
 
                       $i++;
                    }
