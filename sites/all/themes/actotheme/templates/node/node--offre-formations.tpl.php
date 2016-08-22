@@ -118,22 +118,24 @@ if($domaine){
         $p = image_style_url("bloc_image",$images_formation[0]["uri"]);
         drupal_add_css('.formation-detail .c-block-offres-detail .c-img {background-image: url("'.$p.'") !important ; } ', 'inline');
 
+        $image_alignement = field_view_field("node",$node,'field_alignement_image');
+        $alignment = render($image_alignement['#items']['0']['value']);
+        drupal_add_css('.formation-detail .c-block-offres-detail .c-img {background-position: '.$alignment.' !important; } ', 'inline');
+
+
         $nid = $node->nid;
 
         $nid_prev = prev_next_nid($node->nid, 'prev');
         $link_prev = url('node/'.$nid_prev, array('absolute' => TRUE));
-//      dpm($link_prev);
 
         $nid_next = prev_next_nid($nid, 'next');
         $link_next = url('node/'.$nid_next, array('absolute' => TRUE));
 
-    $view_domaines = views_get_view('domaines');
-    $view_domaines->execute();
-    $result_domaines = $view_domaines->result;
+        $view_domaines = views_get_view('domaines');
+        $view_domaines->execute();
+        $result_domaines = $view_domaines->result;
 
-//    dpm($result_domaines);
-
-    $i = 1; ?>
+        $i = 1; ?>
 
  <div class="formation-detail">
    <div class="c-block-offres-detail">
@@ -258,13 +260,14 @@ if($domaine){
 
 <?php
 
-//    $nid = $node->nid;
-//
-//    $p = $_SERVER['REQUEST_URI'];
-//    $a = explode("/",$p);
-//    $ref = $a[2];
-//    $link = "content/formulaire-offres-de-formations";
-//    print l("Pour plus de renseignements, demandez-nous nos fiches formation",$link, array("html"=>true, 'attributes' => array('class' => array('cta')), 'query' => array('nid' => $nid)));
+    //    $nid = $node->nid;
+    //
+    //    $p = $_SERVER['REQUEST_URI'];
+    //    $a = explode("/",$p);
+    //    $ref = $a[2];
+    //    $link = "content/formulaire-offres-de-formations";
+    //    print l("Pour plus de renseignements, demandez-nous nos fiches formation",$link, array("html"=>true, 'attributes' => array('class' => array('cta')), 'query' => array('nid' => $nid)));
+
 ?>
 
 

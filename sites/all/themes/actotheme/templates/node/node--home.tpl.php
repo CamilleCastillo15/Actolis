@@ -81,6 +81,10 @@
 
                       echo "</div>";
 
+                       $image_alignement = field_view_field("node",$n,'field_alignement_image');
+                       $alignment = render($image_alignement['#items']['0']['value']);
+                       drupal_add_css('.c-big-cta .b-big-cta.b'.$i.'{background-position: '.$alignment.' !important; } ', 'inline');
+
                       drupal_add_css('.c-big-cta .b-big-cta.b'.$i.' {background-image: url("'.$o.'") !important ; } ', 'inline');
 
                       $i++;
@@ -178,6 +182,9 @@
             $p = image_style_url("header",$images_rejoignez_nous_bkg_pictos[0]["uri"]);
             drupal_add_css('.home .c-header {background-image: url("'.$p.'") !important ; } ', 'inline');
 
+            $image_alignement_rejoignez_nous_bloc = field_view_field("node",$n,'field_alignement_image');
+            $alignment_rejoignez_nous_bloc = render($image_alignement_rejoignez_nous_bloc['#items']['0']['value']);
+            drupal_add_css('.home .c-block .c-gradient .c-img{background-position: '.$alignment.' !important; } ', 'inline');
             $images_rejoignez_nous_bloc = field_get_items('node', $node, 'field_image_rejoignez_nous_bloc');
             $m = image_style_url("bloc_image",$images_rejoignez_nous_bloc[0]["uri"]);
             drupal_add_css('.home .c-block .c-gradient .c-img {background-image: url("'.$m.'") !important ; } ', 'inline');

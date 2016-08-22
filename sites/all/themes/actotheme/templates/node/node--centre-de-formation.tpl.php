@@ -13,6 +13,11 @@
         $collectionsg =  field_collection_item_load_multiple($idti);
     }
 
+
+    $image_alignement = field_view_field("node",$node,'field_alignement_image');
+    $alignment = render($image_alignement['#items']['0']['value']);
+    drupal_add_css('.centre-formation .c-block-histoire .c-img{background-position: '.$alignment.' !important; } ', 'inline');
+
      $image_formation = field_get_items("node",$node,'field_image_centre_formation');
      $m = image_style_url("bloc_image",$image_formation[0]["uri"]);
      drupal_add_css('.centre-formation .c-block-histoire .c-img {background-image: url("'.$m.'") !important; } ', 'inline');

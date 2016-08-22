@@ -530,6 +530,12 @@
             padding:0rem;
             background-color: transparent !important;
 
+            .dark-layer {
+
+                background-color: rgba(black,0.51) !important;
+
+            }
+
             .c-in {
 
                padding:  1rem 2rem;
@@ -657,9 +663,10 @@
                     padding: 2rem;
                     position: relative;
                     padding-top: 7em;
+                    background-color: transparent;
 
-                    background-attachment: fixed;
-                    @include jpg(histoire_bg_header,50% 50%,cover);
+//                    background-attachment: fixed;
+//                    @include jpg(histoire_bg_header,50% 50%,cover);
 
                     @include breakpoint($tablet){
                         height: 30rem;
@@ -698,17 +705,23 @@
         }
         .phrases-container-2 {
            margin-top:1rem;
-        }
+           background-repeat: no-repeat;
+           background-size: cover;
+           background-position: 50% 50%;
 
-        .phrases-container-2 {
-
-            .dark-layer {
-
-                background-color: rgba(black,0.51) !important;
-
-            }
+           background-attachment: fixed;
 
         }
+
+//        .phrases-container-2 {
+//
+//            .dark-layer {
+//
+//                background-color: rgba(black,0.51) !important;
+//
+//            }
+//
+//        }
     }
 }
 

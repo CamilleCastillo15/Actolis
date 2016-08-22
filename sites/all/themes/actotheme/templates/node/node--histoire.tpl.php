@@ -5,10 +5,19 @@
     $images = field_get_items("node",$node,'field_image_bloc');
     $p = image_style_url("bloc_image",$images[0]["uri"]);
 
+    $image_alignement = field_view_field("node",$node,'field_alignement_image_2');
+    $alignment = render($image_alignement['#items']['0']['value']);
+    drupal_add_css('.c-block-histoire .c-img {background-position: '.$alignment.' !important; } ', 'inline');
+
     drupal_add_css('.c-block-histoire .c-img {background-image: url("'.$p.'") !important; } ', 'inline');
 
     $texte = field_view_field("node",$node,'field_texte');
     $image_intro = field_get_items("node",$node,'field_image_introduction');
+
+    $image_alignement_intro = field_view_field("node",$node,'field_alignement_image');
+    $alignment_intro = render($image_alignement_intro['#items']['0']['value']);
+    drupal_add_css('.c-block-histoire-introduction .c-img {background-position: '.$alignment_intro.' !important; } ', 'inline');
+
     $p_intro = image_style_url("bloc_image",$image_intro[0]["uri"]);
 
     drupal_add_css('.c-block-histoire-introduction .c-img {background-image: url("'.$p_intro.'") !important; } ', 'inline');

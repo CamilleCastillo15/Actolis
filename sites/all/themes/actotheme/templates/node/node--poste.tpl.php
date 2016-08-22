@@ -20,6 +20,10 @@
             $bkg_image = field_get_items("node",$node,'field_image');
             $p = image_style_url("bloc_image",$bkg_image[0]["uri"]);
 
+            $image_alignement = field_view_field("node",$node,'field_alignement_image');
+            $alignment = render($image_alignement['#items']['0']['value']);
+            drupal_add_css('.poste-detail .c-block-offres-detail .c-img {background-position: '.$alignment.' !important; } ', 'inline');
+
             drupal_add_css('.poste-detail .c-block-offres-detail .c-img {background-image: url("'.$p.'") !important; } ', 'inline');
 
             $activites = field_view_field("node",$node,'field_activites');

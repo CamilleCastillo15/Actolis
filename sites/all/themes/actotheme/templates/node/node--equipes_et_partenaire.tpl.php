@@ -17,10 +17,17 @@
         }
         $collectionsg =  field_collection_item_load_multiple($idti);
     }
+
+    $image_alignement = field_view_field("node",$node,'field_alignement_image');
+    $alignment = render($image_alignement['#items']['0']['value']);
+    drupal_add_css('.equipes_et_partenaire .c-block-histoire .c-img {background-position: '.$alignment.' !important; } ', 'inline');
+
     $images = field_get_items("node",$node,'field_image_equipe_partenaire');
     $p = image_style_url("original",$images[0]["uri"]);
     drupal_add_css('.equipes_et_partenaire .c-block-histoire .c-img {background-image: url("'.$p.'") !important; } ', 'inline');
+
     $fc_logos_partenaires = field_get_items('node', $node, 'field_fc_partenaires');
+
     if($fc_logos_partenaires){
         $idti_logos = array();
         foreach ($fc_logos_partenaires as $fc_field) {

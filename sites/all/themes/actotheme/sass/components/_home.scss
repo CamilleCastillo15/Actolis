@@ -104,6 +104,7 @@
 .c-header {
 
     @include jpg(histoire_bg_header,50% 50%,cover);
+    background-attachment: fixed;
 
     .dark-layer{
         padding: 0rem;
