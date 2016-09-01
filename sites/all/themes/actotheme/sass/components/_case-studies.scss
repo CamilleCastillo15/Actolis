@@ -1,7 +1,5 @@
 .case-studies {
 
-
-
     .dark-layer {
 
         background-repeat: no-repeat;
@@ -64,6 +62,25 @@
         }
 
         margin-bottom: 1.5rem;
+
+    }
+
+}
+
+.container-case-studies {
+
+    @include breakpoint($laptop){
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include translate(-50%, -50%);
+
+    }
+
+    .cta {
+
+        margin-top: 3rem;
 
     }
 

@@ -112,7 +112,16 @@
 //                    $desc = trim($desc);
                     $desc_render = render($desc);
 //                    $desc_render = trim($desc_render);
-                    $desc_render = substr($desc_render, 0, 100)."...";
+                    if($desc_render){
+
+                        $desc_render = substr($desc_render, 0, 100)."...";
+
+                    }else{
+
+                         $desc_render = "...";
+
+                    }
+//                    $desc_render = substr($desc_render, 0, 100)."...";
 
                     $sentences = explode(".", $desc_render);
                     $first_sentence = $sentences[0];
@@ -125,7 +134,10 @@
 
                         <div class="item">
                             <?php print l("
-                            <div class='ab'> <h2>".$title_render."</h2>".$img_nb_render."".$desc_render."
+                            <div class='ab'>
+                                <h2>".$title_render."</h2>"
+                                     .$img_nb_render.
+                                     " <div class='desc_partenaires'>".$desc_render."</div>
                                 <div class='sep'></div>
                                 <div class='en_savoir_plus cta'>en savoir plus</div>
                             </div>",

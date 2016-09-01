@@ -241,8 +241,6 @@ $fallback-extension: 'png' !default;
     filter:            progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$startColor}', endColorStr='#{$endColor}');
 }
 
-
-
 .gradient-v{
 	@include background-gradient($vert,$bleu);
 }

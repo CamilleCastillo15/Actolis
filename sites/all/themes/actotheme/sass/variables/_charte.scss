@@ -532,15 +532,13 @@ h5 {
       margin-bottom: 5rem;
   }
 
-     @extend .gradient-h;
+@extend .gradient-h;
 
     .c-gradient{
-
        background-color: white;
        padding:3rem;
        position: relative ;
        perspective: 1000px;
-
     }
 
     .c-text{
@@ -915,6 +913,12 @@ h5 {
                     display: none;
                 }
                 @include fz(2);
+
+            }
+
+            .desc_partenaires {
+
+
 
             }
 

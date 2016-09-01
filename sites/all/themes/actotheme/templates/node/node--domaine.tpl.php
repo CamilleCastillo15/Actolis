@@ -183,7 +183,13 @@
                                     <?php } ?>
                                     <div class="item">
                                         <div class="c-bg c-bg-<?php print $i ?>">
-                                            <?php print l("<div class=''><h2>".$titre_render."</h2><div class='sep'></div></div>","/case-studies/".$path_alias, array("html"=>true, 'fragment' => "num-".$nid));
+                                            <?php print l("
+                                            <div class='container-case-studies'>
+                                                <h2>".$titre_render."</h2>
+                                                <div class='sep'></div>
+                                                <div class='en_savoir_plus cta'>en savoir plus</div>
+                                            </div>"
+                                            ,"/case-studies/".$path_alias, array("html"=>true, 'fragment' => "num-".$nid));
                                             ?>
                                         </div>
                                     </div>
