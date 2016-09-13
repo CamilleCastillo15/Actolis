@@ -4,33 +4,24 @@
 
 @include keyframes(picto1) {
   0% {
-
      @include translate(0px,0px);
      @include opacity(0);
-
   }
 
   30% {
-
      @include translate(0px,0px);
      @include opacity(0);
-
   }
 
 
   60% {
-
      @include translate(0px,-20px);
      @include opacity(0.5);
-
   }
 
   100% {
-
-
       @include translate(0px,0px);
       @include opacity(1);
-
    }
 }
 
@@ -109,17 +100,43 @@
         text-align: center;
 
         .dark-layer{
-            padding: 4rem 0rem;
+            padding: 6rem 0rem;
             display: block;
             width: 100%;
-            height: 100%;
             background-color: rgba(black,0.51);
+
+            @include breakpoint($tablet){
+                padding: 0rem;
+                height: 30rem;
+                position: relative;
+            }
+
+            .container-vertical {
+
+                @include breakpoint($tablet){
+                    position: absolute;
+                    width: 100%;
+                    top: 50%;
+                    left: 50%;
+                    @include translate(-50%, -50%);
+                }
+            }
         }
 
         .c-picto{
             display: inline-block;
-            margin:0rem 2rem;
-            vertical-align: middle;
+            margin:1rem 0.5rem;
+            width: 100%;
+            vertical-align: top;
+
+            @include breakpoint($tablet){
+              width: 14%;
+            }
+
+            @include breakpoint($laptop){
+                margin:0rem 2rem;
+                 width: 14%;
+              }
 
             &:nth-child(3) {
                @include animation(picto1 1.5s ease-in-out 1);
@@ -141,78 +158,57 @@
 
             img {
 
-                width:9em;
+                height: 6rem;
+                width: 6rem;
 
             }
 
         }
 
-        h2{
-            font-weight: 900;
-            color:white;
-            text-transform: uppercase;
-            font-size: 1.5rem;
-            max-width: 14rem;
+        h5{
+          color: white;
+          text-align: center;
         }
+    }
+
+        h4{
+      @include fz(4);
+
+      font-weight: 900;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      text-align: center;
+      @include breakpoint($tablet){
+        text-align: left;
+      }
+
     }
 
 }
 
-h4{
-  @include fz(4);
 
-  font-weight: 900;
-  margin-bottom: 1.5rem;
-  text-transform: uppercase;
-  text-align: center;
-  @include breakpoint($tablet){
-    text-align: left;
-  }
-}
 
 .centre-formation{
   .c-header{
- h4{
-    text-align: center !important;
+     h4{
+        text-align: center !important;
+      }
   }
-  }
- 
 }
 
 .c-block-histoire {
 
-    
     display: block;
     margin: 0 auto;
-    padding:5px;
     @include main-padding();
     margin-top:1rem;
-    margin-bottom: 1rem;
 
      @include breakpoint($tablet){
-
-          margin-top:7rem;
-          margin-bottom: 6rem;
-
+          margin-top:5rem;
+          margin-bottom: 2rem;
      }
 
-
-    .c-blanc{
-
-       background-color: white;
-       padding: 0rem;
-       position: relative;
-       perspective: 1000px;
-       min-height: 27vh;
-       @include breakpoint($tablet) {
-
-            padding: 3rem;
-
-       }
-
-    }
-
-    .c-text{
+    .c-text {
         width:  100%;
         position: relative ;
         display: block;
@@ -222,16 +218,13 @@ h4{
            display: inline-block;
             width:  47%;
          }
-         h4{
-          //text-align: left;
-         }
 
-        .c-cta{
+        .c-cta {
             display: block ;
             width:  100%;
             text-align: center  ;
         }
-        a{
+        a {
 
             display: inline-block ;
 
@@ -239,42 +232,43 @@ h4{
 
         }
           
-             p, li{
-                font-size: 1.1rem;
-                line-height: 1.4rem;
+         p, li {
+            font-size: 1.1rem;
+            line-height: 1.4rem;
+         }
 
-             }
-
-             strong{
-                text-transform: uppercase;
-                font-weight: bold;
-                font-size: 1.3rem;
-                margin-top:3rem;
-                display: block;
-             }
+         strong {
+            text-transform: uppercase;
+            margin-top:3rem;
+            display: block;
+            @include fz(4);
+            font-weight: 900;
+         }
+         h3{
+            margin-bottom: 1rem;
+        }
     }
 
     .c-img{
 
-       
-         width:   100%;
+        width:   100%;
         height: 300px;
         position: relative;
         display: block;
         vertical-align: top;
         right: 0rem;
-         @include jpg(histoire_photo,50% 50%, cover);
-        min-height: 35vh;
+        @include jpg(histoire_photo,50% 50%, cover);
+//        min-height: 35vh;
         top:0%;
-         margin-top: 2rem;
-         @include breakpoint($tablet){
-          margin-top: 0px;
-          right: 2rem;
-          @include translate(0px,-50%);
-           top:50%;
+        margin-top: 2rem;
+        @include breakpoint($tablet){
+            margin-top: 0px;
+            right: 0rem;
+            @include translate(0px,-50%);
+            top:50%;
             position: absolute;
-           width: 47%;
-            height: 115%;
+            width: 47%;
+           height: 100%;
          }
         &:after{
 
@@ -286,6 +280,38 @@ h4{
             bottom:-1px;
             left:0px;
             @extend .gradient-h;
+
+        }
+
+    }
+
+    &.odd-block {
+
+        .c-blanc {
+
+            padding: 0 3rem;
+
+            .c-text{
+
+                @include breakpoint($tablet){
+
+                    display: inline-block;
+                    width:  47%;
+                    position: relative;
+                    margin-left: 50%;
+                    padding: 3rem;
+
+                 }
+
+            }
+
+            .c-img{
+
+                @include breakpoint($tablet){
+                    left: 2rem;
+                }
+
+            }
 
         }
 
@@ -295,31 +321,16 @@ h4{
 
 .c-block-histoire-introduction {
 
-
     display: block;
     margin: 0 auto;
-    padding:5px;
     @include main-padding();
     margin-top:1rem;
     margin-bottom: 1rem;
 
      @include breakpoint($tablet){
-
-          margin-top:7rem;
-          margin-bottom: 6rem;
-
+          margin-top:5rem;
+          margin-bottom: 2rem;
      }
-
-
-    .c-blanc{
-
-       background-color: white;
-       padding: 3rem;
-       position: relative;
-       perspective: 1000px;
-       min-height: 27vh;
-
-    }
 
     .c-text{
         width:  100%;
@@ -340,7 +351,6 @@ h4{
         a{
 
             display: inline-block ;
-
             margin-top: 2rem;
 
         }
@@ -348,7 +358,6 @@ h4{
              p, li{
                 font-size: 1.1rem;
                 line-height: 1.4rem;
-
              }
 
              strong{
@@ -360,28 +369,30 @@ h4{
              }
     }
 
-    .c-img{
+    .c-img {
 
-
-         width:   100%;
-        height: 300px;
+        width:   100%;
+        height: 100%;
         position: relative;
         display: block;
         vertical-align: top;
         right: 0rem;
-         @include jpg(histoire_photo,50% 50%, cover);
+        @include jpg(histoire_photo,50% 50%, cover);
         min-height: 35vh;
         top:0%;
 
-         @include breakpoint($tablet){
-          right: 2rem;
-          @include translate(0px,-50%);
-           top:50%;
-            position: absolute;
-           width: 47%;
-         }
-        &:after{
+        margin-top: 2rem;
 
+        @include breakpoint($tablet){
+            margin-top: 0px;
+            right: 2rem;
+            @include translate(0px,-50%);
+            top:50%;
+            position: absolute;
+            width: 47%;
+         }
+
+        &:after{
             content:"";
             display: block ;
             height: 5px;
@@ -390,7 +401,6 @@ h4{
             bottom:-1px;
             left:0px;
             @extend .gradient-h;
-
         }
 
     }
@@ -411,28 +421,48 @@ h4{
       text-align: center;
     }
 
-    .cc{
-      .views-row{
-        padding: 0px;
-       
-        ul{
+    .cc {
 
-       width: 100%;
-          height: 100%;
-        }
-        li{
+      .views-row {
+        padding: 0px;
+        vertical-align: top;
+        min-height: 11rem;
+        cursor: default;
+
+        ul {
           width: 100%;
           height: 100%;
         }
-        a{
-          display: block;
+
+        li {
           width: 100%;
           height: 100%;
-          color:black;
+        }
+
+      .container-offre {
+
+           display: block;
+           width: 100%;
+           height: 100%;
+           color:black;
            padding: 2rem;
            text-align: left;
-        }
+          cursor: default;
+
       }
+
+        a {
+           display: block;
+           width: 100%;
+           height: 100%;
+           color:black;
+           padding: 2rem;
+           text-align: left;
+           cursor: pointer;
+        }
+
+      }
+
     }
 
   }
@@ -442,17 +472,16 @@ h4{
         background-attachment: fixed;
         @include jpg(histoire_bg_header,50% 50%,cover);
         text-align: center;
+        margin-top: 5rem;
 
-        h2{
-           @include fz(3);
-          max-width: 23rem;
+        h5{
+          color: white;
+          text-align: center;
         }
 
         .dark-layer{
-            padding: 3rem 0rem;
             display: block;
             width: 100%;
-            height: 100%;
             background-color: rgba(black,0.51);
 
             h4{
@@ -464,17 +493,16 @@ h4{
         }
 
         .c-picto{
-          
-            margin:0rem 2rem;
-            vertical-align: top;
 
+            vertical-align: top;
 
             img {
 
-
                 height: 7em;
-                margin-bottom: 2rem;
-                width: auto;
+
+                @include breakpoint($tablet){
+                    margin-bottom: 2rem;
+                }
 
             }
 
@@ -493,57 +521,61 @@ h4{
         background-image: none !important;
         color:black;
 
+        @include breakpoint($tablet){
+            margin-top: 5rem;
+        }
 
         .dark-layer {
 
-          margin-bottom: 3rem;
-
+            padding:0rem;
             background-color: transparent !important;
 
-            .c-in{
-                   padding:2rem;
-                   position: relative;
-                   width: 100%;
-                   
-                   display: inline-block;
-                   @include breakpoint($tablet){
-                       padding:4rem;
-                      width: 49.8%;
-                      max-width: 40rem;
-                     
+            .dark-layer {
 
-                   }
+                background-color: rgba(black,0.51) !important;
+
+            }
+
+            .c-in {
+
+               padding:  1rem 2rem;
+               position: relative;
+               width: 100%;
+
+               display: inline-block;
+               vertical-align: top;
+
+               @include breakpoint($tablet){
+                  width: 49.8%;
+                  max-width: 40rem;
+
+               }
             }
 
                 .c-picto {
 
-                  animation:none;
-
-                    padding: 3rem 2rem;
-                    width: 100%;
-                    height: 100%;
-                    background-color: $gris;
-                    margin:0px !important;
-                     min-height: 20rem;
-                     padding-top: 15%;
-                    //min-height: 150px;
+                animation:none;
+                padding: 3rem 2rem;
+                width: 100%;
+                height: 100%;
+                background-color: $gris;
+                margin:0px !important;
+                min-height: 21rem;
+                padding-top: 15%;
 
                 h2 {
 
-                   
                     text-align: center;
                     margin: 0 auto;
                     color:black;
                     font-weight: 200;
                     max-width: 100%;
 
-
                     &.phrase {
-
 
                         text-transform: lowercase;
                         font-style: italic;
-                       
+
                         max-width: 100%;
                         @include fz(4);
 
@@ -558,14 +590,16 @@ h4{
                         font-size:1.5rem;
                         font-weight: 200;
                         font-size:2rem;
-                        padding-top:1rem;
-                        //text-align: right;
-                        position: absolute;
-                        bottom: 7rem;
-                        right: 7rem;
+
                         display: block;
-                        width: auto;
-                       
+                        width: 100%;
+                        text-align: right;
+
+                        bottom: 3rem;
+                        position: absolute;
+                        right: 4.5rem;
+
+                        text-transform: capitalize;
 
                         &:before{
                           content:"";
@@ -577,14 +611,50 @@ h4{
                           right: -4rem;
                           bottom:0.5rem;
                         }
-
                     }
-
-                    
-
                 }
 
-               
+                .valeur-container {
+
+                    right: 7rem;
+                    width: 12rem;
+                    vertical-align: top;
+
+                    .picto_valeur {
+                        width: 4em;
+                        bottom: 10rem;
+
+                        display: inline-block;
+                        height: 2rem;
+
+                        img {
+                            width: 3.5rem;
+                            margin-right: 5px;
+                        }
+
+                        &.number_0 {
+                          right: 24rem;
+                        }
+
+                        &.number_1 {
+                           right: 22rem;
+                        }
+
+                        &.number_2 {
+
+                            img {
+                                width:1.5rem;
+                            }
+
+                        }
+
+                        &.number_3 {
+                           right: 18rem;
+                        }
+
+                   }
+
+                }
 
                 &.c-picto-cle {
 
@@ -592,45 +662,72 @@ h4{
                     display: inherit;
                     padding: 2rem;
                     position: relative;
+                    padding-top: 7em;
+                    background-color: transparent;
+
+//                    background-attachment: fixed;
+//                    @include jpg(histoire_bg_header,50% 50%,cover);
+
+                    @include breakpoint($tablet){
+                        height: 30rem;
+                        padding-top: 13rem;
+                    }
 
                     h2 {
 
                         margin: 0 auto;
                         text-align: center;
                         max-width: 100%;
-                        width: 76rem;
-          
+
                         font-weight: 800;
-                        @include fz(5);
+                        color: white;
 
                         &.valeur{
-                          position: relative;
-                          bottom: 0px;
-                          right: 0px;
+                          bottom: 60px;
+                          right: 24%;
                           display: inline;
-                          &:before{
-                            display: none;
-                          }
+                          font-size: 3rem;
                         }
-
                     }
+                    .picto_valeur_cle {
+                        width: 4em;
+                        bottom: 10rem;
+                        display: inline-block;
+                        height: 2rem;
 
+                        img {
+                            width: 4.5rem;
+                            margin-right: 5px;
+                        }
+                    }
                 }
-
             }
-
-
         }
-
         .phrases-container-2 {
+           margin-top:1rem;
+           background-repeat: no-repeat;
+           background-size: cover;
+           background-position: 50% 50%;
 
-           margin-top:2.5rem;
+           background-attachment: fixed;
 
         }
 
-
+//        .phrases-container-2 {
+//
+//            .dark-layer {
+//
+//                background-color: rgba(black,0.51) !important;
+//
+//            }
+//
+//        }
     }
-
 }
 
+h2.valeur_cle {
+
+    text-align: right !important;
+
+}
 

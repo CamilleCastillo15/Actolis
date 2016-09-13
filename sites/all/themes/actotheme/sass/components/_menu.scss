@@ -3,37 +3,33 @@
 @import "../variables/mixin";
 
 .menu {
-
-    //display: none;
     display:block;
-
 }
-.l-menu{
-
-        
+.l-menu {
         padding: 0rem;
         text-align: left;
-        
         width: 100%;
- top: 0px;
+        top: 0px;
         position: fixed;
         z-index: 100;
-        
+        font-size: 1.5rem;
         visibility: hidden; 
         background-color: rgba(white,0.9);
         left:-90%;
-      @include opacity(0);
-         @include transition(all 0.2s ease-in-out);
-
+        @include opacity(0);
+        @include transition(all 0.2s ease-in-out);
         @include breakpoint($tablet) {
             visibility: visible;    
             @include opacity(1);
             left:0%;
-             text-align: center;
-                background-color: $orange;
+            text-align: center;
+            background-color: $orange;
             position: relative;
             display: block;
             z-index: 1;
+        }
+        .active{
+                background-color: rgba(white,0.1);
         }
         &.o {
             display: block;
@@ -42,10 +38,8 @@
             width: 80%;
             overflow: auto;
             top: 0px;
-          
             left:0%;
             @include opacity(1);
-           
         }
          &.h {
            display: block;
@@ -56,13 +50,12 @@
             top: 0px;
              @include opacity(0);
             left:-90%;
-           
         }
         ul{
            @extend .ul-nav;
            text-align:left;
             @include breakpoint($tablet) {
-                        text-align: center; 
+                text-align: center;
             }
            li{
                 display: block;
@@ -74,98 +67,121 @@
                 &.last{
                     padding-bottom:1rem;
                 };
-                @include breakpoint($tablet) {
-                    display: inline-block;
-                    width: auto;
-                     &.first{
-                    padding-top:0rem;
-                };
-                &.last{
-                    padding-bottom:0rem;
-                };
-             }
-                a{
+                    @include breakpoint($tablet) {
+                        display: inline-block;
+                        width: auto;
+                         &.first{
+                        padding-top:0rem;
+                    };
+                    &.last{
+                        padding-bottom:0rem;
+                    };
+                 }
+                a {
                     padding:2rem;
                     padding-top: 1rem;
                     padding-bottom: 1rem;
                     position: relative;
                     width: 100%;
                     background-color: $orange;
-                        @include fz(3);
-                        font-weight: 700;
-                        text-transform: uppercase;  
+                    @include fz(3);
+                    font-weight: 700;
+                    text-transform: uppercase;
                     @include breakpoint($tablet) {
-                         font-weight: 300;
+                        font-weight: 300;
                         text-transform: none;
-                        font-size:  inherit;
-                        padding:2rem;
+                        font-size: 1.25rem;
                         width: auto;
                         background-color: transparent;
                     }
-
+                    @include breakpoint($laptop) {
+                        padding:0.5rem 2rem;
+                    }
                     @include transition(all 0.2s ease-out);
                     @include breakpoint($tablet) {
+                        &:hover{
+//                            background-color: rgba(white,0.1);
+//                            &:after {
+//                                 background-color: rgba(#fff,0.3);
+//                            }
 
-                    &:hover{
-                        background-color: rgba(white,0.1);
-
+                            &:after {
+                                content: "";
+                                position: absolute;
+                                top:2.4rem;
+                                width: 5rem;
+                                height: 0.15rem;
+                                left:50%;
+                                @include breakpoint($tablet) {
+                                    left:50%;
+                                }
+                                @include translate(-50%,0px);
+                                background-color: #fff;
+                            }
+                        }
+                    }
+                    span {
+                        width:50%;
+                        position: relative;
                         &:after {
-
-                             background-color: rgba(#fff,0.3);
+                            display: none;
+                            content: "";
+                            position: absolute;
+                            top:4.5rem;
+                            width: 7rem;
+                            left:50%;
+                            @include breakpoint($tablet) {
+                                left:50%;
+                            }
+                            @include translate(-50%,0px);
+                            height: 0.22rem;
+                            background-color: #fff;
                         }
                     }
 
-                }
-                    &.active{
+                    &.active {
+
+                        @include breakpoint($tablet) {
+
                             &:after {
-                        background-color: rgba(#fff,1);
-
+                                content: "";
+                                position: absolute;
+                                top:2.4rem;
+                                width: 5rem;
+                                height: 0.15rem;
+                                left:50%;
+                                @include breakpoint($tablet) {
+                                    left:50%;
+                                }
+                                @include translate(-50%,0px);
+                                background-color: #fff;
                             }
-                    }
-                    &:after {
-
-                        display: block;
-                        content: "";
-                        position: absolute;
-                        bottom:0.5rem;
-                        width: 3rem;
-                        left:2rem;
-                         @include breakpoint($tablet) {
-                            bottom:1rem;
-    left:50%;
-     @include translate(-50%,0px);
-                         }
-                        
-                       
-                        height: 0.22rem;
-                        background-color: rgba(#fff,0);
+                        }
                     }
                 }
            }
       }
-
         .domaine-menu{
             ul{
                  @extend .ul-nav;
-                 padding:1rem 0rem;
                  font-size: 0px;
                   text-align:left;
             @include breakpoint($tablet) {
                         text-align: center; 
             }
                  li{
-                    padding: 0rem 0rem;
+                     padding: 0rem 0rem;
                      background-color: transparent;
-                    a{
+                    a {
                         background-image: none !important;
                         background-image: url("") !important;
                         background-color: transparent;
+//                        padding:1rem 2rem;
+                        padding:2rem 4rem;
                     @include breakpoint($tablet) {
-                        
                         background-color: transparent;
                     }
-                        //padding: 2rem 2rem;
-                        .c-img{
+                        .c-img {
                              display: inline-block;
                               vertical-align: middle;
                               margin-right: 0.5rem;
@@ -178,13 +194,19 @@
                                 height: 5rem;
                                 background-size: 60%;
                                 margin:0px;
+                                background-repeat: no-repeat;
+                                background-position: center center;
+
                                 @include transition(all 0.2s ease-out);
                                 &:before{
+                                    @include translate(0%,0%);
+                                    @include breakpoint($tablet) {
+                                        @include translate(-50%,0px);
+                                    }
                                     border-width: 2px;
-                                    @include translate(0px,0px);
                                     @include transition(all 0.2s ease-out);
                                 }
-                                img{
+                                img {
                                     width: 60%;
                                     height: auto;
                                     left: 20%;
@@ -193,36 +215,28 @@
                                 }
                                 margin-right:2rem;
                         }
-                        span{
-                                display: inline-block;
-                                text-align: left;
-                                vertical-align: middle;
-                                text-transform: uppercase;
-                                @include fz(3);
-                                font-weight: 700;
-                                max-width: 20vw;
-                                width: auto;
-                                //padding-left: 2rem;
+                        span {
+                            display: inline-block;
+                            text-align: left;
+                            vertical-align: middle;
+                            text-transform: uppercase;
+                            @include fz(4);
+                            font-weight: 700;
+                            max-width: 20vw;
+                            width: auto;
 
-                                @include breakpoint($laptop) {
-
-                                        text-align: center; 
-
-                                }
+                            @include breakpoint($laptop) {
+                                    text-align: center;
+                            }
                         }
 
                          &:hover{
                             background-color: transparent;
-
+                            color:white;
                             &:after {
-                                
                                 background-color:transparent;
-
-
                             }
-
                             .c-img{
-  
                                 &:before{
                                     background-color: rgba(white,0.1);
                                 }
@@ -230,32 +244,48 @@
                         }
                     }
                     &:nth-child(2){
-
                         @include breakpoint($laptop) {
-
-                            border-left:2px solid white;
-                            border-right:2px solid white;
-
                         }
                     }
                  }
             }
-             @extend .gradient-h;
-             width: 100%;
-        }
 
-        .user{
-            display: block; 
-            .menu{
-                    padding-bottom: 3rem;
-                    li{
-                        background-color: white;
-                        a{
-                           background-color: white; 
-                           color:black;
+         background-color: $lightgris;
+         width: 100%;
+    }
+}
+
+.user {
+    display: block;
+    position: relative;
+    .menu{
+        padding-bottom: 3rem;
+        position: relative;
+            li{
+                background-color: white;
+                position: relative;
+                a{
+                   background-color: white;
+                   color:black;
+
+                    &:hover {
+
+                        &:after {
+                                content: "";
+                                position: absolute;
+                                bottom:0rem;
+                                width: 5rem;
+                                height: 0.15rem;
+                                left:50%;
+                                @include breakpoint($tablet) {
+                                    left:50%;
+                                }
+                                @include translate(-50%,0px);
+                                background-color: $orange;
                         }
+
                     }
-                
+                }
             }
         }
     }
@@ -264,18 +294,6 @@
 .active-bt{
     a{
         position: relative;
-        &:after{
-            display: block;
-            content: "";
-            position: absolute;
-            bottom:1rem;
-            width: 3rem;
-            left:50%;
-            @include translate(-50%,0px);
-            height: 0.22rem;
-            background-color: #fff;
-
-        }
     }
 }
 

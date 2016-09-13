@@ -12,7 +12,7 @@
  * - $form: The complete form array.
  * - $nid: The node ID of the Webform.
  *
- * The $form array contains two main pieces:
+ * The $form array conwtains two main pieces:
  * - $form['submitted']: The main content of the user-created form.
  * - $form['details']: Internal information stored by Webform.
  *
@@ -33,28 +33,49 @@
     print '</div>';
   }
 
-  // Print out the main part of the form.
-  // Feel free to break this up and move the pieces within the array.
-  //print drupal_render($form['submitted']);
+if(isset($_GET['nid'])){
 
-//$form['submitted']['nom']['#title'] = 'votre nom';
+    $nid = $_GET['nid'];
+    $node = node_load($nid);
+    $title = $node->title;
 
-//dpm($form['submitted']); ?>
+}
+
+?>
 
   <div class="form-col">
-
       <?php print render($form['submitted']['nom']) ?>
       <?php print render($form['submitted']['prenom']) ?>
       <?php print render($form['submitted']['e___mail']) ?>
-      <?php print render($form['submitted']['message']) ?>
-
   </div>
-
   <div class="form-col">
-
-      <?php print render($form['submitted']['parcourir']) ?>
-
+      <?php $options_ref = $form['submitted']['reference_du_poste'];
+            $options = $form['submitted']['reference_du_poste']['#options'];
+            array_push($options, "autres");
+                      if(isset($title)){
+                          $def = array_search($title, $options);
+                          if($def){
+                            $options_ref = array(
+                              '#title' => 'Référence du poste : *',
+                              '#type' => 'select',
+                              '#value' => $def,
+                              '#options' => $options);
+                          }
+                          $options_ref['#options'] = $options ;
+                      }
+                       ?>
+      <div class="webform-component">
+          <?php print render($options_ref); ?>
+      </div>
+      <div class="message">
+          <?php print render($form['submitted']['votre_cv']) ?>
+      </div>
   </div>
   <div class="clear"></div>
+  <?php print render($form['submitted']['message']) ?>
 
-<?php print drupal_render_children($form);
+
+ <?php  print render($form['actions']); ?>
+ <div class="clear"></div>
+
+ <?php //print drupal_render_children($form);

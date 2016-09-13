@@ -2,27 +2,48 @@
 @import "../variables/variables";
 @import "../variables/mixin";
 
-
-
 .contact{
 
     @include main-padding();
     padding-top: 2rem;
 
     h1{
-    @include fz(4);
-    text-transform: uppercase;
+        @include fz(4);
+        text-transform: uppercase;
     }
 
     .c-form{
-      margin-top: 10rem;
-      margin-bottom: 4rem;
+
       h4{
-        padding-left: 0rem;
-        @include breakpoint($tablet){
-          padding-left: 4rem;
-        }
+
+          padding-left: 2rem;
+          padding-bottom: 1rem;
+
       }
+        .webform-client-form {
+            .webform-component{
+                textarea {
+                    min-height: 15.33rem;
+                }
+            }
+        }
+        .webform-submit {
+            margin-bottom: 0;
+            margin-top: 2rem;
+        }
+
+    }
+
+    &.c-block-contact-2 {
+
+        margin-top: 5rem;
+
+    }
+
+    h3 {
+
+        margin-bottom: 1rem;
+
     }
 }
 
@@ -30,13 +51,15 @@
   display: block;
   float: none;
   
-  @include padding(2rem);
+//  @include padding(2rem);
+  padding-left: 2rem;
+  padding-right: 2rem;
+//  padding-top: 2rem;
   width: 100%;
   @include breakpoint($tablet){
     width: 50%;
     float: left;
   }
-
 }
 
 .c-block-contact{
@@ -45,9 +68,8 @@
     display: block;
     margin: 0 auto;
     padding:5px;
-    margin-top:7rem;
-    margin-bottom: 6rem;
-
+    margin-top:5rem;
+//    margin-bottom: 5rem;
 
     .c-blanc{
 
@@ -106,7 +128,6 @@
             left:-2.5rem;
             width: 1.7rem;
             height: 2rem;
-           
           }
         }
         .phone{
@@ -127,17 +148,13 @@
             text-align: center  ;
         }
         a{
-
             display: inline-block ;
-
             margin-top: 2rem;
-
         }
           
              p, li{
                 font-size: 1.1rem;
                 line-height: 1.4rem;
-
              }
 
              strong{
@@ -149,87 +166,82 @@
              }
     }
 
-    .c-img{
+        .c-img{
+            position: absolute;
+            z-index: 10;
+            display: none;
+            vertical-align: top;
+            right: 2rem;
+            @include jpg(map,50% 50%, 100%);
+            height: 35vw;
+            width: 35vw;
 
-       
-        position: absolute;
-        z-index: 10;
-        display: none;
-        vertical-align: top;
-        right: 2rem;
-        @include jpg(map,50% 50%, 100%);
-        height: 35vw;
-        width: 35vw;
+            @include breakpoint($tablet){
+                display: block;
 
-        @include breakpoint($tablet){
-            display: block;
-
-        }
-
-        @include breakpoint($laptop) {
-            
-            max-width: 560px;
-            max-height: 560px;
-            
-        }
-
-
-        top:50%;
-        @include translate(0px,-50%);
-
-        .pointer{
-           position: absolute;
-           width:   2rem;
-           height:  4rem;
-           @include png(pointer-map, 50% 50%, contain);
-           display: block;  
-            @include opacity(0.9);
-             @include transition(all 0.2s ease-out);
-
-        }
-
-        .montpellier{
-          position: absolute; 
-           top: 71%;
-    left: 61%;
-        }
-
-        .bt-nord,.bt-sud{
-          position: absolute; 
-          height:  50%;
-          width:  100%;
-
-          
-          top:0px;
-        }
-        .bt-sud{
-          top:50%;
-          .pointer{
-             top: 1%;
-             left: 68%;
-          }
-          &:hover{
-            .pointer{
-                @include opacity(1);
-                top: -2%;
             }
-          }
-        }
+
+            @include breakpoint($laptop) {
+
+                max-width: 560px;
+                max-height: 560px;
+
+            }
+
+
+            top:50%;
+            @include translate(0px,-50%);
+
+            .pointer{
+               position: absolute;
+               width:   2rem;
+               height:  4rem;
+               @include png(pointer-map, 50% 50%, contain);
+               display: block;
+                @include opacity(0.9);
+                 @include transition(all 0.2s ease-out);
+
+            }
+
+            .bt-nord,.bt-sud,.bt-montpellier{
+              position: absolute;
+              height:  50%;
+    //          width:  100%;
+              top:0px;
+            }
+            .bt-sud{
+              top:50%;
+              left: 68%;
+              .pointer{
+                 top: 1%;
+                &:hover{
+                        @include opacity(1);
+                        top: -2%;
+                }
+              }
+            }
+            .bt-montpellier{
+              top:50%;
+              left: 61%;
+              .pointer{
+                  top: 42%;
+                &:hover{
+                    @include opacity(1);
+                    top: 39%;
+                }
+              }
+            }
         .bt-nord{
+            left: 50.5%;
            .pointer{
                top: 38%;
-               left: 50.5%;
+                &:hover{
+                    @include opacity(1);
+                    top: 35%;
+              }
            }
-           &:hover{
-            .pointer{
-                @include opacity(1);
-                top: 35%;
-            }
-          }
         }
-
     }
-
 }
 
 

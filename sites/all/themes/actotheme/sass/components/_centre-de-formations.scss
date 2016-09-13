@@ -1,0 +1,123 @@
+.cta {
+
+    margin: 0 auto;
+    display: block;
+    max-width: 45rem;
+    margin-bottom: 3rem;
+
+    @include breakpoint($tablet){
+
+        margin-bottom: 5rem;
+
+    }
+
+}
+
+.c-block-offres {
+
+    h3 {
+        text-align: left !important;
+        margin-bottom: 1rem;
+    }
+
+    p.ss {
+        text-align: left !important;
+        padding-left: 0% !important;
+        padding-right: 0% !important;
+    }
+
+    .checkboxes {
+
+        margin-bottom: 1rem;
+        margin-top: 4rem;
+
+        .nom {
+            font-weight: bold;
+            text-transform: uppercase;
+            width: 	100%;
+//            font-size: 	1.2rem;
+            font-weight: 700;
+            margin-right: 2rem;
+        }
+    }
+
+.pictos-container {
+
+   display: inline-block;
+   width: 1rem;
+   margin-left: 3rem;
+
+   margin-bottom: 1.5rem;
+
+        .picto {
+
+            width: 1.75rem;
+            position: relative;
+
+            &:before {
+                content:"";
+                position: absolute;
+                width: 3rem;
+                height: 3rem;
+                left:50%;
+                top:50%;
+                border-radius: 100%;
+                border:0.3rem solid transparent;
+                @include translate(-50%,-50%);
+                background-color: $darkgris;
+                @include transition(all 0.2s ease-in-out);
+            }
+
+            img {
+
+                position: relative;
+                vertical-align: middle;
+
+            }
+
+        }
+
+    }
+
+    .cc {
+
+        margin-top: 3rem;
+
+        .nom {
+
+            font-weight: bold;
+            text-transform: uppercase;
+            width: 	100%;
+            font-size: 	1.2rem;
+            font-weight: 700;
+
+        }
+
+    }
+
+}
+
+.renseignements-container {
+
+    position: relative;
+    min-height: 3rem;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 13rem;
+
+    .renseignements {
+
+        position: absolute;
+        right: 5%;
+
+        &:hover,
+        &:link,
+        &:active,
+        &:visited {
+
+            color: $orange;
+            text-decoration: underline;
+
+        }
+    }
+}

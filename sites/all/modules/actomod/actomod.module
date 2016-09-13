@@ -21,15 +21,16 @@ function actomod_permission() {
 
 function actomod_menu() {	
     $items = array();
-    /*
-    $items['admin/settings/ateliers'] = array(
+    
+    $items['admin/settings/actolis'] = array(
         'title' => 'Configuration du site' ,
         'description' => 'Configuration de l\'adresse, du google map, etc..',
         'page callback' => 'drupal_get_form',
         'page arguments' => array('actomod_admin'),    
         'access arguments' => array('access actomod admin'),
         'type' => MENU_NORMAL_ITEM,
-    );*/
+    );
+    
     $items['espace-personnel/%'] = array(
         'title' => 'Connexion à l\espace personnel' ,
         'description' => 'PAge de connexion à l\espace personnel',
@@ -38,8 +39,199 @@ function actomod_menu() {
         'page arguments' => array(0,1),        
         'type' => MENU_NORMAL_ITEM,
     );
+    
+    $items['case-studies/%'] = array(
+        'title' => 'Liste des case studies par domaine' ,
+        'description' => 'Description',
+        'access callback' => TRUE,
+         'page callback' => 'actomod_casestudies',
+        'page arguments' => array(0,1),        
+        'type' => MENU_NORMAL_ITEM,
+    );
    
 	return $items;
+}
+
+function actomod_admin(){
+    
+    $form = array();
+    $form['actomod_fsvisuels_offres'] = array(
+        '#type' => 'fieldset',
+        '#title' => t('Paramétrage des pictos des détails des offres de formations'),
+        '#collapsible' => TRUE, // Added
+        '#collapsed' => FALSE,  // Added
+    );
+    $fid = variable_get('actomod_pictos_offres_duree');
+    $form['actomod_fsvisuels_offres']['actomod_pictos_offres_duree'] = array(
+        '#type' => 'media',
+        '#tree' => TRUE,
+        '#title' => t('Picto offre détail durée'),
+        '#default_value' => $fid,
+        '#media_options' => array(
+            'global' => array(
+                'file_extensions' => 'jpg png svg', // File extensions
+                'max_filesize' => '100 MB',
+                'file_directory' => 'config', // Will be a subdirectory of the files directory
+                'types' => array('image'), // Refers to a file_entity bundle (such as audio, video, image, etc.)
+            ),  
+        ),  
+        '#description' => t("Pictos dans le détail des offres"),
+        '#required' => FALSE,
+    );
+
+    $form['actomod_fsvisuels_offres']['actomod_pictos_offres_contact'] = array(
+        '#type' => 'media',
+        '#tree' => TRUE,
+        '#title' => t('Picto offre détail contact'),
+        '#default_value' => variable_get('actomod_pictos_offres_contact'),
+        '#media_options' => array(
+            'global' => array(
+                'file_extensions' => 'jpg png svg', // File extensions
+                'max_filesize' => '100 MB',
+                'file_directory' => 'config', // Will be a subdirectory of the files directory
+                'types' => array('image'), // Refers to a file_entity bundle (such as audio, video, image, etc.)
+            ),  
+        ),  
+        '#description' => t("Pictos dans le détail des offres"),
+        '#required' => FALSE,
+    );
+    $form['actomod_fsvisuels_offres']['actomod_pictos_offres_prix'] = array(
+        '#type' => 'media',
+        '#tree' => TRUE,
+        '#title' => t('Picto offre détail prix'),
+        '#default_value' =>  variable_get('actomod_pictos_offres_prix'),
+        '#media_options' => array(
+            'global' => array(
+                'file_extensions' => 'jpg png svg', // File extensions
+                'max_filesize' => '100 MB',
+                'file_directory' => 'config', // Will be a subdirectory of the files directory
+                'types' => array('image'), // Refers to a file_entity bundle (such as audio, video, image, etc.)
+            ),  
+        ),  
+        '#description' => t("Pictos dans le détail des offres"),
+        '#required' => FALSE,
+    );
+    $form['actomod_fsvisuels_postes'] = array(
+        '#type' => 'fieldset',
+        '#title' => t('Paramétrage des pictos des détails des offres de postes'),
+        '#collapsible' => TRUE, // Added
+        '#collapsed' => FALSE,  // Added
+    );
+    $form['actomod_fsvisuels_postes']['actomod_pictos_postes_formation'] = array(
+        '#type' => 'media',
+        '#tree' => TRUE,
+        '#title' => t('Picto poste détail formation'),
+        '#default_value' => variable_get('actomod_pictos_postes_formation'),
+        '#media_options' => array(
+            'global' => array(
+                'file_extensions' => 'jpg png svg', // File extensions
+                'max_filesize' => '100 MB',
+                'file_directory' => 'config', // Will be a subdirectory of the files directory
+                'types' => array('image'), // Refers to a file_entity bundle (such as audio, video, image, etc.)
+            ),  
+        ),  
+        '#description' => t("Pictos dans le détail des offres"),
+        '#required' => FALSE,
+    );
+        $form['actomod_fsvisuels_postes']['actomod_pictos_postes_contrat'] = array(
+        '#type' => 'media',
+        '#tree' => TRUE,
+        '#title' => t('Picto poste détail contrat'),
+        '#default_value' => variable_get('actomod_pictos_postes_contrat'),
+        '#media_options' => array(
+            'global' => array(
+                'file_extensions' => 'jpg png svg', // File extensions
+                'max_filesize' => '100 MB',
+                'file_directory' => 'config', // Will be a subdirectory of the files directory
+                'types' => array('image'), // Refers to a file_entity bundle (such as audio, video, image, etc.)
+            ),  
+        ),  
+        '#description' => t("Pictos dans le détail des offres"),
+        '#required' => FALSE,
+    );
+        $form['actomod_fsvisuels_postes']['actomod_pictos_postes_localisation'] = array(
+        '#type' => 'media',
+        '#tree' => TRUE,
+        '#title' => t('Picto poste détail localisation du poste'),
+        '#default_value' => variable_get('actomod_pictos_postes_localisation'),
+        '#media_options' => array(
+            'global' => array(
+                'file_extensions' => 'jpg png svg', // File extensions
+                'max_filesize' => '100 MB',
+                'file_directory' => 'config', // Will be a subdirectory of the files directory
+                'types' => array('image'), // Refers to a file_entity bundle (such as audio, video, image, etc.)
+            ),  
+        ),  
+        '#description' => t("Pictos dans le détail des offres"),
+        '#required' => FALSE,
+    );
+        $form['actomod_fsvisuels_postes']['actomod_pictos_postes_experience'] = array(
+        '#type' => 'media',
+        '#tree' => TRUE,
+        '#title' => t('Picto poste détail expérience demandée'),
+        '#default_value' => variable_get('actomod_pictos_postes_experience'),
+        '#media_options' => array(
+            'global' => array(
+                'file_extensions' => 'jpg png svg', // File extensions
+                'max_filesize' => '100 MB',
+                'file_directory' => 'config', // Will be a subdirectory of the files directory
+                'types' => array('image'), // Refers to a file_entity bundle (such as audio, video, image, etc.)
+            ),  
+        ),  
+        '#description' => t("Pictos dans le détail des offres"),
+        '#required' => FALSE,
+    );
+        $form['actomod_fsvisuels_postes']['actomod_pictos_postes_langues'] = array(
+        '#type' => 'media',
+        '#tree' => TRUE,
+        '#title' => t('Picto poste détail langues demandées'),
+        '#default_value' => variable_get('actomod_pictos_postes_langues'),
+        '#media_options' => array(
+            'global' => array(
+                'file_extensions' => 'jpg png svg', // File extensions
+                'max_filesize' => '100 MB',
+                'file_directory' => 'config', // Will be a subdirectory of the files directory
+                'types' => array('image'), // Refers to a file_entity bundle (such as audio, video, image, etc.)
+            ),  
+        ),  
+        '#description' => t("Pictos dans le détail des offres"),
+        '#required' => FALSE,
+    );
+        $form['actomod_fsvisuels_postes']['actomod_pictos_postes_disponibilite'] = array(
+        '#type' => 'media',
+        '#tree' => TRUE,
+        '#title' => t('Picto poste détail disponibilité'),
+        '#default_value' => variable_get('actomod_pictos_postes_disponibilite'),
+        '#media_options' => array(
+            'global' => array(
+                'file_extensions' => 'jpg png svg', // File extensions
+                'max_filesize' => '100 MB',
+                'file_directory' => 'config', // Will be a subdirectory of the files directory
+                'types' => array('image'), // Refers to a file_entity bundle (such as audio, video, image, etc.)
+            ),  
+        ),  
+        '#description' => t("Pictos dans le détail des offres"),
+        '#required' => FALSE,
+    );
+        $form['actomod_fsvisuels_postes']['actomod_pictos_postes_salaire'] = array(
+        '#type' => 'media',
+        '#tree' => TRUE,
+        '#title' => t('Picto poste détail salaire'),
+        '#default_value' => variable_get('actomod_pictos_postes_salaire'),
+        '#media_options' => array(
+            'global' => array(
+                'file_extensions' => 'jpg png svg', // File extensions
+                'max_filesize' => '100 MB',
+                'file_directory' => 'config', // Will be a subdirectory of the files directory
+                'types' => array('image'), // Refers to a file_entity bundle (such as audio, video, image, etc.)
+            ),  
+        ),  
+        '#description' => t("Pictos dans le détail des offres"),
+        '#required' => FALSE,
+    );
+    
+    return system_settings_form($form);
+    
 }
 
 function actomod_espaceperso($arg,$hop){
@@ -73,35 +265,64 @@ function actomod_espaceperso($arg,$hop){
     $loginform = drupal_get_form('user_login_block');
     $registerform = drupal_get_form('user_register_form');
     
-    
     return theme($tpl, array('loginform' => $loginform, 'registerform'=>$registerform));
-    
-    
-    /*
-    $view = views_get_view("atelier_id");
-    $view->set_arguments(array($hop));
-    $view->execute();
-    $result = $view->result;
-    if(count($result)==0){
-        //redirection
-        return "Cet atelier n'existe pas";
-        
-    }else{
-        $result[0];
-        $node = node_load($result[0]->nid);
-        $view = views_embed_view('actus', 'page_1', $result[0]->nid);
-        //return $view;
-        return theme('actomod_actus', array('view' => $view, 'node'=>$node));
-    }
-    
-    */
-    //return NULL;
-   // return 'hop '.$arg . " ".$hop;
 }
 
+function actomod_casestudies($arg,$hop){
+    dpm($hop);
+   
+    switch($hop){
+        case "dispositifs-medicaux":
+            $idview=8; 
+            break;
+        case "pharma-biotech":
+            $idview=2; 
+            break;
+        case "cosmetiques-otc":
+            $idview=9; 
+            break;
+        default:
+           
+    }
+    if($idview == "none"){
+        return drupal_not_found();
+        
+    }
+    $view = views_get_view("case_studies");
+    $view->set_arguments(array($idview));
+    $view->execute();
+    $result = $view->result;
+    
+    $a = array();
+    
+    foreach($result as $key => $case){
+        
+        $node = node_load($case->nid);
+        $a[]= $node;
+        
+    }
+    
+    return theme("actomod_casestudies", array('view' => $a));
 
+}
 
+function actomod_form_user_pass_alter(&$form, &$form_state){
 
+    print "test";
+    dpm($form_state);
+    
+    $form_state["redirect"] = "content/home";
+}
+
+function actomod_form_alter(&$form, &$form_state, $form_id) {
+  if ('user_pass' == $form_id) {
+    $form['#submit'][] = '_password_recover_submit';
+  }
+}
+
+function _password_recover_submit($form, &$form_state){
+  $form_state['redirect'] = "content/home";
+}
 
 function actomod_theme($existing, $type, $theme, $path){
   $themez = drupal_get_path("theme",$GLOBALS['theme']);
@@ -109,9 +330,22 @@ function actomod_theme($existing, $type, $theme, $path){
     'actomod_espaceperso_clients' => array(
         'template' => 'templates/actomod_espaceperso_clients', // Change this to the template file name.
         'variables' => array('login' => NULL,"machin"=> NULL), // This is the list of the variables that will be passed to the template file. 
-    ),  
+    ), 
+    'actomod_espaceperso_partenaires' => array(
+        'template' => 'templates/actomod_espaceperso_partenaires', // Change this to the template file name.
+        'variables' => array('login' => NULL,"machin"=> NULL), // This is the list of the variables that will be passed to the template file. 
+    ), 
+    'actomod_espaceperso_consultants' => array(
+        'template' => 'templates/actomod_espaceperso_consultants', // Change this to the template file name.
+        'variables' => array('login' => NULL,"machin"=> NULL), // This is the list of the variables that will be passed to the template file. 
+    ),
+    'actomod_casestudies' => array(
+        'template' => 'templates/actomod_casestudies', // Change this to the template file name.
+        'variables' => array('view' => NULL), // This is the list of the variables that will be passed to the template file. 
+    )
    
   );
+    
 }
 
 

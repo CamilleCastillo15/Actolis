@@ -85,7 +85,6 @@ $fallback-extension: 'png' !default;
     @if($poz){
         background-position: $poz;
     }
-
 }
 
 @mixin jpg($name, $poz:false, $size:false){
@@ -97,15 +96,14 @@ $fallback-extension: 'png' !default;
     @if($poz){
         background-position: $poz;
     }
-
 }
+
 @mixin main-padding($left:0, $right:0){
     
     padding-left:2rem;
     padding-right: 2rem;
 
     @include breakpoint($laptop) {
-       
            @if($left != 0){
              padding-left:$left/2;
           } @else {
@@ -116,12 +114,11 @@ $fallback-extension: 'png' !default;
           } @else {
             padding-right:$m-padding/2;
           }
-
     }
 
     @include breakpoint($laptopl) {
        
-           @if($left != 0){
+          @if($left != 0){
              padding-left:$left;
           } @else {
             padding-left:$m-padding;
@@ -131,10 +128,39 @@ $fallback-extension: 'png' !default;
           } @else {
             padding-right:$m-padding;
           }
+    }
+}
 
+@mixin main-margin($left:0, $right:0){
+
+    margin-left:2rem;
+    margin-right: 2rem;
+
+    @include breakpoint($laptop) {
+           @if($left != 0){
+            margin-left:$left/2;
+          } @else {
+            margin-left:$m-padding/2;
+          }
+          @if($right != 0){
+            margin-right:$right/2;
+          } @else {
+            margin-right:$m-padding/2;
+          }
     }
 
-    
+    @include breakpoint($laptopl) {
+          @if($left != 0){
+            margin-left:$left;
+          } @else {
+            margin-left:$m-padding;
+          }
+          @if($right != 0){
+            margin-right:$right;
+          } @else {
+            margin-right:$m-padding;
+          }
+    }
 }
 
 @mixin main-50(){
@@ -214,8 +240,6 @@ $fallback-extension: 'png' !default;
     background-image:         linear-gradient(to top, $startColor, $endColor);
     filter:            progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$startColor}', endColorStr='#{$endColor}');
 }
-
-
 
 .gradient-v{
 	@include background-gradient($vert,$bleu);
@@ -542,4 +566,45 @@ $fallback-extension: 'png' !default;
     @include css3-prefix('box-shadow', "0 0 0 1px #{$colorTwo}, 0 0 0 2px #{$colorThree}");
 }
 
+@mixin link ($link) {
+  a {
+    color: $link;
+    &:visited {
+      color: $link;
+    }
+    &:hover {
+      color: $link;
+    }
+    &:active {
+      color: $link;
+    }
+  }
+}
 
+@mixin btn_d() {
+
+    background-image : url(../imgs/picto_fleche_d.svg);
+
+    background-repeat: no-repeat;
+    background-size : 20% 55%;
+    background-position: 100% center;
+
+    &:hover {
+        background-image : url(../imgs/picto_fleche_d_b.svg);
+    }
+
+}
+
+@mixin btn_g() {
+
+    background-image : url(../imgs/picto_fleche_l.svg);
+
+    background-repeat: no-repeat;
+    background-size : 20% 55%;
+    background-position: 0% center;
+
+    &:hover {
+        background-image : url(../imgs/picto_fleche_g_b.svg);
+    }
+
+}

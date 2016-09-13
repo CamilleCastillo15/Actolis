@@ -8,11 +8,12 @@ body,html{
     letter-spacing: 0rem;
     @include breakpoint($tablet) {
         letter-spacing: 0.1rem;
-        font-size: 1.1vw;
+//        font-size: 1.1vw;
+        font-size: 12px;
     }
 
      @include breakpoint($laptopl) {
-       font-size: 17px;
+       font-size: 14px;
     }
 
     

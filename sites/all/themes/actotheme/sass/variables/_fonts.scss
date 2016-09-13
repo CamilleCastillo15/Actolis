@@ -1,10 +1,17 @@
 /** Source Sans Pro **/
-/*
+
 @font-face {
-    font-family: "SourceSansProExtraLight";
-    src: url(../fonts/SourceSansPro-ExtraLight.ttf);
-    font-style: normal;
+    font-family: Actolis;
+    src: url("../fonts/actolis.otf") format("opentype");
 }
+
+@font-face {
+    font-family: "SourceSansProUltraBold";
+    src: url(../fonts/SourceSansPro-Black.ttf);
+    font-weight: 900;
+}
+
+/*
 @font-face {
     font-family: "SourceSansProExtraLightItalic";
     src: url(../fonts/SourceSansPro-ExtraLightitalic.ttf);

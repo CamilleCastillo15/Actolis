@@ -6,6 +6,7 @@
     .c-block-histoire{
         .c-img{
             @include png(equipe_photo,50% 50%, cover);
+            right: 0;
         }
     }
 
@@ -14,12 +15,7 @@
             background-color: white;
            
             text-align: center;
-            padding: 0rem 2rem;
-            //padding-bottom: 6rem;
             position: relative;
-           
-
-            @include main-padding(15vw,15vw);
 
             .gradient{
                  @extend .gradient-light;
@@ -34,20 +30,18 @@
 
             }
 
-
-
             .va {
-                    
-                    h4{
-                        text-align: center;
-                    }
+
+                h3{
+                    @include breakpoint($tablet){
+                        text-align: left;
+                     }
+                    text-align: center;
+                }
+
                     position: relative;
                     z-index: 2;
-                padding: 6rem 0rem;
-//                position: absolute;
-//                top: 50%;
-//                @include translate(0px,-50%);
-
+//                    padding: 3rem 0rem 5rem 0rem;
 
                 .c-picto{
 
@@ -58,14 +52,12 @@
                     &:nth-child(3) {
                        @include animation(picto1 1.5s ease-in-out 1);
                     }
-
                     &:nth-child(2) {
                        @include animation(picto2 1.5s ease-in-out 1);
                     }
-                      &:nth-child(4) {
+                    &:nth-child(4) {
                        @include animation(picto2 1.5s ease-in-out 1);
                     }
-
                     &:nth-child(1) {
                        @include animation(picto3 1.5s ease-in-out 1);
                     }
@@ -80,30 +72,61 @@
 
                     }
 
-                    a{
+                a{
 
-                         color:black;
-                            text-transform: uppercase;
-                            @include fz(4);
-                            max-width: 14rem;
-                        h6{
-                
-                            color:black;
-                            text-transform: uppercase;
-                            @include fz(3);
-                            max-width: 14rem;
-                            @include opacity(0.8);
-                        }
-                        &:hover{
-                            h6{
-                                 @include opacity(1);
-                            }
-                        }
+                     color:black;
+                        text-transform: uppercase;
+                        @include fz(4);
+                        max-width: 14rem;
+                    h6{
+
+                        color:black;
+                        text-transform: uppercase;
+                        @include fz(3);
+                        max-width: 14rem;
+                        @include opacity(0.8);
                     }
+                    &:hover{
+                        h6{
+                             @include opacity(1);
+                        }
+
+                    }
+
+                }
 
             }
 
-            
+            .swiper-slide {
+                @include breakpoint($tablet){
+                    text-align: center;
+                 }
+                text-align: center;
+            }
+
+            .image-acto-news {
+                max-width: 14rem;
+            }
+
+        }
+
+        .en_savoir_plus {
+            margin-top: 2rem;
+            @include btn_d();
+
+            @include breakpoint($tablet){
+                float: left;
+             }
+
+        }
+
+    }
+
+    .e-d-c {
+
+        .en_savoir_plus {
+
+            float: none;
 
         }
 
@@ -116,16 +139,8 @@
     width: 100%;
     display: block;
     margin: 0 auto;
-    padding:5px;
-    margin-top:7rem;
-    margin-bottom: 6rem;
-    padding: 3rem 6rem;
 
-    background-color: $gris;
-
-     @include breakpoint($tablet){
-        width: 65vw;
-     }
+    @include main-padding();
 
     h5{
         font-size: 1.5rem;
@@ -133,9 +148,10 @@
         color:black;
         text-transform: uppercase;
         text-align: center;
+
          @include breakpoint($tablet){
-        text-align: left;
-     }
+            text-align: left;
+         }
     }
 
     .sep{
@@ -149,9 +165,10 @@
          margin-bottom: 3rem;
 
           @include breakpoint($tablet){
-       float: right;
-       width: 90%;
-     }
+           position: absolute;
+           left: 0;
+           width: 100%;
+         }
     }
 
     .c-avatar{
@@ -161,8 +178,9 @@
       width: 100%;
       margin-bottom: 1rem;
         @include breakpoint($tablet){
- width: 20%;
-       min-width: 6rem;
+           width: 20%;
+           min-width: 6rem;
+           margin-top: 4rem;
         }
 
        .c-img{
@@ -175,12 +193,12 @@
                 position: relative;
                 margin:0 auto;
 
-                  @include breakpoint($tablet){
-                height: 10rem;
-                width: 10rem;
+          @include breakpoint($tablet){
 
-                  }
+            height: 10rem;
+            width: 10rem;
 
+          }
        }
 
        img{
@@ -192,8 +210,6 @@
          @include translate(-50%,-50%);
             left:50%;
             top: 50%;
-         
-
 
        }
        .nom{
@@ -207,7 +223,7 @@
     .c-text{
        display: inline-block;
        vertical-align: middle;
-       text-align:left;
+       text-align:center;
        width: 100%;
        padding-left: 0%;
        p{
@@ -215,7 +231,8 @@
        }
        @include breakpoint($tablet){
          padding-left: 5%;
-            width: 75%;
+         width: 75%;
+         text-align:left;
        }
     }
 
@@ -225,6 +242,16 @@
 
     }
 
+    .c-blanc{
+
+        &.bkg {
+
+            background-color: $gris;
+            padding: 3rem;
+
+        }
+
+    }
 }
 
 
