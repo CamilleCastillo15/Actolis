@@ -22,12 +22,13 @@
 
 
    background-color: white;
+   padding: 1rem;
 
    // max-width: $max;
     //display: none;
     display: block;
     
-    @include main-padding(1%,1%);
+    //@include main-padding(1%,1%);
 
     @include breakpoint($tablet) {
         display: block;
@@ -39,13 +40,13 @@
 
 
         width: 50%;
-        height: 8rem;
+        height: 5rem;
         text-align: left;
         float: left;
 
         @include breakpoint($tablet) {
 
-                height: 6rem;
+                height: 7rem;
         }
 
         a{
@@ -56,9 +57,10 @@
 
             img{
 
-                height: 80%;
+                height: 100%;
                 width: auto;
                 margin-top: 0.5rem;
+                left:1rem;
                 position: relative;
                  display: inline-block;
                  vertical-align: middle;

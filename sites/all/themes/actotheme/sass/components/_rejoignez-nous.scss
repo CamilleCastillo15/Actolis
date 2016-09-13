@@ -60,13 +60,18 @@
 				display: inline-block;
 				width: 100%;
                 margin-left: 0.3rem;
+ 				padding: 2rem;
+		
+
 
 				 @include breakpoint($tablet) {
 						width: 32%;
+						min-height: 9rem;
+						padding: 2rem;
 				 }
 				
-                min-height: 9rem;
-				padding-top: 2rem;
+                
+               
 				background-color: $gris;
 				position: relative;	
 				margin-bottom: 0.3rem;
@@ -110,6 +115,7 @@
 	                height: 3px;
 	                display: block;
 	                width: 100%;
+	                left:0px;
 	                position: absolute;	
 	                bottom: 0px;
 	                @extend .gradient-h;

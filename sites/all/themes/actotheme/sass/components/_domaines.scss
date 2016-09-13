@@ -106,7 +106,7 @@
         
         strong{
             @include fz(3);
-            text-transform: uppercase;  
+            //text-transform: uppercase;  
             font-weight:    600;
             margin-top: 2rem;
             display: block; 
@@ -130,7 +130,7 @@
 
         h3 {
             p {
-                @include fz(5);
+                @include fz(4);
                 line-height: 2.5rem;
                 font-weight:   600;
                 text-transform: uppercase;
@@ -394,7 +394,7 @@
 
     .nos-actions {
         @include main-padding();
-        margin-top: 3rem;
+        margin-top: 5rem;
     }
 
     .specs-container {
@@ -514,7 +514,7 @@
                 display: block;
 
                 @include breakpoint($laptop){
-                    display: none;
+                    //display: none;
                 }
 
             }

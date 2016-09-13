@@ -122,7 +122,9 @@
     </div>
 
     <div class="acto-news swiper-container">
+    <h3>acto - news</h3>
         <div class="swiper-wrapper">
+
             <?php
 
                 $view_acto_news = views_get_view('acto_news');
@@ -150,7 +152,7 @@
             ?>
 
             <div class="swiper-slide">
-                <h3>acto - news</h3>
+                
                 <div class="image-acto-news">
                     <?php print render($image_acto_news_render); ?>
                 </div>

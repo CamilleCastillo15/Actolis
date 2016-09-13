@@ -13,8 +13,8 @@ h3 {
 h4{
   display: block;
   @include fz(4);
-  font-weight: 900;
-  text-transform: uppercase;
+  font-weight: 700;
+  text-transform: none;
 }
 
 h5 {
@@ -69,6 +69,8 @@ h5 {
         margin-top:3rem;
         margin-bottom: 3rem;
         text-align: center;
+        display: block;
+        width: 100%;
 
         @include fz(5);
         line-height: 2rem;
@@ -78,10 +80,14 @@ h5 {
 
     .body-acto-news {
         display: inline-block;
-        vertical-align: middle;
+        vertical-align: top;
         text-align: center;
         width: 100%;
         padding-bottom: 3rem;
+
+        br{
+          display: none;
+        }
         @include breakpoint($tablet) {
            padding-bottom: 1rem;
            width: 40%;
@@ -91,8 +97,9 @@ h5 {
         h4{
           display: block;
           @include fz(4);
-          font-weight: 900;
-          text-transform: uppercase;
+          font-weight: 700;
+          margin-bottom: 1rem;
+          //text-transform: uppercase;
           text-align: center;
           @include breakpoint($tablet) {
               text-align: left;
@@ -101,11 +108,15 @@ h5 {
     }
     .image-acto-news {
         display: inline-block;
-        vertical-align: middle;
+        vertical-align: top;
         width: 100%;
         @include breakpoint($tablet) {
-//          width: 35%;
+          width: 35%;
+          //width: 25%;
+        }
+         @include breakpoint($laptop) {
           width: 25%;
+          //width: 25%;
         }
         img {
             max-width: 100%;
@@ -197,10 +208,10 @@ h5 {
    height: 7rem;
     width: 7rem;
     display: inline-block;
-    margin:0rem;
+    margin-top:2rem;
     //transform: scale(0.5);
-    top:2rem;
-    margin-bottom: 1rem;
+    //top:2rem;
+   // margin-bottom: 1rem;
     border-radius: 100%;
     border:0.22rem solid white;
 
@@ -208,11 +219,18 @@ h5 {
 
             height: 9rem;
             width: 9rem;
-            margin-bottom: 6rem;
+            
             display: inline-block;
-            margin:3.5rem;
-            margin-top:1rem;
-            top:2rem;
+            //margin:3.5rem;
+            margin-top:2rem;
+            
+
+        }
+
+         @include breakpoint($laptop){
+
+            margin-top:4rem;
+            margin-bottom:4rem;
 
         }
 
@@ -657,39 +675,37 @@ h5 {
 
     .b-big-cta{
         
-    width: 30vw;
-    height: 30vw;
+    width: 30%;
+    height: 18rem;
        
     text-align: center;
     position: relative;
     display: inline-block;
     vertical-align: top;
     margin:0px;
-    min-height: 16rem;
+    //min-height: 16rem;
 
     @include breakpoint($tablet){
         margin:1vw;
 
-        width: 200px;
-        height: 230px;
+        width: 30%;
+        height: 22rem;
 
-        min-height: 100%;
-        min-height: 100%;
-      }
+    }
         
     @include breakpoint($laptop) {
 
-        margin:2vw;
-
-        width: 300px;
-        height: 300px;
+        margin:1rem;
+        min-width: 25rem;
+        width:  25%;       
+        height: 25rem;
 
     }
 
       @include breakpoint($laptopl){
 
-          width: 22vw;
-          height: 22vw;
+          width: 20%;
+          height: 25rem;
 
         }
 
@@ -883,9 +899,10 @@ h5 {
         a {
             display: block;
             color:black;
-            background-color: rgba(white,0.7);
+            background-color: rgba(white,0.3);
             width: 100%;
             height: 300px;
+            cursor:pointer;
             position: relative;
             padding: 3rem;
             padding-top: 4rem;
@@ -896,9 +913,10 @@ h5 {
 
             h2 {
 
-                display: none;
+                //display: none;
 
                 @include fz(3);
+                display: block;
                 font-weight: 800;
                 text-transform: uppercase;
                 margin: 0rem 0 1rem 0;
@@ -910,7 +928,7 @@ h5 {
                 text-align: center;
 
                 @include breakpoint($laptop){
-                    display: none;
+                    //display: none;
                 }
                 @include fz(2);
 
@@ -926,7 +944,7 @@ h5 {
                 height: 0.2rem;
                 display: block;
                 @include breakpoint($laptop){
-                    display: none;
+                    //display: none;
                 }
                 margin: 0 auto;
                 width: 70%;
@@ -941,26 +959,22 @@ h5 {
             }
 
             @include breakpoint($laptop) {
+
                 &:hover{
+                   background-color: rgba(white,0.8);
                     h2{
                         @include opacity(1);
                         display: block;
                     }
-                    p{
-                        display: block;
+                  
+                    .en_savoir_plus{
+                      @include opacity(1);
                     }
+            
                     .sep{
                         margin-top:1rem;
                     }
-                    .en_savoir_plus {
-                        display: block;
-                    }
-                    img {
-                        display: none;
-                    }
-                    .sep {
-                        display: block;
-                    }
+                    
                     .ab {
                         @include translate(-50%, -60%);
                     }
@@ -995,7 +1009,8 @@ h5 {
         }
         .en_savoir_plus {
         @include breakpoint($laptop){
-            display: none;
+           @include opacity(0);
+            //display: none;
         }
             float: none;
             max-width: 14rem;

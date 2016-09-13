@@ -32,7 +32,7 @@
             width:100%;
 
              @include breakpoint($tablet){
-                top:30%;
+                top:10%;
                 @include main-padding();
              }
 
@@ -47,7 +47,7 @@
 
                 text-transform: uppercase;
 
-                @include breakpoint($tablet) {
+                @include breakpoint($laptop) {
                      @include fz(6);
                    text-align: left;
                    display: inline-block;  
@@ -72,9 +72,13 @@
 
                 @include fz(5);
                 padding-top: 1.2rem;
+                padding-left: 2rem;
+                padding-right: 2rem;
                  text-align: center;
-                @include breakpoint($tablet){
+                @include breakpoint($laptop){
                      @include fz(4);
+                     padding: 0rem;
+                     padding-top: 1.2rem;
                    text-align: left;
                 }
             }
@@ -88,7 +92,7 @@
 
             left:50%;
             @include translate(-50%,0px);
-            @include breakpoint($tablet){
+            @include breakpoint($laptop){
                 top: 56%;
                 left:13%;
                 @include translate(0px,0px);

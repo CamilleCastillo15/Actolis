@@ -66,10 +66,14 @@
             <?php print render($titre_offres_formations) ?><br />
          </p>
          <div class="checkboxes">
-             <input name="radio" type="radio" class='checkboxe tous'><span class='nom'> tous </span>
-             <input name="radio" type="radio" class='checkboxe cosmeto'><span class='nom'> cosmétiques & OTC </span>
-             <input name="radio" type="radio" class='checkboxe dispositifs'><span class='nom'> Dispositifs médicaux </span>
-             <input name="radio" type="radio" class='checkboxe pharma'><span class='nom'> Pharma & Biotech </span>
+             <input name="radio" id="tous" type="radio" checked="checked" class='checkboxe tous'><label for="tous" class='nom'>tous</label>
+             
+             <input name="radio" id="cosmeto" type="radio" class='checkboxe cosmeto'><label for="cosmeto" class='nom'>cosmétiques & OTC</label>
+       
+             <input name="radio" id="dispositifs" type="radio" class='checkboxe dispositifs'><label for="dispositifs" class='nom'>Dispositifs médicaux</label>
+             
+             <input name="radio" id="pharma" type="radio" class='checkboxe pharma'><label for="pharma" class='nom'>Pharma & Biotech</label>
+            
          </div>
          <?php //$i == 0; ?>
          <div class="cc cc-1">

@@ -95,7 +95,7 @@
                         background-color: transparent;
                     }
                     @include breakpoint($laptop) {
-                        padding:0.5rem 2rem;
+                        padding:1rem 2rem;
                     }
                     @include transition(all 0.2s ease-out);
                     @include breakpoint($tablet) {
@@ -108,8 +108,8 @@
                             &:after {
                                 content: "";
                                 position: absolute;
-                                top:2.4rem;
-                                width: 5rem;
+                                top:3rem;
+                                width: 50%;
                                 height: 0.15rem;
                                 left:50%;
                                 @include breakpoint($tablet) {
@@ -146,8 +146,8 @@
                             &:after {
                                 content: "";
                                 position: absolute;
-                                top:2.4rem;
-                                width: 5rem;
+                                top:3rem;
+                                width: 50%;
                                 height: 0.15rem;
                                 left:50%;
                                 @include breakpoint($tablet) {
@@ -166,7 +166,7 @@
                  @extend .ul-nav;
                  font-size: 0px;
                   text-align:left;
-            @include breakpoint($tablet) {
+                    @include breakpoint($tablet) {
                         text-align: center; 
             }
                  li{
@@ -259,7 +259,7 @@
     display: block;
     position: relative;
     .menu{
-        padding-bottom: 3rem;
+        //padding-bottom: 3rem;
         position: relative;
             li{
                 background-color: white;

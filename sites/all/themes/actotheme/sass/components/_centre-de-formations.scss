@@ -30,6 +30,37 @@
 
         margin-bottom: 1rem;
         margin-top: 4rem;
+        label{
+            cursor: pointer;
+            color:black;
+        }
+
+        input[type=checkbox]:checked + label {
+              
+            color:$orange;
+
+        } 
+
+        input[type=radio]:checked {
+              
+            background-color: $orange;
+
+        } 
+
+        input{
+
+            width: 2rem;
+            height: 2rem;
+            appearance:none;
+            background-color: rgba(black,0.7);
+            width: 1rem;
+            height: 1rem;
+            border-radius: 100%;
+            outline: none;
+            cursor: pointer;
+            margin-right: 0.5rem;
+
+        }
 
         .nom {
             font-weight: bold;
@@ -44,15 +75,16 @@
 .pictos-container {
 
    display: inline-block;
-   width: 1rem;
-   margin-left: 3rem;
+   width: 3rem;
+   height: 3rem;
 
-   margin-bottom: 1.5rem;
+   margin: 1rem;
 
         .picto {
 
-            width: 1.75rem;
+            width: 3rem;
             position: relative;
+            text-align: center;
 
             &:before {
                 content:"";
@@ -72,6 +104,8 @@
 
                 position: relative;
                 vertical-align: middle;
+                width: 1.5rem;
+                display: inline-block;
 
             }
 

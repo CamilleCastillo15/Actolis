@@ -36,8 +36,10 @@ body {
 }
 .node-type-home{
   .domaine-menu{
+   
+    display: none;
     @include breakpoint($laptop) {
-      display: none;
+      display: block;
     }
   }
 }
