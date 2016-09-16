@@ -147,7 +147,7 @@
 
                 <div class="grille">
 
-                    <h3>cases studies</h3>
+                    <h3>case studies</h3>
 
                     <div class="acto-news swiper-container">
 

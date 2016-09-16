@@ -190,6 +190,7 @@ select{
       position: relative;
 
         .form-file{
+
           background-color: white;
           display: inline-block;
           font-size: 0.8rem;
@@ -198,6 +199,7 @@ select{
           position: relative;
           border:none;
           color:white;
+         
 
           &:after{
 
@@ -206,9 +208,10 @@ select{
             color:$orange;
             @include fz(1);
             position: absolute;
+            
             //width: 40%;
             //height: 100%;
-            padding: 0rem 2rem;
+            padding: 0rem 4rem;
             top:0px;
             background-color: white;
             left:0px;
@@ -253,8 +256,19 @@ select{
 
 }
 
+.isChrome{
+  .form-file{
+      visibility: hidden !important;
+      width: 50% !important;
+
+      &:after{
+        visibility: visible !important;
+      }
+  }
+}
+
 .node-type-webform{
-    .l-content{
+  .l-content{
     @include main-padding();
   }
 }

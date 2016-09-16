@@ -15,6 +15,7 @@
             <li class="active-trail"><a href="/espace-personnel/consultants">Consultants</a></li>
             <li><a href="/espace-personnel/partenaires">Partenaires</a></li>
             <li><a href="/espace-personnel/clients">Clients</a></li>
+            <li class="flag_en soon"><a href="#en"><img src="<?php print $theme ?>/imgs/flag_en.jpg" alt="en" title="en"/></a></li>
         </ul>
     </div>
     <div class="clear"></div>

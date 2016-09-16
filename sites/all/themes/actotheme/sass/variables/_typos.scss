@@ -18,8 +18,14 @@ body,html{
     }
 
      @include breakpoint($laptopl) {
-       font-size: 15px;
+       font-size: 13px;
     }
+
+      @include breakpoint($laptopxl) {
+       font-size: 14px;
+    }
+
+    
 
     
 }

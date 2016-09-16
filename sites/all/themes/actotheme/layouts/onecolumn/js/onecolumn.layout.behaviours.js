@@ -1,6 +1,8 @@
 (function ($) {
     Drupal.behaviors.masBehavior = {
         attach: function (context, settings) {
+
+            var isChrome = !!window.chrome && !!window.chrome.webstore;
             var mobile = (navigator.userAgent.match(/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i) ? true : false);
             var clickmethod = mobile ? "touchstart" : "click";
             var doc = $(document);
@@ -10,6 +12,9 @@
             var l_shield= document.getElementsByClassName("l-shield")[0];
             var l_menu = document.getElementsByClassName("l-menu")[0];
             var toggle = 1;
+            if(isChrome){
+                $("body").addClass("isChrome");
+            }
             $(window).on("resize",function(){
                 l_shield.setAttribute("class", "l-shield");
                 burger.setAttribute("class", "burger");
