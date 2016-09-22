@@ -84,6 +84,19 @@
             }
         }
 
+        .swiper-wrapper {
+
+  height: 100%;
+ 
+
+   @include breakpoint($tablet){
+        
+        height: 70vh;
+
+   }
+
+  }
+
         .swiper-pagination {
             z-index: 2;
             display: block;
